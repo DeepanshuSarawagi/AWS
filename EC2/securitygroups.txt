@@ -1,0 +1,18 @@
+# Introduction to Security Groups in AWS
+
+SG are fundamental of network Security in AWS
+They control how network is allowed into or out of EC2 instance
+Security groups only contains allow rules
+Security groups refer by IPs or other Security groups
+
+They regulate:
+  Access to ports
+  Authorized IP ranges - IPV4 and IPV6
+  Control of inbound network
+  Control of outbound network
+
+Can be attached to multiple instances
+An instance can have multiple Security groups too
+Locked down to a region/VPC combination
+All inbound traffic is blocked by default
+All outbound traffic is authorized by default
