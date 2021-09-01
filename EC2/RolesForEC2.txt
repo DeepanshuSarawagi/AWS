@@ -1,0 +1,22 @@
+# This document will provide steps to user IAM roles for a AWS Service
+
+instead of configuring the Access ID and secure access key using aws configure,
+we can create the IAM Roles and attach it to the EC2 instance. Follow the below
+steps to access a AWS service using Roles.
+
+1) Go to IAM dashboard
+2) Click on roles
+3) Click on create role and choose the AWS Service as EC2
+3) On the next page, attach the permission polocies. Select the desired policy.
+      In our case, we can to list the IAM users after SSHing into the EC2 instance.
+      Hence, we will select IAMReadOnlyAccess policy and attach it to this Role.
+4) Give the name for this role and click on finish.
+5) Go to EC2 service and select the EC2 instance. Click on Actions and Security,
+6) Select Modify IAM Role
+7) Attach the IAM role to the EC2 instance and click on Save.
+
+Test:
+1) SSH into the EC2 instance, run the following command to display the list of IAM users
+$ aws iam list-users
+
+It will display list of all the IAM users for the AWS account.
