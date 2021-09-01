@@ -1,0 +1,9 @@
+# Command below to ssh into the AWS EC2 instance
+
+$ ssh -i <location to the public-private key pair pem file> ec2-user@<public ipv4 address of the EC2 instance>
+
+# -i in the command stands for identity
+# remember that the .pem file should have a read-only permission (0400)
+
+# On a windows machine, the .pem file Inherit permission should be disabled under Advance Settings
+# All the other users must be removed from viewing the file.
