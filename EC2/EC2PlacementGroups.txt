@@ -24,4 +24,13 @@ Spread:
   From this config, we are limited to 7 instances per AZ per group.
   Use case- Maximum high availability. Critical applications that must be isolated
             from failure from each other.
+
+Partition:
+  We can create multiple partitions across multiple AZ.
+  All EC2 instances are spread across multiple partitions across multiple AZs.
+  We can create 100s of EC2 instances per partition.
+  We can create upto 7 partitions per AZ.
+  Each partition represents a hardware rack in AWS.
+  Each partition is isolated from each other hence avoiding simultaneous failures
+  across multiple EC2 instances.
   
