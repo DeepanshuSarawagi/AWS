@@ -1,3 +1,7 @@
 Use the below command to retrieve the instance Metadata
 
 curl http://169.254.169.254/latest/meta-data/
+
+If the EC2 instances are created using Partition Placement Groups, we can retrieve
+the partition number using below command
+curl http://169.254.169.254/latest/meta-data/placement/partition-number
