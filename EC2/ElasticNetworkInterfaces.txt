@@ -1,0 +1,11 @@
+# This document will give us brief introduction about ENI - Elastic Network Interface
+
+Logical component in a VPC that represents a virtual network card
+Each ENI can have the following attributes
+  - It can have 1 Primary Private IPv4 and one or more Secondary IPv4
+  - One Elastic IP (IPv4) per one Private IPv4
+  - One Public IPv4
+  - One or more security groups attached to a ENI
+  - MAC address can be attached to the ENI
+  - Bound to a specific Availability Zone
+  
