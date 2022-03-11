@@ -4,3 +4,6 @@
 2) Design High Performing Architectures
 3) Design Secure Apps and Architectures
 4) Design Cost Optimized Architectures
+
+65 questions, 130 questions
+Passing point: 720/1000
