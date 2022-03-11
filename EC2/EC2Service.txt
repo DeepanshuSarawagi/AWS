@@ -1,0 +1,7 @@
+EC2 service can be broken down into following types.
+Amazon Machine Images
+Instance types
+Instance purchasing options
+Tenancy
+User data
+Storage options
