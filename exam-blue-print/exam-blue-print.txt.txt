@@ -7,3 +7,6 @@
 
 65 questions, 130 questions
 Passing point: 720/1000
+
+Questions can be open-ended or closed
+Multiple choice and Multiple Responses 
