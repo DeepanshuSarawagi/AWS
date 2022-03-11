@@ -1,0 +1,6 @@
+# AWS Solutions Architect Associate Exam
+
+1) Design Resilient Architectures
+2) Design High Performing Architectures
+3) Design Secure Apps and Architectures
+4) Design Cost Optimized Architectures
