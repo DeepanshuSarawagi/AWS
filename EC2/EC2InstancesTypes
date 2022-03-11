@@ -5,6 +5,7 @@ On-Demand instances:
 
 Reserved Instance: (Minimum 1 year)
   Reserved Instances: Long Workloads
+  Purchases for a set period of time for reduced cost
   Convertible Reserved Instances: Long workloads with flexible instances
   (We can change the instance type. For e.g., from t2.micro to t2.large)
   Scheduled Reserved Instances: Example, instance is required on every Thursday between 3PM and 6 PM
@@ -13,7 +14,7 @@ Reserved Instance: (Minimum 1 year)
 
 EC2 On Demand:
   Pay for what you use.
-  Linux - Billing per secong after first minute.
+  Linux - Billing per second after first minute.
   Other OS - Billing per hour
   has the highest cost but no upfront payment
   Recommended for short-term and uninterrupted workloads, where you cant predict
@@ -33,11 +34,14 @@ EC2 Reserved Instance:
 
   Scheduled Reserved Instance:
     Runs only on a particular period.
+    Even if we didn't use the instance, we will be charged.
 
 EC2 Spot Instance:
   Maximum discount upto 90%
   However, least reliable since you may end up losing the instance if the max price
   is less than the current spot price.
+  Spot price is set by AWS and fluctuates based on demand and flow.
+  Bid for large EC2 instances for a low cost.
   The MOST cost-efficient instances in AWS.
   Use for workloads that are resilient to failures.
     - Batch jobs
