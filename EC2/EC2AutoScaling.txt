@@ -12,3 +12,17 @@ Amazon Auto Scaling:
   Allows us to scale the Amazon ECS, DynamoDB, Amazon Aurora.
 
 Components of EC2 Auto Scaling:
+  - Creation of launch configuration or launch template
+    These define how the Auto Scaling group builds new EC2 Instances
+    Which AMI, Instance Type to use.
+    Whether public IP address can be used.
+    Any user data on first boot.
+    What storage volume configuration to use.
+    What security groups to be used.
+    If you would like spot instances.
+
+    A launch template is a newer and advanced version of launch configuration.
+    Being a template, you can build a standard configuration on how to build your
+    instances using the auto scaling group.
+    
+  - Creation of Auto Scaling group
