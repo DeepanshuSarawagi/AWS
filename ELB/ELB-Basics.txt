@@ -1,0 +1,39 @@
+# Elastic Load Balancers
+
+The main function of ELB is to help manage and control the flow of inbound requests
+destined to the group of targets by distributing these requests evenly across the
+targeted resource group.
+These targets could be a fleet of EC2 instances, Lambda functions, IP addresses
+or even containers.
+The targets defined within the ELB could be situated across different Availability
+Zones or in a single Availability Zone.
+
+Load Balancer Types:
+  - Application Load Balancer:
+    Flexible feature set for your web applications running the HTTP and HTTPS protocols.
+    Operates at the request level.
+    Advanced routing, TLS termination, visibility features targeted at application architectures.
+
+  - Network Load Balancer:
+    Ultra-High performance while maintaining low latencies.
+    Operates at the connection level, routing traffic to targets within VPC
+    Handles millions of requests per second.
+
+  - Classic Load Balancer:
+    Used for applications that were built using existing classic EC2 environment.
+    Operates at both connection and request level.
+
+ELB Components:
+  - Listeners:
+    For every load balancer, you must configure at least one listener.
+    The listener defines how your inbound connections are routed to your target groups
+    based on ports and protocols set as conditions.
+  - Target Groups:
+    A target group is a set a resources that you want your ELB to route requests to.
+    You can configure your ELB with a number of different target groups, each
+    associated with different listener configuration and associated rules.
+  - Rules
+    Rules are associated to each listener that you have configured within your ELB
+    They help to define how an incoming request gets routed to which target groups.
+
+ELB -> Listener -> Rule -> Condition -> Action (This is the ELB flow at basic flow)  
