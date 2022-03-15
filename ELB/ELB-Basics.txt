@@ -32,8 +32,34 @@ ELB Components:
     A target group is a set a resources that you want your ELB to route requests to.
     You can configure your ELB with a number of different target groups, each
     associated with different listener configuration and associated rules.
-  - Rules
+  - Rules:
     Rules are associated to each listener that you have configured within your ELB
     They help to define how an incoming request gets routed to which target groups.
+  - Health Checks:
+    A health check is performed against the resources defined within the target groups.
+    These health checks allow the ELB to send a response to contact each target
+    using a specified protocal to receive a response.
+    If response is not received then ELB will mark the target as unhealthy and will
+    stop sending requests.
+  - ELB Nodes:
+    For each AZ selected, an ELB will be placed within that AZ.
+    We need to ensure that we have an ELB Node associated to any AZ for which we
+    want to route traffic to.
+    The nodes are used by the ELB to distribute traffic to the target groups.
+  - Cross Zone load balancing:
+    When cross-zone load balancing is enabled, the ELB will distribute all incoming
+    traffic evenly between all targets across different AZs.
+    When cross-zone load balancing is disabled, each ELB in its associated AZ will
+    distribute traffic to the targets within its AZ.
 
-ELB -> Listener -> Rule -> Condition -> Action (This is the ELB flow at basic flow)  
+ELB -> Listener -> Rule -> Condition -> Action (This is the ELB flow at basic flow)
+
+Internal or Internet-Facing ELB:
+  - Internet-Facing ELB:
+    The nodes of the ELB are accessible via the internet and so have a public DNS
+    that can be resolved to public IP address, in addition to internal IP address.
+    This allows the ELB to server the incoming traffic from the internet before
+    routing to the target groups.
+  - Internal ELB:
+    An internal ELB has a private IP address, this means it can only serve requests
+    which can originate within your VPC.
