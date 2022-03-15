@@ -1,0 +1,14 @@
+Auto scaling is a mechanism that automatically allows you to increase or decrease
+the resources to meet the demand off of the customer defined metrics and thresholds.
+
+Amazon EC2 Auto Scaling:
+  - This automatically scales the EC2 resources
+  - Infrastructure can elastically provision the required resources preventing your
+    operations team from manually deploying and removing resources.
+  - Greater customer satisfaction
+  - Cost reduction
+
+Amazon Auto Scaling:
+  Allows us to scale the Amazon ECS, DynamoDB, Amazon Aurora.
+
+Components of EC2 Auto Scaling:
