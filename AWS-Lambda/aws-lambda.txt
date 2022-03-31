@@ -13,3 +13,12 @@
     Lambda function using only the required compute power as definned.
     Lambda will then calculate the compute time in milliseconds to ascertain the
     cost of the service.
+
+  - Components of AWS Lambda
+    A Lambda function is compiled of your own code that you want Lambda to invoke.
+    Events sources are AWS services that can be used to trigger your Lambda functions.
+    Downstream resources are the resources that are required during the execution of your
+    Lambda function.
+    Log Streams helps to identify and troubleshoot issues that occur within your
+    Lambda function.
+  
