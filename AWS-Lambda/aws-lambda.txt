@@ -1,0 +1,15 @@
+# Basics of AWS Lambda
+  - It is the serverless compute service that allows you to run the code without
+    having to create the EC2 instance.
+    The responsibility to maintain and administer the Ec2 instances is passed over
+    to the AWS to manage for you.
+    AWS Lambda charges compute power 100ms per use in addition to the number of
+    times your code runs.
+
+  - AWS Lambda theory working
+    Upload the code to Lambda
+    Configure your Lambda function to execute upon specific triggers from the supported events
+    Once the specific trigger is initiated, Lambda will run the code as per your
+    Lambda function using only the required compute power as definned.
+    Lambda will then calculate the compute time in milliseconds to ascertain the
+    cost of the service.
