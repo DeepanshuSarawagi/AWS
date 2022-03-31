@@ -38,7 +38,7 @@ ELB Components:
   - Health Checks:
     A health check is performed against the resources defined within the target groups.
     These health checks allow the ELB to send a response to contact each target
-    using a specified protocal to receive a response.
+    using a specified protocol to receive a response.
     If response is not received then ELB will mark the target as unhealthy and will
     stop sending requests.
   - ELB Nodes:

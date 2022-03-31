@@ -1,0 +1,7 @@
+# Application Load Balancers
+
+  Application Load Balancer operates at the application layer of the OSI model.
+  The application layers serves as the interface to the user and the application processes
+  to access the network services.
+  Before setting up ALB, it is recommended to setup the target groups.
+  
