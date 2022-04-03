@@ -21,4 +21,9 @@
     Lambda function.
     Log Streams helps to identify and troubleshoot issues that occur within your
     Lambda function.
-  
+
+  - Permissions of package
+    It is essential to have correct permissions when uploading the package to AWS Lambda
+    The file should have global read permissions and directory should have 755 permissions
+    If right permissions aren't set then the AWS Lambda function would fail.
+    
