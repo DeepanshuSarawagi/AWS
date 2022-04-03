@@ -60,4 +60,16 @@
     of the functions.
     Enable Active Tracing - By enabling this option, it integrates the AWS X-Ray
     service to trace the event resources that invoked the AWS Lambda function.
+  - Concurrency
+    It effectively measures how many functions can be run at the same time.
+    By default the unreserved account concurrency is set to 1000.
+    This means we can have 1000 occurrences of Lambda functions running at once.
+
+    Reserve Concurrency - Allows our function to run x number of parallel executions.
+    This means that the specified function will have a reserved concurrent capaicity
+    and it will be reduced from the unreserved account concurrency. For example,
+    if we set it to 150, then the account unreserved concurrency will be reduced
+    to 850. This further means that the particular Lambda function will have 150
+    concurrent executions, and the rest other AWS Lambda functions will share the
+    unreserved capacity.
     
