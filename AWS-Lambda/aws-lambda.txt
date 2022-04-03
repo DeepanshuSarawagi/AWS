@@ -26,4 +26,38 @@
     It is essential to have correct permissions when uploading the package to AWS Lambda
     The file should have global read permissions and directory should have 755 permissions
     If right permissions aren't set then the AWS Lambda function would fail.
+
+  - Capacity
+    AWS Lambda now supports 10GB of memory required to execute the AWS Lambda function.
+    Timeout - Determines how long the function should before it terminates.
+
+  - Network
+    By default, the AWS Lambda function are only allowed to access resources that
+    are accessible over the internet i.e., Amazon S3. If you want your function
+    to access any resources within your VPC, then we need to configure it.
+    When configured, AWS Lambda then assigns a ENI to your resources using a private
+    IP address.
+    It is important to note that when using this configuration removes the default
+    ability of using the resources over the public internet.
+    To overcome this situation you must attach your function to a private subnet
+    which has access to a NAT instance or Gateway.
+    The execution role of your Lambda function will need to have specific permissions
+    that will allow to operate within your VPC.
+      - ec2:CreateNetworkInterface
+      - ec2:DescribeNetworkInterfaces
+      - ec2:DeleteNetworkInterface
+  - DLQ Resource
+    The Dead Letter Queue resource can be a SQS or SNS resource.
+    In the event of function failing for one or more reasons, the event exception will be
+    caught in this DLQ resource. These exceptions will be then handled based on the
+    invocation type.
+    Invocation can be synchronous or asynchronous depending upon the event source itself.
+    If the invocation is asynchronous then the Lambda would retry the event further two
+    more time if a failure occurs.
+    If you have a DLQ resource configured then the event payload will be sent to this
+    DQL resource.
+    Synchronous invocations do not automatically retry the the failed executions
+    of the functions.
+    Enable Active Tracing - By enabling this option, it integrates the AWS X-Ray
+    service to trace the event resources that invoked the AWS Lambda function.
     
