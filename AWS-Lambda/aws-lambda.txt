@@ -75,3 +75,28 @@
   - Auditing and Compliance
     AWS Cloudtrail can log this Lambda function's auditing, risk compliance, operational
     and governance purposes.
+
+  - Event sources
+    An event source is an AWS service that produces the event that your Lambda
+    function responds to by invoking it.
+    - Poll Based Services
+      Lambda polls the service looking for particular event and then invokes the
+      function if a matching event is found. This type of service follows synchronous
+      invocations.
+    - Pushed Based Services
+      Services using this push model publish events in addition to actually invoking
+      your Lambda function. Invocation types varies on types of service.
+
+    An Event Source Mapping is the configuration that links your event source to
+    the Lambda function.
+
+  - AWS CloudWatch monitors following metrics of your Lambda functions
+    Invocations
+    Errors
+    DeadLetterErrors
+    Duration
+    Throttles
+    IteratorAge
+    ConcurrentExeuctions
+    UnreservedConcurrentExecutions
+    
