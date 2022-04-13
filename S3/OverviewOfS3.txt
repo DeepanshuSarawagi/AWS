@@ -1,0 +1,18 @@
+# Overview of S3 - Simple Storage Services
+
+Amazon S3 supports largest file size upto 5TB.
+The service operates on object storage system.
+S3 is a regional service. While uploading the data, we are required to specify the
+location in which AWS region we want to upload the data.
+It will then upload the data multiple times across multiple AZs thereby increasing
+the durability , availability and reducing the latency.
+
+Amazon S3 offers durability of 99.999999999%
+The availability of S3 objects depends on the storage class used, therefore, it ranges
+from 99.5% to 99.99%
+
+To store data in Amazon S3, we need to define a S3 bucket.
+the name of the bucket should be unique. Since the buckets are created globally,
+this is because of the flat address space.
+
+By default an AWS account can have 100 buckets and this is a soft limit.
