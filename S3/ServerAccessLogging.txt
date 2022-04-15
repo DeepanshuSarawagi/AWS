@@ -9,3 +9,8 @@
   such as
   target bucket - where we want to write the logs of our source bucket.
   prefix - The name which will be prefixed in every log file.
+- Specific permissions group is required to deliver the log files to the target bucket.
+- When server access logging is enabled using AWS management console, the enablement
+  of logging automatically adds the the Log Delivery Group to the ACL of the target
+  buckets.
+- Source and target buckets should be in the same region. 
