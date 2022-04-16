@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<style media="screen">
+  body{
+    color: purple;
+    background: grey
+  }
+  h1{
+    text-align: center;
+    background: grey;
+  }
+  table, th, tr, td {
+    border: 1px solid black
+  }
+</style>
 <html>
 <h1>
   Amazon Elastic FileSystem
@@ -5,12 +19,118 @@
 <h2>
   Basics of EFS:
 </h2>
-  <ol>
-  - Is considered as file storage which also has low latency access.
-  - Unlike EBS, it supports multiple EC2 instances at once.
-  - Simple scalable filesystem which can be mounted on multiple EC2 instances
-    by creating multiple mountpoints on multiple AZs.
-  - It can easily scale to Petabytes in size with low latency access.
-  - It has been designed for high level throuput.
+<ol>
+  <li>
+    Is considered as file storage which also has low latency access.
+  </li>
+  <li>
+    Unlike EBS, it supports multiple EC2 instances at once.
+  </li>
+  <li>
+    Simple scalable filesystem which can be mounted on multiple EC2 instances
+      by creating multiple mountpoints on multiple AZs.
+  </li>
+  <li>
+    It can easily scale to Petabytes in size with low latency access.
+  </li>
+  <li>
+    It has been designed for high level throuput.
+  </li>
   </ol>
+  <h2>
+    Storage Classes and Performace Options:
+  </h2>
+  <ol>
+    <li>Standard</li>
+    <li>Infrequent Access</li>
+  </ol>
+  <h3>
+    Standard Storage Class
+  </h3>
+  <ol>
+    <li>Charges on the amount of stoage used per month</li>
+  </ol>
+  <h3>
+    Infrequent Access Storage Class
+  </h3>
+  <ol>
+    <li>
+      Charges on the amount of Read/Write operations.
+    </li>
+    <li>
+      Reduced cost when compared to the standard class.
+    </li>
+    <li>
+      Spports lifecycle management similar to S3.
+    </li>
+    <li>
+      The files are moved to IA storage class if the file is not accessed based
+      on lifecycle rules.
+    </li>
+    <li>
+      The lifecycle rules can be set to 14, 30, 60 or 90 days.
+    </li>
+    <li>
+      Once the file is accessed within the lifecycle set, the timer gets reset and
+      file automatically moves to standard class.
+    </li>
+    <li>
+      Any files which has size less than 128K or it has metadata about your files,
+      then it will remain in the standard storage class.
+    </li>
+  </ol>
+  <table>
+    <tr>
+      <th>
+        Performace Metrics
+      </th>
+      <th>
+        General Purpose
+      </th>
+      <th>
+        Max I/O
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Throughput
+      </th>
+      <td>
+        Standard
+      </td>
+      <td>
+        Unlimited
+      </td>
+    </tr>
+    <tr>
+      <th>
+        IOPS
+      </th>
+      <td>
+        7K<= per second
+      </td>
+      <td>
+        7k>= per second
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Latency
+      </th>
+      <td>
+        Low Latency
+      </td>
+      <td>
+        High Latency
+      </td>
+    </tr>
+  </table>
+  <h3>
+    Throughput Modes:
+  </h3>
+  <ul>
+    <li>Bursting Throughput - 100 MiB/Second per TiB</li>
+    <li>Provisioned Throughput - Additionnal changes incur since it provides
+      additional Throughput </li>
+  </ul>
 </html>
