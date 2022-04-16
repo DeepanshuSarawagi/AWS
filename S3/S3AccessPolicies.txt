@@ -50,3 +50,5 @@
     Deny stated in the policy.
   - To gain access, there has to be a Allow within a policy that the principal is associated to,
     or defined by within a bucket or ACL.
+  - Note that, if Deny is explicitly stated in any of the above three policy documents then
+    the access to the bucket or its objects will be denied since Deny takes precedence over Allow.
