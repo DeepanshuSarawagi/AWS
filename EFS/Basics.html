@@ -2,7 +2,7 @@
 <style media="screen">
   body{
     color: purple;
-    background: white
+    background: white;
   }
   h1{
     text-align: center;
@@ -133,4 +133,37 @@
     <li>Provisioned Throughput - Additionnal changes incur since it provides
       additional Throughput </li>
   </ul>
+  <h3>
+    Creating EFS:
+  </h3>
+  <p>
+    EFS can be created using two methods:
+  </p>
+  <p>
+    <ul>
+    <li>EFS Mount Helper (Latest)<//li>
+    <li>Linux NFS client</li>
+    </ul>
+  </p>
+  <h3>
+    EFS Mount Helper:
+  </h3>
+  <p>
+    <ul>
+      <li>Simplifies the mount process</li>
+      <li>Has an internal logging system. It logs to /var/log/amazon/efs</li>
+      <li>Automatically connects to EFS at startup by editing the /etc/fstab</li>
+    </ul>
+  </p>
+  <h3>
+    Pre-requisites:
+  </h3>
+  <p>
+    <ul>
+      <li>Create EFS File System and EFS mount targets</li>
+      <li>A running EC2 instance with EFS mount helper installed</li>
+      <li>Needs a EC2 instance in VPC. Amazon DNS servers with DNS hostnames</li>
+      <li>A security group allowing NFS access your EC2 instance</li>
+    </ul>
+  </p>
 </html>
