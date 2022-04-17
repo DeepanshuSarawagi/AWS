@@ -1,0 +1,29 @@
+# This document will give us brief overview of Amazon FSx.
+
+- Provides a fully managed native Microsoft Windows Filesystems on AWS.
+- Easily move and migrate windows workloads requiring file storage.
+- The solution is built on windows server.
+- Operates as shared file storage.
+- Full support for
+  - SMB protocol.
+  - Active Directory.
+  - Windows NTFS.
+  - Distributed File System.
+- Uses SSD storage for enhanced performance and throughput providing sub-milliseconds
+  latencies.
+- Pay for the amount of storage provisioned per month and uses the metric of GB/month.
+- The price varies over single and multi-AZ deployments.
+- Cost also varies for amount of throughput configured on MBps/Month. Also, the
+  throughput cost variation between single and multi-AZ deployments.
+- Takes incremental backups thereby optimizing the storage costs.
+- Data deduplication thereby removing the duplication of files from the Backups
+  thereby saving 80% of the cost.
+
+FSx for Lustre:
+  - A fully managed file system designed for compute-intensive workloads such as ML.
+  - Ability to process massive data sets.
+  - Performance can run upto 100s of GB per second of throughput, millions of IOPS
+    and sub-milliseconds latencies.
+  - Integration with S3.
+  - Supports cloud-bursting workloads from on-premises using Direct-Connect or VPN
+    connections.
