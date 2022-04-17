@@ -1,0 +1,28 @@
+# This document will cover the overview of Amazon Storage Gateway.
+
+- Provides the integration between On-Premise datacenter and AWS S3 or Glacier.
+- Three types:
+  - File Gateway
+      - Pricing follows Amazon S3 pricing metrics.
+      - Provides a mount between on-premise files which will be stores in the S3 as objects.
+      - A cached data will be stored on the on-premise dc for providing low-latency.
+      - Actual data will reside on S3.
+
+  - Volume Gateway
+      - Again two kinds: Stored Volume Gateway or Cached Volume Gateway.
+      - Pricing follows the Amazon EBS volumes metrics.
+      - Provides the gateway to store the on-premise volumes as S3 as EBS snapshots.
+      - Volumes are backed by S3 as iSCSI devices.
+      - Pricing will differ for snapshots of the volumes.
+      - With cached volume gateway, primary data storage is on S3 rather on-premise.
+      - Local volumes act as buffer and cache for low latency.
+
+  - Tape Gateway
+      - Also called as cloud based virtual tape library.
+      - Useful for creating backups of data which is infrequently accessed.
+      - Storage class will change depending on when data is last accessed.
+      - Can be moved to Amazon Glacier or Amazon Glacier Deep-Archive.
+      - Storage pricing is $0.024 per GB-month of data stored in S3.
+      - It is $0.0045 per GB-month of data stored in Glacier.
+      - It is $0.0018 per GB-month of data stored in Glacier-Deep Archive.
+      
