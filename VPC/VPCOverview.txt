@@ -1,0 +1,38 @@
+# This document will give you an overview of VPC in AWS.
+
+A VPC is an isolated environment which allows you to provision your resources
+within cloud which is accessible and visible only by you.
+
+Subnetting is a process of splitting the CIDR block into a smaller CIDR blocks
+using subnet masks. Subnetting allows you to logically divide your network for
+different tiers which increases security of your infra.
+
+A subnet can only belong to one routing table.
+Multiple subnets allow you to restrict resources in certain subnets to specific
+destinations via these defined routes.
+
+Subnets in a VPC contains following information:
+  - Summary; which has following further detailed metadata
+    - SubnetID
+    - IPv4CIDR
+    - Status
+    - Available IPs
+    - VPC
+    - Availability Zone
+    - Route Table
+    - Network ACL
+    - Default Subnet?
+    - Auto Assign Public IP?
+    - Auto Assign IPv6 IP?
+
+  - Route table
+    - All route destinations and targets are shown in this table
+
+  - NACL
+    - Network Access Control Lists provide a rule-based tool for filtering ingress
+      and egress traffic of your subnet
+    - NACL are stateless
+    
+  - Flow logs
+
+  - Tags
