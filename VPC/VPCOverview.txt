@@ -32,7 +32,26 @@ Subnets in a VPC contains following information:
     - Network Access Control Lists provide a rule-based tool for filtering ingress
       and egress traffic of your subnet
     - NACL are stateless
-    
+
   - Flow logs
 
   - Tags
+
+Public and Private Subnets:
+
+  - Public subnets have direct access to the internet while private subnets don't.
+  - An internet gateway IGW must be attached to your VPC to get access to the internet.
+  - However, the instances within your VPC will not have an understanding on how
+    to get to the internet.
+  - Hence, here comes in the route table. The route table will have IGW as target
+    with destination as 0.0.0.0/0
+  - Instances within a public subnet requires a public IP address.
+  - Ensure any NACLs for the public subnet are not restricting any traffic.
+
+  IP addressing behaviour for assigning Public IP address within a public subnet:
+    - Public IP addresses can be automatically assigned or can be assigned manually.
+    - By default all subnets have automatic assignment of public ip addresses disabled.
+    - By design, the public IP addresses are assigned from the AWS resource pool.
+    - Once the instance no longer requires it, the ip is returned back to the pool.
+    - If you want to reuse the public IP address again and again, it is better to
+      assign an Elastic IP address.
