@@ -1,0 +1,14 @@
+# Brief document on routing tables
+
+- AWS creates and adds an implicit routing table for your VPC during the creating of VPC
+- Your default routing table is known as as the routing table.
+- The Main Route Table cannot be deleted.
+- Subnets will be implicitly associated with the route table unless a custom rule
+  route table has been created.
+- A subnet can only be associated to the single route table.
+- Multiple subnets can use the same route table.
+- Each subnet must have its own gateway to leave the VPC to connect to the internet.
+- Route propagation allows you to propagate against any virtual private gateway
+  attached to your VPC.
+- When enabled, routes representing your VPN connection over that VPC will be
+  automatically added in the route table.
