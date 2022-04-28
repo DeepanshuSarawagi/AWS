@@ -11,6 +11,13 @@ A subnet can only belong to one routing table.
 Multiple subnets allow you to restrict resources in certain subnets to specific
 destinations via these defined routes.
 
+Within a subnet, AWS reservs 4 IP addresses.
+1st IP address is the network address.
+2nd IP address is reserved for AWS routing.
+3rd IP address is reserved for DNS.
+4th IP address is reserved for future use.
+Last IP address is the broadcast address which cannot be used either.
+
 Subnets in a VPC contains following information:
   - Summary; which has following further detailed metadata
     - SubnetID
