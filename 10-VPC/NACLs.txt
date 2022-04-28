@@ -1,0 +1,7 @@
+# Brief overview about the NACLs in AWS
+
+NACL controls the virtual network level firewall rules which controls both ingress/egress
+traffic flowing to your VPC and between your subnets.
+
+Just like Route Tables, We can have multiple subnets having the same NACL, however, only one NACL can be
+applied to one subnet.
