@@ -1,0 +1,4 @@
+# Brief document on AWS Transit Gateway
+
+- Transit Gateway allows you to connect multiple VPCs to the remote locations either
+  using VPN or AWS Direct Connect.
