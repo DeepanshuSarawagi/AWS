@@ -1,0 +1,49 @@
+# Brief document on AWS Route 53
+
+- This is a DNS service by AWS.
+- Provides secure and reliable routing of requests.
+- Provides this service through its global network of authoritative DNS ervers
+  that reduce latency and can be managed via the console or API.
+
+Hosted Zones:
+  - Hosted Zones is a container that holds information about how you route traffic
+    for a domain such a Google.com
+   Public Hosted Zone:
+    - This zone determines how traffic is routed on the internet and can be created
+      when you register your domain with Route 53.
+  Private Hosted ZoneL
+    - This zone determines how traffic is routed within your Amazon VPC. If your resources
+      are not accessible outside of your VPC, you can use any domain name of your wish.
+
+Domain Types:
+  Generic Top-Level Domains:
+    - TLDs are used to determine what information you can expect when you access a
+      website. For eg; .watch domain can be used by websites related to straming.
+      .clothing domaon can be used by fashion industry.
+
+  Geographic Domains:
+    - .com.au for Australia
+    - .com.uk for United Kingdom
+
+Routing Policies:
+  - Simple routing policy:
+    - This is the defaukt policy and is for single resource which performs a given function.
+
+  - Failover routing policy:
+    - This allows you to route traffic to different resources based on the resource health.
+
+  - Geo-location routing policy:
+    - This lets you route traffic based on the geographic location of your users.
+
+  - Geo-Proximity routing policy:
+    - This policy is based upon on the location of both your users and your resources.
+
+  - Latency routing policy:
+    - This is suitable when you have resources in multiple regions and want low latency.
+
+  - Multivalue answer routing policy:
+    - This allows you to get a response from a DNS request from up to 8 records at once
+      that are picked at random.
+
+  - Weighted routing policy:
+    - This is suitable when you multiple resource records that perform the same function.
