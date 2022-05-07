@@ -2,8 +2,10 @@
 
 - This is a DNS service by AWS.
 - Provides secure and reliable routing of requests.
-- Provides this service through its global network of authoritative DNS ervers
+- Provides this service through its global network of authoritative DNS servers
   that reduce latency and can be managed via the console or API.
+- Alias Records: Acts like a CNAME record allowing you to route your traffic to
+  other AWS resources such as ELBs, VPC interface endpoints etc.
 
 Hosted Zones:
   - Hosted Zones is a container that holds information about how you route traffic
@@ -18,7 +20,7 @@ Hosted Zones:
 Domain Types:
   Generic Top-Level Domains:
     - TLDs are used to determine what information you can expect when you access a
-      website. For eg; .watch domain can be used by websites related to straming.
+      website. For eg; .watch domain can be used by websites related to streaming.
       .clothing domaon can be used by fashion industry.
 
   Geographic Domains:

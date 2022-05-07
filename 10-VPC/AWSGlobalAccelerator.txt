@@ -7,6 +7,8 @@
 - These IP addresses can be mapped to different multiple endpoints.
 - Global Accelerator intelligently routes customer requests across the most
   optimized path.
+- An ENA provides high speed performance for your instance whereas AWS Global
+  Accelerator provides high speed performance from end client to your application.
 
 
 4 steps to setup AWS Global Accelerator:

@@ -9,7 +9,10 @@
   time interval we set.
 - CloudFront uses distribution to control which source data it needs to redistribute
   and where.
-
+- For additional security, when working with S3 you can create and associate a
+  CloudFront user called an Origin Access Identity (OAI). Only an OAI can access
+  and serve content from your bucket preventing anyone circumventing your CloudFront.
+   
 Web distribution:
   - Speed up distribution of static and dynamic content.
   -  Distribute media files using HTTP or HTTPS.
@@ -18,5 +21,5 @@ Web distribution:
 
 RTMP distribution:
   - Distribute streaming media with the Adobe Flash media service RTMP protocol.
-  - The source data for your RTMP distrubution can only exist in a S3 bucket and
+  - The source data for your RTMP distribution can only exist in a S3 bucket and
     not an EC2 instance.
