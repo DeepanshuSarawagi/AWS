@@ -1,0 +1,19 @@
+# Brief document on AWS Global Accelerator
+
+- Allows you to get TCP and UDP traffic from your end user clients to your applications
+  faster, quicker and more reliably using the global endpoints and infrastructure/
+- It uses two static IP addresses associated with a DNS name which is used a fixed
+  source to gain access to your application.
+- These IP addresses can be mapped to different multiple endpoints.
+- Global Accelerator intelligently routes customer requests across the most
+  optimized path.
+
+
+4 steps to setup AWS Global Accelerator:
+  - Create your global Accelerator by selecting 2 IP addresses.
+  - Create a listener to receive and process incoming requests based on protocol
+    and ports.
+  - Associate a listener with an endpoint group. Each endpoint group is associated
+    with a different region and within each group there are multiple endpoints.
+  - Associate and register your endpoints for your applications. ALB, NLB, an EC2
+    instance or an EIP.
