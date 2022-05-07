@@ -1,0 +1,26 @@
+# Brief document on VPN and DirectConnect and its basic differences
+
+VPN:
+  - To enable communication between your VPC resources and those in datacenters
+    you can use a VPN connection across your public internet.
+  - In your VPC you must attach a Virtual GW.
+  - The CGW has an endpoint attached to the VGW.
+  - In your datacenter you must add a customer gateway. A customer gateway with BGP
+    protocol can enable dynamic routing between your VGW and CGW.
+  - A connection has to be initiated by your CGW. It cannot be initiated from VGW.
+  - Healthcheck pings can be setup to ensure VPN tunnel is not dropped.
+  - If route propagation is enabled on your route table in the VPC, routes representing
+    your Site-to-Site VPN connection automatically appear as propagated routes in
+    your route table.
+
+DirectConnect:
+  - Direct Connect allows you to create a private connection betweeen your remote
+    datacenter and an AWS region, not just your VPC.
+  - Your datacenter will connect to an AWS partner using dedicated links which contains
+    DirectConnect infrastructure.
+  - This is a separate building to your remote datacenter.
+  - You can configure private virtual interfaces and public virtual interfaces
+    on your router for DC.
+  - Private virtual interfaces will connect to the VGW within your VPC.
+  - Public virtual interfaces connects to an AWS region allowing access to Public
+    AWS resources such as S3.
