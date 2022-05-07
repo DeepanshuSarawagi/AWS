@@ -1,0 +1,6 @@
+# Brief document on NAT Gateway
+
+- A NAT Gateway sits within the public subnet with an EIP.
+- NAT GW allows the private resources to access the internet.
+- A private instance should have a route to access the NAT GW.
+- It will block all incoming communications from the internet.

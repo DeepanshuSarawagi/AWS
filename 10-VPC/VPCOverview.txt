@@ -54,6 +54,7 @@ Public and Private Subnets:
     with destination as 0.0.0.0/0
   - Instances within a public subnet requires a public IP address.
   - Ensure any NACLs for the public subnet are not restricting any traffic.
+  - Each subnet exists in a single AZ.
 
   IP addressing behaviour for assigning Public IP address within a public subnet:
     - Public IP addresses can be automatically assigned or can be assigned manually.

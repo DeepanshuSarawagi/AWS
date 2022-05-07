@@ -5,3 +5,8 @@ traffic flowing to your VPC and between your subnets.
 
 Just like Route Tables, We can have multiple subnets having the same NACL, however, only one NACL can be
 applied to one subnet.
+
+- The default NACLs allow traffic.
+- Each entry has a rule number.
+- NACLs are read in rule number order.
+- NACLs are stateless service.
