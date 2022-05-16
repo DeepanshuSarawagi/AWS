@@ -1,0 +1,36 @@
+# Brief document on Amazon ElastiCache Services.
+
+- Allows you to deploy, scale and operate open-source in-memory data stores in the cloud.
+- This service improves the performance through caching, where web applications
+  allow you to retrieve information from fast managed in-memory datastore rather than
+  relying on slow disk based solutions.
+- ElastiCache supports both Memecached and Redis engines.
+- Amazon ElastiCache for Memecached:
+  A high performance, submillisecond latency Memecached-compatible. It is in-memory,
+  key-value store service, that can either be used as a cache.
+  Use Cases:
+    - Session Store
+    - Caching
+- Amazon ElastiCache for Redis:
+  An in-memory data store designed for high performance and again providing
+  submillisecond latency on a huge scale to real-time applications.
+  Use Cases:
+    - Caching
+    - Session store
+    - Gaming Leaderboards
+    - Chat and Messaging
+    - Machine Learning
+    - Queues
+    - Geo-Spatial
+    - Media Streaming
+    - Real-Time Analytics.
+
+- Components of ElastiCache:
+  - Nodes:
+    A fixed size, chunk of secure, network attached RAM essentially the building
+    block of ElastiCache service and supports cluster.
+  - Shard:
+    Redis Shard (node group) a group of upto 6 ElastiCache nodes.
+  - Cluster:
+    A Redis Cluster is a group of 1-90 Shards depending on if cluster mode is enabled
+    or disabled. Data is then partitioned across all of the Shards in a cluster.
