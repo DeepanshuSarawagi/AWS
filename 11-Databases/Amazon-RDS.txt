@@ -1,0 +1,35 @@
+# Brief document on Amazon Relational Database Services
+
+- This service helps to provision, scale and create relational databases.
+- Available database engines
+  - MwSQL
+  - MariaDB
+  - Postgresql
+  - Amazon Aurora
+  - Oracle
+  - SQL Server
+
+- When Multi-AZ is configured, a secondary RDS instance is deployed in a secondary
+  availability zone.
+- When a production RDS instance is crashed/down, Amazon updates the DNS record to
+  point the record to secondary RDS instance which is deployed in secondary AZ.
+- The replication of data between primary and secondary DB instance is synchronous.
+- All the databases uses the EBS for storage, however, Amazon Aurora uses the shared
+  cluster architecture.
+-  General Purpose SSD storage
+  - Provides single digit millisecond latencies
+  - Cost effective
+  - SSD storage for primary data:
+    - Minimum 20 GiB
+    - Maximum 64 TiB (SQL Server 16 TiB)
+- Provisioned IOPs:
+  - Minimum of 8000 IOPs
+  - Maximum of 80000 IOPs (SQL Server 40000 IOPs)
+  - SSD storage for primary data:
+    - Minimum 100 GiB
+    - Maximum 64 TiB (SQL Server 16 TiB)
+- Horizontal Scaling of Amazon RDS:
+  - If the READ operation is more on the production database, then performance may
+    take a hit. Hence, a Read Replica instance can be created by creating a snapshot
+    of the primary instance to serve just the READ ONLY traffic. The data between the primary instance and the read
+    replica instance is linked asynchronously.
