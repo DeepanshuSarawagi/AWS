@@ -9,6 +9,8 @@
   - Oracle
   - SQL Server
 
+- Amazon Aurora uses the share cluster storage architecture. We have option to select
+  the storage option.
 - When Multi-AZ is configured, a secondary RDS instance is deployed in a secondary
   availability zone.
 - When a production RDS instance is crashed/down, Amazon updates the DNS record to
