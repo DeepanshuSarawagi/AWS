@@ -19,6 +19,10 @@
 - When a production RDS instance is crashed/down, Amazon updates the DNS record to
   point the record to secondary RDS instance which is deployed in secondary AZ.
 - The replication of data between primary and secondary DB instance is synchronous.
+- During failure, RDS will update the DNS record to point to the secondary instane.
+- RDS provides automatic backup feature.
+- Amazon Aurora backtrack allows you to go back in time on the database to recover
+  from the error.
 - All the databases uses the EBS for storage, however, Amazon Aurora uses the shared
   cluster architecture.
 -  General Purpose SSD storage
