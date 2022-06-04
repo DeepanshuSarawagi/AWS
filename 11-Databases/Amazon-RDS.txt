@@ -2,7 +2,7 @@
 
 - This service helps to provision, scale and create relational databases.
 - Available database engines
-  - MwSQL
+  - MySQL
   - MariaDB
   - Postgresql
   - Amazon Aurora
@@ -11,6 +11,9 @@
 
 - Amazon Aurora uses the share cluster storage architecture. We have option to select
   the storage option.
+- Benefits of Aurora is we are only billed for storage used and I/Os processed.
+- however, other DB engines such as MariaDB, MySQL, Postgresql, Oracle, SQL Server
+  we are billed for storage provisioned
 - When Multi-AZ is configured, a secondary RDS instance is deployed in a secondary
   availability zone.
 - When a production RDS instance is crashed/down, Amazon updates the DNS record to
