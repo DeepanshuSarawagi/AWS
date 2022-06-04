@@ -1,0 +1,10 @@
+# This document will provide brief explanation on Amazon Aurora
+
+- Fully managed database service by Amazon
+- SQL - MySQL and Postgresql
+- Distributed, fault-tolerant, self-healing storage system that auto-heals
+- Replication across 3 AZs.
+- Upto 15 low-latency read replicas can be created.
+- Aurora is a serverless database service with automatic fail-over.
+- Continuous backup to S3
+- Encryption at rest using KMS and Encryption at transit using SSL.
