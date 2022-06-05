@@ -77,3 +77,16 @@ Using AWS S3 as data backup solution:
 - To reduce data retrievel latency, it is recommended to enable CRR - Cross
   Region Replication.
 - Use Multipart upload to upload the data in S3 if the size of the object is > 100MB.
+
+Using AWS Snowball:
+  - Used to securely transfer large amounts of data in and out of AWS in Petabytes scale.
+  - Data can be transferred either from on-premise datacenter to S3 or vice-versa using
+    a physical device known as Snowball.
+  - The Snowball appliance comes as a 50TB or 80TB storage device.
+  - The device is dust, water and tamper resistant.
+  - Built for high speed data transfer which is compatible using RJ45, SFP + Copper
+    or SFP + Optical Fiber.
+  - Data is automatically encrypted using 256 bit encryption key.
+  - End to End tracking using E Ink shipping label.
+  - The Snowball appliance can be tracked using SNS or using AWS Management console.
+  
