@@ -51,3 +51,21 @@ Synchronous replication:
 
 Asynchronous replication:
 - Non-Atomic update happens to secondary as network and bandwidth permit.
+
+
+# Data Storage Solutions in DR
+Using AWS S3 as data backup solution:
+  - Huge capacity to scale
+  - Highly durable
+  - Highly reliable
+  - Store data from 1Byte to 5TB
+  - Multiple security features
+  - Different storage classes offering different benefits
+  S3 Standard:
+  - Availability: 99.99%
+  - Durability: 99.999999999%
+  - Data management capabilities which can move data to different storage class
+    based on how frequently it is accessed.
+  S3 Standard - Innfrequently Accessed:
+  - Availability: 99.9%
+  - Durability: 99.999999999%
