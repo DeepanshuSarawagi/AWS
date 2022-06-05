@@ -5,14 +5,36 @@
   time when the system can be restored before the event of disaster. Let's say that
   RPO is 1 hour and a disaster has occurred at 12:00PM then, the data before RPO
   time i.e., 1 hour - 11 AM should be restored
-- Backup and recovery using AWS S3.
-- What is the retention time for media.
-- Security of archives.
-- Regular testing.
+- Backup/Restore
+  - Like using AWS as a virtual tape library.
+  - Backup and recovery using AWS S3, Amazon Glacier, Amazon Storage Gateway.
+  - RTO is 8-24 hours.
+  - RPO - Could be upto 24 hours.
+  - What is the retention time for media.
+  - Security of archives.
+  - Regular testing.
+  - Cost is low.
 
-- Pilot testing
+- Pilot Light
+  - Minimal version of environment running on AWS which can be lit up and expanded to
+    full size from this pilot light.
+  - Services used are AMIs, Bootstrapping, EIPs, ELBs, CloudFormation, Amazon RDS.
+  - RTO is 4-8 hours.
+  - RPO is based on last snapshot last available.
+  - Cost is low.
 - Warm standby
+  - Scaled down version of fully functionnal environment always running.
+  - Services used are AMIs, Bootstrapping, EIPs, ELBs, CloudFormation, Amazon RDS.
+  - RTO is <4 hours.
+  - RPO is based on last data write if a master/slave in a Multi-AZ DB.
+  - Cost is Medium.
 - Multi-Site
+  - Fully operational version of fully functionnal environment always running either
+    running off-site or in another region.
+  - Services used are All AWS services.
+  - RTO is <60 minutes.
+  - RPO is based on last data write if a synchronous DB in a Multi-AZ DB.
+  - Cost is High.
 
 Replication Considerations:
 - Distance between the sites - Larger the distance are typically subject to more
@@ -22,3 +44,10 @@ Replication Considerations:
   available bandwidth
 - Replication technology - The replication technology should be parallel so that
   it can use the network effectively
+
+Replication basics:
+Synchronous replication:
+- Atomic write update to multiple clusters in multiple AZs.
+
+Asynchronous replication:
+- Non-Atomic update happens to secondary as network and bandwidth permit.
