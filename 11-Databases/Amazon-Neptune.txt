@@ -23,7 +23,7 @@ Neptune DB Cluster:
     as required upto max of 64 TB.
   - To ensure high availability and reliability, each cluster maintains its separate
     copy of shared volume in at least 3 different AZs.
-  - Neptune storage auto-reepair, will find and detect any segment failures that are
+  - Neptune storage auto-repair, will find and detect any segment failures that are
     present in the SSDs nd automatically repair the segment using the data from the
     shared volume in the cluster.
   - Each Neptune cluster, will have a primary database instance which will serve

@@ -1,0 +1,24 @@
+# Disaster recovery and high availability using AWS
+
+- Recovery Time Objective - is the time required to recover from a disaster.
+- Recovery Point Objective - is the acceptable amount of data measured in time.
+  time when the system can be restored before the event of disaster. Let's say that
+  RPO is 1 hour and a disaster has occurred at 12:00PM then, the data before RPO
+  time i.e., 1 hour - 11 AM should be restored
+- Backup and recovery using AWS S3.
+- What is the retention time for media.
+- Security of archives.
+- Regular testing.
+
+- Pilot testing
+- Warm standby
+- Multi-Site
+
+Replication Considerations:
+- Distance between the sites - Larger the distance are typically subject to more
+  latency or jitter
+- Available bandwidth - The length and variability of interconnections
+- Data required by your application - The data required should be less than the
+  available bandwidth
+- Replication technology - The replication technology should be parallel so that
+  it can use the network effectively
