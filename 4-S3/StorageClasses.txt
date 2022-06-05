@@ -41,11 +41,14 @@ S3 Glacier
   - Data is stored in Vaults. We need to specify a region in which region the vaults should reside.
   - S3 Glacier has different Retrieval options and pricing differs for each options.
     - Expedited: The data retrieval should be less than 250 MB and it is typically made accessible
-                 within 2-5 minutes. This is the most expensive form of retrieval.
+                 within 2-5 minutes. This is the most expensive form of retrieval. Cost is $0.03 per GB
+                 and $0.01 per request.
     - Standard:  The data retrieval can be of any size and data will be made accessible
                  in 3-5 hours. This is second most expensive retrieval type.
+                 Cost is $0.01 per GB and $0.05 per 1000 request.
     - Bulk:      The data retrieval should be Petabytes in size and it is made
                  accessible somewhere between 5-12 hours. Cheapest retrieval option.
+                 Cost is $0.0025 per GB and $0.025 per 1000 request.
   - Data in Glacier can be stored by creating vaults using Glacier console.
   - We can create APIs, SDKs, CLIs to upload the data in the vaults.
   - We need to create retrieval vaults as well to access the data.

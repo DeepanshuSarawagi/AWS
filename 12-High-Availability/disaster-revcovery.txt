@@ -66,6 +66,14 @@ Using AWS S3 as data backup solution:
   - Durability: 99.999999999%
   - Data management capabilities which can move data to different storage class
     based on how frequently it is accessed.
-  S3 Standard - Innfrequently Accessed:
+  S3 Standard - Infrequently Accessed:
   - Availability: 99.9%
   - Durability: 99.999999999%
+  Amazon Glacier:
+  - Stores data in archives
+  - Upto 40 TB in size.
+  - Archives are stored within vaults.
+  - Primarily used for data archiving.
+- To reduce data retrievel latency, it is recommended to enable CRR - Cross
+  Region Replication.
+- Use Multipart upload to upload the data in S3 if the size of the object is > 100MB.
