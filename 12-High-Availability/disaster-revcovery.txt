@@ -74,8 +74,7 @@ Using AWS S3 as data backup solution:
   - Upto 40 TB in size.
   - Archives are stored within vaults.
   - Primarily used for data archiving.
-- To reduce data retrievel latency, it is recommended to enable CRR - Cross
-  Region Replication.
+- To reduce data retrieval latency, it is recommended to enable CRR - Cross Region Replication.
 - Use Multipart upload to upload the data in S3 if the size of the object is > 100MB.
 
 Using AWS Snowball:
@@ -89,4 +88,49 @@ Using AWS Snowball:
   - Data is automatically encrypted using 256 bit encryption key.
   - End to End tracking using E Ink shipping label.
   - The Snowball appliance can be tracked using SNS or using AWS Management console.
-  
+
+Using AWS Storage Gateway as data backup solution:
+File Gateway:
+  - Allows you to securely store your files as objects in S3.
+  - Ability to mount or map drives to a S3 bucket as if it was a share held locally.
+  - We can create a NFS filesystem to access S3 buckets which can be used to store files.
+  - A local cache of your most accessed file would also be created thereby reducing the
+    latency and cost of your egress traffic.
+
+Stored Volume Gateway:
+  - Used to backup your local storage volumes to Amazon S3.
+  - Your entire data set remains on-premise ensuring low latency data access.
+  - Volumes created and configured within the storage gateway are backed up by S3
+    and are mounted as iSCSI devices that your applications then communicate with.
+  - as data is written to these iSCSI devices, the data is actually written locally
+    which is then asynchronously backed as EBS Snapshots to S3.
+  - A Stored volume gateway can provide maximum storage of 512 TiB.
+  - A storage buffer using on-premise storage is used as a staging point for data.
+
+Cached Volume Gateways:
+  - Primary data storage is provided by S3.
+  - Local data storage is used for buffering and a local cache for recently accessed
+    data to help maintain low latency.
+  - The creation of these volumes are presented as iSCSI devices which can be mounted
+    by application service.
+  - Total storage capacity of 1024 TiB per cached volume gateway.
+  - Snapshots of volumes stored on S3 as EBS snapshots which can be incrementally
+    backed up thereby reducing the S3 storage costs.
+
+Gateway Virtual Tape Library:
+  - Allows you to backup data to S3 from your on-premise datacenter.
+  - Leverage Amazon Glacier for data archiving.
+  VTL Components:
+    - Storage Gateway: This is configured as a Tape Gateway acting as a VTL with
+      a capacity of 1500 virtual tapes.
+    - Virtual Tapes: Virtual equivalent to physical tape cartridge with a capacity
+      of 100 GiB - 2.5TiB. Data stored on VTs are backed up Amazon S3 and are
+      visible in VTL.
+    - Virtual Tape Library: This is equivalent to physical tape library containing
+      virtual tapes.
+    - Tape Drives: Each VTL comes with 10 Tape Drives which are then presented as
+      iSCSI devices to your backup applications.
+    - Media Changer: A virtual device presented as iSCSI device to your backup
+      applications that manages tapes between your Tape Drives and VTLs.
+    - Archive: This is equivalent to an off-site storage facility giving you
+      the ability to archive tapes from your VTL to Amazon Glacier.
