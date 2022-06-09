@@ -18,3 +18,32 @@
   in the event of an incident.
 - During any maintenance of the primary instance, the read traffic can still be
   served by the read replicas.
+
+Read Replicas for MySQL Engine:
+- Read replicas are only supported where the source DB is running MySQL DB V5.6 or later.
+- The retention value of the automatic backups of the primary DB needs to set to
+  a value of 1 or more.
+- Replication is only possible when using an InnoDB storage engine which is transactional.
+- It is possible to have nested read replicas chain. This chain can only be a maximum
+  of 4 layers deep.
+- You can have up to a maximum of 5 read replicas per each source DB.
+- If an outage occurs with the primary instance, RDS automatically redirects the
+  read replica source to the secondary DB instance.
+- Amazon CloudWatch can monitor the synchronization between the source DB and the
+  read replica through a metric known as ReplicaLag.
+
+Read Replicas for MariaDB Engine:
+- All the config or requirements of read replicas using MariaDB engine are same as
+  MySQL engine.
+- The only difference is you can be running any version of MariaDB for read replicas.
+
+Read Replicas for PostgreSQL Engine:
+- When using PostgreSQL, you need to run version 9.3.5 or later for read replica.
+- The native PostgreSQL streaming replication is used to handle the replication and
+  creation of the read replica.
+- The connection between the master and the read replica instance replicates the
+  data asynchronously between the 2 instances.
+- PostgreSQL allows you to create Multi-AZ read replica instance.
+- It is possible to create the Multi-AZ read replica instance even if the source
+  DB of the first read replica is not configured for Multi-AZ deployment.
+- PostgreSQL does not allow nested read replicas.
