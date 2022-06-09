@@ -1,0 +1,20 @@
+# Brief document on read replicas in Amazon RDS
+
+- Read replicas are NOT used for resiliency or secondary instance in the event of
+  a failover.
+- Read Replicas are used to serve the read-only access to your database data via
+  a separate instance.
+- A snapshot is taken from your primary database.
+- Once the snapshot is completed, a read-replica instance is created.
+- The read replica maintains a secure asynchronous link between itself and the
+  primary database instance.
+- At this point, read only traffic can be directed to the Read-replica.
+- Read Replicas are only available for MySQL, MariaDB and PostgreSQL database engines.
+- It is possible to deploy more than one read replica for a primary DB.
+- Adding more replicas allows you to scale your read performance to a wider range
+  of applications.
+- You are able to deploy read replicas in different regions.
+- It is possible to promote an existing read replica to replace the primary db instance
+  in the event of an incident.
+- During any maintenance of the primary instance, the read traffic can still be
+  served by the read replicas.
