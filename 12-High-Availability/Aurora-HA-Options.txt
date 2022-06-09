@@ -8,3 +8,16 @@
 - Read replicas can be easily introduced and removed at will.
 - The compute layer when launched can be provisioned in several configurations -
   providing varying forms of performance and availability.
+- The compute layer is implemented using the EC2 instance, but this is a managed
+  service, it will not show up in the console.
+- Aurora stores data in 10GB  block, with each block being replicated 6 times
+  across 3 AZs - 2 within each AZ. From an availability and durability point of view,
+  Aurora can handle up to 3 copies lost for reads, and up to 4 copies lost for write.
+  This makes the data highly redundant, durable and available.
+- The storage layer is presented to the compute layer as a single logical volume.
+- This same single logical volume is shared across all compute instances involved
+  in the compute later whether it be a master or read replica - allowing the read
+  replicas to accomplish the near-identical query performance as the master itself.
+- With RDS data needs to be replicated from the master to each of its replicas.
+  With Aurora on the other hand has no need for the replication since it uses the
+  single logical volume amongst all compute instances.
