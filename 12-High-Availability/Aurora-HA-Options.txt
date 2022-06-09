@@ -1,0 +1,10 @@
+# HA Options available in Amazon Aurora Service
+
+- Amazon Aurora - AWS' fastest growing service.
+- Database service with superior MySQL and PostgreSQL engine compliant service.
+- Separates the compute layer from the storage layer.
+- Separating the compute layer from the storage layer is the key architectural
+  decision which allows you to dial up and down the availability of your data.
+- Read replicas can be easily introduced and removed at will.
+- The compute layer when launched can be provisioned in several configurations -
+  providing varying forms of performance and availability.
