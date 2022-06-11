@@ -21,3 +21,39 @@
 - With RDS data needs to be replicated from the master to each of its replicas.
   With Aurora on the other hand has no need for the replication since it uses the
   single logical volume amongst all compute instances.
+- Aurora uses a Quorum and Gossip protocol basked within the storage layer to ensure
+  that the data remains consistent.
+- Together the Quorum and Gossip protocol provide a self healing mechanism for the
+  data.
+- Reads operation require a Quorum of 3 and writes operation require a Quorum of 4.
+- The peer to peer Gossip protocol is used to ensure that data is copied to all 6
+  nodes.
+- Aurora in general and regardless of the compute storage setup, always provides
+  6 way replicated storage across 3 availability zones.
+- In the event that the Aurora detects Master going offline, it will either launch
+  a replacement master or will promote its existing read replica to the role of master.
+
+Connection Endpoints:
+- Connection Endpoints is load balanced internally using Route53 DNS.
+- Be careful in the client layer, not to cache the connection endpoint lookups
+  longer than their specified TTL.
+- Connection Endpoints are mostly used in "Single Master and multiple read replica"
+  setup.
+- Below are four different types of connection endpoints.
+
+Cluster Endpoints:
+- A cluster endpoint provides connectivity to current master database instance.
+  Using the Cluster endpoint allows you to perform read and write operations on
+  the master database instance.
+Reader Endpoints:
+- Reader endpoint load balances connections across the read replica fleet within
+  the cluster.
+Custom Endpoints:
+- A custom endpoint load balances the connections to a group of specific cluster
+  instances that you choose and register. Custom endpoint can be used to group
+  instances based on instance size or maybe group them on a particular DB parameter
+  group.
+Instance Endpoints:
+- An instance endpoint maps directly to a cluster instance. Each and every instance
+  has its own instnace endpoint. You can use an instance endpoint when you want a
+  fine grained control over instance which you want it to service your requests.
