@@ -1,0 +1,17 @@
+# Brief document explaining the HA options available in DynamoDB
+
+- Designed internally to automatically partition data and incoming traffic across
+  multiple partitions.
+- Partitions are stored on numerous backend servers distributed across three
+  availability zones within a Region.
+- DynamoDB being a managed service takes care of performing both the partition
+  management and replication.
+- Dialing up and down the provisioned throughput of a DynamoDB database is possible
+- DynamoDB provides a second layer of availability in the form of Cross Region
+  Replication (Global Tables)
+- A Global Table gives you the capability to replicate a single table across 1 or
+  many alternate regions.
+- A Global Table elevates the availability of your data and enables applications
+  to take advantage of data locality.
+- Users can be served data directly from the closest geographically located table
+  replica.
