@@ -15,3 +15,22 @@
   to take advantage of data locality.
 - Users can be served data directly from the closest geographically located table
   replica.
+
+On Demand Backups:
+- Allow to request a full backup of a table, as it is at the very moment the backup
+  request is made.
+- On demand backups remain in the account until they are explicitly requested to be deleted
+- Backups typicalls finish within seconds and have zero impact on the table performance
+  and availability.
+
+Point In Time Recovery - PITR:
+- It is an enhanced version of on demand backup and restore feature, providing you
+  the ability to perform point in time recoveries.
+- With PITR in place, you can simply restore back to a specific time.
+- Operates at the table level and provides you with the ability to perform point
+  in time recovery and for any time between the current time and the last 35 days.
+- The restoration will always be performed into a new table of which you specify
+  the new table name.
+- Table restoration can be performed in the same region as the original table, or
+  into a different region altogether.
+  
