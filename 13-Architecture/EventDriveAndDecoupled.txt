@@ -1,0 +1,20 @@
+# Document on Event-Driven and Decoupled Architecture
+
+Decoupled:
+- By using a decoupled Architecture, we are building a solution put together using
+  different components and services that ca operate and execute independently of
+  one another.
+- Each service within a decoupled environment communicates with others using specific
+  interfaces which remain constant throughout its development regardless of what
+  configurations are made.
+
+Event-Driven Architectures:
+- Event-Driven architectures closely relate and interact with decoupled architectures.
+- However, services within an event-driven architecture is triggered by an Event
+  that occur within the infrastructure.
+- In AWS, an Event-Driven architecture has three components:
+  A Producer - Element within the infrastructure that will push an event to the
+  event router.
+  An Event-Router - The Event Router then processes the event and takes the necessary
+  action in pushing the outcome to the consumers.
+  A Consumer - The Consumer executes the appropriate action as requested.
