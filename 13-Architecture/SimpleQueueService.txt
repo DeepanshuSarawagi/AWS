@@ -1,0 +1,31 @@
+# Brief document on AWS Simple Queue Service
+
+- It is a service that handles the delivery of messages between the components.
+- It is a fully managed service that works with serverless systems, microservices
+  and distributed architecture.
+- It has the capability of sending, storing and receiving messages at scale without
+  dropping message data. It also has the feature of dead-letter queue.
+
+SQS Components:
+Producer:
+  - Producer component of your architecture is responsible to send messages to
+    your queue.
+  - At this point, the SQS service stores the message across a number of SQS servers
+    for resiliency within the specified Queue.
+Consumers:
+  - Consumers are responsible for processing messages within your queue.
+  - When the consumer element of your architecture is ready to process the message
+    the message from the queue, the message is then retrieved and is marked as
+    processed by activating the visibility timeout on the message.
+  - This timeout will ensure that the same message will not be read and processed
+    by another consumer.
+  - When the message has been processed, the consumer will then delete the message
+    from the queue.
+  - The default visibility timeout is 30 seconds and it can be set to as long as
+    12 hours.
+  - If a consumer fails to process a message during this visibility timeout due to
+    communication error, the consumer will not send a delete message request to the
+    queue.
+  - If the visibility timeout expires, the message will become available again in
+    the queue for other consumers to process.
+  - 
