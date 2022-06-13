@@ -57,3 +57,20 @@ Instance Endpoints:
 - An instance endpoint maps directly to a cluster instance. Each and every instance
   has its own instnace endpoint. You can use an instance endpoint when you want a
   fine grained control over instance which you want it to service your requests.
+
+Aurora Multi-Master node setup:
+- Pair of masters are created in Active-Active read write configuration.
+- This provides fault tolerane at the compute layer.
+- A maximum of 4 compute instances can be configured in Multi-Master setup.
+- We cannot add read replicas in this Multi-Master configuration setup.
+
+Aurora Serverless:
+- Aurora serverless is an elastic solution that auto-scales the compute layer
+  based on application demand, and only bills you when its in use.
+- Ideally suited towards application which exhibit variable workloads and/or have
+  infrequent data accessing and modification needs.
+- When provisioning an Aurora serverless database, we no longer need to plan and
+  allocate instance sizes. Instead, we simply configure lower and upper limits for
+  capacity. Capacity is measured in ACUs which is Aurora Capacity Units.
+- Aurora will continually adjust and optimize the capacity units based on demand.
+- An Aurora serverless database is configured with single connection endpoint.
