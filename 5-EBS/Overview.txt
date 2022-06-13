@@ -8,6 +8,9 @@
   EC2 instance at any time. However, multiple EBS volumes can be attached to the
   same EC2 instance.
 - However, Amazon has now added a new feature called EBS Multi-Attach.
+- EBS Multi-Attach feature can allow you to attach the storage access between
+  multi-instances and prevent data inconsistencies. It can support upto 16 linux
+  instances that are using the Nitro system and that are in the same availability zone.
 - Backups in the form of snapshots can be created and it will be stored in the S3.
 - If an EBS volume is corrupted or lost or for some reason not accessible, then
   a new EBS volume can be created with the Snapshot created. It then can be attached
