@@ -10,3 +10,8 @@
 - Encryption at rest using KMS and Encryption at transit using SSL.
 - Replication of data is performed asynchronously in milliseconds - fast enough to
   give the impression that the data synchronisation is happening synchronously.
+- Master and Read Replicas use the same Storage Cluster Volume.
+- Read Replicas can be launched in different AZ using the same VPC or can be launched
+  as cross region replicas.
+- Each Read Replica can be tagged with a label indicating priority in terms of which
+  one to get promoted to the role of Master in the event of master going down.
