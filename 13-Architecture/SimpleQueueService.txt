@@ -28,4 +28,16 @@ Consumers:
     queue.
   - If the visibility timeout expires, the message will become available again in
     the queue for other consumers to process.
-  - 
+
+SQS Queue Types:
+Standard Queues:
+  - Supports at least once delivery of messages which means the message can be delivered
+    to the queue more than once.
+  - They offer a best effort on trying to preserve the message ordering.
+  - They provide almost unlimited number of transactions per second.
+  - If message ordering is critical to your solution, then this type of queue service
+    may not be the best fit.
+
+First-In, First-Out:
+  - The order of messages is maintained and there are no duplicates.
+  - Limited number of transactions per second.
