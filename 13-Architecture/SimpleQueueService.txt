@@ -41,3 +41,12 @@ Standard Queues:
 First-In, First-Out:
   - The order of messages is maintained and there are no duplicates.
   - Limited number of transactions per second.
+  - Defaulted to 300 transactions per second for all send, receive and delete operations.
+  - If we are using batching with SQS, the limit increases to 3000 TPS.
+
+Dead Letter Queue:
+  - DLQ is not used as source messages to hold messages submitted by Producers.
+  - Instead, DLQ is used by the source queue to send messages that fail processing.
+  - If the message cant be processed by the consumer after a maximum number of tries
+    specified, the queue will then send the message to DLQ.
+  - The DLQ must have the same queue type as the source its used against.
