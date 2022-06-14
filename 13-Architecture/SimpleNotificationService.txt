@@ -1,0 +1,31 @@
+# Brief document explaining design and components of Simple Notification Service
+
+- It is used as a subscribe/publish messaging service.
+- SNS is centered around topics. You can think of a topic as a group for collecting
+  messages.
+- Users or endpoints can then subscribe to this topic, where messages or events
+  are published.
+- When a message is published, all subscribers of that topic receive a notification
+  of that message.
+- SNS is a managed service which is highly scalable allowing you to distribute messages
+  automatically to all the subscribers in your environment, including mobile devices.
+- SNS uses the concept of Publishers and Subscribers.
+- The publishers sends messages to a SNS topic which is used as the central communication
+  control point.
+- Subscribers are then notified of this message in the topic by one of the following
+  methods:
+    - HTTP
+    - HTTPS
+    - Email
+    - SQS
+    - Email-JSON
+    - Application
+    - Lambda
+    - SMS
+- SNS offers methods of controlling specific access to your topics through topic
+  policy. For example, you can specify which protocol subscribers must use such as
+  SMS or HTTPS, or you can restrict access of a topic to a specific user.
+- SNS and SQS can be integrated seamlessly. A Solution can be designed to send messages
+  seamlessly to subscribers through a push method, while SQS handles incoming messages
+  and waits for consumers to pull data.
+- 
