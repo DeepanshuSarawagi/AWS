@@ -1,0 +1,54 @@
+# Document explaining the components and architecture of Amazon Kinesis service
+
+- Amazon Kinesis was designed to address the complexity and cost of streaming data
+  into AWS cloud.
+- Kinesis makes it to easy to collect, process and analyze data from various data
+  streams such as Event logs, IoT devices, Social media feeds, Click stream data,
+  Application data in real time or near time.
+- Kinesis contains four services such as Video Streams, Data Streams, Data Firehose
+  and Data Analytics.
+- Amazon Kinesis Video Stream is used to do stream processing on binary encoded data
+  such as audio and video.
+- Amazon Kineses Data Stream, Kinesis Data Firehose and Kenisis Data Analytics is
+  used to do stream processing on base64 encoded data such as logs, click stream
+  data, social media feeds, financial transactions, in-game player activity, geospatial
+  services and telemetry from IoT devices.
+
+
+
+Layers of Streaming:
+- There are 5 layers of streaming.
+
+Source:
+  - Mobile Device
+  - Metering
+  - Click Streams
+  - IoT sensors
+  - logs
+
+Stream Ingestion:
+  The data for streaming can be injested using following services/tools
+  - Amazon Kinesis Agent
+  - Amazon Kinesis Producer Library
+  - Amazon SDK
+
+Stream Storage:
+  The data which is stored in this layer is done by Amazon Kinesis Data Streams which
+  is called as Producer.
+ - Inside Kinesis Data Streams, data can be stored but it cannot be modified. Hence,
+   the data is immutable. However, the data can expire.
+ - As of today, the Kinesis Data Stream can store data starting from 24 hours upto 365 days.
+ - It is a high speed storage buffer.
+
+Stream Processing:
+  The Stream Processing layer is managed by the Consumers.
+  - Amazon Kinesis Data Analytics
+  - Amazon Kineses Consumer Library
+  - Amazon Kineses Data Firehose
+
+Destination:
+  Consumers send data to the destination layer which can be one of the following
+  - Amazon S3
+  - Amazon Redshift
+  - Amazon Elasticsearch service
+  - Splunk
