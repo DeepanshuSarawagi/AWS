@@ -1,0 +1,29 @@
+# Brief document to highlight the difference between Stream and Batch processing
+
+Batch Processing:
+- Data is collected, stored and analyzed in chunks of a fixed size on a regular schedule.
+- The schedule depends on the frequency of data collection and the related value of
+  the insight gain.
+- Batch processing may provide insight on data depending upon the schedule when the
+  batch processing is run. By the time, the results are available to application
+  for further analysis, the value of data might be lost. This is due to time sensitive
+  data.
+- Batch processing can be predictive and evenly spaced but they lack intelligence.
+- The second issue with batch processing is that it is designed to wait until a
+  specific amount of data is accumulated before batch processing starts.
+- To address time sensitive data and session load, Stream Processing was introduced
+
+
+Stream Processing:
+- The term streaming is used to describe information as it flows without a beginning
+  or end.
+- Stream processing acts on data when it is in motion.
+- When an event is triggered, the stream processing application can perform following
+  actions
+  - Trigger an action
+  - Update an aggregate or similar statistic
+  - Cache an event for future reference
+- Multiple data streams can be processed simultaneously
+- Consumers that process data from a stream can create new data stream.
+- An example of stream processing is Credit Card Fraud Alerting Message
+- A stream application has three important parts - Producer, Data Stream, Consumer
