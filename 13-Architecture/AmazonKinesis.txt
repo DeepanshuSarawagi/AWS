@@ -112,3 +112,12 @@ Amazon Kinesis Data Firehose:
 - There is no Free tier for using Kinesis Data Firehose. Costs are only incurred when
   data is inside a Firehose stream. There is no bill for provisioned capacity, but only
   billed for used capacity.
+
+Amazon Kinesis Data Analytics:
+- Kinesis Data Analytics has the ability to read the data from stream in real-time
+  and perform aggregation and analysis while data is in motion.
+- It does this by leveraging SQL queries, or with Apache Flink using Java or Scala
+  to perform time-series analytics, feed real time dashboards and create real-time
+  metrics.
+- When using Data Firehose with Data Analytics, data can only be queried using SQL.
+- Apache Flink with Java or Scala are only available for Kinesis Data Streams.
