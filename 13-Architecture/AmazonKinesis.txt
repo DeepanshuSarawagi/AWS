@@ -52,3 +52,37 @@ Destination:
   - Amazon Redshift
   - Amazon Elasticsearch service
   - Splunk
+
+Amazon Kineses Video Stream:
+- Designed to stream binary encoded data into AWS from millions of sources (audio
+  and video but it can be any binary-encoded time series data)
+
+Amazon Kineses Data Stream:
+- A highly customizable data streaming solution available from AWS.
+- Highly customizable: All parts involved with stream processing - data ingestion,
+  monitoring, scaling, elasticity and consumption are done programmatically when
+  creating a stream.
+- AWS will provision resources when requested.
+- Does not have the ability to Auto scaling.
+- To facilitate the development, management and usage of data stream, AWS provides
+  APIs, AWS SDKs, AWS CLI, Kinesis agent for Windows and Linux.
+- Producers put data records into Kinesis Data Stream.
+- Producer can be created using SDKs, APIs or Kinesis Producer Library.
+- A Kinesis Data Stream is a set of shards. A shard contains a sequence of data records.
+- Data Records are composed of a sequence number, a Partition key and a Data Blob
+  and they are stored as a immutable sequence of bytes.
+- Consumers - Amazon Kineses Data Stream Applications get records from Kinesis Data
+  stream and process them.
+- Consumers can be created using SDKs, APIs or Kinesis Client Library.
+- There are two types of Consumers:
+  - Classic:
+    - Pulls data from the stream.
+    - Also known as Polling mechanism.
+    - There is a limit to number of times and amount of data, consumers can pull from the shard.
+  - Enhanced Fan-Out:
+    - Push Method: Consumer can subscribe to a shard.
+    - Results in data being pushed from the shard into a consumer application.
+    - Since polling is removed, Shard limits are removed, every consumer gets provisioned
+      throughput of 2 MBs per second per shard.
+
+Amazon Kinesis Data Firehose:
