@@ -33,3 +33,17 @@ Best practices of implementing IAM in any AWS account:
   external to AWS to be used as a means for authentication. Identity providers such
   as ADFS servers, Google, Facebook. This prevents you from having to create individual
   IAM user accounts.
+
+# Security Token Service Endpoints
+- STS service is used to allow you to request temporary, limited privilege credentials with
+  for both IAM users and federated users.
+
+# Service Control policies
+- Service Control Policies are different from Identity based policies as SCPs do not
+  grant permissions themselves.
+- Instead, SCPs are used with AWS Organizations, to implement and set a boundary of
+  permissions for AWS accounts.
+- For example, if a user has full permissions to S3, RDS and EC2 via identity policy,
+  however, if a there is a SCP associated with the AWS account which denies access
+  to S3 then the user will not be able to access S3 despite having full access via
+  identity policy.
