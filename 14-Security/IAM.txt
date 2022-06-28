@@ -1,0 +1,35 @@
+# Brief document on Identity and Access Management
+
+Best practices of implementing IAM in any AWS account:
+
+- Grant the least privileges. Ensuring a principle of least principles ensures that
+  identities are permitted to perform most minimal set of functions to fulfil a specific
+  task by granting least access without affecting usability and efficiency.
+- Enable identity federation. Centrally manage all the users and groups for all the
+  applications in AWS account. For managing users and groups across multiple AWS accounts
+  in an Organization, we can use AWS Single Sign On.
+- Enable MFA
+- Rotate credentials regularly.
+- Enable IAM Access Analyzer, to enable public and cross-organization access.
+- Attach IAM policies to the IAM user groups to restrict access to the AWS services.
+
+# IAM Roles
+- IAM Roles allows Users, other AWS services and applications to adopt a set of
+  temporary IAM permissions to access AWS resources.
+
+# IAM Policies
+- IAM Policies are written in JSON document and these define what can and can't be
+  accessed. These policies can be attached to Users, User groups and Roles.
+- Policies include Managed Policies and In-line policies.
+- Managed Policies are viewed as library of usable policies. Managed Policies can be
+  applied to multiple users and groups and Roles.
+- These are list of predefined policies granting varied access to different AWS services.
+- Unlike Managed Policies, In-line policies are not stored in a library, instead they
+  have to be written and explicitly embedded within a User, User Group, Role. As a
+  result, same policy cant be applied to another identity like Managed Policies.
+
+# Identity Providers
+- Used to provides federated access to AWS resources. Federated Access allows credentials
+  external to AWS to be used as a means for authentication. Identity providers such
+  as ADFS servers, Google, Facebook. This prevents you from having to create individual
+  IAM user accounts.
