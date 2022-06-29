@@ -47,3 +47,8 @@ Best practices of implementing IAM in any AWS account:
   however, if a there is a SCP associated with the AWS account which denies access
   to S3 then the user will not be able to access S3 despite having full access via
   identity policy.
+
+# Access Keys
+- Access keys are used for programmatic access to your AWS resources.
+- It comprises of two elements - Access Key ID (20 random uppercase alpha-num chars)
+  and Secret Access key (40 random upper and lowercase alpha-num and non alpha-num chars).
