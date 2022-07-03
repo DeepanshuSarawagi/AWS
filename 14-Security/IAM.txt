@@ -31,6 +31,13 @@ Best practices of implementing IAM in any AWS account:
 - IAM roles can also be used by AWS services to access services from your behalf
   or an application requires access to resources which can be used by Roles instead
   of embedding credentials within an application.
+- When a user assumes a Role, all the existing permissions are temporarily replaced.
+- Whenever a Role is created, a user cannot simply get access to the resources as defined
+  in the roles. A policy should be attached to the Role and the user must have the
+  permissions to assume the role. For users to assume the Role, we must create an
+  in-line policy for the user and attach to it.
+- We can user WebIdentity or SAML2.0 federation to allow federated users to assume Roles
+  for accessing specific AWS services.
 
 # IAM Policies
 - IAM Policies are written in JSON document and these define what can and can't be
@@ -77,3 +84,6 @@ Best practices of implementing IAM in any AWS account:
   within the application, it is better to use the EC2 Roles to allow EC2 to access
   S3 on your behalf. This also helps us in reducing the administrative burden of
   rotating credentials for security purposes.
+- Difference Service-Roles and Service-Linked Roles is that it comes with predefined
+  managed roles and they (Service-Linked) Roles cannot be edited. They are one setup
+  when service is used first time and can only be used by that particular service.
