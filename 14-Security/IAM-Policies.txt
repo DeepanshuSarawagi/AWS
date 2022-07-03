@@ -1,0 +1,7 @@
+# Brief document on different types of AWS IAM policies
+
+- There are four different types of policies:
+  - Identity Policy
+  - Resource Based Policy
+  - Permission Boundaries
+  - Organization Service Control Policies
