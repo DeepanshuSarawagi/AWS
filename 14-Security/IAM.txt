@@ -69,4 +69,11 @@ Best practices of implementing IAM in any AWS account:
   and Secret Access key (40 random upper and lowercase alpha-num and non alpha-num chars).
 
 # IAM Services Roles to access AWS resources on your behalf
-- 
+- An AWS service Roles allows access to other AWS service resource within your own
+  account on your behalf.
+- This is commonly used for EC2 instances to assume access to resources on your behalf.
+- For example, we have an EC2 instance running an application which requires access to
+  AWS S3 to perform relevant PUT and GET API calls. Instead of embedding credentials
+  within the application, it is better to use the EC2 Roles to allow EC2 to access
+  S3 on your behalf. This also helps us in reducing the administrative burden of
+  rotating credentials for security purposes.
