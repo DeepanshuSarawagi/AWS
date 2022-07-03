@@ -28,9 +28,14 @@
     - These policies can be associated with a role or a user but then dont actually
       grant permissions themselves. Instead they define the maximum level of permissions
       that can be granted to an entity.
+    - These can only be applied to a user or a role since it is not possible to set
+      boundaries to a group.
 
   - Organization Service Control Policies
     - These are very similar to permission boundaries in the fact that they do not
       grant permissions. Instead, they define a boundary of maximum permissions.
       These SCPs are associated at AWS account or Organizational Unit level and
       govern the maximum permissions to the members of that account.
+    - The SCP would serve to prevent service from being used by an identity within
+      AWS account.
+    - The SCP can't be edited using IAM. It has to be managed using the AWS Organization.
