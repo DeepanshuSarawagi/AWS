@@ -1,7 +1,36 @@
 # Brief document on different types of AWS IAM policies
 
 - There are four different types of policies:
-  - Identity Policy
+  - Identity Policy:
+    - These policies can be attached to users, user groups or IAM roles.
+    - These can either be managed or inline policies.
+    - Managed policies are saved within the IAM library of policies.
+    - Managed policies are of two different flavours as well: AWS Managed Policies and
+      Customer Managed Policies.
+    - AWS Managed policies are preconfigured by AWS and can be used by the users to
+      manage some of the most common permissions to access AWS resources.
+    - Customer managed policies are created by the AWS customer which can be used to
+      managed access to the resources. These can also be assigned to IAM Users/Groups/Roles.
+    - Inline policies are embedded directly into the entity. The policy is not saved/stored
+      in the IAM library of policies.
+    - It cant be replicated to other entities. It is specific to that one user it is
+      attached.
+
   - Resource Based Policy
+    - Instead of attaching to the identity, these policies are attached in-line to
+      resources themselves.
+    - They are inline policies which are effectively tied to a resource instead of an identity.
+    - AWS S3 bucket policy is a common resource based policy.
+    - Resourced based policy has the principal parameter to determine which identity
+      the permissions relate to.
+
   - Permission Boundaries
+    - These policies can be associated with a role or a user but then dont actually
+      grant permissions themselves. Instead they define the maximum level of permissions
+      that can be granted to an entity.
+
   - Organization Service Control Policies
+    - These are very similar to permission boundaries in the fact that they do not
+      grant permissions. Instead, they define a boundary of maximum permissions.
+      These SCPs are associated at AWS account or Organizational Unit level and
+      govern the maximum permissions to the members of that account.
