@@ -16,6 +16,21 @@ Best practices of implementing IAM in any AWS account:
 # IAM Roles
 - IAM Roles allows Users, other AWS services and applications to adopt a set of
   temporary IAM permissions to access AWS resources.
+- IAM roles allow trusted users to set of AWS resources or applications to adopt a
+  set of temporary credentials.
+- Much like identities, Roles have certain set of permissions defined what resources can and
+  can't be accessed.
+- IAM roles are designed to be assumed by multiple entities unlike Users which is
+  defined for single entity/identity.
+- Roles are used for temporary access to gain access to resources. And each time
+  a Role is used by a user/entity to access a AWS resource or application, a temporary
+  credential is generated for that particular session.
+- IAM Roles can be used for a user from one account to access the resources from
+  another AWS account.
+- IAM Roles can be used by federated users to access AWS resources temporarily.
+- IAM roles can also be used by AWS services to access services from your behalf
+  or an application requires access to resources which can be used by Roles instead
+  of embedding credentials within an application.
 
 # IAM Policies
 - IAM Policies are written in JSON document and these define what can and can't be
@@ -52,3 +67,6 @@ Best practices of implementing IAM in any AWS account:
 - Access keys are used for programmatic access to your AWS resources.
 - It comprises of two elements - Access Key ID (20 random uppercase alpha-num chars)
   and Secret Access key (40 random upper and lowercase alpha-num and non alpha-num chars).
+
+# IAM Services Roles to access AWS resources on your behalf
+- 
