@@ -17,4 +17,9 @@
 - The Web ACL would filter the incoming traffic based upon rules or rules groups.
 
 # Understanding Rules and Rules Groups
-- 
+- These rules are used to define the inspection criteria to determine whether the
+  traffic can be allowed or blocked.
+- Managed rule groups are set of rules preconfigured by AWS and AWS market place.
+- Managed Rule groups allows us to protect the web application from set of vulnerabilities.
+- Example for managed rule groups are by Fortinet (Thjreat information) and
+  GeoGuard (Based on IP Fraud detection).
