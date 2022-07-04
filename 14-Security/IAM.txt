@@ -87,3 +87,19 @@ Best practices of implementing IAM in any AWS account:
 - Difference Service-Roles and Service-Linked Roles is that it comes with predefined
   managed roles and they (Service-Linked) Roles cannot be edited. They are one setup
   when service is used first time and can only be used by that particular service.
+
+# Implementing Cross Account Access using IAM
+
+- Cross account access is nothing by a User from one AWS account requesting access to
+  services/resources with another AWS account using IAM roles.
+- To understand the process, lets assume that there are two AWS accounts, one for Dev
+  and one for Production. A developer has access to DEV account and may occassionally
+  require access to Production account.
+- For our understanding, lets call Dev as Trusted Account and Production as Trusting Account.
+- Create a new role from within the Trusting account. This is required to establish a
+  trust relationship between Trusted and Trusting accounts.
+- Specify the permissions attached to these newly created Roles which the users in
+  Trusted account would assume to carry out their required actions and tasks.
+- You must switch to the Trusted account to grant permissions to your developers
+  to allow them to assume the newly created role in the trusting account.
+- Finally switch between AWS accounts to test the configured access.
