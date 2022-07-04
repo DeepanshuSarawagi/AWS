@@ -39,3 +39,16 @@
     - The SCP would serve to prevent service from being used by an identity within
       AWS account.
     - The SCP can't be edited using IAM. It has to be managed using the AWS Organization.
+
+
+# Policy Evaluation steps
+- By default all access to a resource is denied.
+- Access will only be allowed if Allow access has been specified within a policy
+  associated with the principle.
+- If any Deny is specified within any policy associated with the same principle against
+  the same resource then Deny will overrule Allow access.
+- Policies are evaluated in following order:
+  - Organizational SCPs
+  - Resource based SCPs
+  - Permission Boundaries
+  - Identity Policies.
