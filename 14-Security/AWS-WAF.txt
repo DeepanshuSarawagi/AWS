@@ -1,0 +1,20 @@
+# Brief document on AWS Web Application Firewall service
+
+- This is a service which prevents websites and web applications from being
+  maliciously attacked.
+- Two flavours of AWS WAF:
+  - AWS WAF New - Used for resources created after November 2019
+  - AWS WAF Classic - Used for resources created before November 2019
+- AWS WAF communicates with following services:
+  - Amazon API Gateway
+  - Cloudfront Distributions
+  - Application Load Balancers
+  - AWS AppSync GraphQL API
+- AWS WAF helps in filtering HTTP and HTTPS requests.
+- A user would initiate the request.
+- The request will be received by the CloudFront distribution/ALB/API Gateway/AWS AppSync first.
+- The request is forwarded to WAF Web ACL.
+- The Web ACL would filter the incoming traffic based upon rules or rules groups.
+
+# Understanding Rules and Rules Groups
+- 
