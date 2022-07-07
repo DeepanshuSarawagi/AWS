@@ -1,0 +1,4 @@
+# Brief document on AWS Shield services
+
+- AWS Shield has been designed to protect your infrastructure against Distributed
+  Denial of Service attacks.
