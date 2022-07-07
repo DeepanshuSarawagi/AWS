@@ -26,3 +26,13 @@ Pre-requisites:
   AWS Organization. to Enable this, we need to enable sharing using AWS Resource Manager.
 - Enable regions in the AWS Management Account in addition to the account which
   Firewall Manager Administrator.
+
+# Policies
+- We need to create policies for different resources which we want to protect from threats using AWS Firewall Manager.
+- A resource can have multiple policies managed.
+- We can create policies for following resources for multiple AWS accounts across AWS Organizations
+  - AWS WAF
+  - AWS Shield Advanced
+  - AWS Network Firewall
+  - VPC Security Groups
+  - Amazon Route 53 Resolver DNS Firewall
