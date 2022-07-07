@@ -2,3 +2,23 @@
 
 - AWS Shield has been designed to protect your infrastructure against Distributed
   Denial of Service attacks.
+- The attack targets web host and it simultaneously receives a huge number of requests
+  from multiple distributed sources.
+- DDoS attacks prevents legitimate requests going through and it severely hinders the
+  performance of the website/application at the same time.
+-  Types of DDoS attacks:
+  - SYN flood
+  - DNS query flood
+  - HTTP flood/Cache-busting
+
+# AWS Shield Standard:
+- Free to everyone
+- Offers DDoS protection against Network layer and Transport layer.
+- It can be integrated with CloudFront and Route53.
+
+# AWS Shield Advanced:
+- Offers protection against EC2, ELB, CloudFront, Route53
+- Enhanced level of DDoS protection
+- View real-time metrics of any attacks against your resources.
+- Protection from DDoS attacks against Network layer, Transport layer and Application
+  layer.
