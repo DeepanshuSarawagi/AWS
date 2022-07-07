@@ -22,3 +22,5 @@
 - View real-time metrics of any attacks against your resources.
 - Protection from DDoS attacks against Network layer, Transport layer and Application
   layer.
+- You must associate an EIP toy your EC2 instance to protect it from DDoS attacks using
+  AWS Shield.
