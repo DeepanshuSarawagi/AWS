@@ -1,0 +1,78 @@
+# Brief document on Amazon CloudWatch
+
+- Designed for monitoring health and operation performance.
+- Features of CloudWatch
+  - CloudWatch Dashboards
+    We can create dashboards using AWS Management console or using CLI by calling
+    PutDashboardAPI to build and customize page using different visual widgets.
+    We can monitor resources in multiple different regions using dashboards.
+
+  - CloudWatch Metrics and Anomaly Detection
+    Metrics enables you to monitor a specific element of an application or a resource
+    over a period of time while tracking these data points.
+    - Disk Reads/Writes
+    - NumberOfObjects - specific to S3
+    - Creating customised is regional. A metric cannot be available for another region.
+    Allows CloudWatch to implement ML algorithms against your data to help detect
+    any activity which is outside of the normal baseline parameters that are
+    generally expected
+
+  - CloudWatch Alarms
+    CloudWatch Alarms tightly integrate with Metrics and allow you to create automatic
+    actions based on specific thresholds that you configure relating to reach metric
+    Can be easily integrated with dashboards.
+
+  - CloudWatch EventBridge
+    Has evolved from an existing feature called Amazon Events.
+    An event is anything that causes change to your environment or application.
+    CloudWatcch EventBridge supports following targets
+      - Amazon EC2
+      - Amazon Lambda
+      - Amazon Kinesis Data Stream
+      - Amazon Kinesis Data FireHose
+      - Amazon SNS and SQS queues
+      - Amazon CloudWatch Logs
+      - Amazon Batch jobs
+      - CodeBuild Projects
+      - AWS CodePipeline
+      - EC2 CreateSnapshot, EC2 RebootInstances, EC2 StopInstance, EC2 TerminateInstances
+        API calls
+      - Amazon API Gateway REST API Endpoints
+      - Amazon Redshift clusters
+    Rules:
+      Acts as a filter for incoming streams of event traffic and routes these events
+      to appropriate targets defined within the Rule.
+      Rule itself can route events to multiple targets, however, targets must be in
+      the same region.
+    Targets:
+      Targets are where the events are sent by the Rules.
+    Event Bus:
+      It is the component that actually receives the events from your application
+      and your rules are associated to specific event bus.
+
+  - CloudWatch Logs
+    Gives you a centralized location to house all of your logs from different AWS
+    services which provides logs as an output, such as CloudTrail, EC2, VPC Flow Logs etc.
+    Acts as a central repository for real time monitoring of all the log data.
+    Can utilize Insights to get overview of logs in real-time and take actions
+    as needed.
+    Unified CloudWatch Agent can collect logs and additional metric data from EC2
+    instances as well as from on-premise services running either a linux or windows
+    operating system
+
+  - CloudWatch Insights
+    They provide the ability to get more information from the data that CloudWatch
+    is collecting.
+    Three different types of Insights:
+    Log Insights:
+      This is a feature that can analyze logs that are collected by CloudWatch logs
+      at scale in seconds using interactive query and deliver visualizations
+    Container Insights:
+      Allows you to collate and group different metric data from different container
+      services and applications running on AWS. Example, EKS and ECS.
+      It also monitors and captures diagnostic data which can be used to take necessary
+      actions.
+      This monitoring and insight data can be used to collect data at cluster, node,
+      pod and task level.
+    Lambda Insights:
+      Feature to gain deeper underdstanding about the applications using AWS Lambda.
