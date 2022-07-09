@@ -1,0 +1,20 @@
+# Brief document on working of AWS CloudTrail service
+
+- Records and tracks all API requests on your AWS account.
+- Example: When an Auto scaling policy makes an API request to launch three new
+  EC2 instances, CloudTrail records API requests made by Auto scaling policy and
+  delivers the logs to AWS S3.
+- Every API request captured is recorded as an Event.
+- Multiple events are recorded within AWS CloudTrail logs.
+- Events contain an associated metadata, such as
+  Identity of the caller
+  Timestamp of the request
+  Source IP address
+- New log files are created every 5 mins and are stored in S3.
+- CloudTrail logs can also be delivered to CloudWatch logs for metrics monitoring
+  and alerting via SNS.
+- It is a global service which supports all regions.
+- Effective for security analysis.
+- Monitors restricted API calls.
+- Resolve day-to-day operational issues
+- 
