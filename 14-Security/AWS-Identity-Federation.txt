@@ -1,0 +1,11 @@
+# AWS SSO:
+- AWS SSO allows you to create a Single Sign-On approach to access multiple AWS
+  accounts within an AWS Organization using a single identity provider for all.
+
+# AWS IAM:
+- AWS IAM allows you to configure different OpenID or SAML identity providers for
+  each of your AWS account.
+
+# AWS Cognito
+- AWS Cognito enables secure authentication to your web and mobile application using
+  both SAML2.0 and web-identity federation.
