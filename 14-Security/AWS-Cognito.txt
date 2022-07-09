@@ -19,3 +19,12 @@
   - Integration with third party IDP
   - Customizable WebUI with OAuth2.0 compliant authentication server
   - Integration with AWS Lambda
+
+# Amazon Cognito Identity Pool
+
+- Also knows as federated identities helps to provide temporary access to AWS
+  credentials for your users and guests.
+- Integration with third party IDP.
+- Helps to identify authenticated and unauthenticated identities.
+- Each identity has a role associated with policies attached to them.
+- 
