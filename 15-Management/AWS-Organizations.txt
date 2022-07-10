@@ -1,0 +1,39 @@
+# Brief document explaining the key components and use of AWS Organizations service
+
+- AWS Organizations can be used to manage multiple AWS accounts in an Organization.
+- Cost optimization and billing
+- Security and governance
+- Management and control of workloads
+- Resource grouping
+- Helping to define business units
+
+AWS Organizations components:
+Organizations:
+- An Organization is an element that serves to form a hierarchical structure of multiple
+  AWS accounts.
+- It provides a graphical view of your entire AWS account structure.
+
+Root:
+- It is a container that resides on tope of your Organization. All of your AWS
+  accounts and Organizational Units will sit underneath this Root.
+- There can only be one single Root object.
+
+Organizational Units
+- They provide means of categorizing multiple AWS accounts.
+- Like Root, they are just containers, that allow you to group together specific
+  AWS accounts together.
+- They can connect directly below Root or another OU. OUs can be nested 5 times.
+
+Accounts:
+- These are essentially AWS accounts which you use to configure AWS resources.
+
+Service Control Policies:
+- They control what services and features are accessible from within an AWS account.
+- These SCPs can either be associated with a Root, OU or directly AWS accounts.
+- When an SCP is applied to any of these objects, its associated controls are fed
+  down to all of its child objects.
+
+Benefits:
+- Centrally manage policies of all AWS accounts from Master account.
+- Consolidated billing of all AWS account.
+- Categorization and grouping of AWS accounts.
