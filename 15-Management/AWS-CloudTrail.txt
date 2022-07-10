@@ -17,4 +17,41 @@
 - Effective for security analysis.
 - Monitors restricted API calls.
 - Resolve day-to-day operational issues
-- 
+
+# Components of CloudTrail
+
+Trail:
+- These are the building block of service.
+- We can create many different trails containing different configurations related
+  API requests.
+S3:
+- S3 is used by default to store the CloudTrail log files and a dedicated S3 bucket
+  is required during the creation of new trail.
+Logs:
+- Logs are created by CloudTrail and records all events captured.
+- A new log file is created approximately every five minutes and once processed it
+  is deliverd to a S3 bucket as defined by the Trail configuration.
+KMS:
+- The use of KMS is an optional element of CloudTrail.
+- It adds additional encryption to the log files when stored in S3 bucket.
+SNS:
+- SNS is also an optional component in CloudTrail. It allows you to send notifications
+  whenever a new log file delivered in S3 bucket.
+- It can also be used in conjunction with CloudWatch when metric threshold has
+  been reached.
+CloudWatch Logs:
+- This is also an optional component where we can configure to send logs to CloudWatch
+  logs for additional metrics.
+Event Selectors:
+- Event Selectors allows you to add a level of customization to the type of API
+  requests you want CloudTrail to capture.
+Events:
+- For every API requests that is captured by CloudTrail, it is recorded as an event
+  in a CloudTrail log file.
+API activity filters:
+- These are the search filters can be applied against search API history in the
+  management console for create, modify and delete API requests.
+- These events are held in management console for seven days even if the Trail itself
+  is stopped or deleted.
+Tags:
+- Allows you to add your own metadata about the CloudTrail.
