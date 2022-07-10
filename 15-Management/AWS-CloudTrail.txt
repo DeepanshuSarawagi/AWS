@@ -55,3 +55,20 @@ API activity filters:
   is stopped or deleted.
 Tags:
 - Allows you to add your own metadata about the CloudTrail.
+
+CloudTrail Process Flow:
+- Create Trail to let CloudTrail know which resources to be monitored for API requests.
+- Create/Utilize S3 bucket to deliver the captured log files.
+- Optionally encrypt the log files with KMS.
+- Optionally configure the SNS for sending notifications whenever a log file is delivered.
+- Optionally enable the log file validation to ensure log file is not delivered when
+  delivered to S3.
+- Post creation of Trail, we can configure the CloudWatch logs to deliver the CloudTrail
+  logs to it for additional monitoring. This allows us to create additional Metrics
+  against specific API requests
+- Optionally configure the Event Selectors, this allows to configure the CloudTrail
+  to capture specific events, or data.
+- Optionally we can add Tags.
+
+- As soon as API requests are captured based on the Trail configuration, we can
+  use the Activity Filter to filter specific events quickly.
