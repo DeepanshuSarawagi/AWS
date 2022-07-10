@@ -1,0 +1,30 @@
+# Brief document explaining how resource management in AWS can be done using AWS Config service
+
+- AWS config service is designed to record and capture resource changes within AWS
+  environment.
+- Capture resource changes
+- Act as resource inventory
+- Store config history for individual resources
+- Snapshot of current configurations
+- An entire snapshot of all supported configurations can be captured within a region
+- Notifications about changes; configured with SNS
+- Provide information on who made changes and when using AWS CloudTrail integration.
+- Use rules to check compliance of resources
+- Perform security analysis against your resources such as encryption.
+- Identify AWS network connectivity relationship
+
+Following services can be managed using AWS Config:
+- AWS certificate manager
+- AWS EC2
+- AWS EC2 Systems manager
+- AWS EBS
+- AWS S3
+- AWS ELB
+- AWS VPC
+- AWs CloudTrail
+- AWS RDS
+- AWS Redshift
+- AWS IAM
+
+- AWS Config is region specific and it has to be configured for each resource
+  specific region.
