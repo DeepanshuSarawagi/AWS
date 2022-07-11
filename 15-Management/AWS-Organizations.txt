@@ -37,3 +37,10 @@ Benefits:
 - Centrally manage policies of all AWS accounts from Master account.
 - Consolidated billing of all AWS account.
 - Categorization and grouping of AWS accounts.
+
+Process of setting up AWS organizations:
+- Setting up of AWS Orginzations requires a Master account. This Master account should not be used 
+  for anything else such as configuring resources. The sole purpose of this AWS master account is
+  to centrally manage other AWS accounts using AWS Organizations service.
+ - If we want to setup service control policies, we need to enable all features in AWS master account.
+ 
