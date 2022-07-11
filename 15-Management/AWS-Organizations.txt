@@ -44,3 +44,12 @@ Process of setting up AWS organizations:
   to centrally manage other AWS accounts using AWS Organizations service.
  - If we want to setup service control policies, we need to enable all features in AWS master account.
  
+Service Control Policies:
+- SCP is different from both identity based and resource based policies which grants permissions to the AWS resources.
+- SCPs do not grant permissions themselves.
+- They set boundary permissions for an AWS account.
+- For example, if a user has full permission to S3 and RDS, however, there is a SCP associated with the account
+  which restricts permission to read only permission, then the user will not be able to perform any write
+  operation for these services.
+ - SCP overrides the permission set for resources via both identity and resource based policy.
+ - SCP do not grant access, they act as guard rail to what is allowed.
