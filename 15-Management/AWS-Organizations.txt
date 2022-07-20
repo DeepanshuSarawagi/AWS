@@ -51,15 +51,24 @@ Service Control Policies:
 - For example, if a user has full permission to S3 and RDS, however, there is a SCP associated with the account
   which restricts permission to read only permission, then the user will not be able to perform any write
   operation for these services.
- - SCP overrides the permission set for resources via both identity and resource based policy.
- - SCP do not grant access, they act as guard rail to what is allowed.
- - Inheritance of SCP - based on the SCPs attached to the child right from root account will take in place.
-  For example, if root account has SCPs 1,2,3,4,5,6 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4
-  then AWS account under DEV(OU) will be governed by SCPs 2,3,4. Hence, the hierarchary of objects determines the
-  SCPs in effect for each AWS account.
- - Another Exmaple, if root account has SCPs 1,2,3,4 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
-  then AWS account under DEV(OU) will be governed by SCPs 2,3,4 since SCPs 5,6 is not available at parent object Root account. 
-  Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
- - Final Example, if root account has FullAWSAccess SCP and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
-  then AWS account under DEV(OU) will be governed by SCPs 2,3,4,5,6. 
-  Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
+- SCP overrides the permission set for resources via both identity and resource based policy.
+- SCP do not grant access, they act as guard rail to what is allowed.
+- Inheritance of SCP - based on the SCPs attached to the child right from root account will take in place.
+ For example, if root account has SCPs 1,2,3,4,5,6 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4
+ then AWS account under DEV(OU) will be governed by SCPs 2,3,4. Hence, the hierarchary of objects determines the
+ SCPs in effect for each AWS account.
+- Another Exmaple, if root account has SCPs 1,2,3,4 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
+ then AWS account under DEV(OU) will be governed by SCPs 2,3,4 since SCPs 5,6 is not available at parent object Root account. 
+ Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
+- Final Example, if root account has FullAWSAccess SCP and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
+ then AWS account under DEV(OU) will be governed by SCPs 2,3,4,5,6. 
+ Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
+- SCPs do not affect resource based policies. They only affect the principals managed by your accounts in your organization.
+- SCPs affect all users and roles in addition to the root user. However, root user will still be able to change password including
+  MFA settings and also root access keys.
+- If you disabled SCPs in AWS Organizations, then it will remove and delete all SCPs in all AWS organizations managed accounts.
+  if we re-enable SCPs, then the default SCP will be in place which is FullAWSAccess.
+- Following elements are not affected by SCPs
+  - SCPs do not affect the master account.
+  - SCPs do not affect the service-linked roles.
+  - Managing AWS CloudFront keys.
