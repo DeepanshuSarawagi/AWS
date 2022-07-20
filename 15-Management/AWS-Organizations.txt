@@ -53,3 +53,13 @@ Service Control Policies:
   operation for these services.
  - SCP overrides the permission set for resources via both identity and resource based policy.
  - SCP do not grant access, they act as guard rail to what is allowed.
+ - Inheritance of SCP - based on the SCPs attached to the child right from root account will take in place.
+  For example, if root account has SCPs 1,2,3,4,5,6 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4
+  then AWS account under DEV(OU) will be governed by SCPs 2,3,4. Hence, the hierarchary of objects determines the
+  SCPs in effect for each AWS account.
+ - Another Exmaple, if root account has SCPs 1,2,3,4 and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
+  then AWS account under DEV(OU) will be governed by SCPs 2,3,4 since SCPs 5,6 is not available at parent object Root account. 
+  Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
+ - Final Example, if root account has FullAWSAccess SCP and under Dev (OU) we have AWS account. If Dev(OU) has SCPs 2,3,4,5,6
+  then AWS account under DEV(OU) will be governed by SCPs 2,3,4,5,6. 
+  Hence, the hierarchary of objects determines the SCPs in effect for each AWS account.
