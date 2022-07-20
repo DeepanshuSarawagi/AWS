@@ -59,6 +59,20 @@
     Unified CloudWatch Agent can collect logs and additional metric data from EC2
     instances as well as from on-premise services running either a linux or windows
     operating system
+    CloudWatch Agent installation requires creation of role and attaching it to the
+    instance with permissions to collect the data and also interacting with AWS SSM
+    Download and install the agent on EC2 instance.
+    Configure and restart the EC2 instance.
+    The most efficient of achieving this is to use the EC2 systems manager.
+    For installing Unified CloudWatch Agent using EC2 Systems Manager, we need to
+    create two roles:
+      - Use to install the agent and send the metrics to CloudWatch (CloudWatchAgentServerPolicg and AmazonEC2RoleforSSM)
+      - Used to communicate with the parameters store within Systems Manager, to store
+        the configuration information file of the agent which then can be shared with
+        other EC2 instances for Agent installation. (CloudWatchAgentAdminPolicg and AmazonEC2RoleforSSM)
+      - Once the configuration file of agent is stored, we need to detach the policy from EC2 instance.
+      - For security reason, only one EC2 instance needs to be attached with agent configuration role
+        policy.
 
   - CloudWatch Insights
     They provide the ability to get more information from the data that CloudWatch
