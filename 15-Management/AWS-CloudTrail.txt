@@ -69,6 +69,9 @@ CloudTrail Process Flow:
 - Optionally configure the Event Selectors, this allows to configure the CloudTrail
   to capture specific events, or data.
 - Optionally we can add Tags.
-
 - As soon as API requests are captured based on the Trail configuration, we can
   use the Activity Filter to filter specific events quickly.
+  
+Log file format and bucket format:
+- AccountID_CloudTrail_RegionName_YYYYDDTHHmmZ_UniqueString.FileNameFormat
+- BucketName/prefix/AWSLogs/AccountID/CloudTrail/regionName/YYYY/MM/DD
