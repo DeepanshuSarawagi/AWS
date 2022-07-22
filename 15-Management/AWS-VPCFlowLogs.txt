@@ -24,5 +24,13 @@ Limitations:
  Permissions:
  To push Flow log data to a CloudWatch log group, following IAM role
  is required with relevant permissions
+ This role is selected during the setup and configuration of VPC Flow log.
  You also need to allow VPC Flow Logs to assume the IAM role to deliver
  logs to CloudWatch.
+ To review and access VPC Flow logs, we need following permission:
+  - ec2:CreateFlowLogs
+  - ec2:DeleteFlowLogs
+  - ec2:DescribeFlowLogs
+ The logs:GetLogData permissions enables you to llist log events from a data stream
+ To create FlowLogs, you need to also grant the user the IAM permission of iam:passrole,
+ which allows the service to assume the role to create the Flow Logs on your behalf.
