@@ -11,6 +11,7 @@
   Timestamp of the request
   Source IP address
 - New log files are created every 5 mins and are stored in S3.
+- Log files are delivered to S3 Bucket 15 mins after the API was called.
 - CloudTrail logs can also be delivered to CloudWatch logs for metrics monitoring
   and alerting via SNS.
 - It is a global service which supports all regions.
