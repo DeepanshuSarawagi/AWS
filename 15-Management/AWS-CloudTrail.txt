@@ -18,6 +18,7 @@
 - Effective for security analysis.
 - Monitors restricted API calls.
 - Resolve day-to-day operational issues
+- We need to apply permissions to the S3 bucket allowing cross-account access for the CloudTrail
 
 # Components of CloudTrail
 
@@ -70,6 +71,16 @@ CloudTrail Process Flow:
 - Optionally configure the Event Selectors, this allows to configure the CloudTrail
   to capture specific events, or data.
 - Optionally we can add Tags.
-
 - As soon as API requests are captured based on the Trail configuration, we can
   use the Activity Filter to filter specific events quickly.
+  
+Log file format and bucket format:
+- AccountID_CloudTrail_RegionName_YYYYDDTHHmmZ_UniqueString.FileNameFormat
+- BucketName/prefix/AWSLogs/AccountID/CloudTrail/regionName/YYYY/MM/DD
+
+How to allow users from secondary AWS account to allow RO access to CloudTrail logs in primary AWS account S3 bucket?
+- Create a Rolw for secondary AWS ACCOUNT in the Primary AWS Account
+- Attach a policy to the newly created role by allowing read only access to the specific bucket
+- This policy will enable users from secondary AWS account to view S3 bucket (corresponding to their account) in priamry AWS account
+- Assign a user in secondary AWS account new permissions to Assume Role in the primary AWS account (sts:AssumeRole)
+- The sts:AssumeRole will have resource of primary AWS account with the Role we created to access S3 bucket.

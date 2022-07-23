@@ -1,0 +1,21 @@
+# This document will give us explanation on how we can achieve monitoring of CloudTrail logs using CloudWatch
+
+We can monitor following CloudTrail logs
+
+- API calls requesting significant changes to NACLs or security groups
+- API calls to stop/start/reboot/terminate EC2 instances
+- EC2 instance creation using Auto Scaling group
+- Changes to security policy within IAM and S3
+- Failed login attempts in the management console
+- API calls that result in failed authorization
+- Unsuccessful API requests due to permissions
+
+Overview of sending CloudTrail logs to CloudWatch
+
+- A trail is created using CloudTrail
+- A log is sent to you S3 bucket and your chosen CloudWatch log group
+- To deliver these logs, CloudTrail must have correct permissions
+ - CreateLogStream - This enables CloudTrail to create CloudWatch Logs log stream in the log group
+ - PutLogEvents - This allows CloudTrail to put log events in the CloudWatch Logs log stream
+- The role name is called as CloudTrail_CloudWatchLogs_Role
+- CloudWatch logs events have a size limitation of 256KB on the events that they can process

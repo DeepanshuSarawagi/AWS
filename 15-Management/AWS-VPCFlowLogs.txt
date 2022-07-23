@@ -1,0 +1,36 @@
+# Brief explanation of use of VPC Flow logs
+
+- VPC Flow logs are used to capture every data related to network flow
+  and any cimmunication within VPC or other services communicating to VPCs
+- VPC Flow logs can now be sent directly to S3 apart from CloudWatch logs.
+
+Limitations:
+- For VPC peered connections, you can only see flow logs of peered VPCs
+  within the same account.
+- Once the VPC Flow configuration has been created, it cannot be altered.
+  We need to delete it and create a new one.
+  
+  Below Flow logs will not be captured:
+  - DHCP traffic within the VPC
+  - Traffic from instances destined for DNS servers
+  - Traffic destined to the UP addresses for the VPC
+    default router
+  - traffic to and from - (169.254.169.254 or 169.254.169.123)
+  - Traffic relating to an amazon windows activation license from
+    a windows instance
+  - Traffic between Network Load Balancer interface and Endpoint Network
+    interface.
+    
+ Permissions:
+ To push Flow log data to a CloudWatch log group, following IAM role
+ is required with relevant permissions
+ This role is selected during the setup and configuration of VPC Flow log.
+ You also need to allow VPC Flow Logs to assume the IAM role to deliver
+ logs to CloudWatch.
+ To review and access VPC Flow logs, we need following permission:
+  - ec2:CreateFlowLogs
+  - ec2:DeleteFlowLogs
+  - ec2:DescribeFlowLogs
+ The logs:GetLogData permissions enables you to llist log events from a data stream
+ To create FlowLogs, you need to also grant the user the IAM permission of iam:passrole,
+ which allows the service to assume the role to create the Flow Logs on your behalf.
