@@ -32,7 +32,7 @@ S3:
 Logs:
 - Logs are created by CloudTrail and records all events captured.
 - A new log file is created approximately every five minutes and once processed it
-  is deliverd to a S3 bucket as defined by the Trail configuration.
+  is delivered to a S3 bucket as defined by the Trail configuration.
 KMS:
 - The use of KMS is an optional element of CloudTrail.
 - It adds additional encryption to the log files when stored in S3 bucket.
@@ -73,7 +73,7 @@ CloudTrail Process Flow:
 - Optionally we can add Tags.
 - As soon as API requests are captured based on the Trail configuration, we can
   use the Activity Filter to filter specific events quickly.
-  
+
 Log file format and bucket format:
 - AccountID_CloudTrail_RegionName_YYYYDDTHHmmZ_UniqueString.FileNameFormat
 - BucketName/prefix/AWSLogs/AccountID/CloudTrail/regionName/YYYY/MM/DD

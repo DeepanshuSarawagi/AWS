@@ -21,7 +21,7 @@ Following services can be managed using AWS Config:
 - AWS S3
 - AWS ELB
 - AWS VPC
-- AWs CloudTrail
+- AWS CloudTrail
 - AWS RDS
 - AWS Redshift
 - AWS IAM
@@ -32,7 +32,7 @@ Following services can be managed using AWS Config:
 AWS Config Components:
 
 AWS Resources:
-- AWS resources are typicalls classed as AWS Objects which can be created, updated
+- AWS resources are typically classed as AWS Objects which can be created, updated
   and deleted
 
 Configuration Item:
@@ -81,8 +81,8 @@ Config Rules:
 -  Each time a change is made to the resource, AWS Config Rule will check the compliance
   rules to determine if the change made on that resource is valid.
 - If there is a violation of the rule, AWS Config Rule will send a SNS message via
-  the Configuration Stream and the resource will be marked as non-comliant.
-- We can use following number of predefined manged rules by AWS to check for security
+  the Configuration Stream and the resource will be marked as non-compliant.
+- We can use following number of predefined managed rules by AWS to check for security
   compliance:
   - Rds-storage-encrypted
   - Encrypted-volumes
@@ -99,7 +99,7 @@ SNS Topic:
 - Best practice is to use SQS and programatically analyze results using SQS.
 
 S3 Bucket:
-- It is used to store confguration history files for each resource type which are
+- It is used to store configuration history files for each resource type which are
   generated every six hours.
 - Also, any configuration snapshot taken are stored in the same S3 bucket.
 - The configuration used for SNS and S3 are classed as AWS Config delivery channel.

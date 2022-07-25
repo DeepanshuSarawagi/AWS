@@ -6,6 +6,8 @@
     We can create dashboards using AWS Management console or using CLI by calling
     PutDashboardAPI to build and customize page using different visual widgets.
     We can monitor resources in multiple different regions using dashboards.
+  - Default monitoring records metrics every 5 minutes, detailed monitoring records
+    metrics every 1 minute at additional cost.
 
   - CloudWatch Metrics and Anomaly Detection
     Metrics enables you to monitor a specific element of an application or a resource
@@ -23,6 +25,8 @@
     Can be easily integrated with dashboards.
 
   - CloudWatch EventBridge
+    EventBridge connects to your own application allowing to respond to your events
+    that occur in your application.
     Has evolved from an existing feature called Amazon Events.
     An event is anything that causes change to your environment or application.
     CloudWatcch EventBridge supports following targets
