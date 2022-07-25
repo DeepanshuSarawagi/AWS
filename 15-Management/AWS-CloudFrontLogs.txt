@@ -1,6 +1,6 @@
 # Brief document on Amazon CloudFront Access logs
 
-- Amazon CloudFront is a content delivery network that speeds up the delivery of 
+- Amazon CloudFront is a content delivery network that speeds up the delivery of
   static and dynamic contant through its worldwide network of Edge locations.
 - The logging process takes place at Edge-Locations and on per-distribution basis.
 - When multiple edge locations are used for same distribution, a single log file is
@@ -8,7 +8,9 @@
 - These log files are not directly written to the S3 bucket. Instead, they are retained
   by the CloudFront itself. Depending on the size, the log files, they are then delivered
   to S3 bucket. The delivery can take between one and 24 hours.
-- Standard naming convention as follows - 
+- To enable logging for your distribution, the user account activating that
+  feature must have full control on the ACL for the S3 bucket, along with the S3 GetBucketAcl and S3 PutBucketAcl.
+- Standard naming convention as follows -
   butcket-name.s3.amazonaws.com/optional-prefix/distribution-ID.YYYY-MM-DD-HH.unique-ID.gz
 
 Permissions:
@@ -19,17 +21,17 @@ The user must have following permissions to enable logging of CloudFront to S3.
 
 Types of Delivery:
 - Web Delivery
-  It has 26 supported types of fields in access logs such as 
+  It has 26 supported types of fields in access logs such as
   - Date and Timestamp and which Edge Location received this request
   - Source metadata, including IP
   - HTTP access method such as GET, PUT, DELETE and POST
   - HTTP statue code of the request
   - The Distribution domain name
   - Encryption and protocol data
- 
+
  - RTMP Delivery (This is no deprecated)
- 
+
  Cookie Logging:
  - This is to include all cookie information
- - This is only required, if Origin of your distribution points to anything other 
+ - This is only required, if Origin of your distribution points to anything other
    than S3 such as EC2 instance.

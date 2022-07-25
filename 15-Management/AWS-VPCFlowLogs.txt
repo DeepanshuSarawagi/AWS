@@ -2,6 +2,8 @@
 
 - VPC Flow logs are used to capture every data related to network flow
   and any communication within VPC or other services communicating to VPCs
+- VPC flow logs can be enabled at the VPC, subnet, or ENI level to capture and
+  send all network traffic to an S3 bucket.
 - VPC Flow logs can now be sent directly to S3 apart from CloudWatch logs.
 
 Limitations:
