@@ -1,0 +1,82 @@
+# This document gives detailed explanation on Key Policies and Grants in AWS KMS
+
+- For almost all the AWS services, the service access can be controlled using the IAM roles and policies.
+- However, in the case of KMS, to manage access to your CMKs, you must use a key policy
+  associated to your CMK.
+- Without a key policy associated to your CMK, users will not be able to use it.
+- Permissions to allow and access to your CMK can't be given with IAM alone.
+- Permissions to KMS can be managed using number of ways:
+  - Using key policies with IAM
+    - You must have the following key policy allowing root full KMS access to the CMK
+      {
+      "Sid": "Enable IAM user permission",
+      "Effect": "Allow",
+      "Principal": {"AWS": "arn:aws:iam::123456789101:root"},
+      "Action": "kms:*",
+      "Resource": "*"
+      }
+    - By doing this, it allows root to centralize the permission administration
+      from within IAM.
+    - We can use IAM policies for users, roles and groups to perform encryption and
+      decryption.
+    - We can also specify the resource based section to specify which principals
+      can access which CMKs.
+      "Version": "2012-10-170,
+      "Statement": {
+      "Effect": "Allow",
+      "Action": [
+            "kms: Encrypt"
+            "kms: Decrypt."
+      ],
+      "Resource": [
+      "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+      "arn:aws:kms:eu-west-2:123456789012:key/0987dcba-09fe-87dc-65ba-ab0987654321"
+      ],
+      }
+
+  - Using key policies
+    - Key polices are resource based policies that are tied to your CMK.
+    - And if we want a principal to be able to access CMK, a key policy must be there in place.
+    - During the creation of CMK, KMS creates a default key policy for you to allow the
+      principals to use CMK.
+    - Without the root account having full access to the Key Policies, IAM can't be used
+      to manage access for other users.
+    - Using the management console to create CMK will give root user chance to create
+      different permission sets.
+    - when using management console to create CMK, root user gets following ability
+      - Define the key administrators.
+      - Principal administrators can only administer the CMK, they cannot use it to
+        perform any encryption function.
+      - Root user can also specify if administrators can delete the key via the checkpoint option.
+      - These key administrators have access to update the associated key policy.
+      - Next, Root user will be asked to define the CMK users.
+      - Which users should be allowed to perform any encryption using this CMK.
+      - Users can also use Grants to delete subset of their permission to another
+        principal such as another user or AWS service which integrates with KMS.
+
+  - Using key policies with Grants.
+    - They are again resource based policies that allow you to delegate a subset of your own
+      access to a CMK for principals such as another AWS service within your AWS account.
+    - They need to be created using the AWS KMS APIs.
+    - Within the key policy of the CMK, we will see the statement to allow users to
+      perform three grant action.
+    {
+      "Sid": "Allow attachment of persistent resources",
+      "Effect": "Allow",
+      "Principal":
+        {
+      "AWS": [
+      "arn:aws:iam::730739171055:user/Cloudacademy",]
+        },
+      "Action": [
+      "kms: CreateGrant"
+      "kms: listGrants"
+      "kms: RevokeGrant"
+        ],
+      "Resource": "*",
+      "Condition": {
+      "Bool": {
+      "kms: GrantIsForAWSResource": true
+        }
+      }
+    }
