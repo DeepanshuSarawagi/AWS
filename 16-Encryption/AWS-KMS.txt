@@ -1,0 +1,25 @@
+# Brief document on AWS KMS service
+
+Data Encryption:
+- Information is altered rendering plain text data unreadable through mathematical algorithms and encryption keys.
+- An encryption key is required to revert the text to plain text.
+- This encryption is categorized into two types:
+  - Symmetric cryptography
+    A single key is used to both encrypt and decrypt the data.
+    If the data was read by a different person then the key has to be shared with that person to decrypt the data.
+    If the key is intercepted is during the transmission, then the data can be compromised.
+
+  - Asymmetric cryptography
+    Two separate keys are used. One to encrypt the data and the other to decrypt the data.
+    Both the keys are created at the same time.
+    Private keys should be kept by a party and should never be shared.
+    Public keys can be shared with anyone.
+    Both the private and public key is required to decrypt the data.
+
+
+KMS:
+- KMS is a managed service used to store and generate encryption keys that are used by other AWS services
+  and applications.
+- The KMS service is for encryption at rest only.
+- KMS works with CloudTrail to audit and track how your encryption keys are being used and by whom.
+- It is a region specific service.
