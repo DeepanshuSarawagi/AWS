@@ -80,3 +80,6 @@
         }
       }
     }
+    - After the Grant has been created, a Grant token and Grant ID is issued.
+    - When a Grant has been created, there maybe delay in permissions to use it since eventual
+      persistency has to take place.
