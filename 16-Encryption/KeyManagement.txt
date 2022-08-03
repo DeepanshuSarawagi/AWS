@@ -1,0 +1,44 @@
+# Key Management using AWS KMS
+
+- Rotation of CMKs
+  - For security best practices, it is recommended to rotate the CMKs. The longer the each key is left in same place,
+    the more data is encrypted with that key and if that key is breached, wider blast area of data is at risk.
+  - We can use automatic key rotation to rotate the keys. KMS will rotate the keys every 365 days.
+  - The cmkid, ARN and permissions remain the same when a key is rotated.
+  - The only thing that changes during a rotation is backing key of the CMK.
+  - Backing key is the fundamental cryptographic element that is used when encryptio takes place.
+  - Older backing keys are retained to decrypt the data that was encrypted prior to this rotation.
+  - Automatic rotation of key is not possible with imported key material.
+  - We cannot change the default 365 day period of automation key rotation.
+  - It is not possible to manage the rotation of AWS managed CMKs which happens every 1095 days (3 years).
+  - Manual Key Rotation:
+    - The process of manual key rotation requires creation of new CMK.
+    - A new cmk-id is created along with a new backing key.
+    - You will need to update any applications that references the cmk-id.
+    - To reduce the above effort, you can use Alias names for your keys and then simply update the alias
+      target to point to the new cmk-id.
+    - $aws kms update-alias --alias-name DeepanshuCMK --target-key-id <new cmk-id>
+  - Importing key material:
+    - Key material is essentially the backing key.
+    - When customer managed CMKs are generated and created within KMS, the key material is automatically
+      created for the CMK.
+    - However, it is possible to created CMK without the key material (backing key).
+    - To create CMK without backing key, we need to select the External option instead of KMS  for Key Material option
+      when creating the CMK.
+    - When using your own key material, it becomes tied to that CMK and no other key material can be used for that CMK.
+    
+- Import key material from an existing KMS outside of AWS
+  - To create CMK without backing key, we need to select the External option instead of KMS  for Key Material option
+    when creating the CMK.
+  - Download a wrapping key (public key) and an import token.
+  - This wrapping key will be used to upload the external key material in encrypted form.
+  - The import token is used while uploading the key material using public key.
+  - Both public key and import token are valid only for 24 hours.
+  - The key material must be in binary format to allow you to use the wrapping key.
+  - Import your key material that is now encrypted with KMS and then associate with your current empty CMK.
+  - Set the optional expiry date of your key material as security best practice.
+  - CMK will cease to work if the age of key material imported is expired.
+  
+- Deletion of CMKs
+  - Deleting CMK is followed as security best practice and for general housekeeping.
+  - 
