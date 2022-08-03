@@ -1,0 +1,20 @@
+# Brief document on AWS HSM service
+
+- HSM stands for hardware Security Module.
+- A physical tamper resistant hardware appliance that is used to protect and sageguard cryptographic
+  materials and encryption keys.
+- CloudHSM is a physical device and is not a multi-tenant device i.e., that is not shared with
+  any other customer.
+- Following operations are performed using Cloud HSM service:
+  - Creation, storage and management of cryptographic keys.
+  - The ability to use cryptographic hash functions - HMACs - Hash Based Message Authentication Codes.
+  - Cryptographic data signing and signature verification.
+  - Ability to generate cryptographically secure data.
+  - Assymetric encryption:
+    - A public and private key is used to encrypt and decrypt the data.
+    - Private key is not shared with the client.
+    - Common algorithms are RSA, DSA.
+  - Symmetric Encryption:
+    - Same key to encrypt and decrypt the data.
+    - The key must be sent securely between the two parties.
+    - Commonly used symmetric cryptographic algorithms are AES, DES, Triple DES, Blowfish
