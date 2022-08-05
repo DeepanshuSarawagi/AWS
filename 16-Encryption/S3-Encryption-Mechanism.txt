@@ -1,0 +1,24 @@
+# Overview of S3 Encryption mechanism
+
+Server Side Encryption with S3 managed keys (SSE-S3):
+- Requires minimal configuration
+- Management of encryption keys managed by AWS
+- We just need to upload the data and S3 will handle the encryption for us.
+
+Server Side Encryption with KMS managed keys (SSE-KMS):
+- Allows S3 to use KMS to generate data encryption keys.
+- Gives greater flexibility of key management: deisable, rotation and access policies to CMKs.
+
+Server Side Encryption with Customer provided keys (SSE-C):
+- Gives you the opportunity to provide your own master key.
+- Your customer provided key would be sent with data to S3 and S3 would perform the
+  encryption of your data for you.
+
+Client Side Encryption with KMS (CSE-KMS):
+- Uses the KMS to generate the data encryption keys.
+- KMS is called upon via the client, not the S3.
+- Encrytion takes place at client side and encrypted data is then sent to S3.
+
+Client Side Encrytion with Customer provided keys (CSE-C):
+- You are able to utilize your own provided keys.
+- Use AWS SDK client to encrypt your data before sending it to S3 for storage.
