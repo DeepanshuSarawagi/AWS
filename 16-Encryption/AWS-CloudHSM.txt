@@ -18,3 +18,29 @@
     - Same key to encrypt and decrypt the data.
     - The key must be sent securely between the two parties.
     - Commonly used symmetric cryptographic algorithms are AES, DES, Triple DES, Blowfish
+
+# Architecture and components of CloudHSM
+
+- To implement CloudHSM, we need to create a cluster.
+- This cluster is a grouping of different HSMs together which will act as a single unit when configured
+  and deployed.
+- Having multiple HSMs provides high availability as you are able to select multiple different
+  subnet one from each AZ that your VPC operates in.
+- Any requests to your CloudHSM cluster will load balance automatically between different
+  HSM clusters.
+- When HSM is deployed, a HSM ENI is placed in the VPC you select within your subnet.
+- HSM itself resides in a AWS owned VPC and is located in the same AZ.
+- When a HSM is deployed, a new service-linked role will be created AWSServiceRoleForCloudHSM.
+- This will add the permission to send log data to CloudWatch logs.
+- CloudHSM will also create a new security group for the HSM cluster. This will decide which
+  resources can communicate with the HSM cluster.
+- The security group itself will allow both inbound and outbound connectivity on port 2223-2225.
+- Once the cluster is created, it will be in uninitialized state.
+- From here on, we can create HSMs in each availability zone and initialize the cluster.
+- Once the cluster is initialized, you can then connect to the cluster network interfaces
+  and it can be done by an EC2 instance provisioned in the same VPC.
+- Following 2 step process is required for your cluster to communicate with CloudHSM ENIs.
+  - configure a security group.
+    Firstly we must add the EC2 instance to the CloudHSM security group which got created earlier
+    while creatinng cluster.
+  - Install the CloudHSM client software on the EC2 instance.
