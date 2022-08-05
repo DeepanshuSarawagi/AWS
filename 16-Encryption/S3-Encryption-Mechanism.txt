@@ -19,6 +19,23 @@ Server Side Encryption with S3 managed keys (SSE-S3):
 Server Side Encryption with KMS managed keys (SSE-KMS):
 - Allows S3 to use KMS to generate data encryption keys.
 - Gives greater flexibility of key management: deisable, rotation and access policies to CMKs.
+- Encryption Process:
+  - Client uploads object data to S3.
+  - S3 then requests data-keys from KMS' CMK.
+  - Using the specified CMK, KMS then generates two data keys, a plain text data key and
+    an encrypted version of plain text data key.
+  - These two keys are then sent back to S3 for encryption of Object data.
+  - S3 performs the encryption of object data using the plain text data key.
+  - This creates an encrypted version of object data which is then stored in S3 along with
+    encrypted data key.
+  - The plain text data key is then removed from the memory.
+- Decryption Process:
+  - Request is made by the client to retrieve the object data.
+  - S3 sends the associated encrypted data key of the Object data to KMS.
+  - KMS then uses the correct CMK to decrypt it and creates a plain text data key.
+  - This plain text data key is then sent back to S3.
+  - S3 decrypts the data using this Plain text data key.
+  - The decrypted object data is then sent back to the user/client who requested it.
 
 Server Side Encryption with Customer provided keys (SSE-C):
 - Gives you the opportunity to provide your own master key.
