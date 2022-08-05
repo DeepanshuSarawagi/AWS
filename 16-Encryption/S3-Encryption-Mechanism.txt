@@ -4,6 +4,17 @@ Server Side Encryption with S3 managed keys (SSE-S3):
 - Requires minimal configuration
 - Management of encryption keys managed by AWS
 - We just need to upload the data and S3 will handle the encryption for us.
+- Encryption process:
+  - Client uploads object data to S3.
+  - S3 then encrypts this data with plain text S3 data key.
+  - This creates an encrypted version of the object data.
+  - Next, the S3 Plain text data key is then encrypted with S3 master key.
+  - This creates an encrypted version of S3 Plain text data key which is then stored in S3.
+  - S3 Plain text data key is then deleted from the memory.
+- Decryption process:
+  - Request is made by the client to retrieve the object data.
+  - S3 takes the encrypted S3 Data key and decrpyts it with S3 Master key.
+  - This S3 Plain text data key is then used to decrypt the object data and sent back to client.
 
 Server Side Encryption with KMS managed keys (SSE-KMS):
 - Allows S3 to use KMS to generate data encryption keys.
