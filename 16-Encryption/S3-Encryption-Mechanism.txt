@@ -41,6 +41,19 @@ Server Side Encryption with Customer provided keys (SSE-C):
 - Gives you the opportunity to provide your own master key.
 - Your customer provided key would be sent with data to S3 and S3 would perform the
   encryption of your data for you.
+- Encryption Process:
+  - Client uploads object data and a customer provided key for a HTTPS connection.
+  - S3 will then use the customer provided key to encrypt the object data.
+  - S3 will also create a salted HMAC value of the customer provided key for future validation.
+  - The encrypted object data along with HMAC value of customer provided key is then stored
+    in S3
+  - The Customer provided key is then removed from the memory.
+- Decryption Process:
+  - A request is made by the client via a HTTPS connection to retrieve the object data.
+  - At the same time, the Customer provided key is also sent with the request.
+  - S3 uses the HMAC value of the same key to confirm its validity of the requested data.
+  - The Customer provided key is then used to decrypt the encrypted object.
+  - The decrypted object is then sent back to customer.
 
 Client Side Encryption with KMS (CSE-KMS):
 - Uses the KMS to generate the data encryption keys.
