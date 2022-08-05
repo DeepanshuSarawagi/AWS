@@ -83,3 +83,15 @@ Client Side Encryption with KMS (CSE-KMS):
 Client Side Encrytion with Customer provided keys (CSE-C):
 - You are able to utilize your own provided keys.
 - Use AWS SDK client to encrypt your data before sending it to S3 for storage.
+- Encryption Process:
+  - Using the AWS SDK such as Java client, it will randomly genrate a plain text data key.
+  - This Plain text data is used to encrypt the Object data.
+  - The customer provided CMK is then used to encrypt the client-generated data key.
+  - The encrypted Object data and encrypted data key are then sent to S3.
+  - S3 will then store the encrypted data and associate the encrypted data key as metadata.
+- Decryption Process:
+  - Request is made by the client to retrieve the object data.
+  - S3 sends both the encrypted object data and encrypted data key back to the client.
+  - The customer provided CMK is then used to decrypt the encrypted data key.
+  - This will produce the plain text data key.
+  - This Plain text data key is then used to decrypt the Object data.
