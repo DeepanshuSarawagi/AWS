@@ -44,3 +44,17 @@
     Firstly we must add the EC2 instance to the CloudHSM security group which got created earlier
     while creatinng cluster.
   - Install the CloudHSM client software on the EC2 instance.
+
+# Using HSM as a custom keystore in KMS
+
+- HSM cluster can be used to maintain the security and control of key material created for CMKs.
+- The key material is a resource managed within your KMS, however, it allows you to store it
+  within your CloudHSM cluster.
+- CMKs created from your custom key store are 256 bit Non-exportable AES Symmetric key which
+  never leaves the HSM unencrypted.
+- All cryptographic operations made with the CMK happens within the HSM cluster.
+- Each HSM Cluster can only be associated with one custom key store for KMS and must be within the
+  same region.
+- As a part of the process to create the custom key store, you must upload the trust anchor certificate
+  for the cluster to the KMS and this certificate is generated when cluster is first initialized.
+- Also we must create a dedicated crypto user called kmsuser without MFA enabled.
