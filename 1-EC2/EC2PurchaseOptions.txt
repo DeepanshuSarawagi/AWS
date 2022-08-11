@@ -38,6 +38,16 @@ EC2 Reserved Instance:
     Runs only on a particular period.
     Even if we didn't use the instance, we will be charged.
 
+EC2 Savings Plans:
+  Commitment to amount of usage and long workloads
+  Savings plans range from 1-3 years.
+  Locked to a specific family of instances and region.
+  Maximum discount upto 72%.
+
+Capacity Reservations:
+  Reserve capacity in specific AZ for any duration.
+  You have to pay for the duration regardless of whether you use it or not.
+
 EC2 Spot Instance:
   Maximum discount upto 90%
   However, least reliable since you may end up losing the instance if the max price
@@ -45,11 +55,16 @@ EC2 Spot Instance:
   Spot price is set by AWS and fluctuates based on demand and flow.
   Bid for large EC2 instances for a low cost.
   The MOST cost-efficient instances in AWS.
+
   Use for workloads that are resilient to failures.
     - Batch jobs
     - Image Processing
     - Data Analysis
     - Any distributed Workloads
+
+EC2 Spot Fleets:
+  Spot Fleets = set of spot instances + optional on-demand Instances.
+  The spot fleet will try to meet the target capacity with price constraints.
 
 EC2 Dedicated Hosts:
   An Amazon EC2 dedicated host is a physical server with EC2 instance
@@ -58,6 +73,7 @@ EC2 Dedicated Hosts:
   Allows to use existing Server Bound software licenses
   Allocated for a 3 year Reservation
   Per host billing
+  Most expensive option
 
 EC2 Dedicated Instance:
   instances running on hardware that's dedicated to you
