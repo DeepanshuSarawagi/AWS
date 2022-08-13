@@ -1,6 +1,7 @@
 # This document will give us an overview of Elastic Block Storage
 
 - Persistent storage which means data is not lost if the EC2 instance is terminated.
+- They are bound to a specific AZ.
 - EBS volumes are independent of the EC2 instances.
 - They are logically attached to the instance instead of directly attached like
   instance store volumes.
@@ -20,6 +21,14 @@
 - One important note to consider is that, EC2 volumes can be attached to EBS volumes
   within the same availability zone.
 - Also, one EBS volume can be accessed by one EC2 instance at a time.
+
+EBS Snapshot features:
+- EBS Snapshot Archive:
+  - Move the snapshot to Archive which is 75% cheaper
+  - Takes 24-72% to restore the archive.
+- EBS Snapshot bin:
+  - You can restore the snapshot from bin which were accidentally deleted.
+  - The retention period is 1 day to 1 year.
 
 EBS Volume types:
   - SSD volumes
