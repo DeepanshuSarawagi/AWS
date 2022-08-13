@@ -66,7 +66,9 @@ EBS Volume types:
 EBS Security:
   Possible to enable encryption during the creation.
   Used AES 256 algorithm.
+  Data at rest and data in flight is also encrypted.
   Any snapshots created will also be encrypted.
+  All the volumes created from the encrypted snapshot will also be encrypted.
 
 EBS Multi-Attach:
   - Available only for Provisioned IOPS SSD Volumes of io1/io2 types.
