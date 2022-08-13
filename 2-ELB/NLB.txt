@@ -4,6 +4,7 @@
   Enables us to balance requests based on TCP protocols.
   The supported listeners are TCP, TLS and UDP.
   The NLB is able to process millions of requests per second
-  If the application logic requires a static IP address then NLB is preferred.
+  If the application logic requires a static IP address per AZ then NLB is preferred.
+  It also supports assigning Elastic IP.
   For the NLB, cross zone load balancing can be enabled or disabled.
-  
+  Using NLB, we can also route traffic to ALB.
