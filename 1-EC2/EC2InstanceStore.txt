@@ -1,0 +1,7 @@
+# Brief document on EC2 Instance Store
+
+- If you need hardware performance hardware disk use instance store.
+- Better I/O performance.
+- Instance store have ephemeral storage.
+- Good for buffer/cache/scratch data/temporary content.
+- Backup and Replication are your responsibility.

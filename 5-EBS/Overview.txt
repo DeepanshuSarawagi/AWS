@@ -34,17 +34,42 @@ EBS Volume types:
   - SSD volumes
       suited for work with smaller blocks
       Two types: General Purpose and Provisioned IOPS.
+      General Purpose SSD:
+      Cost effective storage, low latency.
+      Used for system boot volumes, virtual desktops, Development and test environments.
+      1GB - 16TB
+      GP3: Baseline of 3000 IOPS and throughput of 125 MB/S.
+      Can increase IOPS upto 16000 and thoughput of 1000 MB/s.
+      GP2: Can burst upto 3000 IOPS.
+
       Provisioned IOPS provides throughput of 16000 IOPS with 250 MiB/S.
+      Critical business application with sustained IOPS performance.
+      Or for applications more then 16,000 IOPS.
+      Great for database workloads.
+      iO1/iO2 - 4GB - 16TB.
+      Max IOPS of 64000 with EC2 nitro instances and max 32,000 IOPS for other instances.
+      iO2 Block Express Provisioned SSD: Can range from 4GB - 64TB
+      sub-millisecond latency.
+      Max IOPS of 256,000 and IOPS:GB ratio is 1000:1
+      supports EBS Multi-Attach
 
   - HDD volumes
       suited for workload that requires higher throughput or high blocks
       of storage. Eg; big data or logging information.
       Two Types:
-      Optimized HDD - Cannot be a boot volume. Used for higher throughput
+      Optimized HDD - Cannot be a boot volume. Used for higher throughput. Max throughput of 500 MB/s and
+      Max IOPS of 500.
       Cold HDD - Lowest cost volume. Cannot be a boot volume. Generally used for
       low infrequently accessed data.
+      Max throughput of 250 MB/s and Max IOPS of 250.
 
 EBS Security:
   Possible to enable encryption during the creation.
   Used AES 256 algorithm.
   Any snapshots created will also be encrypted.
+
+EBS Multi-Attach:
+  - Available only for Provisioned IOPS SSD Volumes of io1/io2 types.
+  - Attach the same volumes to multiple EC2 instances in same AZ.
+  - Achieve higher application availability in linux cluster.
+  - Must use a file-system thats cluster-aware (Not XFS, EX4).
