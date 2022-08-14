@@ -20,9 +20,50 @@ Components of EC2 Auto Scaling:
     What storage volume configuration to use.
     What security groups to be used.
     If you would like spot instances.
+    VPC information.
+    ELB information.
+    SSH-Keys information.
+    Min size/ Max Size/Initial Size.
 
     A launch template is a newer and advanced version of launch configuration.
     Being a template, you can build a standard configuration on how to build your
     instances using the auto scaling group.
-    
+
+    Launch Templates gives the ability of versioning.
+    Can create parameter subsets (partial configuration for re-use and inheritance)
+    Provision using both on-demand and spot instances or mix of them.
+
   - Creation of Auto Scaling group
+
+Auto Scaling Group - Dynamic Scaling Policies:
+  - Target Tracking Scaling
+    - Most simple and easy to setup
+    - Example: If we want the average ASG group CPU utilization to be at 40%
+  - Simple / Step scaling:
+    - When a CloudWatch Alarm is triggered, example: CPU > 70% then add 2 EC2 instances.
+    - When a CloudWatch Alarm is triggered, example: CPU <= 30% then remove 1 EC2 instance.
+  - Scheduled Actions:
+    - Anticipate a scaling based on a known usage pattern
+    - Example: Increase the minimum capacity to 10 at Fridays 5 PM.
+
+Auto Scaling Group - Predictive Scaling:
+  - Continuously forecast load, and then Schedule scaling ahead.
+
+Auto Scaling Group: Scaling cooldowns:
+  - After a scaling activity happens, you are in a cooldown period (default 300 seconds)
+  - During this period, the ASG will not launch or terminate additional instances
+    (to allow the metrics to stabilize after scaling activity)
+  - Use a ready to use AMI to reduce configuration time to serve reuests faster and
+    reduce the cooldown period.
+
+ASG Default termination policy:
+  - If the scale-in event is triggered, ASG will find which AZ has most number of instances.
+  - If multiple instances are running in AZ, then ASG deletes the one with older launch
+    configuration.
+  - ASG tries to balances the number of instances across all AZs.
+
+ASG Lifecyle Hooks:
+  -  By default as soon as an instance is launched, in ASG its in service.
+  - We get the ability to perform extra steps before an instance goes into service. (Pending state)
+  - This is called as Lifecyle hook.
+  - We also get the ability to perform additional steps before instance is terminated. (Terminating state)
