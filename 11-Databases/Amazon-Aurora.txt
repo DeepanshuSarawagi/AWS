@@ -18,3 +18,5 @@
 - Aurora storage automatically grows incrementally in 10GB upto 128TB.
 - Aurora is 10% costlier than RDS.
 - Support for cross-region replication.
+- Enabling Backtrack, helps us to rewind a Aurora DB cluster to a specific point in time.
+- Aurora has a old backtrack time of 72 hours.

@@ -55,8 +55,12 @@ Custom Endpoints:
   group.
 Instance Endpoints:
 - An instance endpoint maps directly to a cluster instance. Each and every instance
-  has its own instnace endpoint. You can use an instance endpoint when you want a
+  has its own instance endpoint. You can use an instance endpoint when you want a
   fine grained control over instance which you want it to service your requests.
+
+Aurora Replicas Auto-Scaling:
+- Using Read-Replicas auto-scaling, we can scale out the read replicas upto 15 instances based on the
+  policy we define.
 
 Aurora Multi-Master node setup:
 - Pair of masters are created in Active-Active read write configuration.
@@ -74,3 +78,16 @@ Aurora Serverless:
   capacity. Capacity is measured in ACUs which is Aurora Capacity Units.
 - Aurora will continually adjust and optimize the capacity units based on demand.
 - An Aurora serverless database is configured with single connection endpoint.
+
+Aurora Global:
+- Aurora Cross region read-replicas.
+- Aurora Global Database.
+  - One primary region where all reads and writes happen.
+  - Upto 5 secondary read-only regions with replication latency of < 1 second.
+  - Upto 16 read-replicas per secondary region.
+  - Promoting another region has an RTO of < 1 minute.
+
+Aurora Machine Learning:
+- Aurora is Compatible with integrating with Machine Learning services
+- Currently supports two ML services offered by AWS - AWS SageMaker and AWS Comprehend (For sentiment analysis)
+- Use cases: Fraud detection, ads protection, sentiment analysis and product recommendations.
