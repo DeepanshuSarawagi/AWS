@@ -34,11 +34,20 @@ Components of EC2 Auto Scaling:
     Provision using both on-demand and spot instances or mix of them.
 
   - Creation of Auto Scaling group
+  - You can configure the Auto Scaling Group to determine the EC2 instances' health based on Application
+    Load Balancer Health Checks instead of EC2 Status Checks (default). When an EC2 instance
+    fails the ALB Health Checks, it is marked unhealthy and will be terminated
+    while the ASG launches a new EC2 instance.
 
 Auto Scaling Group - Dynamic Scaling Policies:
   - Target Tracking Scaling
     - Most simple and easy to setup
     - Example: If we want the average ASG group CPU utilization to be at 40%
+    - These are the metrics you can monitor using Target Tracking Policy:
+      - Average CPU Utilization
+      - Average Network In
+      - Average Network Out
+      - Application Load Balancer request count per target
   - Simple / Step scaling:
     - When a CloudWatch Alarm is triggered, example: CPU > 70% then add 2 EC2 instances.
     - When a CloudWatch Alarm is triggered, example: CPU <= 30% then remove 1 EC2 instance.
@@ -63,7 +72,7 @@ ASG Default termination policy:
   - ASG tries to balances the number of instances across all AZs.
 
 ASG Lifecyle Hooks:
-  -  By default as soon as an instance is launched, in ASG its in service.
+  - By default as soon as an instance is launched, in ASG its in service.
   - We get the ability to perform extra steps before an instance goes into service. (Pending state)
   - This is called as Lifecyle hook.
   - We also get the ability to perform additional steps before instance is terminated. (Terminating state)
