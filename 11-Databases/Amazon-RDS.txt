@@ -54,3 +54,26 @@
     take a hit. Hence, a Read Replica instance can be created by creating a snapshot
     of the primary instance to serve just the READ ONLY traffic. The data between the primary instance and the read
     replica instance is linked asynchronously.
+
+- RDS Encryption:
+  - At Rest encryption:
+    - Possibility to encrypt the data of master and read replica at rest using AWS KMS AES 256 encryption
+    - If master is not encrypted, then read-replicas cannot be encrypted.
+    - Encryption has to be defined at launch time.
+    - Transparent Data Encryption available for Oracle and SQL Server.
+  - In-flight encryption:
+    - SSL certificates to encrypt data to RDS in-flight.
+    - Provide SSL options with trust certificate when connecting to database.
+  - Encrypting RDS backups:
+    - Snapshots of un-encrypted databases are un-encrypted.
+    - Can copy a snapshot into an encrypted one.
+  - How to encrypt an unencrypted database:
+    - Create a snapshot of unencrypted database.
+    - Make a copy of unencrypted snapshot and enable encryption.
+    - Restore the database from the encrypted snapshot.
+    - Update the database connection to the new encrypted database.
+  - Access Management:
+    - IAM roles and policies can be used to control who can manage the database.
+    - IAM authentication can be used to login to RDS MySQL and Postgres.
+    - IAM Authentication token has a lifetime of 15 minutes.
+    -

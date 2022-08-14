@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# IntelliJ Idea Project dir
+.idea/
+.idea/*.xml
+.idea/*.iml
+.idea/AWS.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml

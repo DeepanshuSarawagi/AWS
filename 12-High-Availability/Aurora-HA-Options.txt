@@ -41,7 +41,7 @@ Connection Endpoints:
   setup.
 - Below are four different types of connection endpoints.
 
-Cluster Endpoints:
+Cluster/Writer Endpoints:
 - A cluster endpoint provides connectivity to current master database instance.
   Using the Cluster endpoint allows you to perform read and write operations on
   the master database instance.
@@ -60,7 +60,7 @@ Instance Endpoints:
 
 Aurora Multi-Master node setup:
 - Pair of masters are created in Active-Active read write configuration.
-- This provides fault tolerane at the compute layer.
+- This provides fault tolerance at the compute layer.
 - A maximum of 4 compute instances can be configured in Multi-Master setup.
 - We cannot add read replicas in this Multi-Master configuration setup.
 

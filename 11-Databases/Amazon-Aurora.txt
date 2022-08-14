@@ -15,3 +15,6 @@
   as cross region replicas.
 - Each Read Replica can be tagged with a label indicating priority in terms of which
   one to get promoted to the role of Master in the event of master going down.
+- Aurora storage automatically grows incrementally in 10GB upto 128TB.
+- Aurora is 10% costlier than RDS.
+- Support for cross-region replication.
