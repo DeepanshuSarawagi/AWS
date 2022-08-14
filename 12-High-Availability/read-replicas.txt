@@ -16,6 +16,7 @@
 - You are able to deploy read replicas in different regions.
 - It is possible to promote an existing read replica to replace the primary db instance
   in the event of an incident.
+- For read replicas, you dont pay the fee is the data is travelling across multi-AZ within same region.
 - During any maintenance of the primary instance, the read traffic can still be
   served by the read replicas.
 
