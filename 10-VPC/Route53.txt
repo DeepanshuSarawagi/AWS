@@ -10,18 +10,50 @@
 Hosted Zones:
   - Hosted Zones is a container that holds information about how you route traffic
     for a domain such a Google.com
-   Public Hosted Zone:
+  Public Hosted Zone:
     - This zone determines how traffic is routed on the internet and can be created
       when you register your domain with Route 53.
   Private Hosted ZoneL
     - This zone determines how traffic is routed within your Amazon VPC. If your resources
       are not accessible outside of your VPC, you can use any domain name of your wish.
 
+Route 53 Records:
+  Each record contains:
+   - Domain/Sub-domain name: example.com
+   - Record Type: A or AAAA or CNAME
+   - Value: 12.34.56.78
+   - Routing Policies: How Route53 responds to queries
+   - TTL: The amount of time the record is cached at DNS servers.
+
+Route53 Record Types:
+  - A: maps a hostname to IPV4
+  - AAAA: Maps a hostname to IPv6
+  - CNAME: maps a hostname to another hostname
+      - The target is a hostname which must have a A or AAAA record.
+      - Cant create a CNAME record for the top node of the DNS namespace (Zone apex)
+  - NS: Name servers for the hosted zone.
+
+Route53 CNAME vs Alias:
+  - CNAME only works for non-root domain.
+  - Alias points a hostname to an AWS resource and it works for both root and non-root domains.
+  - Alias is free of charge.
+  - Alias record is always of type A/AAAA for AWS resources.
+  - Alias Records can have following Record targets:
+    - ELB
+    - CloudFront Distribution
+    - API Gateway
+    - Elastic BeanStalk environments
+    - S3 website
+    - VPC Interface endpoints
+    - Global Accelerator
+    - Route53 record in the same hosted zone
+    - You cannot set an Alias for EC2 DNS name.
+
 Domain Types:
   Generic Top-Level Domains:
     - TLDs are used to determine what information you can expect when you access a
       website. For eg; .watch domain can be used by websites related to streaming.
-      .clothing domaon can be used by fashion industry.
+      .clothing domain can be used by fashion industry.
 
   Geographic Domains:
     - .com.au for Australia
@@ -29,7 +61,10 @@ Domain Types:
 
 Routing Policies:
   - Simple routing policy:
-    - This is the defaukt policy and is for single resource which performs a given function.
+    - This is the default policy and is for single resource which performs a given function.
+    - Can specify multiple values in the same record.
+    - When Alias enabled, specify only one AWS resource.
+    - Can't be associated with health checks.
 
   - Failover routing policy:
     - This allows you to route traffic to different resources based on the resource health.
@@ -42,6 +77,9 @@ Routing Policies:
 
   - Latency routing policy:
     - This is suitable when you have resources in multiple regions and want low latency.
+    - Redirect to the resource which has the lowest latency close to us.
+    - Latency is measured on traffic between users and AWS resources.
+    - Can be associated with health checks.
 
   - Multivalue answer routing policy:
     - This allows you to get a response from a DNS request from up to 8 records at once
@@ -49,3 +87,6 @@ Routing Policies:
 
   - Weighted routing policy:
     - This is suitable when you multiple resource records that perform the same function.
+    - DNS records must have the same name and type.
+    - Can be associated with health checks.
+    - Use cases: load balancing between regions or testing of a specific version of application.
