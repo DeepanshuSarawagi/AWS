@@ -68,12 +68,19 @@ Routing Policies:
 
   - Failover routing policy:
     - This allows you to route traffic to different resources based on the resource health.
+    - It is mandatory to associate the health check with primary record and if resource is unhealthy then it will failover
+      to secondary record.
 
   - Geo-location routing policy:
     - This lets you route traffic based on the geographic location of your users.
+    - Can be associated with health checks.
 
   - Geo-Proximity routing policy:
     - This policy is based upon on the location of both your users and your resources.
+    - Ability to shift more traffic to resource based on defined bias.
+    - If you want a resource to receive more traffic then define the bias between 1 to 99
+    - If you want to shrink the resource traffic then bias has to be between -1 to -99
+    - Resources can be AWS and Non-AWS resources
 
   - Latency routing policy:
     - This is suitable when you have resources in multiple regions and want low latency.
@@ -84,9 +91,30 @@ Routing Policies:
   - Multivalue answer routing policy:
     - This allows you to get a response from a DNS request from up to 8 records at once
       that are picked at random.
+    - Upto 8 healthy records are returned for a Multi-Value query.
+    - Multi-Value is not a substitute for having an ELB.
+    - Can be associated with health checks.
 
   - Weighted routing policy:
     - This is suitable when you multiple resource records that perform the same function.
     - DNS records must have the same name and type.
     - Can be associated with health checks.
     - Use cases: load balancing between regions or testing of a specific version of application.
+
+Route53 Health Checks:
+  - HTTP health checks for public resources
+  - It gives the ability for automated failover.
+  - Health checks that monitor an endpoint (AWS resources, application, servers)
+  - Health checks that monitor other health checks (Calculated Health Checks)
+    - Monitor the combined health checks. Can monitor upto 256 child health checks.
+    - You can specify how many health checks are passed for Parent health checks to pass.
+  - Health checks that monitor CloudWatch Alarms (throttles on DynamoDb, alarams on RDS, helpful on private resources)
+    - Helpful in monitoring health check of private resources.
+  - Health checks monitor an endpoint:
+    - Healthy/unhealthy threshold - 3 seconds
+    - Interval - 30 sec (can be 10 sec at additional costs)
+    - Upto 15 global health checkers
+    - if > 18% health checkers report the endpoint healthy, then Route53 will mark it as healthy.
+    - Health checks can also be setup for text based response upto 5120 bytes of text.
+    - For health checks to be healthy, configure your routes/firewall to allow incoming requests from Route53 health
+      checkers.
