@@ -13,12 +13,12 @@ Server Side Encryption with S3 managed keys (SSE-S3):
   - S3 Plain text data key is then deleted from the memory.
 - Decryption process:
   - Request is made by the client to retrieve the object data.
-  - S3 takes the encrypted S3 Data key and decrpyts it with S3 Master key.
+  - S3 takes the encrypted S3 Data key and decrypts it with S3 Master key.
   - This S3 Plain text data key is then used to decrypt the object data and sent back to client.
 
 Server Side Encryption with KMS managed keys (SSE-KMS):
 - Allows S3 to use KMS to generate data encryption keys.
-- Gives greater flexibility of key management: deisable, rotation and access policies to CMKs.
+- Gives greater flexibility of key management: disable, rotation and access policies to CMKs.
 - Encryption Process:
   - Client uploads object data to S3.
   - S3 then requests data-keys from KMS' CMK.
@@ -42,14 +42,14 @@ Server Side Encryption with Customer provided keys (SSE-C):
 - Your customer provided key would be sent with data to S3 and S3 would perform the
   encryption of your data for you.
 - Encryption Process:
-  - Client uploads object data and a customer provided key for a HTTPS connection.
+  - Client uploads object data and a customer provided key for an HTTPS connection.
   - S3 will then use the customer provided key to encrypt the object data.
   - S3 will also create a salted HMAC value of the customer provided key for future validation.
   - The encrypted object data along with HMAC value of customer provided key is then stored
     in S3
   - The Customer provided key is then removed from the memory.
 - Decryption Process:
-  - A request is made by the client via a HTTPS connection to retrieve the object data.
+  - A request is made by the client via an HTTPS connection to retrieve the object data.
   - At the same time, the Customer provided key is also sent with the request.
   - S3 uses the HMAC value of the same key to confirm its validity of the requested data.
   - The Customer provided key is then used to decrypt the encrypted object.
@@ -58,7 +58,7 @@ Server Side Encryption with Customer provided keys (SSE-C):
 Client Side Encryption with KMS (CSE-KMS):
 - Uses the KMS to generate the data encryption keys.
 - KMS is called upon via the client, not the S3.
-- Encrytion takes place at client side and encrypted data is then sent to S3.
+- Encryption takes place at client side and encrypted data is then sent to S3.
 - Encryption Process:
   - Using an AWS SDK such as JAVA client, a request is made to KMS for Data keys.
   - The Data keys are generated from a specific CMK.
@@ -80,11 +80,11 @@ Client Side Encryption with KMS (CSE-KMS):
     plain text Data key.
   - This plain text data is then sent back to the client to decrypt the encrypted data.
 
-Client Side Encrytion with Customer provided keys (CSE-C):
+Client Side Encryption with Customer provided keys (CSE-C):
 - You are able to utilize your own provided keys.
 - Use AWS SDK client to encrypt your data before sending it to S3 for storage.
 - Encryption Process:
-  - Using the AWS SDK such as Java client, it will randomly genrate a plain text data key.
+  - Using the AWS SDK such as Java client, it will randomly generate a plain text data key.
   - This Plain text data is used to encrypt the Object data.
   - The customer provided CMK is then used to encrypt the client-generated data key.
   - The encrypted Object data and encrypted data key are then sent to S3.

@@ -42,7 +42,10 @@ S3 Glacier
   - S3 Glacier has different Retrieval options and pricing differs for each options.
     - Expedited: The data retrieval should be less than 250 MB and it is typically made accessible
                  within 2-5 minutes. This is the most expensive form of retrieval. Cost is $0.03 per GB
-                 and $0.01 per request.
+                 and $0.01 per request. Expedited — There are two types of Expedited retrievals: On-Demand and
+                 Provisioned. On-Demand requests are similar to EC2 On-Demand instances and are available most of the
+                 time. Provisioned requests are guaranteed to be available when you need them, which is recommended
+                 for a DR plan.
     - Standard:  The data retrieval can be of any size and data will be made accessible
                  in 3-5 hours. This is second most expensive retrieval type.
                  Cost is $0.01 per GB and $0.05 per 1000 request.
