@@ -45,3 +45,35 @@ S3 baseline performance:
 -  Your application can achieve at least 3500 PUT/DELETE/COPY/POST per second and 5,500 GET/HEAD requests per second
    per prefix in a bucket.
 - If a bucket has 4 folders, then we can say it has 4 prefixes and the total GET/HEADs/second would be 22,000.
+
+S3 Bytes ranges fetch:
+-  Parallelize GETs by requesting specific Bytes ranges of the file.
+-  Better resilience in case of failures.
+-  Used for speeding up downloads
+- Another use case: Can be used to retrieve only partial file.
+
+S3 Select and Glacier Select:
+-  Using S3 select we can retrieve fewer data using SQL by performing server side filtering
+-  Can filter by rows and columns.
+-  Less network transfer, less CPU cost client-side
+- Upto 400% faster and 80% cheaper
+
+S3 Event Notifications:
+-  Any object related notification which can be sent to SNS, SQS, Lambda and Amazon EventBridge.
+
+S3 Requester Pays:
+-  With Requester Pays bucket, the requester will pay for downloading objects from bucket, rather than bucket owner.
+-  Here, Requester will pay for the networking cost and owner will only bear storage cost.
+-  The requester will have to a AWS authenticated user so that amazon can bill them.
+
+Amazon Athena:
+-  Serverless query service to perform analytics on S3 objects.
+-  Amazon Athena can then be integrated with Amazon QuickSight for some dashboards.
+-  Pricing is $5 per TB for data scanned.
+-  Use compressed or columnar data for cost savings.
+
+Glacier Vault Lock:
+-  Adopt a WORM (Write Once Read Many) policy.
+-  Lock the policy for future edits.
+-  Helpful for data and compliance retention.
+-  Once the data is written to Glacier Vault, it cannot be tampered when this policy is enabled.

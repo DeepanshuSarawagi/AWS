@@ -53,8 +53,16 @@
   - Note that, if Deny is explicitly stated in any of the above three policy documents then
     the access to the bucket or its objects will be denied since Deny takes precedence over Allow.
 
+- Object Retention:
+  - Retention Period: Specifies a fixed period.
+  - Legal Hold: Same protection, no expiry data.
+
 - The difference between compliance mode and governance mode - compliance prevents objects from being updated or
-  deleted, governance only prevents deletion.
+  deleted by any user including the root user. When object is locked in compliance mode, its retention period cant be changed,
+  and its retention period can't be shortened.
+
+- Governance only prevents deletion unless they have special permissions.
+
 - Default Retention periods can be set at bucket level and then applied to all objects uploaded into the bucket.
 - Otherwise, they have to be set at an object version level.
 - Legal holds have no specific time frame associated with them, and cannot be configured at a bucket level.
