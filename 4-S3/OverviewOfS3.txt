@@ -19,4 +19,29 @@ By default, an AWS account can have 100 buckets and this is a soft limit.
 
 S3 CORS:
 -  CORS is abbreviation for Cross Origin Resource Sharing.
--
+
+S3 Default Encryption:
+-  We can enable the default encryption option while creating/modifying a bucket.
+
+S3 Cross Region and Same Region Replication:
+CRR:
+  - Versioning must be enabled in both source and destination bucket.
+  - Asynchronous replication happens between two different region buckets.
+  - Buckets can be in different AWS accounts as well.
+  - Must give proper IAM permission to S3.
+  - After activating, only new objects will be replicated.
+  - For replicating existing objects in the bucket, we can use S3 Batch Replication.
+  - For DELETE options: we can replicate delete marker of the objects from source to target bucket.
+  - There is no chaining of replication.
+  - Permanent delete on objects are not replicated.
+
+S3 Pre-Signed URLs:
+-  Can generate pre-signed URLs using SDK or CLIs.
+-  They have a default TTL of 3600 seconds. It is possible to change the timeout using following argument --expires-in
+   [TIME_IN_SECONDS] argument.
+-  Users given a pre-signed URL inherit the permissions of user who generated the URL.
+
+S3 baseline performance:
+-  Your application can achieve at least 3500 PUT/DELETE/COPY/POST per second and 5,500 GET/HEAD requests per second
+   per prefix in a bucket.
+- If a bucket has 4 folders, then we can say it has 4 prefixes and the total GET/HEADs/second would be 22,000.
