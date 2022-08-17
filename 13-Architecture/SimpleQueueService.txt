@@ -5,6 +5,10 @@
   and distributed architecture.
 - It has the capability of sending, storing and receiving messages at scale without
   dropping message data. It also has the feature of dead-letter queue.
+- Default retention of 4 days and maximum of 14 days.
+- Limitation of < 256KB per message.
+- Can have duplicate messages.
+
 
 SQS Components:
 Producer:
@@ -14,8 +18,11 @@ Producer:
     for resiliency within the specified Queue.
 Consumers:
   - Consumers are responsible for processing messages within your queue.
-  - When the consumer element of your architecture is ready to process the message
-    the message from the queue, the message is then retrieved and is marked as
+  - Consumers poll for messages from the queue. (Max 10 messages at a time)
+  - Once the message is processed, delete the message using DeleteMessageAPI.
+
+  - When the consumer element of your architecture is ready to process the message from the queue,
+    the message is then retrieved and is marked as
     processed by activating the visibility timeout on the message.
   - This timeout will ensure that the same message will not be read and processed
     by another consumer.
@@ -23,11 +30,17 @@ Consumers:
     from the queue.
   - The default visibility timeout is 30 seconds and it can be set to as long as
     12 hours.
+  - If the consumer needs to process the message which will take longer than the visibility timeout, then it can
+    call the ChangeMessageVisibility API to get more time.
   - If a consumer fails to process a message during this visibility timeout due to
     communication error, the consumer will not send a delete message request to the
     queue.
   - If the visibility timeout expires, the message will become available again in
     the queue for other consumers to process.
+  - SQS with ASG (Auto Scaling Group):
+    - Consumers(EC2) in the ASG will poll for the messages from the SQS.
+    - The SQS can monitor the CloudWatch Metric - Queue Length (ApproximateNumberOfMessages)
+    - Based on the QueueLength, the ASG can scale out the instances/consumers based on the CloudWatch Alarm triggered.
 
 SQS Queue Types:
 Standard Queues:
@@ -48,5 +61,10 @@ Dead Letter Queue:
   - DLQ is not used as source messages to hold messages submitted by Producers.
   - Instead, DLQ is used by the source queue to send messages that fail processing.
   - If the message cant be processed by the consumer after a maximum number of tries
-    specified, the queue will then send the message to DLQ.
-  - The DLQ must have the same queue type as the source its used against.
+    specified (MaximumReceives threshold; it can be set between 1 to 1000), the queue will then send the message to DLQ.
+  - The DLQ must have the same queue type as the source It's used against.
+
+SQs Queue Access Policy:
+  - They are resource policy.
+  - Helps to enable cross account access.
+  - Publish S3 Event Notification to SQS Queue - for this SQS needs to give permission to S3 that it can send message.
