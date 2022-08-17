@@ -18,12 +18,34 @@
 - Takes incremental backups thereby optimizing the storage costs.
 - Data deduplication thereby removing the duplication of files from the Backups
   thereby saving 80% of the cost.
+- Scale upto 10s of GBs, millions of IOPs, and PB of data.
+- Storage options are SSd and HDD.
+- Can be accessed from on-premise using VPN or DirectConnect.
+- Can be configured to be Multi-AZ.
+- Data is backedup daily to S3.
 
 FSx for Lustre:
-  - A fully managed file system designed for compute-intensive workloads such as ML.
+  - A fully managed file system designed for compute-intensive workloads such as ML and High Performance Computing (HPC).
   - Ability to process massive data sets.
   - Performance can run upto 100s of GB per second of throughput, millions of IOPS
     and sub-milliseconds latencies.
   - Integration with S3.
   - Supports cloud-bursting workloads from on-premises using Direct-Connect or VPN
     connections.
+  - Scale upto 10os of GBs, millions of IOPs, and PB of data.
+  - Storage options are SSd and HDD.
+  - Can write the computations back to S3 using FSx.
+  - Can be accessed from on-premise using VPN or DirectConnect.
+  
+FSx Filesystem deployment options:
+  - Scratch File System:
+    - Temporary storage
+    - Data is not replicated
+    - High Performace
+    - Short term processng of data, optimize costs.
+  - Persistent File System:
+    - Long-Term Storage
+    - Data is replicated within same AZ.
+    - Replace failed files witgin minutes.
+    - Long term processing or sesitive data.
+  - 
