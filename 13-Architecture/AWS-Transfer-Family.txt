@@ -1,0 +1,11 @@
+# Brief document on AWS Transfer family
+
+- A fully managed service for file transfers into and out of Amazon S3 or EFS using FTP protocol.
+- Supported Protocols:
+  - FTP
+  - FTPS
+  - SFTP
+- Managed infrastructure, Scalable, Reliable, High Available
+- Pay for per provisioned endpoint per hour _ data transfers in GB
+- Integrate with Authentication systems as MS AD, LDAP, OKTA, Amazon Cognito.
+- Use case: Sharing files, public datasets, CRM, ERP..
