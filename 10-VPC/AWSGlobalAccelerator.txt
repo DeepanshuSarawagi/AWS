@@ -2,11 +2,12 @@
 
 - Allows you to get TCP and UDP traffic from your end user clients to your applications
   faster, quicker and more reliably using the global endpoints and infrastructure/
-- It uses two static IP addresses associated with a DNS name which is used a fixed
+- It uses two static Anycast IP addresses associated with a DNS name which is used a fixed
   source to gain access to your application.
 - These IP addresses can be mapped to different multiple endpoints.
 - Global Accelerator intelligently routes customer requests across the most
   optimized path.
+- Proxying packets at the Edge location to the applications running in one or more AWS regions.
 - An ENA provides high speed performance for your instance whereas AWS Global
   Accelerator provides high speed performance from end client to your application.
 
@@ -19,3 +20,19 @@
     with a different region and within each group there are multiple endpoints.
   - Associate and register your endpoints for your applications. ALB, NLB, an EC2
     instance or an EIP.
+
+
+AWS Global Accelerator vs CloudFront Distribution:
+- They both use AWS Global Network and Edge locations all around the world..
+- They both are protected from DDoS attacks using AWS Shield.
+
+CloudFront:
+  - Improves performance for both cacheable content (images and videos)
+  - Dynamic content such as API delivery
+  - Content is served at Edge Location (content is cached at edge location)
+
+AWS Global Accelerator:
+  - Proxying packets at the Edge location to the applications running in one or more AWS regions.
+  - Hence, Region is still serving the content instead of Edge Locations.
+  - Improves performance for wide variety of applications over TCP or UDP.
+  - Good for HTTP use cases that require static IP address.

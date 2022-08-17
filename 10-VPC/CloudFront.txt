@@ -12,12 +12,71 @@
 - For additional security, when working with S3 you can create and associate a
   CloudFront user called an Origin Access Identity (OAI). Only an OAI can access
   and serve content from your bucket preventing anyone circumventing your CloudFront.
-   
+- It gives protection from DDoS attack and integration with AWS WAF, AWS Shield.
+
+CloudFront Origins:
+- S3 buckets
+- HTTP Endpoints such as:
+  - Ec2 Instance (Must be public, Allow public IP of Edge Locations in Security Group)
+  - Application Load Balancer (Must be a public/external, Allow public IP of Edge Locations in Security Group, EC2 instances
+    must allow ALB source in its security group and can be in private subnet)
+  - Custom HTTP Endpoints
+  - S3 Website
+
+CloudFront Geo Restriction:
+- Can whitelist or blacklist users based on their origin country IP address.
+
+CloudFront vs S3 CRR:
+CloudFront:
+  - Global Edge Network
+  - Great for static content
+  - TTL maybe for a day
+
+SR CRR:
+  - Must be setup for each region you want replication to happen
+  - Files are updated in near real time
+  - Great for static/dynamic content that needs to be available at fewer region
+
+CloudFront Signed URLs:
+- Use case: You want to share paid shared content to premium users around the world
+- We can use CloudFront Signed URLs or Signed Cookies to access the private content with policies.
+  - Includes URL expiration
+  - Trusted Signers (Which AWS accounts can create Signed URLs)
+  - Includes IP address range for which user can access the data
+- Signed URL = Access to individual files
+- Signed Cookies = Access to multiple files (One cookie for multiple files)
+
+CloudFront Price Classes:
+- Price varies for per GB data transfer on network for different Edge Locations.
+- There are three Price classes:
+  - Price Class All: All regions, the best performance
+  - Price Class 200: includes most region but excludes the most expensive region
+  - Price Class 100: Only the least expensive region
+
 Web distribution:
   - Speed up distribution of static and dynamic content.
   -  Distribute media files using HTTP or HTTPS.
   - Add, delete or delete objects and submit data using web forms.
-  - Use live streming to stream a live event.
+  - Use live-streaming to stream a live event.
+
+CloudFront Multiple Origins:
+- To route to different kind of origins based on content type.
+- We can route content to different origin based on path
+  - /api/* - We can route the CloudFront request to ALB.
+  - /* - We can route the request to S3 bucket.
+
+CloudFront Origin Groups:
+- To increase high-availability and do failover.
+- Origin Group: One primary and one secondary origin
+- If primary origin fails, CloudFront can then failover to secondary origin.
+
+CloudFront Field Level Encryption:
+- Protect user sensitive information through application stack.
+- You can specify what fields to encrypt by specifying fields if POST request is made. (Upto 10 fields can be encrypted)
+- Encryption of user sensitive data happens at Edge Location and is not accessible to any downstream layers.
+- Only the origin can decrypt it using the private key.
+- Uses asymmetric encryption.
+- Adds extra layer of security.
 
 RTMP distribution:
   - Distribute streaming media with the Adobe Flash media service RTMP protocol.

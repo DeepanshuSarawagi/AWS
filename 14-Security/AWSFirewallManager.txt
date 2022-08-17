@@ -1,7 +1,7 @@
 # Brief document on AWS Firewall Manager Service
 
 - The core function of AWS Firewall Manager is to help you simplify management to help
-  you provide you security to different resources across different AWS accounts.
+  you provide security to different resources across different AWS accounts.
 - The service works across multiple AWS account infrastructure.
 - Once you configured security policies, to govern the protection that you require for
   your resources, AWS Firewall Manager will then automatically apply this protection
