@@ -22,10 +22,23 @@
     - Application
     - Lambda
     - SMS
+    - Kinesis Data Firehose
 - SNS offers methods of controlling specific access to your topics through topic
   policy. For example, you can specify which protocol subscribers must use such as
   SMS or HTTPS, or you can restrict access of a topic to a specific user.
 - SNS and SQS can be integrated seamlessly. A Solution can be designed to send messages
   seamlessly to subscribers through a push method, while SQS handles incoming messages
   and waits for consumers to pull data.
-- 
+
+SNS and SQS Fan-out pattern:
+  - Push once in SNS, receive in all SQS queues that are subscribers.
+  - We need to make sure SQS queue access policy allows for SNS to write.
+  - SNS can directly connect with Kinesis Data Firehose.
+  - SNS FIFO - same like SQS FIFO, the subscribers can only by SQS FIFO.
+  - The SNS FIFO naming convention - should have .fifo extension.
+  - Same throughput as of SQS FIFO.
+  - SNS Message Filtering using SNS Fan Out pattern.
+  - JSON Policy used to filter messages sent to SNS Topic's subscribers.
+
+SNS FIFO + SQS FIFO: Fan Out
+  - Provides Fan Out + Ordering + De-duplication.

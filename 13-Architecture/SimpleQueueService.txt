@@ -55,16 +55,35 @@ First-In, First-Out:
   - The order of messages is maintained and there are no duplicates.
   - Limited number of transactions per second.
   - Defaulted to 300 transactions per second for all send, receive and delete operations.
-  - If we are using batching with SQS, the limit increases to 3000 TPS.
+  - If we are using batching with SQS, the limit increases to 3000 TPS with batching.
+  - The queue name extension should end with .fifo
+  - Content based deduplication can be enabled.
 
 Dead Letter Queue:
   - DLQ is not used as source messages to hold messages submitted by Producers.
   - Instead, DLQ is used by the source queue to send messages that fail processing.
   - If the message cant be processed by the consumer after a maximum number of tries
-    specified (MaximumReceives threshold; it can be set between 1 to 1000), the queue will then send the message to DLQ.
+    specified (MaximumReceives threshold; it can be set between 1 and 1000), the queue will then send the message to DLQ.
   - The DLQ must have the same queue type as the source It's used against.
 
 SQs Queue Access Policy:
   - They are resource policy.
   - Helps to enable cross account access.
   - Publish S3 Event Notification to SQS Queue - for this SQS needs to give permission to S3 that it can send message.
+
+SQS Delay Messages:
+  - Delay a message, consumers dont see it immediately upto 15 minutes.
+  - The default is 0 seconds with message being available right away.
+  - Can set at default queue level and can be overridden using DelaySeconds parameter for each queue.
+
+SQS Long Polling:
+  - When a consumer requests for a messages from a queue, it can wait for messages to arrive if there are none in the queue.
+  - This is called as Long Polling.
+  - LongPolling decreases the number of API calls made to SQS queue and increases efficiency and decreases latency of your
+    consumer.
+  - The wait can be 1 to 20 seconds.
+  - Long Polling can be enabled at the queue level or at the API level using WaitTimeSeconds parameter.
+
+SQS Request-Response Systems:
+  - We can implement Request Response Systems using the SQS Temporary Queue Client.
+  - It creates virtual queues instead of leveraging SQS queues (Cost effective)
