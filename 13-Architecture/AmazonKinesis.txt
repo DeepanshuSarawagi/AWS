@@ -68,12 +68,19 @@ Amazon Kineses Data Stream:
   APIs, AWS SDKs, AWS CLI, Kinesis agent for Windows and Linux.
 - Producers put data records into Kinesis Data Stream.
 - Producer can be created using SDKs, APIs or Kinesis Producer Library.
+- Each Shard can give 1MBPS or 1000 messages per second.
 - A Kinesis Data Stream is a set of shards. A shard contains a sequence of data records.
 - Data Records are composed of a sequence number, a Partition key and a Data Blob
   and they are stored as a immutable sequence of bytes.
 - Consumers - Amazon Kineses Data Stream Applications get records from Kinesis Data
   stream and process them.
 - Consumers can be created using SDKs, APIs or Kinesis Client Library.
+- For consumers, in shared consumption - 2 MB/s per shard for all consumers.
+- In enhanced consumption - 2MB/s per shard per consumer.
+- Once data is entered into Kinesis, it cant be deleted.
+- Data storage from 1 to 365 days.
+- Supports replay capability.
+
 - There are two types of Consumers:
   - Classic:
     - Pulls data from the stream.
@@ -84,6 +91,15 @@ Amazon Kineses Data Stream:
     - Results in data being pushed from the shard into a consumer application.
     - Since polling is removed, Shard limits are removed, every consumer gets provisioned
       throughput of 2 MBs per second per shard.
+Capacity Modes:
+  - Provisioned Mode:
+    - You choose the number of shards provisioned, scale manually or using API.
+    - You pay per shard provisioned per hour.
+  On demand Mode:
+    - No need to manage or provision the capacity.
+    - Default capacity of 4 MB/s or 4000 messages/second
+    - Scales automatically based on observed throughput peak of last 30 days.
+    - Pay per stream per hour and data in/out in GB.
 
 Amazon Kinesis Data Firehose:
 - Data Firehose being fully managed is a streaming delivery service for data.
@@ -96,9 +112,10 @@ Amazon Kinesis Data Firehose:
   data to its destination. The buffer size and buffer interval is chosen when creating
   delivery stream.
 - The buffer size is in megabytes and the ranges can vary depending upon the destination.
+- The buffer size has to be a minimum of 32MB in size and maximum of 128MB.
 - The buffer interval can vary between 60 seconds to 900 seconds.
 - Essentially, data buffers inside the stream and it leaves the buffer either when it
-  is full or when buffer interval expires. For this reason, Kinesis Data Firehose
+  size is full or when buffer interval expires. For this reason, Kinesis Data Firehose
   is considered as a near real-time streaming solution.
 - Kinesis Data Firehose can deliver data to four data stores - Amazon S3, Amazon Redshift,
   Amazon Elasticsearch and Splunk. Now, it can also deliver data using generic HTTP
@@ -112,6 +129,7 @@ Amazon Kinesis Data Firehose:
 - There is no Free tier for using Kinesis Data Firehose. Costs are only incurred when
   data is inside a Firehose stream. There is no bill for provisioned capacity, but only
   billed for used capacity.
+- Doesn't support replay capability.
 
 Amazon Kinesis Data Analytics:
 - Kinesis Data Analytics has the ability to read the data from stream in real-time

@@ -8,7 +8,7 @@
 - Default retention of 4 days and maximum of 14 days.
 - Limitation of < 256KB per message.
 - Can have duplicate messages.
-
+- SQS can scale automatically.
 
 SQS Components:
 Producer:
