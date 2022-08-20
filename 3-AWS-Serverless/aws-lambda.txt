@@ -3,8 +3,11 @@
     having to create the EC2 instance.
     The responsibility to maintain and administer the Ec2 instances is passed over
     to the AWS to manage for you.
+    You can execute functions for maximum of 15 minutes.
+    Scaling is on-demand and automatic.
     AWS Lambda charges compute power 100ms per use in addition to the number of
     times your code runs.
+    Lambda Container Image - Lambda's own container and it has its own Lambda Runtime API.
 
   - AWS Lambda theory working
     Upload the code to Lambda
@@ -97,6 +100,6 @@
     Duration
     Throttles
     IteratorAge
-    ConcurrentExeuctions
+    ConcurrentExecutions
     UnreservedConcurrentExecutions
     

@@ -20,7 +20,7 @@ On Demand Backups:
 - Allow to request a full backup of a table, as it is at the very moment the backup
   request is made.
 - On demand backups remain in the account until they are explicitly requested to be deleted
-- Backups typicalls finish within seconds and have zero impact on the table performance
+- Backups typically finish within seconds and have zero impact on the table performance
   and availability.
 
 Point In Time Recovery - PITR:

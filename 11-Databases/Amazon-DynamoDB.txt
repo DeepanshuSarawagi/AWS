@@ -18,9 +18,16 @@
 - Provisioned Read/Write mode: Allows you to provision, set read and writes
   allowed against your database per second by your application
   Depending on the transaction, each action will use 1 or more RCUs or WCUs.
+  Auto-Scaling can be enabled with Provisioned Capacity mode.
 -  On-Demand mode: They are scaled on demand. This mode is generally used, when
    you are not aware of the load.
 - DynamoDB is highly reliable. The data replication is between three availability
   zones within a region which happens in milliseconds.
 - DynamoDB can allow upto Maximum record size of 400 KB and upto 20 global indexes
   and 5 secondary per table.
+- DynamoDB Global Tables - Makes a DynamoDB tables accessible from multiple regions and the data replication will be
+  a two way replication.
+- DynamoDB TTL - Automatically delete items after an expiry timestamp.
+- DynamoDB Transactions - If there is an attribute/column which is common in two or more tables. And if youy want to
+  sync the data between these two tables then using DynamoDB transactions, data will be written to all the two or tables
+  or it will be written to None.
