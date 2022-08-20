@@ -3,7 +3,7 @@
 - Fully managed database service by Amazon
 - SQL - MySQL and Postgresql
 - Distributed, fault-tolerant, self-healing storage system that auto-heals
-- Replication across 3 AZs.
+- Replication across 3 AZs in 6 replicas.
 - Upto 15 low-latency read replicas can be created.
 - Aurora is a serverless database service with automatic fail-over.
 - Continuous backup to S3
@@ -20,3 +20,4 @@
 - Support for cross-region replication.
 - Enabling Backtrack, helps us to rewind a Aurora DB cluster to a specific point in time.
 - Aurora has a old backtrack time of 72 hours.
+- Auto scaling of storage from 10GB to 128TB.

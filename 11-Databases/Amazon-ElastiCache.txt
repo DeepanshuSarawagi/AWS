@@ -5,6 +5,7 @@
   allow you to retrieve information from fast managed in-memory datastore rather than
   relying on slow disk based solutions.
 - ElastiCache supports both Memecached and Redis engines.
+- Users can be authenticated using Redis-Auth.
 
 - Amazon ElastiCache for Memecached:
   A high performance, sub-millisecond latency Memecached-compatible. It is in-memory,
