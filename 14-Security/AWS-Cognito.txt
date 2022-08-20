@@ -18,7 +18,7 @@
   - SSO mechanism
   - Integration with third party IDP
   - Customizable WebUI with OAuth2.0 compliant authentication server
-  - Integration with AWS Lambda
+  - Integration with AWS Lambda and API Gateway
 
 # Amazon Cognito Identity Pool
 
@@ -36,4 +36,4 @@
   S3 or DynamoDB.
 - In this case, the CUP token is then sent to Identity Pool via STS and this STS token
   is then sent back to application.
-- Appication can then use credentials to call upon AWS services like S3 or DynamoDB.
+- Application can then use credentials to call upon AWS services like S3 or DynamoDB.

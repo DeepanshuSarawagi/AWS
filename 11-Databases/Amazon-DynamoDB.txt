@@ -26,7 +26,7 @@
 - DynamoDB can allow upto Maximum record size of 400 KB and upto 20 global indexes
   and 5 secondary per table.
 - DynamoDB Global Tables - Makes a DynamoDB tables accessible from multiple regions and the data replication will be
-  a two way replication.
+  a two way replication. To do this we need to enable DynamoDB Streams.
 - DynamoDB TTL - Automatically delete items after an expiry timestamp.
 - DynamoDB Transactions - If there is an attribute/column which is common in two or more tables. And if youy want to
   sync the data between these two tables then using DynamoDB transactions, data will be written to all the two or tables

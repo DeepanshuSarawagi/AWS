@@ -1,0 +1,30 @@
+# Brief document on API Gateway
+
+- It is a serverless offering by AWS to create REST APIs.
+- This is going to be public and accessible to clients.
+- When the user hits the API Gateway, APIGW will proxy the requests to Lambda function.
+- Support for WebSocket protocol.
+- Handles versioning.
+- Handle different environments
+- Create API Keys, handle request throttling
+- Swagger / Open API import to define APIs.
+- Handle security (Authentication and Authorization)
+- Generate SDK and API specifications
+- Cache API responses
+
+API Gateway Integrations:
+- Lambda Function
+- HTTP
+- AWS Service
+
+Endpoint Types:
+- Edge Optimized: (For Global clients)
+  - Requests are routed through CloudFront Edge Locations
+  - The API Gateway still lives in only one region
+
+- Regional:
+  - For clients within the same region.
+  - Can be combined with CloudFront distribution (More control over the caching strategies and distributions)
+
+- Private:
+  - Can be accessible only from your VPC using an Interface Endpoint.
