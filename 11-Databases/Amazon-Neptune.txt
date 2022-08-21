@@ -1,8 +1,10 @@
 # Brief document on Amazon Neptune and its use cases
 
 - This is a fully managed, fast, reliable and secure graph database service.
-- Graph database is ideal if the focus is on relationship of inter-connected data
+- Graph database is ideal if the focus is on relationship of interconnected data
   rather than the database.
+- Highly available across 3 AZs, upto 15 read replicas.
+
 Uses Cases:
   - Powerful asset when running a social networking application.
   - Helps in detecting financial fraud by analyzing the potential known fraud.
@@ -11,7 +13,7 @@ Components of Amazon Neptune:
   - Uses its own Graph database engine which supports two graph frameworks
   - Apache Tinkerpop Gremlin: Allows you to query your graph running on Neptune DB,
     using the Gremlin Traversal language.
-  - World Wide Web consortium sparql: Desinged to work with network and can be used
+  - World Wide Web consortium sparql: Designed to work with network and can be used
     to run queries against your Neptune DB graph.
 
 Neptune DB Cluster:
@@ -19,7 +21,7 @@ Neptune DB Cluster:
     to virtual database cluster volumes which contains data across all instances
     within the cluster.
   - The single cluster volume consists of solid state drives or SSDs. As the graph
-    database grows, the shared volume will automatically scale and incrase in size
+    database grows, the shared volume will automatically scale and increase in size
     as required upto max of 64 TB.
   - To ensure high availability and reliability, each cluster maintains its separate
     copy of shared volume in at least 3 different AZs.
