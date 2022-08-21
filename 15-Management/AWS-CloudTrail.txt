@@ -19,6 +19,29 @@
 - Monitors restricted API calls.
 - Resolve day-to-day operational issues
 - We need to apply permissions to the S3 bucket allowing cross-account access for the CloudTrail
+- CloudTrail will retain trail for 90 days. If you want to retain forever, you can send it to S3
+  and use Athena to analyze.
+
+CloudTrail Events:
+ Management Events:
+  - Operations that are performed on your AWS account.
+  - By default, trails are configured to record Management events.
+  - Can separate events from Read Event and Write Events.
+
+ Data Events:
+  - They are not recorded by default since they are high volume events.
+  - Example, AWS S3 object level activity.
+  - AWS Lambda function execution (InvokeAPI)
+  - These two are the only services that are supported at the moment.
+
+ Insight Events:
+  - Enable CloudTrail Insights to detect unusual activity in your AWS account.
+    - Inaccurate resource provisioning.
+    - Hitting service limits.
+    - Bursts of IAM actions.
+    - Gaps in periodic maintenance activity.
+  - CloudTrail Insights analyzes normal management events to create baseline.
+  - And then continuously analyze write events to detect unusual pattern.
 
 # Components of CloudTrail
 
@@ -79,7 +102,7 @@ Log file format and bucket format:
 - BucketName/prefix/AWSLogs/AccountID/CloudTrail/regionName/YYYY/MM/DD
 
 How to allow users from secondary AWS account to allow RO access to CloudTrail logs in primary AWS account S3 bucket?
-- Create a Rolw for secondary AWS ACCOUNT in the Primary AWS Account
+- Create a Role for secondary AWS ACCOUNT in the Primary AWS Account
 - Attach a policy to the newly created role by allowing read only access to the specific bucket
 - This policy will enable users from secondary AWS account to view S3 bucket (corresponding to their account) in priamry AWS account
 - Assign a user in secondary AWS account new permissions to Assume Role in the primary AWS account (sts:AssumeRole)

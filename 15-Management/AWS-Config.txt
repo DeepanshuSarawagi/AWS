@@ -12,6 +12,9 @@
 - Use rules to check compliance of resources
 - Perform security analysis against your resources such as encryption.
 - Identify AWS network connectivity relationship
+- This is not a deny service where you can restrict a resource to be created if it doesn't meet your rule criteria.
+- However, you can apply the AWS Config: Remediations against the resources which are marked as Non-Compliant using
+  SSM Automation Documents.
 
 Following services can be managed using AWS Config:
 - AWS certificate manager
@@ -96,7 +99,7 @@ Resource Relationship:
 SNS Topic:
 - SNS topic is used a Configuration Stream for Notifications.
 - We can have various endpoints associated to SNS stream.
-- Best practice is to use SQS and programatically analyze results using SQS.
+- Best practice is to use SQS and programmatically analyze results using SQS.
 
 S3 Bucket:
 - It is used to store configuration history files for each resource type which are

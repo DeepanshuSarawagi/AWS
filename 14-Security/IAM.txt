@@ -59,6 +59,8 @@ Best practices of implementing IAM in any AWS account:
 # Security Token Service Endpoints
 - STS service is used to allow you to request temporary, limited privilege credentials with
   for both IAM users and federated users.
+- Token is valid for 1 hour.
+- You can AssumeRole using STS Token.
 
 # Service Control policies
 - Service Control Policies are different from Identity based policies as SCPs do not
