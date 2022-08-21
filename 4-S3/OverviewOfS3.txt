@@ -69,7 +69,7 @@ S3 Requester Pays:
 Amazon Athena:
 -  Serverless query service to perform analytics on S3 objects.
 -  Amazon Athena can then be integrated with Amazon QuickSight for some dashboards.
--  Pricing is $5 per TB for data scanned.
+-  Pricing is pay per query or $5 per TB for data scanned.
 -  Use compressed or columnar data for cost savings.
 
 Glacier Vault Lock:
