@@ -27,6 +27,8 @@ Best practices of implementing IAM in any AWS account:
   credential is generated for that particular session.
 - IAM Roles can be used for a user from one account to access the resources from
   another AWS account.
+- When you assume a Role to access resource, you give your original permission and
+  take the permission assigned to the role.
 - IAM Roles can be used by federated users to access AWS resources temporarily.
 - IAM roles can also be used by AWS services to access services from your behalf
   or an application requires access to resources which can be used by Roles instead
@@ -92,10 +94,10 @@ Best practices of implementing IAM in any AWS account:
 
 # Implementing Cross Account Access using IAM
 
-- Cross account access is nothing by a User from one AWS account requesting access to
+- Cross account access is nothing but a User from one AWS account requesting access to
   services/resources with another AWS account using IAM roles.
 - To understand the process, lets assume that there are two AWS accounts, one for Dev
-  and one for Production. A developer has access to DEV account and may occassionally
+  and one for Production. A developer has access to DEV account and may occasionally
   require access to Production account.
 - For our understanding, lets call Dev as Trusted Account and Production as Trusting Account.
 - Create a new role from within the Trusting account. This is required to establish a
@@ -105,3 +107,20 @@ Best practices of implementing IAM in any AWS account:
 - You must switch to the Trusted account to grant permissions to your developers
   to allow them to assume the newly created role in the trusting account.
 - Finally switch between AWS accounts to test the configured access.
+
+# IAM Conditions
+- We can restrict resources in AWS based on source IP of the client. aws:SourceIP
+- AWS:RequestedRegion, restrict the region the API calls are made to.
+
+# IAM Permission Boundaries:
+- Supported for users and roles and not groups.
+- IAM feature to use a managed policy to set the maximum permission an IAM entity can get.
+- Can be in combination of AWS Organizations SCPs + Identity-based Policy + Permissions Boundary.
+
+# IAM Policies evaluation
+- Explicit Deny?
+- SCP
+- Resource Based Policy
+- Identity Based Policy
+- IAM Permission Boundaries
+- Session Policies

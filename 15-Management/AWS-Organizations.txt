@@ -1,7 +1,7 @@
 # Brief document explaining the key components and use of AWS Organizations service
 
 - AWS Organizations can be used to manage multiple AWS accounts in an Organization.
-- Cost optimization and billing
+- Cost optimization and billing (Consolidated)
 - Security and governance
 - Management and control of workloads
 - Resource grouping
