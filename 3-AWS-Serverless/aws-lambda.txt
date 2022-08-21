@@ -103,3 +103,22 @@
     ConcurrentExecutions
     UnreservedConcurrentExecutions
     
+  - Lambda Limits:
+    Execution:
+     - Memory is 128MB to 10GB (Increments in 1MB)
+     - maximum Execution Time - 15 minutes
+     - Environment variables (4KB)
+     - Disk capacity in the function container (/tmp) - 512MB
+     - Concurrent Executions is 1000 - it can be increased
+    Deployment:
+     - Deployment size (compressed zip): 50MB
+     - Size of uncompressed deployments - code + dependencies - 250MB
+     - Can use /tmp to load other files at startup
+     - Environment variables - 4KB
+
+  - Lamda@edge:
+    - It is another type of synchronous invocation of Lambda.
+    - You can use the Lambda FUnction globally by using Lambda@Edge
+    - Deploy Lambda functions alongside CDN distribution
+    - Helps to build more responsive application.
+    - Customize the CDN content.

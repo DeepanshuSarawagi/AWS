@@ -11,6 +11,8 @@
 - Runs on Massive Parallel Query Execution.
 - Columnar storage of data instead of row based.
 - Runs on a paradigm of Extract, Transform and Load.
+- Enhanced VPC Routing Redshift forces all COPY and UNLOAD traffic moving between your cluster and data
+  repositories through your VPCs.
 
 Redshift Snapshots and DR:
 - Redshift has no Multi-AZ mode.
