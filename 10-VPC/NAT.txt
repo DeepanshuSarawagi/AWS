@@ -11,3 +11,13 @@
 -  After you've created a NAT gateway, you must update the route table associated with one or more of your private
    subnets to point Internet-bound traffic to the NAT gateway.
 -  Disabling source/destination checks is a feature of NAT Instances not NAT Gateways.
+- Port forwarding is not supported.
+- No security group association is required.
+
+NAT Instances:
+- Same as NAT gateway, must be created in the public subnet.
+- We must disable the EC2 check: source/destination check.
+- Must have an EIP attached to it.
+- Port forwarding is supported.
+
+Complete comparison can be found here - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html

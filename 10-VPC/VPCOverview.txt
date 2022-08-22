@@ -11,7 +11,7 @@ A subnet can only belong to one routing table.
 Multiple subnets allow you to restrict resources in certain subnets to specific
 destinations via these defined routes.
 
-Within a subnet, AWS reservs 4 IP addresses.
+Within a subnet, AWS reserves 4 IP addresses.
 1st IP address is the network address.
 2nd IP address is reserved for AWS routing.
 3rd IP address is reserved for DNS.
@@ -63,3 +63,47 @@ Public and Private Subnets:
     - Once the instance no longer requires it, the ip is returned back to the pool.
     - If you want to reuse the public IP address again and again, it is better to
       assign an Elastic IP address.
+
+  Following are CIDR ranges of Private IPs:
+    - 10.0.0.0/8
+    - 172.16.0.0/16 (most default VPCs subnets will be in this range)
+    - 192.168.0.0/16
+
+Internet Gateway:
+  - Allows resources in a VPC to connect to the internet.
+  - Must be created separately from a VPC.
+  - One VPC can only be attached to one IGW.
+  - Internet Gateways on their own do not allow internet access.
+  - We must edit the route tables.
+  - Every Internet Gateway should have one or more explicit subnet associations.
+  - And every subnet should have a route table attached to it.
+  - We add routes that is public internet 0.0.0.0 in the public route table. The target of this route should be IGW.
+  - Public route table must only be associated with public subnet.
+
+DNS Resolution in VPC:
+  - If we use custom domain names in the VPC, and want to use custom domain names of a private hosted zone in Route53
+    then we must enable the enableDnsSupport and enableDnsHostname attributes in VPC.
+
+VPC Reachability Analyzer:
+  - A network diagnostics tool that troubleshoots network connectivity between two endpoints in your VPC.
+  - It builds the model of network configuration, then checks the reachability based on these
+    configurations. (doesn't send packets)
+
+VPC Peering:
+  - Privately connect two VPCs together using AWS network.
+  - Must not have overlapping CIDRs.
+  - You must update route tables in each VPC's subnets to ensure EC2 instances can communicate with each other.
+
+VPC Traffic Mirroring:
+  - Allows you to capture and inspect traffic in your VPC.
+  - Route the traffic to security appliances that you manage.
+  - Capture the traffic from source ENIs to Network LB which is sitting infront of EC2 instances
+    which will analyze traffic.
+
+IPV6:
+  - We can enable the IPv6 in VPC to operate in dual stack mode.
+
+Egress only Internet Gateway:
+  - Used only for IPv6 address.
+  - Allow Instances in your VPC outbound connections over IPv6 while preventing the internet to initiate
+    an IPv6 connection to your instances.

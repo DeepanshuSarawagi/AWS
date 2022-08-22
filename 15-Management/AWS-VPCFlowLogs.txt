@@ -5,6 +5,14 @@
 - VPC flow logs can be enabled at the VPC, subnet, or ENI level to capture and
   send all network traffic to an S3 bucket.
 - VPC Flow logs can now be sent directly to S3 apart from CloudWatch logs.
+- Captures network information from AWS managed interfaces too:
+  - ELB
+  - RDS
+  - ElastiCache
+  - RedShift
+  - WorkSpaces
+  - NAT GW
+  - Transit GW
 
 Limitations:
 - For VPC peered connections, you can only see flow logs of peered VPCs

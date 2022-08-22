@@ -1,7 +1,7 @@
 # Brief document on AWS HSM service
 
 - HSM stands for hardware Security Module.
-- A physical tamper resistant hardware appliance that is used to protect and sageguard cryptographic
+- A physical tamper resistant hardware appliance that is used to protect and safeguard cryptographic
   materials and encryption keys.
 - CloudHSM is a physical device and is not a multi-tenant device i.e., that is not shared with
   any other customer.

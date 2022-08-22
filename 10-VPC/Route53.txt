@@ -29,7 +29,7 @@ Route53 Record Types:
   - A: maps a hostname to IPV4
   - AAAA: Maps a hostname to IPv6
   - CNAME: maps a hostname to another hostname
-      - The target is a hostname which must have a A or AAAA record.
+      - The target is a hostname which must have an A or AAAA record.
       - Cant create a CNAME record for the top node of the DNS namespace (Zone apex)
   - NS: Name servers for the hosted zone.
 

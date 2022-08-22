@@ -1,7 +1,7 @@
 # Brief document on routing tables
 
 - AWS creates and adds an implicit routing table for your VPC during the creating of VPC
-- Your default routing table is known as as the routing table.
+- Your default routing table is known as the routing table.
 - The Main Route Table cannot be deleted.
 - Subnets will be implicitly associated with the route table unless a custom rule
   route table has been created.
