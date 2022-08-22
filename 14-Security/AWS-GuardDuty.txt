@@ -1,0 +1,10 @@
+# Amazon GuardDuty
+
+- Intelligent threat discovery to protect AWS account.
+- Uses ML, anomaly detection.
+- Input logs include
+  - CloudTrail Logs
+  - VPC Flow logs
+  - DNS Logs
+  - Kubernetes Audit Logs
+- Can protect against Cryptocurrency attack

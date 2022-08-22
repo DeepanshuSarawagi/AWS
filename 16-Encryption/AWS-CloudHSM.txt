@@ -10,7 +10,7 @@
   - The ability to use cryptographic hash functions - HMACs - Hash Based Message Authentication Codes.
   - Cryptographic data signing and signature verification.
   - Ability to generate cryptographically secure data.
-  - Assymetric encryption:
+  - Asymmetric encryption:
     - A public and private key is used to encrypt and decrypt the data.
     - Private key is not shared with the client.
     - Common algorithms are RSA, DSA.
