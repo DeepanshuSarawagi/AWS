@@ -1,0 +1,8 @@
+# AWS Data Migration Services
+
+- Quickly and securely migrate databases to AWS.
+- The source database remains available during the migration.
+- Continuous data replication using CDC.
+- EC2 instance must be created to perform replication tasks.
+- Using Schema Conversion Tool we can migrate the database on-prem running on one engine
+  to cloud using a different database engine. Ex. On-prem to Oracle to Aurora.
