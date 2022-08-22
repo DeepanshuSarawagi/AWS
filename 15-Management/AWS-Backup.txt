@@ -1,0 +1,9 @@
+# AWS Backup service
+
+- Fully managed service
+- Can take automated backup across almost all AWS services.
+- Supports cross-region backups.
+- Supports cross-account backups.
+- Supports PITR for supported services.
+- On demand and scheduled backups.
+- tag-based backup policies.
