@@ -3,7 +3,7 @@
 - It is a serverless offering by AWS to create REST APIs.
 - This is going to be public and accessible to clients.
 - When the user hits the API Gateway, APIGW will proxy the requests to Lambda function.
-- Support for WebSocket protocol.
+- Support for WebSocket protocol which makes the API stateful.
 - Handles versioning.
 - Handle different environments
 - Create API Keys, handle request throttling

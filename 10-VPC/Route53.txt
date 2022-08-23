@@ -13,7 +13,7 @@ Hosted Zones:
   Public Hosted Zone:
     - This zone determines how traffic is routed on the internet and can be created
       when you register your domain with Route 53.
-  Private Hosted ZoneL
+  Private Hosted Zone:
     - This zone determines how traffic is routed within your Amazon VPC. If your resources
       are not accessible outside of your VPC, you can use any domain name of your wish.
 
@@ -108,7 +108,7 @@ Route53 Health Checks:
   - Health checks that monitor other health checks (Calculated Health Checks)
     - Monitor the combined health checks. Can monitor upto 256 child health checks.
     - You can specify how many health checks are passed for Parent health checks to pass.
-  - Health checks that monitor CloudWatch Alarms (throttles on DynamoDb, alarams on RDS, helpful on private resources)
+  - Health checks that monitor CloudWatch Alarms (throttles on DynamoDb, alarms on RDS, helpful on private resources)
     - Helpful in monitoring health check of private resources.
   - Health checks monitor an endpoint:
     - Healthy/unhealthy threshold - 3 seconds

@@ -39,12 +39,12 @@ EBS Volume types:
       Used for system boot volumes, virtual desktops, Development and test environments.
       1GB - 16TB
       GP3: Baseline of 3000 IOPS and throughput of 125 MB/S.
-      Can increase IOPS upto 16000 and thoughput of 1000 MB/s.
+      Can increase IOPS upto 16000 and throughput of 1000 MB/s.
       GP2: Can burst upto 3000 IOPS.
 
       Provisioned IOPS provides throughput of 16000 IOPS with 250 MiB/S.
       Critical business application with sustained IOPS performance.
-      Or for applications more then 16,000 IOPS.
+      Or for applications more than 16,000 IOPS.
       Great for database workloads.
       iO1/iO2 - 4GB - 16TB.
       Max IOPS of 64000 with EC2 nitro instances and max 32,000 IOPS for other instances.

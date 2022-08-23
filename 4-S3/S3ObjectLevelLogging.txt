@@ -5,7 +5,7 @@
   DeleteObject
   PutObject
 - Similar to AWS CloudTrail service which records all the AWS API requests.
-- These API calls can be programatic requests using SDK, or any other AWS service.
+- These API calls can be programmatic requests using SDK, or any other AWS service.
 - When an AWS API request is made, AWS CloudTrail captures the event and stores the
   event in the form of log file in the S3 bucket.
 - CloudTrail captures other metadata such as Identity of the caller, Source IP and

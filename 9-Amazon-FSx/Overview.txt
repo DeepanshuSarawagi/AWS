@@ -41,11 +41,11 @@ FSx Filesystem deployment options:
   - Scratch File System:
     - Temporary storage
     - Data is not replicated
-    - High Performace
-    - Short term processng of data, optimize costs.
+    - High Performance
+    - Short term processing of data, optimize costs.
   - Persistent File System:
     - Long-Term Storage
     - Data is replicated within same AZ.
-    - Replace failed files witgin minutes.
-    - Long term processing or sesitive data.
+    - Replace failed files within minutes.
+    - Long term processing or sensitive data.
   - 

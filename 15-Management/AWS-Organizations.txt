@@ -14,7 +14,7 @@ Organizations:
 - It provides a graphical view of your entire AWS account structure.
 
 Root:
-- It is a container that resides on tope of your Organization. All of your AWS
+- It is a container that resides on top of your Organization. All of your AWS
   accounts and Organizational Units will sit underneath this Root.
 - There can only be one single Root object.
 

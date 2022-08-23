@@ -13,7 +13,7 @@
     Upload the code to Lambda
     Configure your Lambda function to execute upon specific triggers from the supported events
     Once the specific trigger is initiated, Lambda will run the code as per your
-    Lambda function using only the required compute power as definned.
+    Lambda function using only the required compute power as defined.
     Lambda will then calculate the compute time in milliseconds to ascertain the
     cost of the service.
 
@@ -59,7 +59,7 @@
     more time if a failure occurs.
     If you have a DLQ resource configured then the event payload will be sent to this
     DQL resource.
-    Synchronous invocations do not automatically retry the the failed executions
+    Synchronous invocations do not automatically retry the failed executions
     of the functions.
     Enable Active Tracing - By enabling this option, it integrates the AWS X-Ray
     service to trace the event resources that invoked the AWS Lambda function.
@@ -69,7 +69,7 @@
     This means we can have 1000 occurrences of Lambda functions running at once.
 
     Reserve Concurrency - Allows our function to run x number of parallel executions.
-    This means that the specified function will have a reserved concurrent capaicity
+    This means that the specified function will have a reserved concurrent capacity
     and it will be reduced from the unreserved account concurrency. For example,
     if we set it to 150, then the account unreserved concurrency will be reduced
     to 850. This further means that the particular Lambda function will have 150
@@ -118,7 +118,7 @@
 
   - Lamda@edge:
     - It is another type of synchronous invocation of Lambda.
-    - You can use the Lambda FUnction globally by using Lambda@Edge
+    - You can use the Lambda Function globally by using Lambda@Edge
     - Deploy Lambda functions alongside CDN distribution
     - Helps to build more responsive application.
     - Customize the CDN content.

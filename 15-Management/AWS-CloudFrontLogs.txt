@@ -1,7 +1,7 @@
 # Brief document on Amazon CloudFront Access logs
 
 - Amazon CloudFront is a content delivery network that speeds up the delivery of
-  static and dynamic contant through its worldwide network of Edge locations.
+  static and dynamic content through its worldwide network of Edge locations.
 - The logging process takes place at Edge-Locations and on per-distribution basis.
 - When multiple edge locations are used for same distribution, a single log file is
   created for that distribution.

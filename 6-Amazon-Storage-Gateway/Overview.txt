@@ -7,9 +7,9 @@
 - Three types:
   - File Gateway
       - Pricing follows Amazon S3 pricing metrics.
-      - Confgured S3 buckets are accessible using NFS and SMB protocol.
+      - Configured S3 buckets are accessible using NFS and SMB protocol.
       - Bucket access using IAM roles for each file gateway.
-      - Provides a mount between on-premise files which will be stored in the S3 as objects. - # Is this really correct? Varies on what I learn on Udemy and        CloudAcademy.
+      - Provides a mount between on-premise files which will be stored in the S3 as objects. - # Is this really correct? Varies on what I learn on Udemy and CloudAcademy.
       - A cached data will be stored on the on-premise dc for providing low-latency.
       - Actual data will reside on S3.
 

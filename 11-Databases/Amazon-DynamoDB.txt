@@ -4,7 +4,7 @@
 - Instead it falls into the category of databases known as Key-Value stores.
 - The data can be looked up using primary key of each item or through the index.
 - DynamoDB tables are considered as schemaless.
-- Secondary indexes of an item in a table can be used to perform queries n attributes
+- Secondary indexes of an item in a table can be used to perform queries on attributes
   that are not part of the table's primary key.
 - If you want to query and match on different columns, you need to create an index
   that can do properly.
@@ -28,6 +28,6 @@
 - DynamoDB Global Tables - Makes a DynamoDB tables accessible from multiple regions and the data replication will be
   a two way replication. To do this we need to enable DynamoDB Streams.
 - DynamoDB TTL - Automatically delete items after an expiry timestamp.
-- DynamoDB Transactions - If there is an attribute/column which is common in two or more tables. And if youy want to
+- DynamoDB Transactions - If there is an attribute/column which is common in two or more tables. And if you want to
   sync the data between these two tables then using DynamoDB transactions, data will be written to all the two or tables
   or it will be written to None.

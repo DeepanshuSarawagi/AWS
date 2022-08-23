@@ -26,11 +26,11 @@
 - All the databases uses the EBS for storage, however, Amazon Aurora uses the shared
   cluster architecture.
 - Using RDS Auto-scaling feature, the database instance storage can be scaled automatically.
-- We need to specify the maxinum storage threshold, i.e., to what maximum extent our database
+- We need to specify the maximum storage threshold, i.e., to what maximum extent our database
   storage can scale automatically.
 - RDS backups allows you to automatically takes backup
 - Transaction logs are backed up every 5 minutes.
-- ability to restore to any point right from 5 minns old to oldest backup.
+- ability to restore to any point right from 5 mins old to oldest backup.
 - Data retention period is 7 days and it can be increased to 35 days.
 - Snapshots are manual backup of database.
 - Data retention of Snapshot can be as long as you want.

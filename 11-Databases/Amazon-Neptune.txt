@@ -41,7 +41,7 @@ Connecting to Amazon Neptune:
   - We can connect Amazon Neptune DB instances using endpoints. There are three
     different types of Amazon Neptune endpoints.
   - Cluster Endpoint:
-    Points directly to the current primary DB instane of a cluster.
+    Points directly to the current primary DB instance of a cluster.
     Should be used by applications that require both read and write access to the
     databases.
     When primary DB instance fails, will point to the new primary DB instance without
@@ -49,7 +49,7 @@ Connecting to Amazon Neptune:
   - Reader Endpoints:
     Used to connect to read replicas.
     Allows applications to access your database on a read only basis for your queries.
-    A single reader endpoint exists even if you have multuple read replicas.
+    A single reader endpoint exists even if you have multiple read replicas.
     Connections served by the read replicas will be performed on a round-robin basis.
     The endpoint does not load balance your traffic in any way across the Available
     replicas in your cluster.

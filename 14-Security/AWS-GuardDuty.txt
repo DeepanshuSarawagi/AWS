@@ -8,3 +8,8 @@
   - DNS Logs
   - Kubernetes Audit Logs
 - Can protect against Cryptocurrency attack
+- Amazon GuardDuty offers threat detection that enables you to continuously monitor and protect your AWS accounts,
+  workloads, and data stored in Amazon S3. GuardDuty analyzes continuous streams of meta-data generated from your
+  account and network activity found in AWS CloudTrail Events, Amazon VPC Flow Logs, and DNS Logs.
+  It also uses integrated threat intelligence such as known malicious IP addresses, anomaly detection,
+  and machine learning to identify threats more accurately.

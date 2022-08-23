@@ -4,4 +4,5 @@
 - Better I/O performance.
 - Instance store have ephemeral storage.
 - Good for buffer/cache/scratch data/temporary content.
+- Provides high random I/O performance.
 - Backup and Replication are your responsibility.

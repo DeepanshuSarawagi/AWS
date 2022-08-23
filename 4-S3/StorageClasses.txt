@@ -37,7 +37,7 @@ S3 One-Zone Infrequent Access
   - Minimum storage duration of 30 days.
 
 S3 Glacier Instant Retrieval:
-  - Millisecond retrieval, great for data accessed in once a quester.
+  - Millisecond retrieval, great for data accessed in once a quarter.
   - Minimum Storage duration of 90 days.
 
 S3 Glacier Flexible Retrieval:

@@ -51,13 +51,13 @@ S3 Bytes ranges fetch:
 -  Parallelize GETs by requesting specific Bytes ranges of the file.
 -  Better resilience in case of failures.
 -  Used for speeding up downloads
-- Another use case: Can be used to retrieve only partial file.
+-  Another use case: Can be used to retrieve only partial file.
 
 S3 Select and Glacier Select:
 -  Using S3 select we can retrieve fewer data using SQL by performing server side filtering
 -  Can filter by rows and columns.
 -  Less network transfer, less CPU cost client-side
-- Upto 400% faster and 80% cheaper
+-  Upto 400% faster and 80% cheaper
 
 S3 Event Notifications:
 -  Any object related notification which can be sent to SNS, SQS, Lambda and Amazon EventBridge.
