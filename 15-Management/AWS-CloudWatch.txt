@@ -41,6 +41,7 @@
     EventBridge connects to your own application allowing to respond to your events
     that occur in your application.
     Has evolved from an existing feature called Amazon Events.
+    Amazon EventBridge is the only event-based service that integrates directly with third-party SaaS partners.
     An event is anything that causes change to your environment or application.
     CloudWatch EventBridge supports following targets
       - Amazon EC2
