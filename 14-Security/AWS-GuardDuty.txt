@@ -13,3 +13,12 @@
   account and network activity found in AWS CloudTrail Events, Amazon VPC Flow Logs, and DNS Logs.
   It also uses integrated threat intelligence such as known malicious IP addresses, anomaly detection,
   and machine learning to identify threats more accurately.
+
+Difference between Disabling and suspending GuardDuty:
+
+Disable the service in the general settings - Disabling the service will delete all remaining data, including your
+findings and configurations before relinquishing the service permissions and resetting the service.
+
+Suspend the service in the general settings - You can stop Amazon GuardDuty from analyzing your data sources at any time
+ by choosing to suspend the service in the general settings. This will immediately stop the service from analyzing data,
+ but does not delete your existing findings or configurations.

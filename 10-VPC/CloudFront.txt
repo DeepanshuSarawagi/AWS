@@ -13,6 +13,9 @@
   CloudFront user called an Origin Access Identity (OAI). Only an OAI can access
   and serve content from your bucket preventing anyone circumventing your CloudFront.
 - It gives protection from DDoS attack and integration with AWS WAF, AWS Shield.
+- Dynamic content, as determined at request time (cache-behavior configured to forward all headers) go directly to origin.
+- Proxy methods PUT/POST/PATCH/OPTIONS/DELETE go directly to the origin
+- CloudFront works from edge locations and doesn't belong to a VPC.
 
 CloudFront Origins:
 - S3 buckets

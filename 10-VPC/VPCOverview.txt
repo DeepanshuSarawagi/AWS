@@ -91,6 +91,7 @@ VPC Reachability Analyzer:
 
 VPC Peering:
   - Privately connect two VPCs together using AWS network.
+  - Inter-region VPC peering is possible.
   - Must not have overlapping CIDRs.
   - You must update route tables in each VPC's subnets to ensure EC2 instances can communicate with each other.
 

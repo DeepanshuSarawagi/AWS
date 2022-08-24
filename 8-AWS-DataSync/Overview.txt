@@ -1,6 +1,8 @@
 AWS DataSync is an Amazon service which can be used to transfer data from on-premises
 to AWS storage services such as S3 or EFS.
 
+It is natively integrated with Amazon S3, Amazon EFS, Amazon FSx for Windows File Server, Amazon CloudWatch, and AWS CloudTrail
+
 AWS DataSync has the following capabilities
 
   - Migrate an NFS from an Amazon EC2 to Amazon EFS within the same AWS region.

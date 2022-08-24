@@ -25,3 +25,9 @@ ENAs:
     and 3.2 and above.
   - Offers high bandwidth with increased packet per second performance.
   - Offered at no extra cost and is included with the latest version of Amazon Linux AMI.
+
+EFA:
+  - Elastic Fabric Adapter
+  - Improved ENA for HPC, works only for Linux.
+  - Leverages Message Passing Interface standard.
+  - Bypass the underlying OS to provide Low-latency, reliable support.

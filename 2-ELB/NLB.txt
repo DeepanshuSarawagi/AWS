@@ -8,3 +8,4 @@
   It also supports assigning Elastic IP.
   For the NLB, cross zone load balancing can be enabled or disabled.
   Using NLB, we can also route traffic to ALB.
+  NLB does not have a security group associated with it.

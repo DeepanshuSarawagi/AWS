@@ -21,3 +21,5 @@
 - Enabling Backtrack, helps us to rewind a Aurora DB cluster to a specific point in time.
 - Aurora has a old backtrack time of 72 hours.
 - Auto scaling of storage from 10GB to 128TB.
+- Amazon Aurora will promote the Read Replica that has the highest priority (the lowest numbered tier).
+  If two or more Aurora Replicas share the same priority, then Amazon RDS promotes the replica that is largest in size.

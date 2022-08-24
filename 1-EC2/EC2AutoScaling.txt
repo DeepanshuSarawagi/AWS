@@ -1,6 +1,7 @@
 Auto scaling is a mechanism that automatically allows you to increase or decrease
 the resources to meet the demand off of the customer defined metrics and thresholds.
 
+
 Amazon EC2 Auto Scaling:
   - This automatically scales the EC2 resources
   - Infrastructure can elastically provision the required resources preventing your
@@ -76,3 +77,7 @@ ASG Lifecyle Hooks:
   - We get the ability to perform extra steps before an instance goes into service. (Pending state)
   - This is called as Lifecyle hook.
   - We also get the ability to perform additional steps before instance is terminated. (Terminating state)
+
+Exam Tip:
+  - Amazon EC2 Auto Scaling chooses the policy that provides the largest capacity, so policy with the custom metric is
+    triggered, and two new instances will be launched by the ASG

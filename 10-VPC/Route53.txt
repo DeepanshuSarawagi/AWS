@@ -74,6 +74,8 @@ Routing Policies:
   - Geo-location routing policy:
     - This lets you route traffic based on the geographic location of your users.
     - Can be associated with health checks.
+    - You can also use geolocation routing to restrict the distribution of content to only the locations in which you
+      have distribution rights.
 
   - Geo-Proximity routing policy:
     - This policy is based upon on the location of both your users and your resources.

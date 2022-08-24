@@ -80,6 +80,8 @@ Amazon Kineses Data Stream:
 - Once data is entered into Kinesis, it cant be deleted.
 - Data storage from 1 to 365 days.
 - Supports replay capability.
+- KDS provides ordering of records, as well as the ability to read and/or replay records in the same order to
+  multiple Amazon Kinesis Applications.
 
 - There are two types of Consumers:
   - Classic:
@@ -100,6 +102,20 @@ Capacity Modes:
     - Default capacity of 4 MB/s or 4000 messages/second
     - Scales automatically based on observed throughput peak of last 30 days.
     - Pay per stream per hour and data in/out in GB.
+
+Use Cases:
+  AWS recommends Amazon Kinesis Data Streams for use cases with requirements that are similar to the following:
+
+  - Routing related records to the same record processor (as in streaming MapReduce). For example, counting and aggregation
+    are simpler when all records for a given key are routed to the same record processor.
+  - Ordering of records. For example, you want to transfer log data from the application host to the processing/archival
+    host while maintaining the order of log statements.
+  - Ability for multiple applications to consume the same stream concurrently. For example, you have one application that
+    updates a real-time dashboard and another that archives data to Amazon Redshift. You want both applications to consume
+    data from the same stream concurrently and independently.
+  - Ability to consume records in the same order a few hours later. For example, you have a billing application and an
+    audit application that runs a few hours behind the billing application. Because Amazon Kinesis Data Streams stores
+    data for up to 365 days, you can run the audit application up to 365 days behind the billing application.
 
 Amazon Kinesis Data Firehose:
 - Data Firehose being fully managed is a streaming delivery service for data.
@@ -139,3 +155,5 @@ Amazon Kinesis Data Analytics:
   metrics.
 - When using Data Firehose with Data Analytics, data can only be queried using SQL.
 - Apache Flink with Java or Scala are only available for Kinesis Data Streams.
+- Kinesis Data Analytics cannot directly ingest data from the source as it ingests data either from Kinesis Data
+  Streams or Kinesis Data Firehose
