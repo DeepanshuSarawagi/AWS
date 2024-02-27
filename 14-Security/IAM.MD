@@ -124,3 +124,7 @@ Best practices of implementing IAM in any AWS account:
 - Identity Based Policy
 - IAM Permission Boundaries
 - Session Policies
+
+## Sample IAM Policy with NotAction as example:
+```json
+```
