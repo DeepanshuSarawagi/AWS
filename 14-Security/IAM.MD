@@ -13,7 +13,7 @@ Best practices of implementing IAM in any AWS account:
 - Enable IAM Access Analyzer, to enable public and cross-organization access.
 - Attach IAM policies to the IAM user groups to restrict access to the AWS services.
 
-# IAM Roles
+## IAM Roles
 - IAM Roles allows Users, other AWS services and applications to adopt a set of
   temporary IAM permissions to access AWS resources.
 - IAM roles allow trusted users to set of AWS resources or applications to adopt a
@@ -41,7 +41,7 @@ Best practices of implementing IAM in any AWS account:
 - We can user WebIdentity or SAML2.0 federation to allow federated users to assume Roles
   for accessing specific AWS services.
 
-# IAM Policies
+## IAM Policies
 - IAM Policies are written in JSON document and these define what can and can't be
   accessed. These policies can be attached to Users, User groups and Roles.
 - Policies include Managed Policies and In-line policies.
@@ -52,19 +52,19 @@ Best practices of implementing IAM in any AWS account:
   have to be written and explicitly embedded within a User, User Group, Role. As a
   result, same policy cant be applied to another identity like Managed Policies.
 
-# Identity Providers
+## Identity Providers
 - Used to provides federated access to AWS resources. Federated Access allows credentials
   external to AWS to be used as a means for authentication. Identity providers such
   as ADFS servers, Google, Facebook. This prevents you from having to create individual
   IAM user accounts.
 
-# Security Token Service Endpoints
+## Security Token Service Endpoints
 - STS service is used to allow you to request temporary, limited privilege credentials with
   for both IAM users and federated users.
 - Token is valid for 1 hour.
 - You can AssumeRole using STS Token.
 
-# Service Control policies
+## Service Control policies
 - Service Control Policies are different from Identity based policies as SCPs do not
   grant permissions themselves.
 - Instead, SCPs are used with AWS Organizations, to implement and set a boundary of
@@ -74,12 +74,12 @@ Best practices of implementing IAM in any AWS account:
   to S3 then the user will not be able to access S3 despite having full access via
   identity policy.
 
-# Access Keys
+## Access Keys
 - Access keys are used for programmatic access to your AWS resources.
 - It comprises of two elements - Access Key ID (20 random uppercase alpha-num chars)
   and Secret Access key (40 random upper and lowercase alpha-num and non alpha-num chars).
 
-# IAM Services Roles to access AWS resources on your behalf
+## IAM Services Roles to access AWS resources on your behalf
 - An AWS service Roles allows access to other AWS service resource within your own
   account on your behalf.
 - This is commonly used for EC2 instances to assume access to resources on your behalf.
@@ -108,16 +108,16 @@ Best practices of implementing IAM in any AWS account:
   to allow them to assume the newly created role in the trusting account.
 - Finally switch between AWS accounts to test the configured access.
 
-# IAM Conditions
+## IAM Conditions
 - We can restrict resources in AWS based on source IP of the client. aws:SourceIP
 - AWS:RequestedRegion, restrict the region the API calls are made to.
 
-# IAM Permission Boundaries:
+## IAM Permission Boundaries:
 - Supported for users and roles and not groups.
 - IAM feature to use a managed policy to set the maximum permission an IAM entity can get.
 - Can be in combination of AWS Organizations SCPs + Identity-based Policy + Permissions Boundary.
 
-# IAM Policies evaluation
+## IAM Policies evaluation
 - Explicit Deny?
 - SCP
 - Resource Based Policy
