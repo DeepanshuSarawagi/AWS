@@ -190,3 +190,5 @@ service. This helps us to get rid of using explicit Deny.
 - Tag based:
   - iam:ResourceTag/key-name
   - aws:PrincipalTag/key-name
+
+## IAM roles v. resource based policies:
