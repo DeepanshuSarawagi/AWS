@@ -169,3 +169,24 @@ service. This helps us to get rid of using explicit Deny.
   }
 }
 ```
+
+## IAM Policies variables and tags:
+
+- Aws username:
+  - "Resource": ["aws:arn:iam::::/${aws:username}/*"]
+- AWS Specific:
+  - aws:CurrentTime
+  - aws:TokenIssueTime
+  - aws:PrincipleType
+  - aws:SecureTransport
+  - aws:SourceIp
+  - aws:userid
+  - ec2:SourceInstanceArn
+- Service specific:
+  - s3:prefix
+  - s3:max-keys
+  - sns:Endpoint
+  - sns:Protocol
+- Tag based:
+  - iam:ResourceTag/key-name
+  - aws:PrincipalTag/key-name
