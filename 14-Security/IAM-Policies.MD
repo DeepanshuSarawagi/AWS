@@ -41,7 +41,7 @@
     - The SCP can't be edited using IAM. It has to be managed using the AWS Organization.
 
 
-# Policy Evaluation steps
+## Policy Evaluation steps
 - By default all access to a resource is denied.
 - Access will only be allowed if Allow access has been specified within a policy
   associated with the principle.
@@ -100,8 +100,72 @@
         "account:*"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole",
+        "iam:DescribeServiceLinkedRole",
+        "iam:ListRoles",
+        "organizations:DescribeOrganizations",
+        "account:ListRegions"
+      ],
+      "Resource": "*"
     }
   ]
 }
 ```
 
+The above sample NotAction policy is very useful where you want your IAM principals to restrict certain but not all Actions for a
+service. This helps us to get rid of using explicit Deny.
+
+## Condition Operators in Policy Statements:
+
+### String operators:
+- StringEquals
+- StringNotEquals
+- StringLike
+
+### Numeric operators:
+- NumericEquals
+- NumericNotEquals
+- NumericLessThan
+
+### Date operators:
+- DateEquals
+- DateNotEquals
+- DateLessThan
+
+### Boolean operators:
+- true
+- false
+
+### Ip operator:
+- IpAddress
+- NotIpAddress
+
+### Arn operator:
+- ArnEquals
+- ArnLike
+
+### Null condition:
+
+```json
+{
+  "Condition": {
+    "Bool": {
+      "aws:SecureTransport": "true",
+      "aws:MultiFactorAuthPresent": "true"
+    },
+    "StringEquals": {
+      "aws:PrincipalTag/job-category": "iamuser-admin"
+    },
+    "IpAddress": {
+      "aws:SourceIp": "192.168.0.0/24"
+    },
+    "Null": {
+      "aws:TokenIssueTime": "true"
+    }
+  }
+}
+```
