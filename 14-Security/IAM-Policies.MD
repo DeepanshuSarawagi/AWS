@@ -52,3 +52,56 @@
   - Resource based SCPs
   - Permission Boundaries
   - Identity Policies.
+
+## Sample IAM Policy example:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:DescribeVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+          "StringEquals": {
+            "ec2:ResourceTag/Department": "Development"
+          }
+        }
+      },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:DescribeVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/VolumeUser": "${aws:username}"
+        }
+      }
+    }
+  ]
+}
+```
+## Sample IAM policy with NotAction
+```json
+{
+  "Version": "2012=10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "NotAction": [
+        "iam:*",
+        "organizations:*",
+        "account:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+

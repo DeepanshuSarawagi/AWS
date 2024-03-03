@@ -15,7 +15,7 @@
   - Amazon Route 53 Resolver DNS Firewall
 - Running AWS Organization is a pre-requisite for using AWS Firewall Manager.
 
-Pre-requisites:
+## Pre-requisites:
 - Choose the AWS account which will be used as Firewall Manager Administrator which
   will be essentially used to manage security Policies.
 - Need to ensure that account is part of AWS Organizations.
@@ -27,7 +27,7 @@ Pre-requisites:
 - Enable regions in the AWS Management Account in addition to the account which
   Firewall Manager Administrator.
 
-# Policies
+## Policies
 - We need to create policies for different resources which we want to protect from threats using AWS Firewall Manager.
 - A resource can have multiple policies managed.
 - We can create policies for following resources for multiple AWS accounts across AWS Organizations
