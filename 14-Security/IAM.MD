@@ -76,7 +76,7 @@ Best practices of implementing IAM in any AWS account:
 
 ## Access Keys
 - Access keys are used for programmatic access to your AWS resources.
-- It comprises of two elements - Access Key ID (20 random uppercase alpha-num chars)
+- It comprises two elements - Access Key ID (20 random uppercase alpha-num chars)
   and Secret Access key (40 random upper and lowercase alpha-num and non alpha-num chars).
 
 ## IAM Services Roles to access AWS resources on your behalf

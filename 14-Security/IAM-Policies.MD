@@ -26,7 +26,7 @@
 
   - Permission Boundaries
     - These policies can be associated with a role or a user but then dont actually
-      grant permissions themselves. Instead they define the maximum level of permissions
+      grant permissions themselves. Instead, they define the maximum level of permissions
       that can be granted to an entity.
     - These can only be applied to a user or a role since it is not possible to set
       boundaries to a group.
@@ -42,7 +42,7 @@
 
 
 ## Policy Evaluation steps
-- By default all access to a resource is denied.
+- By default, all access to a resource is denied.
 - Access will only be allowed if Allow access has been specified within a policy
   associated with the principle.
 - If any Deny is specified within any policy associated with the same principle against
@@ -192,3 +192,7 @@ service. This helps us to get rid of using explicit Deny.
   - aws:PrincipalTag/key-name
 
 ## IAM roles v. resource based policies:
+- When you assume a role, you give your original permissions and take the permission assigned to the role.
+- However, when using a resource based policy, user/IAM principal doesn't have to give up any permissions.
+- Classic usecase:
+  - User needs to scan a DynamoDB table in account A and dump it in S3 bucket in account B.
