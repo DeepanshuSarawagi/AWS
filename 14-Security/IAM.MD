@@ -38,7 +38,7 @@ Best practices of implementing IAM in any AWS account:
   in the roles. A policy should be attached to the Role and the user must have the
   permissions to assume the role. For users to assume the Role, we must create an
   in-line policy for the user and attach to it.
-- We can user WebIdentity or SAML2.0 federation to allow federated users to assume Roles
+- We can use WebIdentity or SAML2.0 federation to allow federated users to assume Roles
   for accessing specific AWS services.
 
 ## IAM Policies
