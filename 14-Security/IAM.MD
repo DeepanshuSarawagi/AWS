@@ -82,13 +82,20 @@ Best practices of implementing IAM in any AWS account:
       "Resource": "arn:aws:s3::::hr-docs/*",
       "Condition": {
         "StringEquals": {
-          "aws":PrincipalTa/Department": "HR" 
+          "aws:PrincipalTa/Department": "HR" 
         }
       }
     }
   ]
 }
 ```
+
+## STS important APIs:
+
+- AssumeRole: Access the role within your account or cross account you own.
+- AssumeRoleWithSAML: Return credentials for users logged in with SAML.
+- AssumeRoleWithWebIdentity: Returns creds for users logged in with IdP.
+- GetSessionToken: For MFA, for user or account root user.
 
 ## Service Control policies
 - Service Control Policies are different from Identity based policies as SCPs do not
