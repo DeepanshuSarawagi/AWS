@@ -64,6 +64,32 @@ Best practices of implementing IAM in any AWS account:
 - Token is valid for 1 hour.
 - You can AssumeRole using STS Token.
 
+## Session tags in STS
+- Tags that you pass when you assume an IAM role or federate user in STS.
+  - Why do this?
+  - So that we can use ws:PrincipalTag condition in policy.
+  - Compares the tag attached to the principal making the request with the tag you specified in the policy.
+  - Example: Allow principal to pass session tags only if the principal making the request has the specified tags.
+- Refer to below S3 policy which makes use of session tags.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3::::hr-docs/*",
+      "Condition": {
+        "StringEquals": {
+          "aws":PrincipalTa/Department": "HR" 
+        }
+      }
+    }
+  ]
+}
+```
+
 ## Service Control policies
 - Service Control Policies are different from Identity based policies as SCPs do not
   grant permissions themselves.
@@ -88,7 +114,7 @@ Best practices of implementing IAM in any AWS account:
   within the application, it is better to use the EC2 Roles to allow EC2 to access
   S3 on your behalf. This also helps us in reducing the administrative burden of
   rotating credentials for security purposes.
-- Difference Service-Roles and Service-Linked Roles is that it comes with predefined
+- Difference between Service-Roles and Service-Linked Roles is that it comes with predefined
   managed roles and they (Service-Linked) Roles cannot be edited. They are one setup
   when service is used first time and can only be used by that particular service.
 
