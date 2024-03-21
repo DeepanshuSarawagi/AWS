@@ -29,6 +29,20 @@
 - AWS Cognito enables secure authentication to your web and mobile application using
   both SAML2.0 and web-identity federation.
 
+### Web identity federation with AWS Cognito:
+- Create IAM Roles using Cognito with least privilege needed.
+- Build the trust between OIDC IdP and AWS.
+- Login Flow:
+  - Client authenticates itself using 3rd party IdP.
+  - Receives ID token.
+  - The token is then exchanged with Cognito and gets Cognito token in return.
+  - The Cognito token is then sent to STS to receive temporary AWS credentials.
+  - Using this, client can access AWS resources.
+- Cognito benefits:
+  - Supports anonymous users.
+  - Supports MFA.
+  - Data synchronization.
+
 
 - You have an on-premises identity provider that does not support SAML 2.0, and you want to give your on-premises
   users access to your resources in the AWS Accounts that you manage. What should you do?
