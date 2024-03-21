@@ -1,18 +1,31 @@
-# AWS SSO:
+# Identity federation in AWS:
+
+- Give users outside of AWS relevant permissions to access AWS resources in your account.
+- You don't need to create IAM users for this.
+- Can have many flavors:
+  - SAML 2.0
+  - Web identity federation with(out) AWS Cognito
+  - Single Sign-On
+
+## AWS SSO:
 - AWS SSO allows you to create a Single Sign-On approach to access multiple AWS
   accounts within an AWS Organization using a single identity provider for all.
 - AWS IAM Identity Center = AWS Single Sign-On (SSO)
 - Supports SAML 2.0 and also integration with On-prem AD.
 
-# AWS IAM:
+## AWS IAM:
 - AWS IAM allows you to configure different OpenID or SAML identity providers for
   each of your AWS account.
 
-- SAML 2.0:
+### SAML 2.0:
   - To integrate AD/ADFS with AWS.
-  - Provides access to console or CLI.
+  - Provides access to console or CLI or AWS API using temporary credentials.
+    - No need to create IAM users for each of your employees.
+    - Need to setup trust relationship between AWS IAM and SAML 2.0 idP.
+  - Uses the STS API ```AssumeRoleWithSAML``` call to give temporary credentials using saml assertion to access AWS services.
+  - Amazon SSO is the new managed and simpler way.
 
-# AWS Cognito
+## AWS Cognito
 - AWS Cognito enables secure authentication to your web and mobile application using
   both SAML2.0 and web-identity federation.
 
@@ -21,8 +34,4 @@
   users access to your resources in the AWS Accounts that you manage. What should you do?
 
   - Use a Custom Identity Broker to authenticate your users and get temporary credentials from
-    AWS ST using AssumeRole or GetFederationToken STS API calls
-
-
-
-
+    AWS ST using AssumeRole or GetFederationToken STS API calls.
