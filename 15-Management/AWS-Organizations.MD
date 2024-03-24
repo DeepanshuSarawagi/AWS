@@ -51,11 +51,20 @@
 - These SCPs can either be associated with a Root, OU or directly AWS accounts.
 - When an SCP is applied to any of these objects, its associated controls are fed
   down to all of its child objects.
+- SCP is applied to all users and groups including root user.
+- SCPs does not affect service linked roles.
 
 ### 2f. Benefits:
 - Centrally manage policies of all AWS accounts from Master account.
 - Consolidated billing of all AWS account.
 - Categorization and grouping of AWS accounts.
+  - #### Reserved instances benefits:
+    - For billing purposes, the consolidated billing feature of AWS organizations treats all the accounts in the organizations
+      as one.
+    - This means that all the accounts in the organizations can receive hourly cost benefit of reserved instances even though
+      they are purchased by any other account.
+    - The Payer account (Management) of AWS organization can turn off Reserved Instance and savings plan discount sharing
+      for any other AWS accounts in that organization. 
 
 ### 2g. Process of setting up AWS organizations:
 - Setting up of AWS Organizations requires a Master account. This Master account should not be used
