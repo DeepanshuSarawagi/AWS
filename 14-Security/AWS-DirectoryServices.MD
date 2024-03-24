@@ -40,4 +40,4 @@
 ## Simple AD:
 - AD-Compatible managed directory on AWS.
 - Cannot be joined/linked with on-prem AD.
-- Does not support MFA.
+- Does not support MFA, RDS SQL server, AWS SSO.
