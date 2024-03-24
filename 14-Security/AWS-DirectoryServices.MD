@@ -22,10 +22,14 @@
   - One-way trust; AWS => On-prem
   - One-way trust; On-prem => AWS
   - Two-way trust; AWS <=> AWS
-  - Forest trust is different from synchronization (Replication is not support)
+  - Forest trust is different from synchronization (Replication is not supported)
     - It means, user can reside on any of the domain controller. Be it On-prem AD or AWS AD.
     - Since we have the forest trust established, an On-prem AD application can ask AWS AD to check whether the user can be
       trusted.
+### How to establish replication then?
+- Create a replica of your on-prem AD on EC2 instance.
+- Set up replication between On-prem AD and AD running on EC2 instance.
+- Finally, establish forest trust between AD running on EC2 instance and AWS managed AD.
 
 ## AD Connector
 - Directory Gateway to redirect to On-prem AD using proxy, supports MFA.
