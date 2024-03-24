@@ -1,5 +1,17 @@
 # Brief document explaining the key components and use of AWS Organizations service
 
+## Table of contents:
+
+1. [How to perform administrative tasks on AWS Member account?](#1-how-to-perform-administrative-tasks-on-aws-member-account)
+2. [AWS Organizations components](#2-aws-organizations-components)
+   1. [Organizations](#2a-organizations)
+   2. [Root](#2b-root)
+   3. [Organizational Units](#2c-organizational-units)
+   4. [Account](#2d-accounts)
+   5. [Service Control Policies](#2e-service-control-policies)
+   6. [Benefits](#2f-benefits)
+   7. [Service Control Policies process](#2h-service-control-policies-process)
+
 - AWS Organizations can be used to manage multiple AWS accounts in an Organization.
 - Cost optimization and billing (Consolidated)
 - Security and governance
@@ -7,44 +19,51 @@
 - Resource grouping
 - Helping to define business units
 
-AWS Organizations components:
-Organizations:
+## 1. How to perform administrative tasks on AWS Member account?
+- If an AWS account is created from the Management account using the Organization service, then a special IAM is created
+  in the Member account ```OrganizationAccountAccessRole```.
+- This IAM role grants full administrator access to the Management account in Member account.
+- Could be assumed by IAM users in the Management account.
+- Must be created manually if you invite an existing member account.
+
+## 2. AWS Organizations components:
+### 2a. Organizations:
 - An Organization is an element that serves to form a hierarchical structure of multiple
   AWS accounts.
 - It provides a graphical view of your entire AWS account structure.
 
-Root:
+### 2b. Root:
 - It is a container that resides on top of your Organization. All of your AWS
   accounts and Organizational Units will sit underneath this Root.
 - There can only be one single Root object.
 
-Organizational Units
+### 2c. Organizational Units
 - They provide means of categorizing multiple AWS accounts.
 - Like Root, they are just containers, that allow you to group together specific
   AWS accounts together.
 - They can connect directly below Root or another OU. OUs can be nested 5 times.
 
-Accounts:
+### 2d. Accounts:
 - These are essentially AWS accounts which you use to configure AWS resources.
 
-Service Control Policies:
+### 2e. Service Control Policies:
 - They control what services and features are accessible from within an AWS account.
 - These SCPs can either be associated with a Root, OU or directly AWS accounts.
 - When an SCP is applied to any of these objects, its associated controls are fed
   down to all of its child objects.
 
-Benefits:
+### 2f. Benefits:
 - Centrally manage policies of all AWS accounts from Master account.
 - Consolidated billing of all AWS account.
 - Categorization and grouping of AWS accounts.
 
-Process of setting up AWS organizations:
+### 2g. Process of setting up AWS organizations:
 - Setting up of AWS Organizations requires a Master account. This Master account should not be used
   for anything else such as configuring resources. The sole purpose of this AWS master account is
   to centrally manage other AWS accounts using AWS Organizations service.
  - If we want to setup service control policies, we need to enable all features in AWS master account.
 
-Service Control Policies:
+### 2h. Service Control Policies process:
 - SCP is different from both identity based and resource based policies which grants permissions to the AWS resources.
 - SCPs do not grant permissions themselves.
 - They set boundary permissions for an AWS account.
