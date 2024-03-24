@@ -35,6 +35,7 @@
 - Directory Gateway to redirect to On-prem AD using proxy, supports MFA.
 - Users are managed on on-prem AD.
 - A small AD connector can support upto 500 users and a large AD connector can support upto 5000 users.
+- Doesn't work with SQL server, can't perform seamless joining and can't share directory. 
 
 ## Simple AD:
 - AD-Compatible managed directory on AWS.
