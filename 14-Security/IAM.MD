@@ -157,3 +157,8 @@ Best practices of implementing IAM in any AWS account:
 - Identity Based Policy
 - IAM Permission Boundaries
 - Session Policies
+
+This is a fantastic [document](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow) 
+which shows the evaluation logic of IAM policies.
+
+Refer the following ![image](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal111621.png)
