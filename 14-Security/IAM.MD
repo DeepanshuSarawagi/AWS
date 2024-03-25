@@ -162,3 +162,26 @@ This is a fantastic [document](https://docs.aws.amazon.com/IAM/latest/UserGuide/
 which shows the evaluation logic of IAM policies.
 
 Refer the following ![image](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal111621.png)
+
+## Restricting Tags with IAM policies:
+
+We can restrict specific tags on AWS resources. Example: Allow only IAM users which has Env and CostCenter tags to create EBS
+volumes.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateVolume",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": ["Env", "CostCenter"]
+        } 
+      }
+    }
+  ]
+}
+```
