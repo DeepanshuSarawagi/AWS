@@ -53,6 +53,9 @@
   down to all of its child objects.
 - SCP is applied to all users and groups including root user.
 - SCPs does not affect service linked roles.
+  - Service Linked Roles enables other AWS services to integrate with AWS Organizations and cannot be restricted using SCPs.
+- SCP must have an explicit ```Allow```.
+- 
 
 ### 2f. Benefits:
 - Centrally manage policies of all AWS accounts from Master account.
