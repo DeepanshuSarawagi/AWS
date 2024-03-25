@@ -10,9 +10,9 @@
   - Built-in identity store in IAM Identity Center
   - Or integrate with 3rd party IdP: Okta, AD
 
-## Fine grained permissions and assignments:
+## Fine-grained permissions and assignments:
 
-Following hyper links provide in-depth details for each topic. 
+Following hyperlinks provide in-depth details for each topic. 
 
 - [Multi-account permissions](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html)
 - [ABAC - Attribute Based Access Control](https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html)
