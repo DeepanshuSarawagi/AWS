@@ -103,3 +103,38 @@
   - SCPs do not affect the master account.
   - SCPs do not affect the service-linked roles.
   - Managing AWS CloudFront keys.
+
+## 3. Using SCP to restrict creating resources without appropriate tags:
+
+- Prevent IAM Users/Roles in the affected member accounts if they dont have specific tags.
+- Example below is to restrict running EC2 instances if IAM user/role does not have tags.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyRunEC2InstanceWithNoProjectTag",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/Project": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyRunEC2InstanceWithNoProjectTag",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/CostCenter": "true"
+        }
+      }
+    }
+  ]
+}
+```
