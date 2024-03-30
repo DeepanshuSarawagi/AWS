@@ -35,4 +35,12 @@ It is typically one of the following:
 - Example: lets say we have following CIDR ranges 10.0.0.0/16, 192.134.1.62/32, 192.168.0.0/24.
   - Then all these CIDR ranges can be added into a Prefix List which can then be shared with other AWS accounts for 
     references.
-  - Any update on this prefix list, will be made on all AWS accounts / Security Groups who are leveraging this Prefix lists.
+  - Customer Managed Prefix List:
+    - Set of CIDRs that you define and managed by you.
+    - Can be shared with other AWS Accounts or Organizations.
+    - Any update on this prefix list, will be made on all AWS accounts / Security Groups who are leveraging this Prefix lists.
+  - AWS Managed Prefix List:
+    - Set of CIDR for AWS services.
+    - You can't create, share, modify or delete them.
+
+## Route53 outbound resolver:
