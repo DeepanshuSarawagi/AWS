@@ -11,6 +11,7 @@
 4. [CloudTrail Process Flow](#4-cloudtrail-process-flow)
 5. [Log file format](#5-log-file-format-and-bucket-format)
 6. [Access to CloudTrail from secondary AWS account](#6-how-to-allow-users-from-secondary-aws-account-to-allow-ro-access-to-cloudtrail-logs-in-primary-aws-account-s3-bucket)
+7. [Faster response to CloudTrail Events](#7-faster-response-to-cloudtrail-events)
 
 ## 1. Introduction:
 
@@ -130,3 +131,16 @@ Tags:
 - This policy will enable users from secondary AWS account to view S3 bucket (corresponding to their account) in priamry AWS account
 - Assign a user in secondary AWS account new permissions to Assume Role in the primary AWS account (sts:AssumeRole)
 - The sts:AssumeRole will have resource of primary AWS account with the Role we created to access S3 bucket.
+
+## 7. Faster response to CloudTrail Events:
+
+- Overall, CloudTrail may take up to 15 minutes to deliver events.
+- EventBridge:
+  - Can be triggered for any API call.
+  - Fastest and the most reactive way.
+- CloudTrail delivery in CloudWatch logs:
+  - Events are streamed.
+  - Can perform a metric filter to analyze and detect anomalies.
+- Delivery in S3:
+  - Events are delivered every 5 minutes.
+  - Possibility of analyzing logs integrity, deliver cross account and provides long term storage.
