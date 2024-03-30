@@ -32,7 +32,7 @@ It is typically one of the following:
 
 - A set of one or more CIDR blocks.
 - Makes it easier to configure and maintain Security Groups and Route tables.
-- Example: lets say we have following CIDR ranges 10.0.0.0/16, 192.134.1.62/32, 192.168.0.0/24.
+- Example: lets say we have the following CIDR ranges 10.0.0.0/16, 192.134.1.62/32, 192.168.0.0/24.
   - Then all these CIDR ranges can be added into a Prefix List which can then be shared with other AWS accounts for 
     references.
   - Customer Managed Prefix List:
