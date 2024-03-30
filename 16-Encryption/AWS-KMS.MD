@@ -4,6 +4,8 @@
 
 1. [Data Encryption](#1-data-encryption)
 2. [KMS](#2-kms)
+   1. [KMS Key types](#2a-kms---key-types)
+   2. [KMS Key origin](#2b-kms-key-material-origin)
 3. [Key Components](#3-key-components-of-kms)
 4. [Data Encryption Keys](#4-data-encryption-keys)
 5. [S3 SSe-KMS](#5-s3-sse-kms)
@@ -16,12 +18,14 @@
 - Information is altered rendering plain text data unreadable through mathematical algorithms and encryption keys.
 - An encryption key is required to revert the text to plain text.
 - This encryption is categorized into two types:
-  - Symmetric cryptography
+  - Symmetric cryptography:
+  
     A single key is used to both encrypt and decrypt the data.
     If the data was read by a different person then the key has to be shared with that person to decrypt the data.
     If the key is intercepted is during the transmission, then the data can be compromised.
 
-  - Asymmetric cryptography
+  - Asymmetric cryptography:
+  
     Two separate keys are used. One to encrypt the data and the other to decrypt the data.
     Both the keys are created at the same time.
     Private keys should be kept by a party and should never be shared.
@@ -35,6 +39,44 @@
 - The KMS service is for encryption at rest only.
 - KMS works with CloudTrail to audit and track how your encryption keys are being used and by whom.
 - It is a region specific service.
+- Seamless integration with other services such as:
+  - S3
+  - RDS
+  - SSM
+  - EBS
+  - RedShift
+
+### 2a. KMS - Key types:
+
+**Symmetric Keys: (AES 256 keys)**
+
+- First offering of KMS, single encryption key is used to encrypt and decrypt.
+- AWS Services that are integrated with KMS use Symmetric KMS keys.
+- Necessary for envelope encryption.
+- You never get access to KMS key unencrypted.
+
+**Asymmetric Keys: (RSA and ECC key pair)**
+
+- Public (Encrypt) and Private key (Decrypt) pair.
+- Used for sign/verify operation.
+- Public key is downloadable, however, we can't access the private key.
+- Use case: For AWS users who cant perform encryption using KMS Encrypt API calls.
+
+### 2b. KMS Key material origin:
+
+Identifies the source of the key material KMS key.
+
+Can't be changed once it is created.
+
+#### KMS (AWS_KMS) default:
+- AWS KMS creates and manages the key material in its own key store.
+
+#### External (EXTERNAL):
+- You import the key material into the KMS key.
+- You are responsible for securing and managing this key material outside of AWS.
+
+#### Custom key store (AWS_CLOUDHSM):
+- AWS KMS creates the KMS key material in the CloudHSM cluster.
 
 ## 3. Key components of KMS:
 
@@ -44,15 +86,15 @@ Customer Master Key:
 - It is typically used in relation to your Data Encryption Keys (DEKs).
 - The CMK can generate, encrypt and decrypt these DEKs.
 - There are two types of CMKs:
-  - AWS Managed CMKs:
-    These are used by other AWS services that interact with KMS to encrypt the data.
-    They can only be used by the service that created them within a particular region.
-    They are created on the first time that you implement encryption using that service.
-  - Customer managed CMKs:
-    These provide the ability to implement greater flexibility.
-    You can perform rotation, governing access and key policy configuration.
-    You are able to enable and disable the key when it is no longer required.
-    AWS services can also be configured to use your own customer CMKs.
+  - **AWS Managed CMKs:**
+    - These are used by other AWS services that interact with KMS to encrypt the data.
+    - They can only be used by the service that created them within a particular region.
+    - They are created on the first time that you implement encryption using that service.
+  - **Customer managed CMKs:**
+    - These provide the ability to implement greater flexibility.
+    - You can perform rotation, governing access and key policy configuration.
+    - You are able to enable and disable the key when it is no longer required.
+    - AWS services can also be configured to use your own customer CMKs.
 
 ## 4. Data Encryption Keys:
 - DEKs are created by CMKs and are used to encrypt data of any size.
