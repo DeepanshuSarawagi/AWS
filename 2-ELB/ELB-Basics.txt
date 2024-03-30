@@ -98,13 +98,13 @@ Elastic Load Balancer SSL Certificates:
   - ELB uses x.509 certificates for SSL handshake.
   - The SSL certificates can be managed using AWS CM. (AWS Certificate Manager)
   - If an ELB is routing traffic to multiple sites, then client needs to specify the SNI
-    (Server Name Indication) to speicify which hostname they are trying to reach.
+    (Server Name Indication) to specify which hostname they are trying to reach.
   - ELB will then load the correct SSL certificate for that hostname and return to the client.
   - SNI only works for ALB, NLB and CloudFront.
 
 Elastic Load Balancer Connection Draining:
   - Connection draining for CLB.
-  - Deregistration delay for ALB and NLB.
+  - De-registration delay for ALB and NLB.
   - Time to complete in-flight requests while the instance is de-registering or unhealthy.
   - Stops sending new requests to EC2 instances which are de-registering.
   - Time to complete in-flight requests is 1 to 3600 seconds (default is 300 seconds)

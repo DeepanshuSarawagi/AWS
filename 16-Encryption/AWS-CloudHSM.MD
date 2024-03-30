@@ -1,6 +1,6 @@
 # Brief document on AWS HSM service
 
-- HSM stands for hardware Security Module.
+- HSM stands for Hardware Security Module.
 - A physical tamper resistant hardware appliance that is used to protect and safeguard cryptographic
   materials and encryption keys.
 - CloudHSM is a physical device and is not a multi-tenant device i.e., that is not shared with
@@ -10,16 +10,16 @@
   - The ability to use cryptographic hash functions - HMACs - Hash Based Message Authentication Codes.
   - Cryptographic data signing and signature verification.
   - Ability to generate cryptographically secure data.
-  - Asymmetric encryption:
+  - **Asymmetric encryption:**
     - A public and private key is used to encrypt and decrypt the data.
     - Private key is not shared with the client.
     - Common algorithms are RSA, DSA.
-  - Symmetric Encryption:
+  - **Symmetric Encryption:**
     - Same key to encrypt and decrypt the data.
     - The key must be sent securely between the two parties.
     - Commonly used symmetric cryptographic algorithms are AES, DES, Triple DES, Blowfish
 
-# Architecture and components of CloudHSM
+## Architecture and components of CloudHSM
 
 - To implement CloudHSM, we need to create a cluster.
 - This cluster is a grouping of different HSMs together which will act as a single unit when configured
@@ -39,13 +39,13 @@
 - From here on, we can create HSMs in each availability zone and initialize the cluster.
 - Once the cluster is initialized, you can then connect to the cluster network interfaces
   and it can be done by an EC2 instance provisioned in the same VPC.
-- Following 2 step process is required for your cluster to communicate with CloudHSM ENIs.
+- Following is a 2-step process is required for your cluster to communicate with CloudHSM ENIs.
   - configure a security group.
     Firstly we must add the EC2 instance to the CloudHSM security group which got created earlier
-    while creatinng cluster.
+    while creating cluster.
   - Install the CloudHSM client software on the EC2 instance.
 
-# Using HSM as a custom keystore in KMS
+## Using HSM as a custom keystore in KMS
 
 - HSM cluster can be used to maintain the security and control of key material created for CMKs.
 - The key material is a resource managed within your KMS, however, it allows you to store it
