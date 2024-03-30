@@ -1,6 +1,18 @@
 # Brief document on AWS KMS service
 
-Data Encryption:
+## Table of contents:
+
+1. [Data Encryption](#1-data-encryption)
+2. [KMS](#2-kms)
+3. [Key Components](#3-key-components-of-kms)
+4. [Data Encryption Keys](#4-data-encryption-keys)
+5. [S3 SSe-KMS](#5-s3-sse-kms)
+   1. [Encryption Process](#5a-encryption-process)
+   2. [Decryption Process](#5b-decryption-process)
+6. [Key policies](#6-key-policies)
+7. [Grants](#7-grants)
+
+## 1. Data Encryption:
 - Information is altered rendering plain text data unreadable through mathematical algorithms and encryption keys.
 - An encryption key is required to revert the text to plain text.
 - This encryption is categorized into two types:
@@ -17,14 +29,14 @@ Data Encryption:
     Both the private and public key is required to decrypt the data.
 
 
-KMS:
+## 2. KMS:
 - KMS is a managed service used to store and generate encryption keys that are used by other AWS services
   and applications.
 - The KMS service is for encryption at rest only.
 - KMS works with CloudTrail to audit and track how your encryption keys are being used and by whom.
 - It is a region specific service.
 
-Key components of KMS:
+## 3. Key components of KMS:
 
 Customer Master Key:
 - This is the main key type within KMS.
@@ -35,14 +47,14 @@ Customer Master Key:
   - AWS Managed CMKs:
     These are used by other AWS services that interact with KMS to encrypt the data.
     They can only be used by the service that created them within a particular region.
-    The are created on the first time that you implement encryption using that service.
+    They are created on the first time that you implement encryption using that service.
   - Customer managed CMKs:
     These provide the ability to implement greater flexibility.
     You can perform rotation, governing access and key policy configuration.
     You are able to enable and disable the key when it is no longer required.
     AWS services can also be configured to use your own customer CMKs.
 
-Data Encryption Keys:
+## 4. Data Encryption Keys:
 - DEKs are created by CMKs and are used to encrypt data of any size.
 - Whenever a request to generate a key is issued, the CMK specified in the request will create a plain text
   data encryption key and an encrypted version of same plain text data encryption key.
@@ -57,8 +69,9 @@ Data Encryption Keys:
 - The only way you will be able to decrypt the object is if you have the relevant decrypt
   permission for that CMK that the data keys are associated to.
 
-S3 SSE-KMS:
-Encryption Process:
+## 5. S3 SSE-KMS:
+
+### 5a. Encryption Process:
 - User stores the object in S3 bucket with SSE-KMS enabled.
 - When the object is uploaded, the S3 invokes the KMS to generate the data keys.
 - At this point, the KMS then uses the CMK to generate two keys.
@@ -70,7 +83,7 @@ Encryption Process:
 - S3 will now store the encrypted version of the object alongside its encrypted data key.
 - Post encryption of data, the plain text data key is deleted from the memory.
 
-Decryption Process:
+### 5b. Decryption Process:
 - The user will request the object from S3.
 - At this point, S3 knows that the data is encrypted and it has the associated encrypted
   data key with it.
@@ -82,12 +95,12 @@ Decryption Process:
 - The decrypted object is then sent back to user to access it.
 - S3 deletes the plain text data key from its memory.
 
-Key Policies:
+## 6. Key Policies:
 - The key policies allow you to define who can use and access a key in the KMS.
 - These key polices are tied to the CMK which makes them resource based policies.
 - Different key policies can be created for each CMK.
 
-Grants:
+## 7. Grants:
 - Grants are another method of controlling access and use of the CMKs held within KMS.
 - They are again resource based policies that allow you to delegate a subset of your own
   access to a CMK for principals such as another AWS service within your AWS account.
