@@ -74,9 +74,30 @@ Can't be changed once it is created.
 #### External (EXTERNAL):
 - You import the key material into the KMS key.
 - You are responsible for securing and managing this key material outside of AWS.
+- Must be 256-bit Symmetric key.
+- Can't be used with custom key store.
+- Manually rotate your KMS key. (Automatic key rotation is not supported)
 
 #### Custom key store (AWS_CLOUDHSM):
 - AWS KMS creates the KMS key material in the CloudHSM cluster.
+- Integrate KMS with CloudHSM cluster.
+- The cryptographic operations occur at the HSM cluster.
+- Use cases:
+  - You need direct control over the HSM.
+  - KMS keys needs to be stores in the dedicated HSMs.
+
+### 2c. KMS Multi-Region keys:
+
+- A set of identical KMS keys in multiple AWS regions that can be used interchangeably( Same KMS key in multiple regions)
+- Encrypt in one region and decrypt in other region (No need to re-encrypt or make CrossRegion API calls)
+- Multi-Region keys have the same key ID, key material and automatic rotation..
+- Each Multi-Region key is managed independently.
+- KMS multi-region keys are not global (It is one Primary key + replicas)
+- Only one primary key at a time and can promote replicas into their own primary.
+- Use cases:
+  - Disaster recovery
+  - Global Data management
+  - Distributed signing applications
 
 ## 3. Key components of KMS:
 
