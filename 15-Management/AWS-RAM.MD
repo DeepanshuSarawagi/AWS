@@ -44,3 +44,6 @@ It is typically one of the following:
     - You can't create, share, modify or delete them.
 
 ## Route53 outbound resolver:
+
+- Helps you scale forwarding rules to your DNS in case you have multiple accounts and VPCs.
+- Helps centrally managed resolver group.
