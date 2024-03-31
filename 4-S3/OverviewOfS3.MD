@@ -41,6 +41,10 @@ S3 Pre-Signed URLs:
 -  They have a default TTL of 3600 seconds. It is possible to change the timeout using following argument --expires-in
    [TIME_IN_SECONDS] argument.
 -  Users given a pre-signed URL inherit the permissions of user who generated the URL.
+  - Use cases:
+    - Allow only logged-in users to download a premium video on S3 bucket.
+    - Allow an ever-changing list of users to download files by generating URLs dynamically.
+    - Allow a user temporarily to upload a file in S3 bucket in precise location.
 
 S3 baseline performance:
 -  Your application can achieve at least 3500 PUT/DELETE/COPY/POST per second and 5,500 GET/HEAD requests per second
@@ -72,6 +76,10 @@ Amazon Athena:
 -  Amazon Athena can then be integrated with Amazon QuickSight for some dashboards.
 -  Pricing is pay per query or $5 per TB for data scanned.
 -  Use compressed or columnar data for cost savings.
+
+S3 Object Lock:
+- Adopt a WORM model.
+- Block an object version deletion for a specified amount of time.
 
 Glacier Vault Lock:
 -  Adopt a WORM (Write Once Read Many) policy.
