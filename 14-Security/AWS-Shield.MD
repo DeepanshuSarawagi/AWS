@@ -17,10 +17,11 @@
 - It can be integrated with CloudFront and Route53.
 
 # AWS Shield Advanced:
-- Offers protection against EC2, ELB, CloudFront, Route53
+- Offers protection against EC2, ELB, CloudFront, AWS Global Accelerator, Route53 with $3000 per month
 - Enhanced level of DDoS protection
 - View real-time metrics of any attacks against your resources.
 - Protection from DDoS attacks against Network layer, Transport layer and Application
   layer.
-- You must associate an EIP toy your EC2 instance to protect it from DDoS attacks using
+- You must associate an EIP to your EC2 instance to protect it from DDoS attacks using
   AWS Shield.
+- Protect against higher fees during usage spikes due to DDoS attacks.
