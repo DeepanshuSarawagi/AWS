@@ -1,7 +1,7 @@
 # Brief document on AWS Web Application Firewall service
 
 - This is a service which prevents websites and web applications from being
-  maliciously attacked.
+  maliciously attacked on layer 7.
 - Two flavours of AWS WAF:
   - AWS WAF New - Used for resources created after November 2019
   - AWS WAF Classic - Used for resources created before November 2019
@@ -15,11 +15,15 @@
 - The request will be received by the CloudFront distribution/ALB/API Gateway/AWS AppSync first.
 - The request is forwarded to WAF Web ACL.
 - The Web ACL would filter the incoming traffic based upon rules or rules groups.
+  - Rules can include IP address, HTTP headers, HTTP Body or URI strings.
+  - Protects from common attacks - (SQL injection attacks and Cross-Site-Scripting)
+  - Size constraints - (Such as any request greater than 20 MB)
+  - Rate based rules - to count occurrences of events.
 
-# Understanding Rules and Rules Groups
+## Understanding Rules and Rules Groups
 - These rules are used to define the inspection criteria to determine whether the
   traffic can be allowed or blocked.
-- Managed rule groups are set of rules preconfigured by AWS and AWS market place.
+- Managed rule groups are set of rules preconfigured by AWS and AWS marketplace.
 - Managed Rule groups allows us to protect the web application from set of vulnerabilities.
 - Example for managed rule groups are by Fortinet (Threat information) and
   GeoGuard (Based on IP Fraud detection).
@@ -42,3 +46,16 @@
 - A web ACL can have a maximum of 1500 WCU.
 - We also need to set the Rule priority. The Rules are executed in the order they
   are listed. The general priority should be Allow, Deny/Block and Bad Signatures.
+
+## AWS WAF - Managed rules:
+
+- Library of over 190 managed rules
+- There are different kinds of rule groups:
+  - Baseline rule group - general protection from common threats.
+    - AWSManagedRulesCommonRuleSet, AWSManagedRulesAdminProtectionRuleSet
+  - Use-case specific rule groups - Protection for many AWS WAF use cases
+    - SQLiRuleSet, WindowsRuleSet, PHPRuleSet, WordPressRuleSet
+  - IP Reputation rule groups - block requests based on source IP.
+    - AWSManagedRulesAmazonIpReputationList, AWSManagedRulesAnonymousIpList
+  - Bot control managed rule group - block and manage requests from Bots
+    - AWSManagedRulesBotControlRuleSet
