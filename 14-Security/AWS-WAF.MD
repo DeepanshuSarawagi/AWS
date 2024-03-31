@@ -59,3 +59,29 @@
     - AWSManagedRulesAmazonIpReputationList, AWSManagedRulesAnonymousIpList
   - Bot control managed rule group - block and manage requests from Bots
     - AWSManagedRulesBotControlRuleSet
+
+## AWS WAF - Web ACL - Logging:
+
+- You can send WAF logs to:
+  - Cloudwatch logs log group - 5 MB per second
+  - S3 buckets with 5 minutes interval
+  - Amazon Kinesis Data Firehose.
+
+## Example Solution Architecture - Enhance CloudFront origin security with AWS WAF with AWS Secrets Manager:
+
+**Use case:**
+
+We have an application running on EC2 instances front ended with ALB. We want to allow incoming traffic only originated from
+CloudFront. All other direct site access should be blocked/rejected.
+
+**Solution:**
+
+- Setup WAF with some Web ACLs on CloudFront level.
+- On Amazon CloudFront create a custom HTTP Header with a secret string - `X-Origin-Verify:xxxxxxxx`. This will be added to every request that
+  goes through CloudFront.
+- Result of this, we can create WAF at ALB level and create a filtering rule.
+  - This filtering rule will allow only traffic which has the above custom HTTP Header to route to ALB.
+  - All other traffic will be blocked.
+- We can then setup rotation of this secret string in http header to have maximum security using SecretsManager.
+- The lambda function will rotate this secret string once in a while and update the AWS WAF at both CloudFront level
+  and filter rule of WAF at ALB level.
