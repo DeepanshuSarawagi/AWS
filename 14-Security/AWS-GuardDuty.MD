@@ -4,9 +4,16 @@
 - Uses ML, anomaly detection.
 - Input logs include
   - CloudTrail Logs
+    - CloudTrail Management events: Create VPC subnets, create trails, etc..
+    - CloudTrail S3 Data events: Get/List/Delete objects
   - VPC Flow logs
   - DNS Logs
   - Kubernetes Audit Logs
+  - RDS and Aurora
+  - EBS
+  - S3 Data Events
+  - Lambda network activity
+- Can setup EventBridge rules in case of any findings.
 - Can protect against Cryptocurrency attack
 - Amazon GuardDuty offers threat detection that enables you to continuously monitor and protect your AWS accounts,
   workloads, and data stored in Amazon S3. GuardDuty analyzes continuous streams of meta-data generated from your
@@ -14,7 +21,11 @@
   It also uses integrated threat intelligence such as known malicious IP addresses, anomaly detection,
   and machine learning to identify threats more accurately.
 
-Difference between Disabling and suspending GuardDuty:
+## Delegated Administrator:
+- AWS Organization member accounts can be designates to be GuardDuty Delegated Administrator.
+- Have full permissions to enable and manage GuardDut for all accounts in the Organization.
+
+## Difference between Disabling and suspending GuardDuty:
 
 Disable the service in the general settings - Disabling the service will delete all remaining data, including your
 findings and configurations before relinquishing the service permissions and resetting the service.
