@@ -58,3 +58,10 @@
 - As a part of the process to create the custom key store, you must upload the trust anchor certificate
   for the cluster to the KMS and this certificate is generated when cluster is first initialized.
 - Also we must create a dedicated crypto user called kmsuser without MFA enabled.
+
+## SSL offloading using CloudHSM:
+
+CloudHSMM can be used for SSL offloading. The cloudHSM device at the backend will be the one performing SSL acceleration.
+The benefit of using this solution is that the SSL private key will never your CloudHSM device.
+
+To make this work, one must setup the Cryptographic User (CU) on the device and have EC2 instance use that user for all operations.
