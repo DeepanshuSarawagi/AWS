@@ -194,5 +194,7 @@ service. This helps us to get rid of using explicit Deny.
 ## IAM roles v. resource based policies:
 - When you assume a role, you give your original permissions and take the permission assigned to the role.
 - However, when using a resource based policy, user/IAM principal doesn't have to give up any permissions.
-- Classic usecase:
+- Classic use case:
   - User needs to scan a DynamoDB table in account A and dump it in S3 bucket in account B.
+
+## IAM Advanced policies:
