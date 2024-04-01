@@ -1,6 +1,6 @@
 # We have different types of EC2 instances
 
-1) General Purpose
+##  General Purpose
 t2:micro
 t: instance class
 2: generation (AWS improves them over time)
@@ -13,7 +13,7 @@ Balance between
   Networking
 Eligible for free tier
 
-2) Compute Optimized
+## Compute Optimized
   Batch processing workloads
   Media Transcoding
   High performance webservers
@@ -21,7 +21,8 @@ Eligible for free tier
   Dedicated webservers for gaming
   Naming convention: c5, c6, c6g
 
-3) Memory Optimized
+## Memory Optimized
+
 Fast performance for workloads that process huge data sets using in-Memory (RAM)
   High performance, relational/non-relational databases
   Distributed web scale cache stores
@@ -29,7 +30,8 @@ Fast performance for workloads that process huge data sets using in-Memory (RAM)
   Applications performing real time processing of big unstructured data
 Naming convention: R6g, R5a, R5b, R5n
 
-4) Storage Optimized
+## Storage Optimized
+
 Great for Storage-incentive tasks that require high R/W operations to large data
 sets in local memory
   High Frequency Online Transaction Processing System
@@ -37,3 +39,7 @@ sets in local memory
   Redis
   Data warehousing
   Naming convention: i3, D2, D3, H1
+
+## General or Web app:
+    
+These are used for general web applications. Example, m5.xlarge, m6.xlarge.
