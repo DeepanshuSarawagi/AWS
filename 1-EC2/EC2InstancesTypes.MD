@@ -81,3 +81,39 @@ On-Demand instances:
   - CPU based ML
   - Video encoding, Gaming
   - in-memory caches
+
+## HPC - High Performance Computing:
+
+- Can create high performing number of instances in no time.
+- You can speed up time to results by adding more time.
+- You can pay only for the systems you have used.
+
+**HPC can be used in following areas:**
+
+- Genomics
+- Computation chemistry
+- Financial risk
+- Machine Learning
+- Weather prediction
+- Deep Learning
+- Autonomous driving
+
+### Which services help HPC?
+
+### Data Management and transfer:
+
+- AWS Direct Connect:
+  - Move GBs of data to cloud over private secure network.
+- AWS Snowball and Snowmobile:
+  - Move PB data to the cloud.
+- AWS DataSync:
+  - Move large amount of data between On-prem and S3, EFS and FSx for windows.
+
+### Compute and Networking:
+
+- EC2 instances:
+  - CPU optimized
+  - GPU optimized
+- EC2 placement groups:
+  - Cluster placement group can provide high network performance of up to 10gbps.
+  - Same AZ, same rack
