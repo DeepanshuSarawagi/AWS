@@ -57,9 +57,24 @@
 ECS tasks can be invoked by EventBridge
 
 ### Amazon ECR:
--  Store and manage docker images in ECR.
+- Store and manage docker images in ECR.
 - Provides both private and public repository.
 - Backed by S3.
+- Fully integrated with ECS.
+- Access to ECR is controlled through IAM.
+- Features:
+  - Vulnerability scanning
+    - Manual scan or scan on push.
+    - Two types:
+      - Basic Scanning:
+        - Checks for Common CVE.
+      - Enhanced scanning:
+        - Leverages Amazon Inspector; Looks for OS and programming language vulnerabilities.
+  - Image tags.
+  - Image lifecycle.
+  - Versioning 
+  - ECR Cross region replication:
+    - ECR private repository supports both cross-region and cross-account replication.
 
 ### ECS - ALB Integration:
 
