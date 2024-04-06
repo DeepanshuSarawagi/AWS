@@ -41,13 +41,15 @@ On-Demand instances:
 *     Even if we didn't use the instance, we will be charged.
 
 ## EC2 Spot Instance:
-*   Maximum discount upto 90%
-*   However, least reliable since you may end up losing the instance if the max price
-*   is less than the current spot price.
-*   Spot price is set by AWS and fluctuates based on demand and flow.
-*   Bid for large EC2 instances for a low cost.
-*   The MOST cost-efficient instances in AWS.
-*   Use for workloads that are resilient to failures.
+* Maximum discount upto 90% compared to on-demand.
+* However, least reliable since you may end up losing the instance if the max price
+* is less than the current spot price.
+* Spot price is set by AWS and fluctuates based on demand and flow.
+* Bid for large EC2 instances for a low cost.
+* The MOST cost-efficient instances in AWS.
+* If the current spot price goes more than your max price, then you can either choose to stop or terminate the EC2 instance
+  with the grace period of two minutes.
+  Use for workloads that are resilient to failures.
     - Batch jobs
     - Image Processing
     - Data Analysis
