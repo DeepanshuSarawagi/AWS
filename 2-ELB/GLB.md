@@ -1,4 +1,4 @@
-# Brief document on Gateway Load Balancer
+# Gateway Load Balancer
 
 - Operates at layer 3, network layer using IP protocol.
 - Deploy, scale and manage a fleet of 3rd party network virtual appliances in AWS.
