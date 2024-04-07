@@ -96,3 +96,37 @@ Limits to know:
 ### X-Ray:
 - Enable tracing to get extra information about requests in API Gateway.
 - X-Ray API Gateway + AWS Lambda gives you the full picture.
+
+## Usage plan and API keys:
+- If you want to make an API available as an offering to your customers.
+
+## Usage plan:
+- Who can access one or more deployed API stages and methods.
+- how much and how fast can they access them.
+- Use API keys to identify users and measure access.
+- Configure throttling limits and quota limits that are enforced on individual clients.
+
+## API Keys:
+- Alphanumeric strings are secrets to distribute to your customers and that's how they get identified into API.
+- Can use usage plans to control usage.
+- Throttling limits that are applied to API keys.
+- Quotas limits is the maximum number of requests.
+
+## WebSocket API:
+- Two way interactive communication between a user browser and a server.
+- Server can push information to the client.
+- This enables stateful application use cases.
+- **Useful in real time applications such as:**
+  - Chat applications
+    - Server to client messaging `@connections` used for replies to clients.
+    - Use the @connections callback URL, which can be invoked by Lambda.
+    - API Gateway is smart enough to post message to the client using this `@connections callback URL.`
+  - Collaborative platforms
+  - Multi-player games
+  - Financial trading platforms
+
+## Private APIs:
+- Can be accessed from your VPC by using vpc interface endpoints.
+- Each VPC Interface endpoints can be used to access multiple private APIs.
+- Can attach API Gateway resource policy to control access to API Gateway via VPC or VPCE.
+  - `aws:SourceVpc` or `aws:SourceVpce` 
