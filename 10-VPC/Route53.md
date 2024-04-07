@@ -161,3 +161,16 @@
   - Other networks can be:
     - Peered VPCs
     - On-premises network connected through AWS Direct Connect or AWS VPN.
+
+### Inbound endpoint:
+- DNS resolvers on your network can forward DNS queries to Route53 resolver.
+- Allows your DNS resolvers to resolve domain names for AWS resources and records in private hosted zone.
+
+### Outbound endpoint:
+- Route53 resolvers conditionally forward DNS queries to your DNS resolvers.
+
+DNS resolvers can be associated with one or more VPCs in the same region. 
+
+Each endpoint supports 10,000 queries per second per IP address.
+
+Resolver rules can be shared across accounts using AWS RAM.
