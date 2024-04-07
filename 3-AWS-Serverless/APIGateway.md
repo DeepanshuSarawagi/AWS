@@ -64,3 +64,35 @@ Limits to know:
 - CORS - Cross Origin Resource Sharing
   - Control which domain can call your API.
   - Browser based security.
+
+## API Gateway - Authentication:
+
+### IAM based access:
+- Good for providing access within your infrastructure.
+- Pass IAM credentials in Headers through SigV4.
+
+### Lambda Authorizer:
+- Use lambda to verify custom OAuth/SAML/3rd party authentication.
+- The lambda function would still need to be programmed.
+
+### Cognito user pools:
+- Client authenticates with Cognito.
+- Client passes the token to API Gateway.
+- API Gateway then verifies the token with the help of its deep integration with Cognito.
+
+## Logging, Monitoring, Tracing:
+
+### CloudWatch Logs:
+- Enable CW logging at stage level.
+- Can send API Gateway access logs.
+- Can log full requests / responses data.
+- Can send logs directly into Kinesis Data Firehose.
+
+### CloudWatch Metrics:
+- Metrics are by stage, possibility to log detailed metrics.
+- Following metrics are integrated:
+  - `IntegrationLatency, Latency, CacheHitCount, CacheMissCount`
+
+### X-Ray:
+- Enable tracing to get extra information about requests in API Gateway.
+- X-Ray API Gateway + AWS Lambda gives you the full picture.
