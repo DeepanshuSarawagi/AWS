@@ -6,6 +6,12 @@
   that reduce latency and can be managed via the console or API.
 - Alias Records: Acts like a CNAME record allowing you to route your traffic to
   other AWS resources such as ELBs, VPC interface endpoints etc.
+- Get support for DNSSEC.
+  - A protocol for securing DNS traffic and verifies Data DNS integrity and origin.
+  - Protects against MITM attacks.
+  - Route53 supports both DNSSEC for Domain Registration and DNSSEC signing.
+  - Works only with public hosted zone.
+- 
 
 ## Hosted Zones:
   - Hosted Zones is a container that holds information about how you route traffic
@@ -13,9 +19,17 @@
   ### Public Hosted Zone:
   - This zone determines how traffic is routed on the internet and can be created
       when you register your domain with Route 53.
+  - Target can be public IP of
+    - EC2 instance
+    - ALB
+    - CloudFront distribution
+    - S3 bucket
   ### Private Hosted Zone:
   - This zone determines how traffic is routed within your Amazon VPC. If your resources
     are not accessible outside of your VPC, you can use any domain name of your wish.
+  - For private hosted zones, you must enable the following VPC settings:
+    - `enableDnsHostnames`
+    - `enableDnsSupport`
 
 ## Route 53 Records:
   Each record contains:
@@ -129,3 +143,10 @@
   - Health checks can also be setup for text based response upto 5120 bytes of text.
   - For health checks to be healthy, configure your routes/firewall to allow incoming requests from Route53 health
     checkers.
+
+### Health checks - Private hosted zones:
+- Route53 health checkers are outside the VPC.
+- They can't access private endpoints.
+- **So, how do we monitor the private endpoints or resources?**
+  - Create a CloudWatch Metric of the private resource, create a CloudWatch alarm out of it.
+  - Then create the healthcheck that checks the alarm itself.
