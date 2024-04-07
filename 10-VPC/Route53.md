@@ -150,3 +150,14 @@
 - **So, how do we monitor the private endpoints or resources?**
   - Create a CloudWatch Metric of the private resource, create a CloudWatch alarm out of it.
   - Then create the healthcheck that checks the alarm itself.
+
+## Hybrid DNS:
+- By default, Route53 resolver automatically answers DNS queries for:
+  - Local domain names for EC2 instances.
+  - Private hosted resources
+  - Public Name servers.
+- **Hybrid DNS:**
+  - Resolving DNS queries between your VPC and other networks.
+  - Other networks can be:
+    - Peered VPCs
+    - On-premises network connected through AWS Direct Connect or AWS VPN.
