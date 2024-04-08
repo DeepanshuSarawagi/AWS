@@ -6,3 +6,6 @@
 - Good for buffer/cache/scratch data/temporary content.
 - Provides high random I/O performance.
 - Backup and Replication are your responsibility.
+- Disks upto 7.5 TiB, stripped to reach 60 TiB.
+- Block storage just like EBS.
+- Cannot be increased in size.
