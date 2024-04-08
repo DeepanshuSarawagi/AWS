@@ -18,19 +18,19 @@
 - Information is altered rendering plain text data unreadable through mathematical algorithms and encryption keys.
 - An encryption key is required to revert the text to plain text.
 - This encryption is categorized into two types:
-  - Symmetric cryptography:
+  - **Symmetric cryptography:**
   
-    A single key is used to both encrypt and decrypt the data.
-    If the data was read by a different person then the key has to be shared with that person to decrypt the data.
-    If the key is intercepted is during the transmission, then the data can be compromised.
+    - A single key is used to both encrypt and decrypt the data.
+    - If the data was read by a different person then the key has to be shared with that person to decrypt the data.
+    - If the key is intercepted is during the transmission, then the data can be compromised.
 
-  - Asymmetric cryptography:
+  - **Asymmetric cryptography:**
   
-    Two separate keys are used. One to encrypt the data and the other to decrypt the data.
-    Both the keys are created at the same time.
-    Private keys should be kept by a party and should never be shared.
-    Public keys can be shared with anyone.
-    Both the private and public key is required to decrypt the data.
+    - Two separate keys are used. One to encrypt the data and the other to decrypt the data.
+    - Both the keys are created at the same time.
+    - Private keys should be kept by a party and should never be shared.
+    - Public keys can be shared with anyone.
+    - Both the private and public key is required to decrypt the data.
 
 
 ## 2. KMS:
