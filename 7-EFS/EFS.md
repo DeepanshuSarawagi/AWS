@@ -11,6 +11,10 @@
 - It can easily scale to Petabytes in size with low latency access.
 - It has been designed for high level throughput.
 - Works only with Linux based AMI, POSIX compliant.
+- Uses NFSVv4.1 protocol.
+- Uses security groups to control access.
+- Encryption at rest using KMS.
+- Can attach to one VPC alone, create one ENI (mount target) per AZ.
 
 ## Storage Classes and Performance Options:
 - Standard
@@ -28,6 +32,11 @@
 - Once the file is accessed within the lifecycle set, the timer gets reset and file automatically moves to standard class.
 - Any files which has size less than 128K or it has metadata about your files, then it will remain in the standard storage class.
 
+### Scalability:
+- 1000s of concurrent NFS clients, 10+ Gbps throughput.
+- Grow to petabyte scale NFS automatically.
+
+
 | **Performance Metrics** | **General Purpose**	 | **Max I/O**     |
 |-------------------------|----------------------|-----------------|
 | **Throughput**	         | Standard	            | Unlimited       |
@@ -36,8 +45,13 @@
 
 ### Throughput Modes:
 
-- Bursting Throughput - 100 MiB/Second per TiB
-- Provisioned Throughput - Additional changes incur since it provides additional Throughput
+- **Bursting Throughput -**  100 MiB/Second per TiB
+- **Provisioned Throughput -** Set your throughput regardless of storage size. Additional changes incur since it provides 
+  additional Throughput.
+- **Elastic -**
+  - Automatically scales throughput up or down based on workload.
+  - Upto 3 GiB/s for reads and 1 GiB/s for writes.
+  - Used for unpredictable workloads.
 
 ## Creating EFS:
 
