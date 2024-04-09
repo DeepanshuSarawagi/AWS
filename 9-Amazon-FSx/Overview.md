@@ -1,4 +1,4 @@
-# Amazon FSx.
+# Amazon FSx
 
 ## Introduction:
 
@@ -38,6 +38,12 @@
   - Storage options are SSd and HDD.
   - Can write the computations back to S3 using FSx.
   - Can be accessed from on-premise using VPN or DirectConnect.
+
+#### FSx for Lustre - Data Lazy Loading:
+- Any data processing job on Lustre with S3 as input data source can be started without Lustre doing full download of the
+  dataset first.
+- Data is lazy loaded; meaning only the data that has been processed is loaded. This helps in reducing costs and latency.
+- Data is also loaded only once. Therefore you reduce requests costs to S3 bucket.
   
 ### FSx Filesystem deployment options:
   - Scratch File System:
