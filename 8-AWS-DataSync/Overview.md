@@ -21,3 +21,4 @@ AWS DataSync has the following capabilities
   - Replicate an Amazon EFS from one AWS region to a different Amazon EFS in a
     different AWS region for disaster recovery.
   - Replications tasks can be scheduled hourly, daily, weekly.
+  - File permissions and metadata are preserved. (NFS POSIX, SMB..)
