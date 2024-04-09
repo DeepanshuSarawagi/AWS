@@ -1,4 +1,6 @@
-# This document will give us brief overview of Amazon FSx.
+# Amazon FSx.
+
+## Introduction:
 
 - Provides a fully managed native Microsoft Windows Filesystems on AWS.
 - Easily move and migrate windows workloads requiring file storage.
@@ -24,7 +26,7 @@
 - Can be configured to be Multi-AZ.
 - Data is backedup daily to S3.
 
-FSx for Lustre:
+### FSx for Lustre:
   - A fully managed file system designed for compute-intensive workloads such as ML and High Performance Computing (HPC).
   - Ability to process massive data sets.
   - Performance can run upto 100s of GB per second of throughput, millions of IOPS
@@ -37,7 +39,7 @@ FSx for Lustre:
   - Can write the computations back to S3 using FSx.
   - Can be accessed from on-premise using VPN or DirectConnect.
   
-FSx Filesystem deployment options:
+### FSx Filesystem deployment options:
   - Scratch File System:
     - Temporary storage
     - Data is not replicated
@@ -48,4 +50,33 @@ FSx Filesystem deployment options:
     - Data is replicated within same AZ.
     - Replace failed files within minutes.
     - Long term processing or sensitive data.
-  - 
+
+### FSx for NetApp ONTAP:
+
+- Managed NetApp ONTAP on AWS.
+- Compatible with NFS, SMB, iSCSI protocol
+- Move workloads running on ONTAP or NAS to AWS.
+- Works with:
+  - Linux
+  - Windows
+  - MacOS
+  - EC2, EKS, ECS
+  - VMWare cloud on AWS.
+  - Amazon WorkSpaces and AppStream 2.0.
+- Storage shrinks or grows automatically.
+- Snapshot, Compression, Data De-duplication and replication feature available.
+- Point in time instantaneous cloning.
+
+### FSx for OpenZFS:
+- Managed OpenZFS on AWS.
+- File System compatible with NFS (v3, v4, v4.1, v4.2)
+- Move workloads running on ZFS to AWS.
+- Works with:
+  - Linux
+  - Windows
+  - MacOS
+  - EC2, EKS, ECS
+  - VMWare cloud on AWS.
+- Upto 1,000,000 IOPs and < 0.5ms latency.
+- Snapshot, Compression and replication feature available.
+- Point in time instantaneous cloning.
