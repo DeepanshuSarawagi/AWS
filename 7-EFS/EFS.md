@@ -37,11 +37,11 @@
 - Grow to petabyte scale NFS automatically.
 
 
-| **Performance Metrics** | **General Purpose**	 | **Max I/O**     |
-|-------------------------|----------------------|-----------------|
-| **Throughput**	         | Standard	            | Unlimited       |
-| **IOPS**	               | 7K<= per second	     | 7k>= per second |
-| **Latency**             | 	Low Latency         | 	High Latency   | 
+| **Performance Metrics** | **General Purpose** | **Max I/O**     |
+|-------------------------|---------------------|-----------------|
+| **Throughput**          | Standard            | Unlimited       |
+| **IOPS**	               | 7K<= per second     | 7k>= per second |
+| **Latency**             | 	Low Latency        | 	High Latency   | 
 
 ### Throughput Modes:
 
@@ -72,3 +72,31 @@
 - A running EC2 instance with EFS mount helper installed
 - Needs a EC2 instance in VPC. Amazon DNS servers with DNS hostnames
 - A security group allowing NFS access your EC2 instance
+
+## Storage classes:
+
+### Standard:
+- For frequently accessed files.
+
+### Infrequent access:
+- Cost to retrieve files.
+- Lower price to store.
+- Enable EFS-IA with a lifecycle policy.
+
+## Availability and Durability:
+
+- Regional: Multi-AZ, great for Prod.
+- Great for lower environments, compatible with IA; EFS One Zone-IA
+
+## On-premises and VPC peering:
+
+- EFS has a way to be mounted with on-premises and has VPC peering.
+- The VPC elsewhere can be peered with your EFS VPC for you EC2 instances to access your EFS drive.
+- Or through on-premises servers through DC or Site-to-Site VPN.
+  - On-premises mount of EFS should be done using IPV4.
+
+## Access points:
+- Easily manage application environments to NFS environments.
+- Enforce a POSIX user and a group to use when accessing the file system.
+- Restrict access to directory within a filesystem and optionally specify a different root directory.
+- Can restrict access from NFS clients using IAM policies.
