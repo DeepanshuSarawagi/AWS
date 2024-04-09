@@ -100,3 +100,22 @@
 - Enforce a POSIX user and a group to use when accessing the file system.
 - Restrict access to directory within a filesystem and optionally specify a different root directory.
 - Can restrict access from NFS clients using IAM policies.
+
+### Use case of EFS access points:
+
+- Consider the following directory structure of / -> /root, /config, /secrets, /data.
+- We create an `Access Point 1`, lets say `UID: 1001, GID: 1001, Path: /data`
+- Then any IAM identity which has access to this `access point 1` using IAM will only be able to access the `/data` directory
+  of your NFS.
+
+## EFS - File System policies:
+
+- Resource based policies to control access to EFS File System
+- By default it grants full access to all clients.
+
+## EFS - Cross-Region replication:
+- Replicate objects in an EFS file system to another AWS region.
+- Can be setup for new or existing EFS file systems.
+- Provides RTO and RPO of minutes.
+- The replication setting doesnt affect the throughput of the file system.
+- 
