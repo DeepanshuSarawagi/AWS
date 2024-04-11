@@ -111,6 +111,19 @@ An Event Source Mapping is the configuration that links your event source to the
 
 ### Lamda@edge:
 - It is another type of synchronous invocation of Lambda.
+- Written on Node.js or Python.
+- Scales to 1000s requests/second.
+- Runs at the nearest regional edge cache.
+- VM-based isolation.
+- Used to change CloudFront requests and responses:
+  - **Viewer Requests:**
+    - Perform customization after CloudFront receives a request from the user.
+  - **Viewer Responses:**
+    - Perform customization before CloudFront forwards the response to the user.
+  - **Origin Requests:**
+    - Perform customization after CloudFront forwards a request to the origin.
+  - **Origin Responses:**
+    - Perform customization after CloudFront receives the response from the origin.
 - You can use the Lambda Function globally by using Lambda@Edge
 - Deploy Lambda functions alongside CDN distribution
 - Helps to build more responsive application.

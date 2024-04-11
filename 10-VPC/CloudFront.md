@@ -131,7 +131,7 @@
 - A code that you write and attach to CloudFront distributions.
 - It runs closer to the users to minimize latency.
 - Doesn't have any cache, only to send requests/responses.
-- CloudFront provides two types: CloudFront Functions and [Lambda@Edge](../3-AWS-Serverless/AWS-Lambda.md#lamdaedge)
+- CloudFront provides two types: [CloudFront Functions](#cloudfront-functions) and [Lambda@Edge](../3-AWS-Serverless/AWS-Lambda.md#lamdaedge)
 
 ### Use cases:
 - Manipulate HTTP requests and responses.
@@ -145,3 +145,19 @@ Note:
 
 : Lambda@Edge is going to be deployed at Regional Edge Cache level whereas CloudFront Functions are going to be deployed at
 Edge Locations.
+
+### CloudFront Functions:
+
+- LightWeight functions written in JS.
+- For high-scale, latency sensitive CDN customizations.
+- Sub-ms startup time, can handle millions of requests/second.
+- Process based isolation.
+- Used to change `Viewer requests and responses`:
+  - **Viewer Requests:**
+    - Perform customization after CloudFront receives a request from the user.
+  - **Viewer Responses:**
+    - Perform customization before CloudFront forwards the response to the user.
+- **Does not modify `Origin Request or Origin Response.`**
+- Native feature of CloudFront (Manage code entirely within CloudFront.
+
+Following is the detailed comparison between [CloudFront Functions vs Lambda@Edge](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-choosing.html)
