@@ -3,6 +3,7 @@
 - AWS CloudFront is CDN - content delivery network service which speeds up the
   delivery of the static or dynamic content delivered to the end user based on the
   nearest edge location.
+- Can scale up to 1000000 requests per second.
 - The content of the website will be cached in the nearest edge location whenever
   a user access your resources.
 - As this data is cached, after a set period this data will expire based on the
