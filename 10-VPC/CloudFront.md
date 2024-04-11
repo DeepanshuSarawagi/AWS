@@ -17,31 +17,46 @@
 - Proxy methods PUT/POST/PATCH/OPTIONS/DELETE go directly to the origin
 - CloudFront works from edge locations and doesn't belong to a VPC.
 
-CloudFront Origins:
-- S3 buckets
-- HTTP Endpoints such as:
+## CloudFront Origins:
+- **S3 buckets**
+  - For distributing files
+  - Can provide enhanced security with **_Origin Access Control._**
+  - OAC is now replaced with newer version called **_Origin Access Identity._**
+  - Can be used as an ingress; to upload files to S3.
+- **HTTP Endpoints such as:**
   - Ec2 Instance (Must be public, Allow public IP of Edge Locations in Security Group)
   - Application Load Balancer (Must be a public/external, Allow public IP of Edge Locations in Security Group, EC2 instances
     must allow ALB source in its security group and can be in private subnet)
   - Custom HTTP Endpoints
-  - S3 Website
+  - API Gateway.
+    - For more control use API Gateway Edge.
+- **S3 Website:**
+  - This can be achieved by enabling static website hosting on S3 bucket.
+- **MediaStore Container and MediaPackage Endpoint:**
+  - To deliver Video On Demand or for Live-streaming video using AWS Media Services.
 
-CloudFront Geo Restriction:
+## CloudFront Geo Restriction:
 - Can whitelist or blacklist users based on their origin country IP address.
+- The country is determined by 3rd party Geo-IP database.
+- **Use case:** Copyright laws to control access to content.
+- Note:
+: The geo header `CloudFront-Viewer-Country` is in Lambda@Edge.
 
-CloudFront vs S3 CRR:
-CloudFront:
+## CloudFront vs S3 CRR:
+
+### CloudFront:
   - Global Edge Network
-  - Great for static content
+  - Great for static content that must be available everywhere
   - TTL maybe for a day
 
-SR CRR:
+### SR CRR:
   - Must be setup for each region you want replication to happen
   - Files are updated in near real time
+  - Read only
   - Great for static/dynamic content that needs to be available at fewer region
 
-CloudFront Signed URLs:
-- Use case: You want to share paid shared content to premium users around the world
+### CloudFront Signed URLs:
+- **Use case:** You want to share paid shared content to premium users around the world
 - We can use CloudFront Signed URLs or Signed Cookies to access the private content with policies.
   - Includes URL expiration
   - Trusted Signers (Which AWS accounts can create Signed URLs)
@@ -49,31 +64,34 @@ CloudFront Signed URLs:
 - Signed URL = Access to individual files
 - Signed Cookies = Access to multiple files (One cookie for multiple files)
 
-CloudFront Price Classes:
+### CloudFront Price Classes:
 - Price varies for per GB data transfer on network for different Edge Locations.
 - There are three Price classes:
   - Price Class All: All regions, the best performance
   - Price Class 200: includes most region but excludes the most expensive region
   - Price Class 100: Only the least expensive region
+- Below is the price class chart offering for reference.
 
-Web distribution:
+![cloudFront price class offering](CloudFront.png)
+
+### Web distribution:
   - Speed up distribution of static and dynamic content.
   -  Distribute media files using HTTP or HTTPS.
   - Add, delete or delete objects and submit data using web forms.
   - Use live-streaming to stream a live event.
 
-CloudFront Multiple Origins:
+### CloudFront Multiple Origins:
 - To route to different kind of origins based on content type.
 - We can route content to different origin based on path
   - /api/* - We can route the CloudFront request to ALB.
   - /* - We can route the request to S3 bucket.
 
-CloudFront Origin Groups:
+### CloudFront Origin Groups:
 - To increase high-availability and do failover.
-- Origin Group: One primary and one secondary origin
+- **Origin Group:** One primary and one secondary origin
 - If primary origin fails, CloudFront can then failover to secondary origin.
 
-CloudFront Field Level Encryption:
+### CloudFront Field Level Encryption:
 - Protect user sensitive information through application stack.
 - You can specify what fields to encrypt by specifying fields if POST request is made. (Upto 10 fields can be encrypted)
 - Encryption of user sensitive data happens at Edge Location and is not accessible to any downstream layers.
@@ -81,7 +99,27 @@ CloudFront Field Level Encryption:
 - Uses asymmetric encryption.
 - Adds extra layer of security.
 
-RTMP distribution:
+### RTMP distribution:
   - Distribute streaming media with the Adobe Flash media service RTMP protocol.
   - The source data for your RTMP distribution can only exist in a S3 bucket and
     not an EC2 instance.
+
+## CloudFront - Restrict Access to Application Load Balancers and Custom Origins
+- Prevent direct access to your ALB or Custom Origins (only access through CloudFront)
+- First, configure CloudFront to add a Custom HTTP Header to requests it sends to the ALB
+- Second, configure the ALB to only forward requests that contain that Custom HTTP Header
+- Keep the custom header name and value secret!
+
+## CloudFront Signed URL vs 53 Pre-Signed URL:
+
+### CloudFront Signed URL:
+
+- Allow access to a path, no matter the origin
+- Account wide key-pair, only the root can manage it
+- Can filter by IP, path, date, expiration
+- Can leverage caching features
+
+### 53 Pre-Signed URL:
+- Issue a request as the person who pre-signed the URL
+- Uses the IAM key of the signing IAM principal
+- Limited lifetime

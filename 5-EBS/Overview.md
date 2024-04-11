@@ -21,6 +21,7 @@
 - One important note to consider is that, EC2 volumes can be attached to EBS volumes
   within the same availability zone.
 - Also, one EBS volume can be accessed by one EC2 instance at a time.
+- EBS volumes can be resized.
 
 ## EBS Snapshot features:
 
