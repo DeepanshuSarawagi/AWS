@@ -29,3 +29,7 @@ AWS DataSync has the following capabilities
 - Find, subscribe to and use third-party data in the cloud.
 - Once subscribed to data product, you can use the Amazon Data Exchange API to load the data directly into S3 and analyze
   it with wide variety of AWS Analytics and ML services.
+
+### AWS Data EXchange for RedShift:
+- Find and subscribe to third party data in Data Exchange that you can query in Redshift Data Warehouse within minutes.
+- Easily license your data in Amazon Redshift through Amazon Data Exchange.
