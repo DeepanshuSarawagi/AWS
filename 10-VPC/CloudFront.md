@@ -123,3 +123,23 @@
 - Issue a request as the person who pre-signed the URL
 - Uses the IAM key of the signing IAM principal
 - Limited lifetime
+
+## CloudFront - Customization at the Edge:
+- Many modern applications execute some form of logic at the Edge.
+
+### Edge Function:
+- A code that you write and attach to CloudFront distributions.
+- It runs closer to the users to minimize latency.
+- Doesn't have any cache, only to send requests/responses.
+- CloudFront provides two types: CloudFront Functions and [Lambda@Edge](../3-AWS-Serverless/AWS-Lambda.md#lamdaedge)
+
+### Use cases:
+- Manipulate HTTP requests and responses.
+- Implement request filtering before reaching your application.
+- User authentication and authorization.
+- Generate HTTP responses at the Edge.
+- A/B testing.
+- BOT mitigation at the Edge.
+
+Note:
+: 
