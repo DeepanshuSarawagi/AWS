@@ -74,4 +74,4 @@
 
 - Partition key must be unique for each item.
 - It must be diverse so that the data is distributed.
-- **Example:** `user_id` is a great partition key for table of users.
+  - **Example:** `user_id` is a great partition key for table of users.
