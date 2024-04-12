@@ -1,0 +1,88 @@
+# Brief document on Amazon Relational Database Services
+
+- This service helps to provision, scale and create relational databases.
+- Available database engines
+  - MySQL
+  - MariaDB
+  - Postgresql
+  - Amazon Aurora
+  - Oracle
+  - SQL Server
+
+- Amazon Aurora uses the share cluster storage architecture. We have option to select
+  the storage option.
+- Benefits of Aurora is we are only billed for storage used and I/Os processed.
+- however, other DB engines such as MariaDB, MySQL, Postgresql, Oracle, SQL Server
+  we are billed for storage provisioned
+- When Multi-AZ is configured, a secondary RDS instance is deployed in a secondary
+  availability zone.
+- When a production RDS instance is crashed/down, Amazon updates the DNS record to
+  point the record to secondary RDS instance which is deployed in secondary AZ.
+- The replication of data between primary and secondary DB instance is synchronous.
+- During failure, RDS will update the DNS record to point to the secondary instane.
+- RDS provides automatic backup feature.
+- Amazon Aurora backtrack allows you to go back in time on the database to recover
+  from the error.
+- All the databases uses the EBS for storage, however, Amazon Aurora uses the shared
+  cluster architecture.
+- Using RDS Auto-scaling feature, the database instance storage can be scaled automatically.
+- We need to specify the maximum storage threshold, i.e., to what maximum extent our database
+  storage can scale automatically.
+- RDS backups allows you to automatically takes backup
+- Transaction logs are backed up every 5 minutes.
+- ability to restore to any point right from 5 mins old to oldest backup.
+- Data retention period is 7 days and it can be increased to 35 days.
+- Snapshots are manual backup of database.
+- Data retention of Snapshot can be as long as you want.
+- The database instance classes are standard(m), memory optimized(r and x) and burstable(t).
+
+### General Purpose SSD storage:
+- Provides single digit millisecond latencies
+- Cost effective
+- SSD storage for primary data:
+  - Minimum 20 GiB
+  - Maximum 64 TiB (SQL Server 16 TiB)
+
+### Provisioned IOPs:
+
+- Minimum of 8000 IOPs
+- Maximum of 80000 IOPs (SQL Server 40000 IOPs)
+- SSD storage for primary data:
+  - Minimum 100 GiB
+  - Maximum 64 TiB (SQL Server 16 TiB)
+
+### Horizontal Scaling of Amazon RDS:
+- If the READ operation is more on the production database, then performance may
+  take a hit. Hence, a Read Replica instance can be created by creating a snapshot
+  of the primary instance to serve just the READ ONLY traffic. The data between the primary instance and the read
+  replica instance is linked asynchronously.
+
+## RDS Encryption:
+
+### At Rest encryption:
+ - Possibility to encrypt the data of master and read replica at rest using AWS KMS AES 256 encryption
+ - If master is not encrypted, then read-replicas cannot be encrypted.
+ - Encryption has to be defined at launch time.
+ - Transparent Data Encryption available for Oracle and SQL Server.
+
+### In-flight encryption:
+ - SSL certificates to encrypt data to RDS in-flight.
+ - Provide SSL options with trust certificate when connecting to database.
+
+### Encrypting RDS backups:
+
+ - Snapshots of un-encrypted databases are un-encrypted.
+ - Can copy a snapshot into an encrypted one.
+
+### How to encrypt an unencrypted database:
+
+ - Create a snapshot of unencrypted database.
+ - Make a copy of unencrypted snapshot and enable encryption.
+ - Restore the database from the encrypted snapshot.
+ - Update the database connection to the new encrypted database.
+
+### Access Management:
+
+ - IAM roles and policies can be used to control who can manage the database.
+ - IAM authentication can be used to login to RDS MySQL and Postgres.
+ - IAM Authentication token has a lifetime of 15 minutes.
