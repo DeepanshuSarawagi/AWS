@@ -46,11 +46,13 @@
 - DAX is an in-memory cache delivering significant performance enhancement, upto
   10X as fast as default DynamoDB settings, allowing response times to decrease
   from milliseconds to microseconds.
+- 5 minutes TTL for cache by default.
 - DAX deployment can start with a multi-node cluster, containing a minimum of 3 nodes
   which you can quickly and easily modify and expand reaching a maximum of 10 nodes
   which could be 1 primary and 9 read replicas.
 - DAX is a separate entity to DynamoDB and it sits outside of DynamoDB and is placed
   within your VPC.
+- Writes go through DAX to DynamoDB.
 - A DAX client is required to allow EC2 instances to interact with DAX cluster.
   This client then intercepts with and directs all DynamoDB API calls from your
   client to your new DAX cluster endpoint where the incoming request is then load
