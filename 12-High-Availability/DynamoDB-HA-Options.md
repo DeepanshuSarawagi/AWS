@@ -16,14 +16,14 @@
 - Users can be served data directly from the closest geographically located table
   replica.
 
-On Demand Backups:
+## On Demand Backups:
 - Allow to request a full backup of a table, as it is at the very moment the backup
   request is made.
 - On demand backups remain in the account until they are explicitly requested to be deleted
 - Backups typically finish within seconds and have zero impact on the table performance
   and availability.
 
-Point In Time Recovery - PITR:
+## Point In Time Recovery - PITR:
 - It is an enhanced version of on demand backup and restore feature, providing you
   the ability to perform point in time recoveries.
 - With PITR in place, you can simply restore back to a specific time.
@@ -34,10 +34,11 @@ Point In Time Recovery - PITR:
 - Table restoration can be performed in the same region as the original table, or
   into a different region altogether.
 
-DynamoDB Accelerator:
+## DynamoDB Accelerator:
+- Seamless cache for DynamoDB. No re-write of application required.
 - The data is automatically replicated to different AZs and that replication usually
   happens in milliseconds but this synchronisation can take longer time. This is
-  called us eventual consistency.
+  called as eventual consistency.
 - There are certain kinds of queries and table scans that may return older version
   of data before the most recent copy.
 - We might have a requirement where we need microsecond response times in a read-heavy
