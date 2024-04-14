@@ -36,3 +36,16 @@
   - General
   - Audit
 - These log files are either downloaded or published to CloudWatch logs.
+
+## Convert RDS to Aurora:
+
+### Option1:
+
+- Create an RDS snapshot. And then restore the snapshot into an Aurora DB instance.
+- Quicker option, however, application still using RDS main instance will have problems due to replication of remaining data.
+
+### Option2:
+
+- This option is to create an Aurora Read Replica from RDS DB instance. 
+  - It is possible to create Aurora Read Replica from Non-Aurora RDS instance.
+- When the replication lag is zero, you can then promote it to Aurora DB instance.
