@@ -1,5 +1,7 @@
 # Brief document explaining design and components of Simple Notification Service
 
+## Introduction:
+
 - It is used as a subscribe/publish messaging service.
 - SNS is centered around topics. You can think of a topic as a group for collecting
   messages.
@@ -23,6 +25,19 @@
     - Lambda
     - SMS
     - Kinesis Data Firehose
+- SNS integrates with lot of AWS services.
+- Many AWS services can send data directly to SNS for notifications.
+  - CloudWatch Alarms.
+  - ASG Notifications.
+  - CloudFormation State changes.
+  - AWS Budgets.
+  - S3 Events notifications.
+  - AWS DMS.
+  - Lambda.
+  - DynamoDB.
+  - RDS Events.
+- Upto `12,500,000` subscriptions per topic.
+- An account can have upto `100,000` topics limit.
 - SNS offers methods of controlling specific access to your topics through topic
   policy. For example, you can specify which protocol subscribers must use such as
   SMS or HTTPS, or you can restrict access of a topic to a specific user.
@@ -30,7 +45,7 @@
   seamlessly to subscribers through a push method, while SQS handles incoming messages
   and waits for consumers to pull data.
 
-SNS and SQS Fan-out pattern:
+## SNS and SQS Fan-out pattern:
   - Push once in SNS, receive in all SQS queues that are subscribers.
   - We need to make sure SQS queue access policy allows for SNS to write.
   - SNS can directly connect with Kinesis Data Firehose.
