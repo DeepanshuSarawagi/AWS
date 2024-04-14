@@ -100,6 +100,15 @@
 - IAM to centrally manage users instead of DB.
 - Can leverage IAM roles and EC2 instance profile for easy integration.
 
-### RDS For Oracle - Exam Tips:
+## RDS For Oracle - Exam Tips:
+
+### RDS Oracle Backups:
 - Use RDS Backups for backups and restore to Amazon RDS for Oracle.
 - Or use the Oracle RMAN (Recovery Manager) to back from Amazon RDS for Oracle and restore to Non-RDS oracle instance.
+
+### Real Application Clusters:
+- RDS for Oracle does not support RAC.
+- RAC is working on Oracle on EC2 instances since we have full control.
+
+- RDS for Oracle supports Transparent Data Encryption to encrypt data before its written to storage.
+- DMS works on RDS oracle.
