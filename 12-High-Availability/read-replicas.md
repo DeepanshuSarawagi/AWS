@@ -16,8 +16,8 @@
 - Adding more replicas allows you to scale your read performance to a wider range
   of applications.
 - You are able to deploy read replicas in different regions.
-- It is possible to promote an existing read replica to replace the primary db instance
-  in the event of an incident.
+- **It is possible to promote an existing read replica to replace the primary db instance
+  in the event of an incident.**
 - For read replicas, you dont pay the fee is the data is travelling across multi-AZ within same region.
 - During any maintenance of the primary instance, the read traffic can still be
   served by the read replicas.

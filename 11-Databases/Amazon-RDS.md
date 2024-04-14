@@ -112,3 +112,14 @@
 
 - RDS for Oracle supports Transparent Data Encryption to encrypt data before its written to storage.
 - DMS works on RDS oracle.
+
+### RDS for MySQL:
+- You can use the native `mysqldump` to migrate a MySQL RDS Db to Non-RDS.
+- The external MySQL database can run on Amazon EC2 instance.
+
+### RDS Proxy for Lambda:
+- When using Lambda functions with RSD, it opens and maintains a database connection.
+- This can result in a `TooManyConnections` exceptions.
+- With `RDS Proxy`, you no longer need code to handle the cleaning up of idle connections and managing it.
+- RDS Proxy supports IAM Authentication, DB Authentication and autoscaling.
+- **Note:** Lambda function must have connectivity to Proxy.
