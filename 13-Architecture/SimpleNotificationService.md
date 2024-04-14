@@ -54,6 +54,25 @@
   - Same throughput as of SQS FIFO.
   - SNS Message Filtering using SNS Fan Out pattern.
   - JSON Policy used to filter messages sent to SNS Topic's subscribers.
+  - Cross Region Delivery: Works with SQS in other region provided the security allows it.
 
-SNS FIFO + SQS FIFO: Fan Out
+**SNS FIFO + SQS FIFO: Fan Out**
   - Provides Fan Out + Ordering + De-duplication.
+
+## Amazon SNS – Security
+
+### Encryption:
+
+- In-flight encryption using HTTPS API
+- At-rest encryption using KMS keys
+- Client-side encryption if the client wants to perform encryption/decryption itself
+### Access Controls: 
+- IAM policies to regulate access to the SNS API
+- SNS Access Policies (similar to S3 bucket policies)
+- Useful for cross-account access to SNS topics
+- Useful for allowing other services ( S3…) to write to an SNS topic
+
+## SNS - Messaging Filtering:
+
+- JSON policy used to filter messages sent to SNS topic’s subscriptions
+- If a subscription doesn’t have a filter policy, it receives every message
