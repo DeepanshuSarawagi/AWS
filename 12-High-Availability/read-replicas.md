@@ -1,5 +1,7 @@
 # Brief document on read replicas in Amazon RDS
 
+## Introduction:
+
 - Read replicas are NOT used for resiliency or secondary instance in the event of
   a failover.
 - Read Replicas are used to serve the read-only access to your database data via
@@ -20,7 +22,12 @@
 - During any maintenance of the primary instance, the read traffic can still be
   served by the read replicas.
 
-Read Replicas for MySQL Engine:
+### Distributing Reads across replicas:
+- Using Route53 we can use the weighted record set to route traffic equally among all the replicas.
+- We can also include health checks to read replicas using Route53, hence, in event of failures, application traffic will
+  not be routed to a faulty ready replica instance.
+
+## Read Replicas for MySQL Engine:
 - Read replicas are only supported where the source DB is running MySQL DB V5.6 or later.
 - The retention value of the automatic backups of the primary DB needs to set to
   a value of 1 or more.
@@ -33,12 +40,12 @@ Read Replicas for MySQL Engine:
 - Amazon CloudWatch can monitor the synchronization between the source DB and the
   read replica through a metric known as ReplicaLag.
 
-Read Replicas for MariaDB Engine:
+## Read Replicas for MariaDB Engine:
 - All the config or requirements of read replicas using MariaDB engine are same as
   MySQL engine.
 - The only difference is you can be running any version of MariaDB for read replicas.
 
-Read Replicas for PostgreSQL Engine:
+## Read Replicas for PostgreSQL Engine:
 - When using PostgreSQL, you need to run version 9.3.5 or later for read replica.
 - The native PostgreSQL streaming replication is used to handle the replication and
   creation of the read replica.

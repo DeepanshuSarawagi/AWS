@@ -8,6 +8,7 @@
   - Amazon Aurora
   - Oracle
   - SQL Server
+  - IBM DB2
 
 - Amazon Aurora uses the share cluster storage architecture. We have option to select
   the storage option.
@@ -35,6 +36,8 @@
 - Snapshots are manual backup of database.
 - Data retention of Snapshot can be as long as you want.
 - The database instance classes are standard(m), memory optimized(r and x) and burstable(t).
+- IAM authentication for PostgreSQL, MySQL and MariaDB.
+- Authorization still happens with RDS.
 
 ### General Purpose SSD storage:
 - Provides single digit millisecond latencies
@@ -86,3 +89,17 @@
  - IAM roles and policies can be used to control who can manage the database.
  - IAM authentication can be used to login to RDS MySQL and Postgres.
  - IAM Authentication token has a lifetime of 15 minutes.
+
+### RDS Events:
+- Get notified via SNS for events.
+
+## RDS IAM Authentication:
+- IAM authentication for PostgreSQL, MySQL and MariaDB.
+- You dont need a password, just an IAM authentication token obtained using IAM and RDS API calls with a validity of 15 minutes.
+- Network In/Out must be encrypted using SSL.
+- IAM to centrally manage users instead of DB.
+- Can leverage IAM roles and EC2 instance profile for easy integration.
+
+### RDS For Oracle - Exam Tips:
+- Use RDS Backups for backups and restore to Amazon RDS for Oracle.
+- Or use the Oracle RMAN (Recovery Manager) to back from Amazon RDS for Oracle and restore to Non-RDS oracle instance.

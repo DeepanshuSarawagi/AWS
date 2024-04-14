@@ -12,7 +12,7 @@
 - RDS uses a failover mechanism on Oracle, MySQL, MariaDB, PostgreSQL.
 - The RDS failover process happens automatically and is managed by AWS.
 - RDS updates the DNS record to point to the secondary instance within 60-120 seconds.
-- The RDS failover triggers an event which is recorded as RDS-EVENT-0025 when the
+- The RDS failover triggers an event which is recorded as `RDS-EVENT-0025` when the
   failover process is complete.
 - The failover event can be notified using SMS/SNS service.
 
