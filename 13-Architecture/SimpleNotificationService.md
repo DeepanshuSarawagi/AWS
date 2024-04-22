@@ -76,3 +76,38 @@
 
 - JSON policy used to filter messages sent to SNS topic’s subscriptions
 - If a subscription doesn’t have a filter policy, it receives every message
+
+## SNS Message delivery retries:
+
+- Amazon SNS defines a delivery policy for each delivery protocol. 
+- The delivery policy defines how Amazon SNS retries the delivery of messages when server-side errors occur 
+  (when the system that hosts the subscribed endpoint becomes unavailable). 
+- When the delivery policy is exhausted, Amazon SNS stops retrying the delivery and discards the message—unless a dead-letter queue is attached to the subscription.
+
+For delivery protocols and policies, refer to this [table](https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html).
+
+## Delivery policy stages
+
+Each delivery policy is comprised of four phases.
+
+### Immediate Retry Phase (No Delay): 
+
+- This phase occurs immediately after the initial delivery attempt. There is no delay between retries in this phase.
+
+### Pre-Backoff Phase
+
+- This phase follows the Immediate Retry Phase. 
+- Amazon SNS uses this phase to attempt a set of retries before applying a backoff function. 
+- This phase specifies the number of retries and the amount of delay between them.
+
+### Backoff Phase
+
+- This phase controls the delay between retries by using the retry-backoff function. 
+- This phase sets a minimum delay, a maximum delay, and a retry-backoff function that defines how quickly the delay increases from the minimum to the maximum delay. 
+- The backoff function can be arithmetic, exponential, geometric, or linear.
+
+### Post-Backoff Phase
+
+- This phase follows the backoff phase. 
+- It specifies a number of retries and the amount of delay between them. 
+- This is the final phase.
