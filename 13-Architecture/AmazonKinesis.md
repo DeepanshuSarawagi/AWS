@@ -9,55 +9,61 @@
   and Data Analytics.
 - Amazon Kinesis Video Stream is used to do stream processing on binary encoded data
   such as audio and video.
-- Amazon Kineses Data Stream, Kinesis Data Firehose and Kenisis Data Analytics is
+- Data is automatically replicated synchronously to 3AZs.
+- Amazon Kineses Data Stream, Kinesis Data Firehose and Kinesis Data Analytics is
   used to do stream processing on base64 encoded data such as logs, click stream
   data, social media feeds, financial transactions, in-game player activity, geospatial
   services and telemetry from IoT devices.
 
 
 
-Layers of Streaming:
-- There are 5 layers of streaming.
+## Layers of Streaming:
 
-Source:
+There are 5 layers of streaming.
+
+### Source:
   - Mobile Device
   - Metering
   - Click Streams
   - IoT sensors
   - logs
 
-Stream Ingestion:
+### Stream Ingestion:
+
   The data for streaming can be injested using following services/tools
   - Amazon Kinesis Agent
   - Amazon Kinesis Producer Library
   - Amazon SDK
 
-Stream Storage:
-  The data which is stored in this layer is done by Amazon Kinesis Data Streams which
-  is called as Producer.
+### Stream Storage:
+
+The data which is stored in this layer is done by Amazon Kinesis Data Streams which is called as Producer.
+
  - Inside Kinesis Data Streams, data can be stored but it cannot be modified. Hence,
    the data is immutable. However, the data can expire.
  - As of today, the Kinesis Data Stream can store data starting from 24 hours upto 365 days.
  - It is a high speed storage buffer.
+ - Multiple applications at the same time can consume from same stream.
+ - Real time processing with scale of throughput.
 
-Stream Processing:
-  The Stream Processing layer is managed by the Consumers.
+### Stream Processing:
+The Stream Processing layer is managed by the Consumers.
   - Amazon Kinesis Data Analytics
   - Amazon Kineses Consumer Library
   - Amazon Kineses Data Firehose
 
-Destination:
-  Consumers send data to the destination layer which can be one of the following
+### Destination:
+Consumers send data to the destination layer which can be one of the following
   - Amazon S3
   - Amazon Redshift
   - Amazon Elasticsearch service
   - Splunk
 
-Amazon Kineses Video Stream:
+## Amazon Kineses Video Stream:
 - Designed to stream binary encoded data into AWS from millions of sources (audio
   and video but it can be any binary-encoded time series data)
 
-Amazon Kineses Data Stream:
+## Amazon Kineses Data Stream:
 - A highly customizable data streaming solution available from AWS.
 - Highly customizable: All parts involved with stream processing - data ingestion,
   monitoring, scaling, elasticity and consumption are done programmatically when
@@ -83,27 +89,30 @@ Amazon Kineses Data Stream:
 - KDS provides ordering of records, as well as the ability to read and/or replay records in the same order to
   multiple Amazon Kinesis Applications.
 
-- There are two types of Consumers:
-  - Classic:
+### There are two types of Consumers:
+  - **Classic:**
     - Pulls data from the stream.
     - Also known as Polling mechanism.
     - There is a limit to number of times and amount of data, consumers can pull from the shard.
-  - Enhanced Fan-Out:
+  - **Enhanced Fan-Out:**
     - Push Method: Consumer can subscribe to a shard.
     - Results in data being pushed from the shard into a consumer application.
     - Since polling is removed, Shard limits are removed, every consumer gets provisioned
       throughput of 2 MBs per second per shard.
-Capacity Modes:
-  - Provisioned Mode:
+
+### Capacity Modes:
+
+  - **Provisioned Mode:**
     - You choose the number of shards provisioned, scale manually or using API.
     - You pay per shard provisioned per hour.
-  On demand Mode:
+  **On demand Mode:**
     - No need to manage or provision the capacity.
     - Default capacity of 4 MB/s or 4000 messages/second
     - Scales automatically based on observed throughput peak of last 30 days.
     - Pay per stream per hour and data in/out in GB.
 
-Use Cases:
+### Use Cases:
+
   AWS recommends Amazon Kinesis Data Streams for use cases with requirements that are similar to the following:
 
   - Routing related records to the same record processor (as in streaming MapReduce). For example, counting and aggregation
@@ -117,7 +126,7 @@ Use Cases:
     audit application that runs a few hours behind the billing application. Because Amazon Kinesis Data Streams stores
     data for up to 365 days, you can run the audit application up to 365 days behind the billing application.
 
-Amazon Kinesis Data Firehose:
+## Amazon Kinesis Data Firehose:
 - Data Firehose being fully managed is a streaming delivery service for data.
 - Ingested data can be dynamically transformed, scaled automatically and can be
   automatically delivered to a data store.
@@ -147,7 +156,7 @@ Amazon Kinesis Data Firehose:
   billed for used capacity.
 - Doesn't support replay capability.
 
-Amazon Kinesis Data Analytics:
+## Amazon Kinesis Data Analytics:
 - Kinesis Data Analytics has the ability to read the data from stream in real-time
   and perform aggregation and analysis while data is in motion.
 - It does this by leveraging SQL queries, or with Apache Flink using Java or Scala
