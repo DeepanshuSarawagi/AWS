@@ -1,5 +1,6 @@
 # Document explaining the components and architecture of Amazon Kinesis service
 
+- Kinesis is a managed `data streaming` service.
 - Amazon Kinesis was designed to address the complexity and cost of streaming data
   into AWS cloud.
 - Kinesis makes it to easy to collect, process and analyze data from various data
@@ -10,6 +11,11 @@
 - Amazon Kinesis Video Stream is used to do stream processing on binary encoded data
   such as audio and video.
 - Data is automatically replicated synchronously to 3AZs.
+- Low latency streaming ingest at scale.
+- Streams are divided into Shards / Partitions.
+  - Shards should be provisioned in advance.
+  - Producers will produce data to a Shard and consumers will consume it from Shard.
+  - Data retention is 24 hours by default and can go upto 365 days.
 - Amazon Kineses Data Stream, Kinesis Data Firehose and Kinesis Data Analytics is
   used to do stream processing on base64 encoded data such as logs, click stream
   data, social media feeds, financial transactions, in-game player activity, geospatial
@@ -39,8 +45,7 @@ There are 5 layers of streaming.
 
 The data which is stored in this layer is done by Amazon Kinesis Data Streams which is called as Producer.
 
- - Inside Kinesis Data Streams, data can be stored but it cannot be modified. Hence,
-   the data is immutable. However, the data can expire.
+ - Inside Kinesis Data Streams, data can be stored but it cannot be modified. Hence,the data is immutable. However, the data can expire.
  - As of today, the Kinesis Data Stream can store data starting from 24 hours upto 365 days.
  - It is a high speed storage buffer.
  - Multiple applications at the same time can consume from same stream.
