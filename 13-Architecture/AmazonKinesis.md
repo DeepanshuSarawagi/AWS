@@ -86,8 +86,10 @@ Consumers send data to the destination layer which can be one of the following
 - Consumers - Amazon Kineses Data Stream Applications get records from Kinesis Data
   stream and process them.
 - Consumers can be created using SDKs, APIs or Kinesis Client Library.
-- For consumers, in shared consumption - 2 MB/s per shard for all consumers.
-- In enhanced consumption - 2MB/s per shard per consumer.
+  - `For classic consumers`, in shared consumption - 2 MB/s per shard across for all consumers.
+    - 5 API calls per second per SHARD across all consumers.
+  - `In enhanced fan-out consumption` - 2MB/s per shard per consumer.
+    - No API calls needed. (Push model)
 - Once data is entered into Kinesis, it cant be deleted.
 - Data storage from 1 to 365 days.
 - Supports replay capability.
@@ -135,6 +137,14 @@ Consumers send data to the destination layer which can be one of the following
 - Data Firehose being fully managed is a streaming delivery service for data.
 - Ingested data can be dynamically transformed, scaled automatically and can be
   automatically delivered to a data store.
+- Following producers can produce data into Kinesis Data Firehose:
+  - Applications
+  - KPL Client
+  - SDK
+  - Kinesis Agent
+  - Kinesis Data Streams
+  - AWS IoT
+  - AWS CloudWatch Logs and Events
 - Not a streaming storage layer in the way that Data stream is.
 - It uses Producers to load data into streams in batches and once inside a stream, it
   delivers data into a data store.
@@ -144,12 +154,21 @@ Consumers send data to the destination layer which can be one of the following
 - The buffer size is in megabytes and the ranges can vary depending upon the destination.
 - The buffer size has to be a minimum of 32MB in size and maximum of 128MB.
 - The buffer interval can vary between 60 seconds to 900 seconds.
-- Essentially, data buffers inside the stream and it leaves the buffer either when it
-  size is full or when buffer interval expires. For this reason, Kinesis Data Firehose
-  is considered as a near real-time streaming solution.
-- Kinesis Data Firehose can deliver data to four data stores - Amazon S3, Amazon Redshift,
-  Amazon Elasticsearch and Splunk. Now, it can also deliver data using generic HTTP
-  endpoints and 3rd party solution providers such as MongoDB, DataDog, New Relic.
+- Essentially, data buffers inside the stream, and it leaves the buffer either when its size is full or when buffer 
+  interval expires. 
+- For this reason, Kinesis Data Firehose is considered as a near real-time streaming solution.
+  - Why near-real time?
+    - Buffer Interval - 0 seconds or upto 900 seconds.
+    - Buffer size: Min 1MB
+- Kinesis Data Firehose can deliver data to four data stores - 
+  - Amazon S3, 
+  - Amazon Redshift, 
+  - Amazon Elasticsearch
+  - Now, it can also deliver data using generic HTTP endpoints and 3rd party solution providers such as 
+    - MongoDB, 
+    - DataDog, 
+    - New Relic.
+- Can send failed or all data to a backup S3 bucket.
 - Automatic Scaling is possible in Data Firehose.
 - It can also transform incoming data from JSON format to Apache Parquet or Apache ORC.
 - Parquet and ORC are columnar data formats that save space and has faster queries
@@ -161,6 +180,40 @@ Consumers send data to the destination layer which can be one of the following
   billed for used capacity.
 - Doesn't support replay capability.
 
+### Kinesis Data Firehose Delivery Diagram:
+
+![Delivery Diagram](https://docs.aws.amazon.com/images/firehose/latest/dev/images/fh-flow-rs.png)
+
+For Splunk destinations, streaming data is delivered to Splunk, and it can optionally be backed up to your S3 bucket concurrently.
+
+![Splunk Delivery Diagram](https://docs.aws.amazon.com/images/firehose/latest/dev/images/fh-flow-splunk.png)
+
+### Firehose buffer sizing:
+
+- Firehose accumulates records in a buffer
+- The buffer is flushed based on time and size rules.
+- If the `Buffer Size` has reached example - 32 MB in size, then it is flushed.
+- Or if the `Buffer Time` has reached example - 1 minute, then it is flushed.
+- Firehose can automatically increase the buffer size to increase the throughput.
+  - High Throughput => Buffer Size will be hit. 
+  - Low Throughput => Buffer Time will be hit.
+
+Note:
+
+: If real time flush from Kinesis Data Streams to S3 is needed, use Lambda. Data Firehose will cost a lot more.
+
+### Exam Tip:
+
+| Dimension                 | Kinesis Data Stream                                                                 | Kinesis Data Firehose                                                                              |
+|---------------------------|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Purpose                   | Low latency streaming service for scale                                             | Data Transfer Service to load data into S3, Redshift, Opensearch, 3rd party tools                  |
+| Message propagation delay | Real time ~200 ms latency for classic and ~70 ms for enhanced fanout                | Near real time, depends on Buffer Size and Buffer Time                                             |
+| Provisioning              | Managed provisioning                                                                | Fully managed service                                                                              |
+| Scaling                   | Manual scaling                                                                      | Automatic Scaling                                                                                  |
+| Data Storage              | Configurable upto 1 to 365 days                                                     | Does not provide Data storage                                                                      |
+| Replay capability         | Supports replay                                                                     | Does not replay capability                                                                         |
+| Producers                 | Need to write code for producers, supports SDK, KPL, Kinesis Agent, CloudWatch, IoT | Need to write code for producers, supports SDK, KPL, Kinesis Agent, CloudWatch, IoT                |
+| Consumers                 | Open ended. Supports multiple consumers and destinations. Supports KCL and Spark    | Close ended. Handled by Firehost and supports limited destinations. Does not support KCL and Spark |
 ## Amazon Kinesis Data Analytics:
 - Kinesis Data Analytics has the ability to read the data from stream in real-time
   and perform aggregation and analysis while data is in motion.
