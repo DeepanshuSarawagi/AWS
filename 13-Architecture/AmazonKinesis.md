@@ -214,6 +214,7 @@ Note:
 | Replay capability         | Supports replay                                                                     | Does not replay capability                                                                         |
 | Producers                 | Need to write code for producers, supports SDK, KPL, Kinesis Agent, CloudWatch, IoT | Need to write code for producers, supports SDK, KPL, Kinesis Agent, CloudWatch, IoT                |
 | Consumers                 | Open ended. Supports multiple consumers and destinations. Supports KCL and Spark    | Close ended. Handled by Firehost and supports limited destinations. Does not support KCL and Spark |
+
 ## Amazon Kinesis Data Analytics:
 - Kinesis Data Analytics has the ability to read the data from stream in real-time
   and perform aggregation and analysis while data is in motion.
@@ -224,3 +225,24 @@ Note:
 - Apache Flink with Java or Scala are only available for Kinesis Data Streams.
 - Kinesis Data Analytics cannot directly ingest data from the source as it ingests data either from Kinesis Data
   Streams or Kinesis Data Firehose
+
+### Use cases
+- **Streaming ETL:** select columns, make simple transformations, on streaming data
+- **Continuous metric generation:** live leaderboard for a mobile game
+- **Responsive analytics:** look for certain criteria and build alerting (filtering)
+
+### Features
+- Pay only for resources consumed (but it's not cheap)
+- Serverless; scales automatically
+- Use IAM permissions to access streaming source and destination(s)
+- SQL or Flink to write the computation
+- Schema discovery
+- Lambda can be used for pre-processing
+
+
+## References:
+
+Here are some great architectural patterns discussed at length. Refer to AWS blogs below.
+
+1. [Architectural patterns for real time analytics](https://aws.amazon.com/blogs/big-data/architectural-patterns-for-real-time-analytics-using-amazon-kinesis-data-streams-part-1/)
+2. [Amazon Kinesis Architecture](https://aws.amazon.com/blogs/architecture/category/analytics/amazon-kinesis/)
