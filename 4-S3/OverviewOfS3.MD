@@ -84,7 +84,36 @@ By default, an AWS account can have 100 buckets and this is a soft limit.
 -  Serverless query service to perform analytics on S3 objects.
 -  Amazon Athena can then be integrated with Amazon QuickSight for some dashboards.
 -  Pricing is pay per query or $5 per TB for data scanned.
+- Supports different formats such as 
+  - Parquet
+  - JSON
+  - CSV
+  - ORC
+  - AVRO
+- Pricing: $5.00 per TB of data scanned.
+- **Use cases:**
+  - BI
+  - Analytics
+  - Reporting
+  - Analyze and query VPC flow logs, ELB logs, CloudTrail trails
+- **Exam tip:** Any time analyze data on S3 using SQL with serverless solution, use Athena
+
+### Athena - Performance Improvement:
 -  Use compressed or columnar data for cost savings.
+- Apache Parquet or ORC is recommended.
+- Use Glue to convert data into Parquet or ORC.
+- Partition datasets in S3 for easy querying on virtual columns.
+- Use larger files > 128 MB to minimize overhead as compared to many smaller files.
+
+### Amazon Athena - Federated Query:
+
+- Allows you to run SQL queries across data stored in relations, non-relational, objects, and custom data sources (AWS or on-premises)
+- Use Datasource connectors that run on Lambda to run federated queries on (CLoudWatch logs, RDS, DynamoDB)
+
+![Federated Query](https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2019/11/27/AthenaQueryPic1.png)
+
+[AWS Reference link](https://aws.amazon.com/blogs/big-data/query-any-data-source-with-amazon-athenas-new-federated-query/) 
+for further reading.
 
 ## S3 Object Lock:
 - Adopt a WORM model.
