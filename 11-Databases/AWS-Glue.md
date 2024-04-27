@@ -5,7 +5,7 @@
 - Fully serverless service.
 - It can Extract and transform data from S3 or RDS and load into Redshift for further analytics.
 
-Glue Data Catalog:
+## Glue Data Catalog:
 - Catalog of datasets.
 - Glue Data Crawler will be used to collect the metadata from S3, DynamoDB, RDS or any JDBC compatible.
 - Glue Data Crawler will then load the data into Data Catalog which will contain tables about the metadata.
