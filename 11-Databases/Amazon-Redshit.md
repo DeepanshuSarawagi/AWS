@@ -15,16 +15,20 @@
 - Runs on a paradigm of Extract, Transform and Load.
 - Enhanced VPC Routing Redshift forces all COPY and UNLOAD traffic moving between your cluster and data
   repositories through your VPCs.
+- Data is loaded from S3, Kinesis Firehose, DynamoDB, DMS.
+- Based on node type: 100+ nodes and upto 16TB of space per node.
+- Can provision multiple nodes and can be Multi-AZ for specific type of clusters.
 
 ## Redshift Snapshots and DR:
 - Redshift has no Multi-AZ mode.
 - Snapshots are point-in-time backups of cluster stored internally in S3.
 - The backups are incremental in nature.
-- The Snapshots can be automated: Every 8 hours, Every 5 GB or Scheduled with set retention period.
-- Manual snapshots can be taken with infinite retention period until you delete it.
+- The Snapshots can be **automated**: Every 8 hours, Every 5 GB or **Scheduled** with set retention period.
+- **Manual** snapshots can be taken with infinite retention period until you delete it.
 - Snapshots can be automated to be copied into another AWS region and restore of cluster in another region.
 
 ## Components of Redshift:
+
 ### Cluster:
 - Main or the core component of Amazon Redshift service which has its own Redshift
 - engine and has at least one database.
@@ -43,16 +47,35 @@
 - Redshift Spectrum can perform queries directly against S3.
 
 ### Connectivity:
-- Communication between Business Intelligence applications and Amazon Redshift database can be established using either ODBC or JDBC.
+- Communication between Business Intelligence applications and Amazon Redshift database can be 
+  established using either ODBC or JDBC.
+- RedShift Enhanced VPC routing: COPY/UNLOAD goes through VPC.
 
 ### Performance features:
 - Massive Parallel Programming
 - Columnar Data Storage
 - Result caching.
-- Results are cached in the memory of the Leader Node, whenever a query is made to the Redshift Database, 
+  - Results are cached in the memory of the Leader Node, whenever a query is made to the Redshift Database, 
 - Leader Node first checks for the results within its memory
 
 ### Redshift Spectrum:
 - Query data that is already in S3 without loading it.
 - Must have a Redshift cluster available to start the query.
 - The query is then submitted to thousands of Redshift spectrum nodes.
+
+## Redshift Workload Management:
+
+- Enables you to flexibly manage queries' priorities within workloads.
+- Example: Prevent short, faster running queries from getting stuck behind longer running queries.
+- Define multiple query queues (SuperUser query queue, UserDefined query queue)
+- Route queries to appropriate queues at runtime.
+- Two types of workload management:
+  - **Automatic:** Queues and Resources are managed by Redshift.
+  - **Manual:** Queues and Resources managed by customer.
+
+## Redshift Concurrency Scaling:
+
+- Enables you to provide consistently fast performance with unlimited queries and concurrent users.
+- Redshift automatically adds additional cluster capacity (Concurrency Scaling Cluster) to process an increase in requests.
+- Ability to decide which queries sent to Concurrency Scaling Cluster using WLM.
+- Charges are per second.
