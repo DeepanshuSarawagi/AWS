@@ -35,15 +35,33 @@
 - Can be easily integrated with dashboards.
 - We can perform actions using CloudWatch Alarms Action.
   - EC2 instance action (Stop, Reboot, Terminate, Recover)
-  - ASG actions
-  - SNS
+  - ASG actions (Scale based on different CloudWatch Alarms)
+  - SNS (Email notifications)
 - If you set an alarm on a high-resolution metric, you can specify a high-resolution alarm with a period
 of 10 seconds or 30 seconds, or you can set a regular alarm with a period of any multiple of 60 seconds.
 
+## CloudWatch Synthetics Canary:
+
+- Configurable script that monitor your APls, URLs, Websites, ...
+- Reproduce what your customers do programmatically to find issues before customers are impacted
+- Checks the availability and latency of your endpoints and can store load time data and screenshots of the Ul
+- Integration with CloudWatch Alarms Scripts written in Node.js or Python
+- Programmatic access to a headless Google Chrome browser
+- Can run once or on a regular schedule
+
+### CloudWatch Synthetics Canary Blueprints:
+
+- **Heartbeat Monitor:** Load URL, store screenshot and an HTTP archive file.
+- **API Canary:** Test basic read and write functions of REST APIs.
+- **Broken link checker:** Check all the links inside URL is working.
+- **Visual monitoring:** Compare a screenshot taken during a canary run with a baseline screenshot.
+- **Canary recorder:** Used with CloudWatch Synthetics recorder - (record your actions on a website and automatically 
+    generate a script for it)
+- **GUI Workflow builder:** verifies that actions can be taken on your webpage. E.g., login form.
+
 ## CloudWatch EventBridge
 
-- EventBridge connects to your own application allowing to respond to your events
-that occur in your application.
+- EventBridge connects to your own application allowing to respond to your events that occur in your application.
 - Has evolved from an existing feature called Amazon Events.
 - Amazon EventBridge is the only event-based service that integrates directly with third-party SaaS partners.
 - An event is anything that causes change to your environment or application.
@@ -78,7 +96,7 @@ that occur in your application.
 ## CloudWatch Logs
 
 - Gives you a centralized location to house all of your logs from different AWS
-services which provides logs as an output, such as CloudTrail, EC2, VPC Flow Logs etc.
+  services which provides logs as an output, such as CloudTrail, EC2, VPC Flow Logs etc.
 - Acts as a central repository for real time monitoring of all the log data.
 - Can utilize Insights to get overview of logs in real-time and take actions as needed.
 - Unified CloudWatch Agent can collect logs and additional metric data from EC2 instances as well as from on-premise services 
