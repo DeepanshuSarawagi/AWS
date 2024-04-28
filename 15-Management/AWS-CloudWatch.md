@@ -17,7 +17,7 @@
   - Disk Reads/Writes
   - NumberOfObjects - specific to S3
   - Creating customised is regional. A metric cannot be available for another region.
-- Allows CloudWatch to implement ML algorithms against your data to help detect any activity which is outside 1/the normal 
+- Allows CloudWatch to implement ML algorithms against your data to help detect any activity which is outside the normal 
   baseline parameters that are generally expected
 
 ## CloudWatch Custom Metric:
@@ -99,6 +99,11 @@ of 10 seconds or 30 seconds, or you can set a regular alarm with a period of any
   services which provides logs as an output, such as CloudTrail, EC2, VPC Flow Logs etc.
 - Acts as a central repository for real time monitoring of all the log data.
 - Can utilize Insights to get overview of logs in real-time and take actions as needed.
+- CloudWatch Logs can send logs to:
+  - Kinesis Data Streams
+  - Kinesis Data Firehose
+  - S3
+  - ElasticSearch
 - Unified CloudWatch Agent can collect logs and additional metric data from EC2 instances as well as from on-premise services 
   running either a linux or windows operating system
 - CloudWatch Agent installation requires creation of role and attaching it to the instance with permissions to collect 
@@ -116,6 +121,50 @@ of 10 seconds or 30 seconds, or you can set a regular alarm with a period of any
   - Once the configuration file of agent is stored, we need to detach the policy from EC2 instance.
   - For security reason, only one EC2 instance needs to be attached with agent configuration role
     policy.
+
+### CloudWatch Logs - S3 Export:
+
+CloudWatch has a feature to directly send the logs to S3 bucket. However, S3 buckets should meet following requirements and
+has certain limitations.
+
+- S3 buckets must be encrypted with SSE-S3 or SSE-KMS.
+- Logs can take up to 12 hours to become available for export.
+- Logs export is not automated, we need to make an API call `CreateExportTask`.
+- Not real-time or near real-time, use logs subscription instead.
+
+### CLoudWatch Logs - Subscription:
+
+CloudWatch logs can get subscription filter to filter the logs you want. This subscription filter can send data to many
+different outputs such as:
+
+- Subscription filter lambda function to send logs to ElasticSearch in real time.
+- Or we can create a custom lambda function.
+- Subscription filter with Kinesis Data Firehose to send logs to S3 in near real time.
+- Subscription filter with Kinesis Data Firehose and from there to:
+  - Kinesis Data Firehose
+  - Kinesis Data Analytics
+  - EC2 running KCL
+  - Lambda
+
+![Subscription filter for Multi-Account Multi-region CloudWatch Logs aggregation](https://cdn.hashnode.com/res/hashnode/image/upload/v1701069324947/222e2868-f06b-476f-83de-b2b8442570aa.png?auto=compress,format&format=webp)
+
+![Subscription filter](https://cdn.hashnode.com/res/hashnode/image/upload/v1701074286418/d92009f5-3e89-40d0-856d-19886793c7b2.png?auto=compress,format&format=webp)
+
+#### References:
+
+To read more about CloudWatch Logs aggregation using subscription filter for multiple accounts/region. read this fantastic
+[blog](https://blog.awsfundamentals.com/cloudwatch-logs-strategies-for-cross-account-and-cross-region-aggregation).
+
+### AWS CloudWatch logs sources:
+- SDK, CloudWatch Logs Agent, CLoudWatch Unified Agent.
+- **Elastic Beanstalk:** Collection of logs from applications.
+- **ECS:** Container logs
+- **CloudWatch Logs Agent:** Example running on EC2 machine or on any on-premise VM.
+- **VPC:** Collect VPC flow logs
+- **Lambda:** Function logs.
+- **CloudTrail:** Trails based on filter.
+- **API Gateway logs**
+- **Route53:** DNS Queries logs
 
 ## CloudWatch Insights
 
