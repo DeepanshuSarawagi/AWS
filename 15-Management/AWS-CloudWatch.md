@@ -78,6 +78,7 @@ of 10 seconds or 30 seconds, or you can set a regular alarm with a period of any
   - EC2 CreateSnapshot, EC2 RebootInstances, EC2 StopInstance, EC2 TerminateInstances API calls
   - Amazon API Gateway REST API Endpoints
   - Amazon Redshift clusters
+
 ### Rules:
 - Acts as a filter for incoming streams of event traffic and routes these events to appropriate targets defined within the Rule.
 - Rule itself can route events to multiple targets, however, targets must be in the same region.
