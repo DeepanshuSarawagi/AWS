@@ -34,3 +34,9 @@ CloudFormation can manage custom resources using lambda.
 - Empty S3 bucket before deleting it.
 - Fetch the AMI id.
 
+## CloudFormation StackSets:
+
+- Create, update, or delete stacks across multiple accounts and regions with a single operation
+- Administrator account to create StackSets
+- Trusted accounts to create, update, delete stack instances from StackSets When you update a stack set, all associated stack instances are updated throughout all accounts and regions
+- Enable Automatic Deployment feature to automatically deploy to accounts in AWS Organization or OUs
