@@ -40,3 +40,10 @@ CloudFormation can manage custom resources using lambda.
 - Administrator account to create StackSets
 - Trusted accounts to create, update, delete stack instances from StackSets When you update a stack set, all associated stack instances are updated throughout all accounts and regions
 - Enable Automatic Deployment feature to automatically deploy to accounts in AWS Organization or OUs
+
+## CloudFormation - resource imports:
+
+- Import existing resources into existing/new stacks.
+- You dont need to delete and recreate resources as part of CloudFormation stacks.
+- Eac resource to import must have a `DeletionPolicy` attribute and identifier.
+- you cant import same resource into multiple stacks.
