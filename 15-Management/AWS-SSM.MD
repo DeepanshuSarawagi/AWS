@@ -32,7 +32,27 @@ Here is a SSM automation example of executing actions on EC2 instance based on C
 
 ### Systems Manager - Patch Managers steps:
 
-- 
+- **Define a patch baseline** to use (or multiple if you have multiple environments)
+- **Define patch groups:** define based on tags, example different environments (dev, test, prod) - use tag Patch Group
+- **Define Maintenance Windows** (schedule, duration, registered targets/patch groups and registered tasks)
+- Add the AWS-RunPatchBaseline Run
+- Command as part of the registered tasks of the Maintenance Window (works cross platform Linux & Windows)
+- Define Rate Control (concurrency & error threshold) for the task
+- Monitor Patch Compliance using SSM
+
+### Systems Manager - Session Manager:
+
+- Allows you to start a secure shell on your
+- EC2 and on-premises servers
+- Access through AWS Console, AWS CLI, or Session Manager SDK
+- Does not need SSH access, bastion hosts, or SSH keys
+- Supports Linux, macOS, and Windows Log connections to your instances and executed commands
+- Session log data can be sent to 53 or CloudWatch
+
+![Session Manager](https://d2908q01vomqb2.cloudfront.net/972a67c48192728a34979d9a35164c1295401b71/2019/08/15/VR-Beneficios-1.png)
+
+[Blog](https://aws.amazon.com/blogs/mt/vr-beneficios-session-manager/) for reference.
+
 ## SSM Parameter Store
 
 - Secure storage for configuration and secrets.
