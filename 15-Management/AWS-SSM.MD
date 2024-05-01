@@ -48,10 +48,22 @@ Here is a SSM automation example of executing actions on EC2 instance based on C
 - Does not need SSH access, bastion hosts, or SSH keys
 - Supports Linux, macOS, and Windows Log connections to your instances and executed commands
 - Session log data can be sent to 53 or CloudWatch
+- CloudTrail to intercept StartSessions events.
 
 ![Session Manager](https://d2908q01vomqb2.cloudfront.net/972a67c48192728a34979d9a35164c1295401b71/2019/08/15/VR-Beneficios-1.png)
 
 [Blog](https://aws.amazon.com/blogs/mt/vr-beneficios-session-manager/) for reference.
+
+### Systems Manager - Ops Center:
+
+- Resolve Operational Issues (Opstems) related to AWS resources 
+- OpsItems - issues, events and alerts
+- Aggregates information to resolve issues on each OpsItems such as:
+  - AWS Config changes and relationships
+  - CloudTrail Logs
+  - CloudWatch Alarms
+  - CloudFormation Stack information
+- Provides Automation Runbooks that you can use to resolve issues EventBridge or CloudWatch Alarms can create OpsItems
 
 ## SSM Parameter Store
 
