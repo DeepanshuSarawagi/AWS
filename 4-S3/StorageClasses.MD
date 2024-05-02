@@ -19,8 +19,9 @@
     move the data to the Infrequent access storage class thereby optimizing storage costs.
   - Frequent and Infrequent access
   - Availability is 99.9%
-  - Minimum storage duration of 30 days.
+  - Infrequent access tier: Minimum storage duration of 30 days.
   - Object will be moved to Archive instant access tier if it is not accessed for 90 days.
+  - Archive instant access tier: Objects not accessed for 90 days.
   - Archive access tier - Configurable from 90 to 700+ days
   - Deep Archive access tier - Configurable from 180 to 700+ days
 
