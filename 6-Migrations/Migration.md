@@ -42,3 +42,17 @@
 - It is still a decision to make in cloud migration.
 
 ![The 6R's](https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2022/03/02/Screen-Shot-2022-03-02-at-12.57.44-PM.png)
+
+## AWS Cloud Adoption Readiness Tool:
+
+- Helps organizations develop effective and effective plans for cloud migration and adoptions.
+- Transforms your idea of moving to cloud into a detailed plan that follows AWS best practices.
+- We need to answer set of questions across 6 different perspectives
+  - Business
+  - People
+  - Security
+  - Process
+  - Platform
+  - Operations
+- Generates a custom report on your level of migration readiness.
+
