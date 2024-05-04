@@ -57,5 +57,5 @@
 1. You use the AWS Schema Conversion Tool (AWS SCT) to extract the data locally and move it to an Edge device.
 2. You ship the Edge device or devices back to AWS.
 3. After AWS receives your shipment, the Edge device automatically loads its data into an Amazon S3 bucket.
-4. AWS DMS takes the files and migrates the data to the target data store. If you are using change data capture (CDC), 
-   those updates are written to the Amazon 53 bucket and then applied to the target data
+4. AWS DMS takes the files and migrates the data to the target data store. 
+5. If you are using change data capture (CDC), those updates are written to the Amazon 53 bucket and then applied to the target data
