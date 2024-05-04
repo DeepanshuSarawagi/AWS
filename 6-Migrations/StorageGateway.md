@@ -17,6 +17,20 @@
 - A cached data will be stored on the on-premise dc for providing low-latency.
 - Actual data will reside on S3.
 
+### File Gateway: S3 Object versioning:
+
+- Ability to store multiple object versions.
+- Helpful to restore a file to previous version.
+-  Could restore an entire filesystem to a previous version.
+- If the files are restored to a previous version, we must let the file-gateway appliance know.
+  - There is a `RefreshCache` API on the gateway which is to be notified of the restore.
+
+### File Gateway: S3 Object Lock:
+
+- Enables to have the file gateway for Write Once Read Many (WORM) data.
+- If there are file modifications or renames in the file share clients, the file gateway creates a new object without affecting the
+  prior versions, hence the original objects remains unchanged. 
+
 ![S3 File Gateway](https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2021/09/29/Figure1-ArchHTTP.png)
 
 ![S3 File Gateway using Interface Endpoint](https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2021/09/29/Figure2-Access.png)
