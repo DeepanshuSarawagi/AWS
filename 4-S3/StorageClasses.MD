@@ -19,11 +19,11 @@
     move the data to the Infrequent access storage class thereby optimizing storage costs.
   - Frequent and Infrequent access
   - Availability is 99.9%
-  - Infrequent access tier: Minimum storage duration of 30 days.
-  - Object will be moved to Archive instant access tier if it is not accessed for 90 days.
-  - Archive instant access tier: Objects not accessed for 90 days.
-  - Archive access tier - Configurable from 90 to 700+ days
-  - Deep Archive access tier - Configurable from 180 to 700+ days
+  - **Infrequent access tier:** Minimum storage duration of 30 days.
+  - Object will be moved to **Archive instant access tier** if it is not accessed for 90 days.
+  - **Archive instant access tier:** Objects not accessed for 90 days.
+  - **Archive access tier** - Configurable from 90 to 700+ days
+  - **Deep Archive access tier** - Configurable from 180 to 700+ days
 
 ## S3 Standard Infrequent Access
   - Much like S3 Intelligent Tier Infrequent access.
@@ -85,6 +85,7 @@ This is second most expensive retrieval type. Cost is $0.01 per GB and $0.05 per
 |----------------------------------|-----------------|----------------------|------------------|------------------|-------------------------------|--------------------------------|--------------------------|
 | **Durability**                   | 99.99999999999% | 99.99999999999%      | 99.99999999999%  | 99.99999999999%  | 99.99999999999%               | 99.99999999999%                | 99.99999999999%          | 
 | **Availability Zone**            | >=3             | >=3                  | >=3              | 1                | >=3                           | >=3                            | >=3                      | 
+| **Availability**                 | 99.99%          | 99.9%                | 99.9%            | 99.5%            | 99.9%                         | 99.99%                         | 99.99%                   |
 | **Min. Storage Duration Charge** | None            | None                 | 30 Days          | 30 Days          | 90 Days                       | 90 Days                        | 180 Days                 |
 | **Min. Billable Object Size**    | None            | None                 | 128 KB           | 128 KB           | 128 KB                        | 40 KB                          | 40KB                     |
 | **Retrieval Fees**               | None            | None                 | Per GB Retrieved | Per GB Retrieved | Per GB Retrieved              | Per GB Retrieved               | Per GB Retrieved         | 
