@@ -29,10 +29,12 @@
 - Provides the gateway to store the on-premise volumes as S3 as EBS snapshots.
 - Volumes are backed by S3 as iSCSI devices.
 - Pricing will differ for snapshots of the volumes.
-- Backed by EBS snapshots which can help restore on-premises volumes!
+- Backed by EBS snapshots which can help restore on-premises volumes.
 - With cached volume gateway, primary data storage is on S3 rather on-premise.
 - With Stored Volumes: Entire dataset is on-premise , scheduled backups on S3.
 - Local volumes act as buffer and cache for low latency.
+
+![Volume Gateway](https://media.tutorialsdojo.com/public/aws-volume-gateway-stored-&-cache-mode.jpg)
 
 ## Tape Gateway
 - Also called as cloud based virtual tape library.
@@ -42,6 +44,8 @@
 - Storage pricing is $0.024 per GB-month of data stored in S3.
 - It is $0.0045 per GB-month of data stored in Glacier.
 - It is $0.0018 per GB-month of data stored in Glacier-Deep Archive.
+
+![Tape gateway](TapeGateway.png)
  
 ## Amazon FSx File Gateway:
 - Native access to Amazon FSx for Windows FIle Server
