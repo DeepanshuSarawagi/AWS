@@ -50,6 +50,11 @@
 * Locked to a specific family of instances and region.
 * Maximum discount upto 72%.
 
+### Compute savings plan:
+
+- Upto 66% discount, same as convertible reserved instances.
+- Ability between instance family, region, compute type, OS and family.
+
 ### Capacity Reservations:
 * Reserve capacity in specific AZ for any duration.
 * You have to pay for the duration regardless of whether you use it or not.
