@@ -1,6 +1,6 @@
 # Migration services
 
-## Application Directory Services
+## Application Discovery Services
 
 - Plan migration projects by gathering information about on-premises data centers.
 - Server utilization data and dependency mapping are important for migrations.
