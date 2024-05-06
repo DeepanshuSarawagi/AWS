@@ -75,7 +75,7 @@ Public and Private Subnets:
     - 172.16.0.0/16 (most default VPCs subnets will be in this range)
     - 192.168.0.0/16
 
-Internet Gateway:
+### Internet Gateway:
   - Allows resources in a VPC to connect to the internet.
   - Must be created separately from a VPC.
   - One VPC can only be attached to one IGW.
@@ -87,31 +87,44 @@ Internet Gateway:
   - We add routes that is public internet 0.0.0.0 in the public route table. The target of this route should be IGW.
   - Public route table must only be associated with public subnet.
 
-DNS Resolution in VPC:
+### DNS Resolution in VPC:
   - If we use custom domain names in the VPC, and want to use custom domain names of a private hosted zone in Route53
     then we must enable the enableDnsSupport and enableDnsHostname attributes in VPC.
 
-VPC Reachability Analyzer:
+### VPC Reachability Analyzer:
   - A network diagnostics tool that troubleshoots network connectivity between two endpoints in your VPC.
   - It builds the model of network configuration, then checks the reachability based on these
     configurations. (doesn't send packets)
 
-VPC Peering:
+### VPC Peering:
   - Privately connect two VPCs together using AWS network.
-  - Inter-region VPC peering is possible.
+  - Inter-region / cross-account VPC peering is possible.
+    - You can reference a security group of a peered VPC (cross account)
   - Must not have overlapping CIDRs.
   - You must update route tables in each VPC's subnets to ensure EC2 instances can communicate with each other.
+  - VPC uses the longest prefix match to select the most prefix route.
+  - No Edge to Edge routing:
+    - Lets say we have VPC-A and VPC-B peered together.
+    - And VPC-A has connection to corporate network via VPN/Direct Connect.
+    - That doesn't allow to have VPC-B have connection established with corporate network through VPC-A.
+    - No Edge-to-Edge routing for `VPN, Direct Connect, IGW, NATGW, Gateway VPC Endpoints`.
 
-VPC Traffic Mirroring:
+### VPC Flow Logs:
+- Log internet traffic going through VPC.
+- Can be defined at the VPC/Subnet/ENI level.
+- Helpful to capture `denied internet traffic.`
+- Can be sent to CloudWatch logs and S3.
+
+### VPC Traffic Mirroring:
   - Allows you to capture and inspect traffic in your VPC.
   - Route the traffic to security appliances that you manage.
   - Capture the traffic from source ENIs to Network LB which is sitting infront of EC2 instances
     which will analyze traffic.
 
-IPV6:
+### IPV6:
   - We can enable the IPv6 in VPC to operate in dual stack mode.
 
-Egress only Internet Gateway:
+### Egress only Internet Gateway:
   - Used only for IPv6 address.
   - Allow Instances in your VPC outbound connections over IPv6 while preventing the internet to initiate
     an IPv6 connection to your instances.
