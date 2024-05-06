@@ -11,12 +11,18 @@ A subnet can only belong to one routing table.
 Multiple subnets allow you to restrict resources in certain subnets to specific
 destinations via these defined routes.
 
+Private IP CIDR ranges in AWS:
+
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 192.168.0.0/16
+
 Within a subnet, AWS reserves 4 IP addresses.
-1st IP address is the network address.
-2nd IP address is reserved for AWS routing.
-3rd IP address is reserved for DNS.
-4th IP address is reserved for future use.
-Last IP address is the broadcast address which cannot be used either.
+- 1st IP address is the network address.
+- 2nd IP address is reserved for AWS routing.
+- 3rd IP address is reserved for DNS.
+- 4th IP address is reserved for future use.
+- Last IP address is the broadcast address which cannot be used either.
 
 Subnets in a VPC contains following information:
   - Summary; which has following further detailed metadata
@@ -73,8 +79,9 @@ Internet Gateway:
   - Allows resources in a VPC to connect to the internet.
   - Must be created separately from a VPC.
   - One VPC can only be attached to one IGW.
+  - Acts as NAT for instances which has public IPV4 attached to it.
   - Internet Gateways on their own do not allow internet access.
-  - We must edit the route tables.
+    - We must edit the route tables.
   - Every Internet Gateway should have one or more explicit subnet associations.
   - And every subnet should have a route table attached to it.
   - We add routes that is public internet 0.0.0.0 in the public route table. The target of this route should be IGW.
