@@ -35,6 +35,11 @@ They scale horizontally and are redundant.
   - Mean if we are using VPN/DX/TGW/VPC Peering then it cannot go through your gateway endpoint.
   - Traffic has to remain within your private VPC.
 
+Note:
+
+: **Key difference between Gateway endpoint and Interface endpoint is that, former sits at VPC level with a prefix list of IPs route created in a route table, while
+    the latter sits at subnet level by associating a private ENI.**
+
 ### VP Endpoints architecture:
 
 ![Endpoints-architecture](https://docs.aws.amazon.com/images/whitepapers/latest/aws-privatelink/images/connectivity.png)
