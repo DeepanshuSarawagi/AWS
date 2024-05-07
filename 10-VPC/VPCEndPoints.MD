@@ -37,8 +37,8 @@ They scale horizontally and are redundant.
 
 Note:
 
-: **Key difference between Gateway endpoint and Interface endpoint is that, former sits at VPC level with a prefix list of IPs route created in a route table, while
-    the latter sits at subnet level by associating a private ENI.**
+: Key difference between Gateway endpoint and Interface endpoint is that, former sits at VPC level with a prefix list of IPs route created in a route table, while
+    the latter sits at subnet level by associating a private ENI.
 
 ### VP Endpoints architecture:
 
