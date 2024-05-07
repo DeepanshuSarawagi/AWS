@@ -35,7 +35,9 @@ They scale horizontally and are redundant.
   - Mean if we are using VPN/DX/TGW/VPC Peering then it cannot go through your gateway endpoint.
   - Traffic has to remain within your private VPC.
 
+### VP Endpoints architecture:
 
+![Endpoints-architecture](https://docs.aws.amazon.com/images/whitepapers/latest/aws-privatelink/images/connectivity.png)
 
 ## AWS Private Link:
 - Called as VPC Endpoint Services.
