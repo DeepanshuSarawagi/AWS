@@ -3,6 +3,7 @@
 - It allows you to connect to the supported services without configuring an Internet
   gateway, NAT gateway, VPN or Direct Connect.
 - They are powered by AWS PrivateLink.
+They scale horizontally and are redundant.
 
 ## Interface Endpoints
 - These are essentially ENIs placed in subnets that act as a target for any traffic
@@ -19,14 +20,16 @@
 - This must be attached to a security group.
 
 ## Gateway Endpoints
-- Gateway endpoints dont allow traffic out to the internet. It is used to direct the
-  internal AWS traffic across different AWS services such as S3 and DynamoDB.
-- A Gateway endpoint is a target within your route table that allows you to
-  communicate with the supported services. Currently, the list of services supported
-  by gateway endpoints are S3 and DynamoDB.
-- During the creation of Gateway endpoint you will be asked which route tables
-  within your VPC should be updated to add the new target of the gateway endpoint.
+- Gateway endpoints dont allow traffic out to the internet. 
+- It is used to direct the internal AWS traffic across different AWS services such as S3 and DynamoDB.
+- A Gateway endpoint is a target within your route table that allows you to communicate with the supported services. 
+- Currently, the list of services supported by gateway endpoints are S3 and DynamoDB.
+- During the creation of Gateway endpoint you will be asked which route tables within your VPC should be updated to add the new target of the gateway endpoint.
 - Gateway endpoints are free to use, we just need to pay for the data transfer.
+- Must update the route tables.
+- DNS resolution must be enabled in the VPC.
+- Same public hostname for S3 can be used.
+
 
 
 ## AWS Private Link:
