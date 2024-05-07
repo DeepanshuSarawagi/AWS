@@ -23,10 +23,13 @@
   your route table.
 - If you need to ping the EC2 instance from the on-prem network, then you need to enable the
   ICMP protocol in the inbound rule of security groups.
-- AWS VPN CloudHub:
+
+
+### AWS VPN CloudHub:
   - Provide secure connection between multiple sites if you have multiple VPN connections.
-  - Low-cost hub-and-spoke model to connect multiple Customer GWs with one VGW. Using CloudHub, we
-    can connect multiple on-prem DCs together with VPC using VPN.
+  - We can connect upto 10 customer gateway for each virtual private gateway.
+  - Low-cost hub-and-spoke model to connect multiple Customer GWs with one VGW. 
+  - Using CloudHub, we can connect multiple on-prem DCs together with VPC using VPN.
 
 
 ## DirectConnect (DX):
