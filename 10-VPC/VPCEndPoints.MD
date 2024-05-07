@@ -17,7 +17,9 @@ They scale horizontally and are redundant.
 - Requests to that service using the default DNS name will be resolved to the
   private IP address of the interface endpoint and will route through the internal
   AWS network instead of the internet.
+- VPC Setting: `Enable DNS hostnames` and `Enable DNS Support` must be set to `true`.
 - This must be attached to a security group.
+- Interface endpoints can be accessed from Direct Connect and Site-to-Site VPN connection.
 
 ## Gateway Endpoints
 - Gateway endpoints dont allow traffic out to the internet. 
@@ -29,6 +31,9 @@ They scale horizontally and are redundant.
 - Must update the route tables.
 - DNS resolution must be enabled in the VPC.
 - Same public hostname for S3 can be used.
+- VPC Gateway endpoints cannot be extended outside of VPC. (VPN, DX, TGW, VPC peering).
+  - Mean if we are using VPN/DX/TGW/VPC Peering then it cannot go through your gateway endpoint.
+  - Traffic has to remain within your private VPC.
 
 
 
