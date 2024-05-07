@@ -44,6 +44,14 @@ Note:
 
 ![Endpoints-architecture](https://docs.aws.amazon.com/images/whitepapers/latest/aws-privatelink/images/connectivity.png)
 
+### VPC Endpoint policies:
+
+- Endpoint policies are JSON documents to control access to services.
+- Does not override or replace IAM user policies or service-specigic policies (such as S3 bucket policies)
+- For exmaple: IAM user can still use other SQS API from outside the VPC endpoint.
+  - However, if we want IAM users to restrict any SQS action vic VPC endpoint then we can create SQS queue policy.
+  - This way users are enforced to perform any action on the SQS queue only if they come via SQS VPC interface endpoint.
+
 ## AWS Private Link:
 - Called as VPC Endpoint Services.
 - Most secure and reliable way to expose your services to 1000s of VPCs.
