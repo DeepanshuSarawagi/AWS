@@ -47,9 +47,10 @@
 - This is a separate building to your remote datacenter.
 - You can configure private virtual interfaces and public virtual interfaces
   on your router for DC.
-- Private virtual interfaces will connect to the VGW within your VPC.
-- Public virtual interfaces connects to an AWS region allowing access to Public
-  AWS resources such as S3.
+- **Private virtual interfaces** will connect to the VGW within your VPC.
+- **Public virtual interfaces** connects to an AWS region allowing access to Public
+  AWS resources such as S3 and DynamoDB.
+- **Transit virtual interface** will allow to connect to VPC using transit gateway.
 - Direct Connect Gateway can be used to setup a Direct Connect to one or more VPC in
   different regions (same AWS account).
 **Direct Connect Connections:**
@@ -66,3 +67,22 @@
 **- Two modes of resiliency:**
   - high resiliency with two Direct Connect locations
   - Maximum resiliency with two Direct Connect Locations and each location with two Direct Connect Connections.
+
+### Direct Connect - Link Aggregation Groups:
+
+- Get increased speed and failover by summing up existing DX connections into single logical one.
+- Can aggregate upto 4 connections.
+- Can add connections over time to the LAG.
+
+![AWS Direct Connect](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/redundant-aws-direct-connect.png)
+
+Below is the architecture diagram how we can leverage AWS DX + Transit Gateway:
+
+![DX - TGW](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/aws-direct-connect-and-aws-transit-gateway.png)
+
+With AWS Direct Connect + AWS Transit Gateway + AWS Site-to-Site VPN, you can enable end-to-end IPsec-encrypted connections 
+between your networks and a regional centralized router for Amazon VPCs over a private dedicated connection.
+
+![DX-TGW-S2SVPN](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/aws-direct-connect-and-aws-transit-gateway-and-vpn-with-transit-vif.png)
+
+
