@@ -113,7 +113,18 @@ Public and Private Subnets:
 - Log internet traffic going through VPC.
 - Can be defined at the VPC/Subnet/ENI level.
 - Helpful to capture `denied internet traffic.`
-- Can be sent to CloudWatch logs and S3.
+- Can be sent to CloudWatch logs, Kinesis Data Firehose and S3.
+- Captures network information from managed interfaces such as:
+  - ELB
+  - RDS
+  - ElastiCache
+  - RedShift
+  - Workspaces
+  - Nat Gateway
+  - Transit Gateway
+- VPC Flow Logs when sent to CloudWatch can be used to determine the top 10 IP addresses in your network using cloudWatch
+  contributor insights.
+- 
 
 ### VPC Traffic Mirroring:
   - Allows you to capture and inspect traffic in your VPC.
