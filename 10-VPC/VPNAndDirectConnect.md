@@ -73,6 +73,22 @@
 - Get increased speed and failover by summing up existing DX connections into single logical one.
 - Can aggregate upto 4 connections.
 - Can add connections over time to the LAG.
+- All connections in the LAG:
+  - Must be dedicated connections
+  - Must have the same bandwidth
+  - Must terminate at same AWS DX connection endpoint.
+
+### Direct Connect Gateway:
+
+- Allows to setup Direct Connect to one or more VPC in many different regions.
+
+### Direct Connect Gateway - Sitelink:
+
+- SiteLink, a new feature of AWS Direct Connect (DX), makes it easy to send data from one Direct Connect location to another, bypassing AWS Regions. 
+- If you recall, Direct Connect is a cloud service that links your network to AWS, bypassing the internet to deliver more consistent, lower-latency performance. 
+- Prior to SiteLink, it was not possible to route traffic directly between Direct Connect locations. 
+- Now, you can create global, reliable, and pay-as-you-go connections between the offices and data centers 
+  in your global network by sending data over the fastest path between AWS Direct Connect locations.
 
 ![AWS Direct Connect](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/redundant-aws-direct-connect.png)
 
@@ -85,4 +101,6 @@ between your networks and a regional centralized router for Amazon VPCs over a p
 
 ![DX-TGW-S2SVPN](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/aws-direct-connect-and-aws-transit-gateway-and-vpn-with-transit-vif.png)
 
+Direct connect gateway sitelink architecture diagram:
 
+![DX-Sitelink](https://d2908q01vomqb2.cloudfront.net/5b384ce32d8cdef02bc3a139d4cac0a22bb029e8/2021/12/01/Slide1-14.jpg)
