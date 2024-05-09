@@ -1,4 +1,4 @@
-# This document will give you an overview of VPC in AWS.
+# VPC in AWS.
 
 A VPC is an isolated environment which allows you to provision your resources
 within cloud which is accessible and visible only by you.

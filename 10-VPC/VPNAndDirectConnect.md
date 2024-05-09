@@ -31,6 +31,13 @@
   - Low-cost hub-and-spoke model to connect multiple Customer GWs with one VGW. 
   - Using CloudHub, we can connect multiple on-prem DCs together with VPC using VPN.
 
+### AWS Client VPN:
+
+- Connect from your computer using OpenVPN to your private network in AWS and on-premises.
+- This requires installation of software.
+- Refer to below architecture diagram how we can utilize AWS client VPN to connect to many VPCs.
+
+![AWS client VPN](https://d2908q01vomqb2.cloudfront.net/5b384ce32d8cdef02bc3a139d4cac0a22bb029e8/2020/04/14/Screen-Shot-2020-04-07-at-10.30.06-AM.png)
 
 ## DirectConnect (DX):
 - Direct Connect allows you to create a private connection between your remote
