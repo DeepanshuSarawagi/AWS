@@ -1,6 +1,6 @@
 ## Machine Learning Services
 
-### AWS Rekognition:
+### Amazon Rekognition:
 
 - Find objects, people, text, scenes in images and videos.
 - Facial Analysis and Facial Recognition.
@@ -21,7 +21,7 @@
 - Used in social media, broadcast media, advertising and e-commerce solutions to create a safe user experience.
 - Flag sensitive content for manual review in Amazon Augmented AI.
 
-### AWS Transcribe:
+### Amazon Transcribe:
 
 - Automatically convert speech to text.
 - Uses a deep learning process called `automatic speech recognition (ASR)` to automatically convert speech to text quickly
@@ -34,7 +34,7 @@
   - Generate metadata for media assets to create a fully searchable archive.
 - 
 
-### AWS Polly:
+### Amazon Polly:
 
 - It is oppposite of AWS Transcribe.
 - Use text into speech using ML.
@@ -46,13 +46,13 @@
   - enables more customization emphasizing specific words or phrases using phonetic pronunciation
   - Including breathing sounds, whispering using the Newscaster speaking style.
 
-### AWS Translate:
+### Amazon Translate:
 
 - Used for natural language translation.
 - Allows you to localize content such as website and applications for international users and to easily translate large
   volumes of text easily.
 
-### AWS lex + Connect:
+### Amazon lex + Connect:
 
 #### Amazon lex:
 
@@ -67,19 +67,26 @@
 - Can integrate with other CRM systems or AWS.
 - 80% cheaper than traditional contact center solutions.
 
-### AWS SageMaker:
+### Amazon SageMaker:
 
-Fully managed service to build ML Models.
+- Fully managed service to build ML Models.
+- Typically difficult to process in on place plus we need to provision servers.
 
-### AWS Forecast:
+### Amazon Forecast:
 
-Fully managed service to deliver forecast on data provided.
+- Fully managed service that uses ML to deliver forecast on data provided.
+- Example: Predict future sales of a product.
+- Reduce forecasting time from months to hours.
+- **Use cases:**
+  - Product demand planning
+  - Resource planning
+  - Financial planning
 
-### AWS Kendra:
+### Amazon Kendra:
 
 Fully managed document search service. Extract answers from within a document. Knowledge index ML model.
 
-### AWS Comprehend:
+### Amazon Comprehend:
 
 - For Natural Language Processing
 - Fully managed and serverless service.
@@ -105,7 +112,7 @@ Fully managed document search service. Extract answers from within a document. K
 - Store your documents in Amazon S3, analyze real-time data with Kinesis Data Firehose, or use Amazon Transcribe to 
   transcribe patient narratives into text that can be analyzed by Amazon Comprehend Medical.
 
-### AWS Personalize:
+### Amazon Personalize:
 
 Fully managed ML service with real-time personalized recommendations. Example, product recommendations on Amazon.
 
