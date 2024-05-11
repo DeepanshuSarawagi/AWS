@@ -23,7 +23,16 @@
 
 ### AWS Transcribe:
 
-Automatically convert speech to text.
+- Automatically convert speech to text.
+- Uses a deep learning process called `automatic speech recognition (ASR)` to automatically convert speech to text quickly
+  and accurately.
+- Automatically remove **Personally Identifiable Information using Redaction.**
+- **Supports Automatic Language Identification for multi-lingual audio.**
+- **Use cases:**
+  - Transcribe customer service calls.
+  - Automated closed captioning and subtitling.
+  - Generate metadata for media assets to create a fully searchable archive.
+- 
 
 ### AWS Polly:
 
