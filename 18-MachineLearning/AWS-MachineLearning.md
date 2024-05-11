@@ -36,7 +36,15 @@
 
 ### AWS Polly:
 
-Use text into speech using ML.
+- It is oppposite of AWS Transcribe.
+- Use text into speech using ML.
+- Uses Lexicon and SSML.
+- Customize the pronunciation of words with Pronunciation lexicons
+  - Acronyms: AWS => "Amazon Web Services"
+  - Upload the lexicons and use them in the SynthesizeSpeech operation
+- Generate speech from plain text or from documents marked up with Speech Synthesis Markup Language (SSML) - 
+  - enables more customization emphasizing specific words or phrases using phonetic pronunciation
+  - Including breathing sounds, whispering using the Newscaster speaking style.
 
 ### AWS Translate:
 
