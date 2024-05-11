@@ -67,6 +67,16 @@ Consumers send data to the destination layer which can be one of the following
 ## Amazon Kineses Video Stream:
 - Designed to stream binary encoded data into AWS from millions of sources (audio
   and video but it can be any binary-encoded time series data)
+- Underlying data is stored in S3.
+- Cannot output the stream data directly to S3.
+  - Need to build a custom solution for it.
+- **Consumers:**
+  - Consumed by Ec2 instances for real time analysis or in batch.
+  - Can leverage the Kinesis video stream parser library.
+  - Integration with Amazon Rekognition for facial recognition.
+  - Example architecture below.
+
+![kvs-rekognition](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2021/02/12/ML-2176-1.png)
 
 ## Amazon Kineses Data Stream:
 - A highly customizable data streaming solution available from AWS.
