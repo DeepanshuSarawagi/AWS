@@ -36,7 +36,7 @@
 
 ### Amazon Polly:
 
-- It is oppposite of AWS Transcribe.
+- It is opposite of AWS Transcribe.
 - Use text into speech using ML.
 - Uses Lexicon and SSML.
 - Customize the pronunciation of words with Pronunciation lexicons
