@@ -54,7 +54,18 @@
 
 ### AWS lex + Connect:
 
-Same technology that powers Alexa. Helps build chatbots and virtual contact center.
+#### Amazon lex:
+
+- Same technology that powers Alexa.
+- Automatic Speech Recognition to convert speech to text.
+- Natural language understanding to understand the intent of text, callers.
+- Helps build chatbots, call center bots.
+
+#### Amazon Connect:
+
+- Receive calls, create contact flows, cloud-based virtual contact center.
+- Can integrate with other CRM systems or AWS.
+- 80% cheaper than traditional contact center solutions.
 
 ### AWS SageMaker:
 
@@ -70,7 +81,7 @@ Fully managed document search service. Extract answers from within a document. K
 
 ### AWS Comprehend:
 
-For Natural Language Processing
+- For Natural Language Processing
 
 ### AWS Personalize:
 
