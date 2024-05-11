@@ -124,8 +124,11 @@
 
 ### Amazon Personalize:
 
-Fully managed ML service with real-time personalized recommendations. Example, product recommendations on Amazon.
+- Fully managed ML service with real-time personalized recommendations.
+- Example, product recommendations on Amazon.
+- Inegrates into existing websites, applications, SMS, email marketing systems..
+- Implement in days not months (you don't need to build, train and deploy ML solutions)
 
 ### Amazon Textract:
 
-Used to extract text using AI and ML from any scanned documents, forms, tables, images, PDFs.
+- Used to extract text using AI and ML from any scanned documents, forms, tables, images, PDFs.
