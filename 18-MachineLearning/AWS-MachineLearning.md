@@ -48,7 +48,9 @@
 
 ### AWS Translate:
 
-Used for natural language translation.
+- Used for natural language translation.
+- Allows you to localize content such as website and applications for international users and to easily translate large
+  volumes of text easily.
 
 ### AWS lex + Connect:
 
