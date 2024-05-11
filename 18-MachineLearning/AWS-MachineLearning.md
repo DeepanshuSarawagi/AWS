@@ -82,6 +82,17 @@ Fully managed document search service. Extract answers from within a document. K
 ### AWS Comprehend:
 
 - For Natural Language Processing
+- Fully managed and serverless service.
+- Uses machine learning to find insights and relationships in texts:
+  - Language of the text
+  - Extracts key phrases, places, people, brands, or events
+  - Understands how positive or negative the text is
+  - Analyzes text using tokenization and parts of speech
+  - Automatically organizes a collection of text files by topic
+- **Use cases:**
+  - Analyze customer interaction emails to find what leads to positive or negative experience.
+  - Helps to deliver the business insights based on customer experience.
+  - Create and group articles by topic that Comprehend will uncover.
 
 ### AWS Personalize:
 
