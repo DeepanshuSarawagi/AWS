@@ -84,7 +84,17 @@
 
 ### Amazon Kendra:
 
-Fully managed document search service. Extract answers from within a document. Knowledge index ML model.
+- Fully managed document search service. 
+- Extract answers from within a document.
+  - Text
+  - HTML
+  - Word
+  - Powerpoint
+  - FAQs
+  - pdf
+- Natural language search capability.
+- Knowledge index ML model.
+- Ability to fine-tune search results.
 
 ### Amazon Comprehend:
 
