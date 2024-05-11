@@ -94,6 +94,17 @@ Fully managed document search service. Extract answers from within a document. K
   - Helps to deliver the business insights based on customer experience.
   - Create and group articles by topic that Comprehend will uncover.
 
+### Amazon Comprehend Medical:
+
+- Amazon Comprehend Medical detects and returns useful information in unstructured clinical text:
+  - Physician's notes
+  - Discharge summaries
+  - Test results
+  - Case notes
+- Uses NLP to detect Protected Health Information (PHI) - `DetectPHI API`
+- Store your documents in Amazon S3, analyze real-time data with Kinesis Data Firehose, or use Amazon Transcribe to 
+  transcribe patient narratives into text that can be analyzed by Amazon Comprehend Medical.
+
 ### AWS Personalize:
 
 Fully managed ML service with real-time personalized recommendations. Example, product recommendations on Amazon.
