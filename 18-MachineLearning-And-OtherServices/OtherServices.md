@@ -29,3 +29,22 @@
   and protect sensitive data in AWS.
 - Macie helps identity and alert you to ssensitive data, such as personally identifiable information. (PII)
 
+## Amazon SES:
+
+- Simple Email Service.
+- Fully managed service to send emails securely, globally and at scale.
+- Allows inbound/outbound emails.
+- Reputation dashboard, performance insights, anti-spam feedback.
+- Provides statistics such as email deliveries, bounces, feedbac kloop results email open
+- Supports security such as `DomainKeys Identified Mail ` and `Sender Policy Framework`.
+- **Flexible IP deployment:** shared, dedicated and customer-owned IPs. This is to send emails from a specific IP address.
+
+### SES - Configuration sets:
+
+- Configuration sets helps you customize and analyze your email send events.
+- **Event destinations:**
+  - **Kinesis Data Firehose:** receives metrics such as number of sends, deliveries, opens, clicks, bounces and complaints for each email.
+  - **SNS:** for immediate feedback on bounce and complaint information.
+- **IP Pool Management:** Use IP pools to send particular types of emails.
+  - That is one IP pool set to send transactional emails.
+  - Other IP pool set to send marketing emails.
