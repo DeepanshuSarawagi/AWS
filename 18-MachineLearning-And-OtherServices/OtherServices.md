@@ -22,3 +22,10 @@
 - Improve the quality of web and mobile app.
 - Generates videos and logs to document the issue encountered.
 - Can remotely login to devices for debugging.
+
+## Amazon Macie:
+
+- Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover
+  and protect sensitive data in AWS.
+- Macie helps identity and alert you to ssensitive data, such as personally identifiable information. (PII)
+
