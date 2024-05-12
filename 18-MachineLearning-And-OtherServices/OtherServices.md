@@ -48,3 +48,17 @@
 - **IP Pool Management:** Use IP pools to send particular types of emails.
   - That is one IP pool set to send transactional emails.
   - Other IP pool set to send marketing emails.
+
+## Amazon PinPoint:
+
+- Scalable 2-Way outboubd/inbound marketing communication service.
+- Supports email, SMS, push, voice, and in-app messaging.
+- Ability to segment and personalize messages with the right content to customers.
+- Possibility to receive replies.
+- Scales to billions of messages per day.
+- **Use cases:**
+  - run campaigns by sending marketing
+  - Bulk transactional SMS messages
+- **Versus Amazon SNS or Amazon SES:**
+  - In SNS and SES you manage each message's audience, content and delivery schedule.
+  - In Amazon PinPoint, you create message templates, delivery schedules,highly-targeted segments and full campaigns.
