@@ -66,8 +66,8 @@ Best practices of implementing IAM in any AWS account:
 
 ## Session tags in STS
 - Tags that you pass when you assume an IAM role or federate user in STS.
-  - Why do this?
-  - So that we can use ws:PrincipalTag condition in policy.
+  - **Why do this?**
+  - So that we can use `aws:PrincipalTag` condition in policy.
   - Compares the tag attached to the principal making the request with the tag you specified in the policy.
   - Example: Allow principal to pass session tags only if the principal making the request has the specified tags.
 - Refer to below S3 policy which makes use of session tags.
@@ -82,7 +82,7 @@ Best practices of implementing IAM in any AWS account:
       "Resource": "arn:aws:s3::::hr-docs/*",
       "Condition": {
         "StringEquals": {
-          "aws:PrincipalTa/Department": "HR" 
+          "aws:PrincipalTag/Department": "HR" 
         }
       }
     }
