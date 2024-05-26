@@ -6,7 +6,7 @@
 - Allows you to federate identities from your own Active Directory service so that
   your users can access to your own external web and mobile applications.
 
-# Amazon Cognito User Pool
+## Amazon Cognito User Pool
 
 - To create and maintain a directory of your Users for your mobile and web applications.
 - Deals with both signing-up and signing-in.
@@ -20,7 +20,7 @@
   - Customizable WebUI with OAuth2.0 compliant authentication server
   - Integration with AWS Lambda and API Gateway
 
-# Amazon Cognito Identity Pool
+## Amazon Cognito Identity Pool
 
 - Also knows as federated identities helps to provide temporary access to AWS
   credentials for your users and guests.
