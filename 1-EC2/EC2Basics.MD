@@ -21,19 +21,19 @@
     - Persistent Storage - Available by attaching the EBS (Elastic Block Storage) Volumes
     - Ephemeral Storage - Local storage
 
-  ### EBS Volumes:
-    - EBS volumes are separated from the EC2 instances. They are network attached storage devices.
-    - These volumes are logically attached using AWS Network.
-    - The data on EBS volumes are replicated on the other EBS volumes in the same availability Zone for data resiliency which is managed by AWS.
-    - You can disconnect the EBS volume with the EC2 instance thereby maintaining the data.
-    - We can take the backup of the EBS volumes and store it in S3.
-    - We can implement backup encryption on the EBS volumes.
+### EBS Volumes:
+- EBS volumes are separated from the EC2 instances. They are network attached storage devices.
+- These volumes are logically attached using AWS Network.
+- The data on EBS volumes are replicated on the other EBS volumes in the same availability Zone for data resiliency which is managed by AWS.
+- You can disconnect the EBS volume with the EC2 instance thereby maintaining the data.
+- We can take the backup of the EBS volumes and store it in S3.
+- We can implement backup encryption on the EBS volumes.
 
-  ### Ephemeral Storage:
-    - Physically attached to the underlying host.
-    - When the instance is stopped or terminated, all the data is lost.
+### Ephemeral Storage:
+- Physically attached to the underlying host.
+- When the instance is stopped or terminated, all the data is lost.
 
 ## Security:
-  - Security group - We will be asked to select a security group for that instance.
-  - Instance level firewall by specifying both Ingress and Egress level traffic thereby controlling both incoming and outgoing traffic on EC2 instance.
-  - We will also be asked to create a new Key-Pair which allows us to SSH into the instances.
+- Security group - We will be asked to select a security group for that instance.
+- Instance level firewall by specifying both Ingress and Egress level traffic thereby controlling both incoming and outgoing traffic on EC2 instance.
+- We will also be asked to create a new Key-Pair which allows us to SSH into the instances.
