@@ -117,6 +117,6 @@ ELB -> Listener -> Rule -> Condition -> Action (This is the ELB flow at basic fl
   - Connection draining for CLB.
   - De-registration delay for ALB and NLB.
   - Time to complete in-flight requests while the instance is de-registering or unhealthy.
-    - Stops sending new requests to EC2 instances w`hich are de-registering.
+    - Stops sending new requests to EC2 instances which are de-registering.
   - Time to complete in-flight requests is 1 to 3600 seconds (default is 300 seconds)
   - Set to low value if the request is short.

@@ -4,7 +4,7 @@
 - Amazon S3 supports the largest file size upto 5TB.
 - The service operates on object storage system.
 - S3 is a regional service. While uploading the data, we are required to specify the
-- location in which AWS region we want to upload the data.
+  location in which AWS region we want to upload the data.
 - It will then upload the data multiple times across multiple AZs thereby increasing the durability , availability and reducing the latency.
 - Application can achieve at least 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket.
 
