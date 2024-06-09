@@ -8,6 +8,8 @@ policy which is similar to bucket policy and is going to grant read/write access
   - Its own DNS names (Internet origin or VPC origin)
   - An access point policy
 
+![S3-Access-Points](https://d2908q01vomqb2.cloudfront.net/e1822db470e60d090affd0956d743cb0e7cdf113/2020/10/12/One-example-of-how-you-can-use-S3-Access-Points-to-manage-access-to-shared-datasets-on-Amazon-S3..png)
+
 ## S3 - Access Points - VPC origin:
 
 - We can define the access point to be accessible only from within the VPC.
@@ -18,4 +20,6 @@ policy which is similar to bucket policy and is going to grant read/write access
 - Provide a global endpoint that span S3 buckets in multiple AWS regions.
 - Dynamically route requests to nearest S3 buckets. (Low latency)
 - Bidirectional S3 buckets replication rules are created to keep buckets in sync across the regions.
-- Failover control - Allows you to shift request to buckets in different AWS regions within minutes.
+- **Failover control** - Allows you to shift request to buckets in different AWS regions within minutes.
+
+![Multi-region-access-points-failover-control](https://d1.awsstatic.com/reInvent/reinvent-2022/simple-storage-service/failover-hiw-diagram.a70520851388826ee6cfe43a67b7ee0020f01996.png)
