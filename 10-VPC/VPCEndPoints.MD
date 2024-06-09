@@ -22,6 +22,7 @@ They scale horizontally and are redundant.
 - Interface endpoints can be accessed from Direct Connect and Site-to-Site VPN connection.
 
 ## Gateway Endpoints
+- Gateway VPC endpoints provide reliable connectivity to Amazon S3 and DynamoDB without requiring an internet gateway or a NAT device for your VPC.
 - Gateway endpoints dont allow traffic out to the internet. 
 - It is used to direct the internal AWS traffic across different AWS services such as S3 and DynamoDB.
 - A Gateway endpoint is a target within your route table that allows you to communicate with the supported services. 
@@ -32,7 +33,7 @@ They scale horizontally and are redundant.
 - DNS resolution must be enabled in the VPC.
 - Same public hostname for S3 can be used.
 - VPC Gateway endpoints cannot be extended outside of VPC. (VPN, DX, TGW, VPC peering).
-  - Mean if we are using VPN/DX/TGW/VPC Peering then it cannot go through your gateway endpoint.
+  - Meaning if we are using VPN/DX/TGW/VPC Peering then it cannot go through your gateway endpoint.
   - Traffic has to remain within your private VPC.
 
 Note:
