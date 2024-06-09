@@ -23,16 +23,16 @@ implement SCPs.
 ### Guardrails:
 - Provides ongoing governance for your AWS Control Tower environment.
 - Two types of guardrails:
-  - Preventive: Using SCPs. (E.g., which disallows creation of KMS key for root user)
-  - Detective: Using AWS Config. (E.g., Detect whether MFA for root user is enabled)
+  - **Preventive:** Using SCPs. (E.g., which disallows creation of KMS key for root user)
+  - **Detective:** Using AWS Config. (E.g., Detect whether MFA for root user is enabled)
 
 #### Guardrail levels:
-- Mandatory:
+- **Mandatory:**
   - Automatically enabled and enforced by AWS Control Tower.
   - Example: Disallow public read access to log archive account.
-- Strongly recommended:
+- **Strongly recommended:**
   - Based on AWS best practices. (Optional)
   - Example: Enable encryption for EBS volumes attached to EC2 instances.
-- Elective:
+- **Elective:**
   - Commonly used by enterprises. (Optional)
   - Example: Disallow delete actions without MFA in S3 bucket.
