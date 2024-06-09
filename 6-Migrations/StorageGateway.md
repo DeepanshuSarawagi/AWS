@@ -68,3 +68,31 @@
 - Useful for group file shares and home directories
 
 ![Amazon FSx File Gateway](FSxFileGateway.png)
+
+## Quotas of storage gateways:
+
+- As with any AWS service, AWS Storage gateway is bound by certain quotas.
+
+### File Gateway Quotas:
+
+- Maximum number of file shares per gateway is `10`.
+- Maximum size of individual file in a share is `5 TB`.
+- Maximum path length of `1,024 TiB`.
+- Note that 1 file share maps exactly to 1 S3 bucket.
+
+### Volume Gateway Quotas:
+
+- Maximum size of a volume can be 
+  - 32 TiB for cached volumes.
+  - 16 TiB for stored volumes.
+- Maximum number of volumes per gateway is `32`.
+- Maximum size of all volumes per gateway:
+  - 1024 TiB for cached volumes
+  - 512 TiB for stored volumes.
+
+### Tape Gateway Quotas:
+
+- Minimum of 100 GiB size of virtual tapes.
+- Maximum of 5 TiB size of virtual tapes.
+- Maximum number of virtual tapes per VTL is `1,500`.
+- Total size of all tapes in a library is `1 PiB`.
