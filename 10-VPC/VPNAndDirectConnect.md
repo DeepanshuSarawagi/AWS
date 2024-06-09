@@ -12,6 +12,12 @@
 - A connection has to be initiated by your CGW. It cannot be initiated from VGW.
 - Healthcheck pings can be setup to ensure VPN tunnel is not dropped.
 
+Note:
+
+: Aws managed VPN is a great approach when you want to connect one on-premises network location with your AWS environment.
+But what about the situation when the need arises to connect multiple on-sites with AWS? Thats when [AWS VPN CloudHub](#aws-vpn-cloudhub)
+comes into picture.
+
 ### AWS Site-to-Site VPN architecture:
 
 ![Site-to-Site](https://docs.aws.amazon.com/images/whitepapers/latest/aws-vpc-connectivity-options/images/aws-managed-vpn.png)
@@ -53,13 +59,14 @@
 - **Transit virtual interface** will allow to connect to VPC using transit gateway.
 - Direct Connect Gateway can be used to setup a Direct Connect to one or more VPC in
   different regions (same AWS account).
-**Direct Connect Connections:**
+- **Direct Connect Connections:**
   - Dedicated Connections: Comes with a bandwidth of 1/10/100 GBPS.
   - Physical ethernet port dedicated to a customer.
   - Request made to AWS first and then completed by AWS Direct Connect partners.
-**Hosted Connections:**
+- **Hosted Connections:**
   - Bandwidth of 50 Mbps, 500 Mbps, 10 Gbps.
   - Capacity requests are made via AWS Direct Connect partners.
+  - Capacity is shared with other AWS customers.
   - Capacity can be increased/decreased on-demand.
 - Direct Connect often takes more than 1 month to establish.
 - Data in transit is not encrypted but is private.
