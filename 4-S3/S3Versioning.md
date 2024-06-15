@@ -8,4 +8,4 @@
 - Versioning once enabled, cannot be disabled. It is not enabled by default.
 - Instead versioning can be suspended, it will only prevent us from creating versions
   of objects.
-- Any file that doesn't been versioned prior to enabling versioning will have version null.
+- Any file that hasn't been versioned prior to enabling versioning will have version null.

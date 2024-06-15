@@ -13,7 +13,7 @@
 - Gives insights such as `StorageBytes`, `ObjectCount`..
 - **Use case:** Identify the fastest growing buckets and prefixes.
 
-### Cost-OOptimization metrics:
+### Cost-Optimization metrics:
 - Provide insights to manage and optimize your storage costs.
 - `NonCurrentVersionStorageBytes`, `IncompleteMultipartUploadStorageBytes`..
 - **Use cases:** Identify buckets with incomplete multi-part files uploaded older than 7 days, identify files in buckets which

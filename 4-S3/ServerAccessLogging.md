@@ -13,4 +13,4 @@
 - When server access logging is enabled using AWS management console, the enablement
   of logging automatically adds the Log Delivery Group to the ACL of the target
   buckets.
-- Source and target buckets should be in the same region.
+- **Source and target buckets should be in the same region.**
