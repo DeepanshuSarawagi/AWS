@@ -19,7 +19,7 @@ There are two kinds of `Application Discovery Services:`
 
 Note:
 : - Resulting data can be exported as CSV or viewed within AWS Migration Hub.
-: - Data can be explorer using pre-defined queries in Amazon Athena.
+: - Data can be explored using pre-defined queries in Amazon Athena.
 
 ## Migration Hub Data Exploration:
 

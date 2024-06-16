@@ -34,7 +34,7 @@
   - Integration with S3.
   - Supports cloud-bursting workloads from on-premises using Direct-Connect or VPN
     connections.
-  - Scale upto 10os of GBs, millions of IOPs, and PB of data.
+  - Scale upto 100s of GBs, millions of IOPs, and PB of data.
   - Storage options are SSd and HDD.
   - Can write the computations back to S3 using FSx.
   - Can be accessed from on-premise using VPN or DirectConnect.
@@ -46,12 +46,12 @@
 - Data is also loaded only once. Therefore you reduce requests costs to S3 bucket.
   
 ### FSx Filesystem deployment options:
-  - Scratch File System:
+  - **Scratch File System:**
     - Temporary storage
     - Data is not replicated
     - High Performance
     - Short term processing of data, optimize costs.
-  - Persistent File System:
+  - **Persistent File System:**
     - Long-Term Storage
     - Data is replicated within same AZ.
     - Replace failed files within minutes.

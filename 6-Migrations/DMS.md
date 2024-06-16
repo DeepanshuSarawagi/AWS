@@ -2,7 +2,7 @@
 
 ## Introduction:
 
-- Quickly and securely migrate databased to AWS. It is resilient and self-healing.
+- Quickly and securely migrate databases to AWS. It is resilient and self-healing.
 - The source database remains available during the migration.
 - Supports:
   - **Homogeneous migrations:** Example oracle to RDS oracle.
@@ -32,10 +32,10 @@
 
 ## Schema Conversion Tool:
 
-- Convert your database's schema from one engine to another engine.
+- **Convert your database's schema from one engine to another engine.**
 - Example: OLTP (Oracle or SQL Server) to PostgreSQL, Aurora, MySQL.
 - Example: OLAP (Teradata or Oracle) to Amazon RedShift.
-- You dont need to use SCT if you are migrating to same database engine.
+- You don't need to use SCT if you are migrating to same database engine.
   - Example: Migrating from on-prem postgresql to RDS postgresql.
 
 ## DMS - Must know:

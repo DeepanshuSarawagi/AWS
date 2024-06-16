@@ -8,7 +8,7 @@ to AWS storage services such as S3 or EFS. Agent is needed.
 
 - It is natively integrated with Amazon S3, Amazon EFS, Amazon FSx, Amazon CloudWatch, and AWS CloudTrail
 
-AWS DataSync has the following capabilities
+**AWS DataSync has the following capabilities**
 
   - Migrate an NFS from an Amazon EC2 to Amazon EFS within the same AWS region.
   - Replicate a NFS from an Amazon EC2 in one AWS region to an Amazon EFS in
