@@ -1,6 +1,6 @@
 # Brief document on routing tables
 
-- AWS creates and adds an implicit routing table for your VPC during the creating of VPC
+- AWS creates and adds an implicit routing table for your VPC during the creation of VPC
 - Your default routing table is known as the routing table.
 - The Main Route Table cannot be deleted.
 - Subnets will be implicitly associated with the route table unless a custom rule
@@ -24,10 +24,10 @@
 - If any propagated routes have the same destination as any static routes, the longest
   prefix match is not applied. Route priority s executed against the static routes
   in following order:
-  IGW
-  VGW
-  Network Interface
-  Instance ID
-  VPC Peering connection
-  NAT gateway
-  VPC Endpoint
+  - IGW
+  - VGW
+  - Network Interface
+  - Instance ID
+  - VPC Peering connection
+  - NAT gateway
+  - VPC Endpoint

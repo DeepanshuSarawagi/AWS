@@ -111,7 +111,7 @@
 - Second, configure the ALB to only forward requests that contain that Custom HTTP Header
 - Keep the custom header name and value secret!
 
-## CloudFront Signed URL vs 53 Pre-Signed URL:
+## CloudFront Signed URL vs S3 Pre-Signed URL:
 
 ### CloudFront Signed URL:
 

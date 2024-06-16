@@ -25,7 +25,7 @@
   - ALB and NLB public or private
 - Supports client IP preservation except for NLBs and EIPs.
 - **Consistent Performance:**
-  - IIntelligent routing to lowest latency and fast regional failover.
+  - Intelligent routing to lowest latency and fast regional failover.
   - Uses AWS internal network.
   - No issues with client cache because IP doesn't change.
 - **Health checks:**
