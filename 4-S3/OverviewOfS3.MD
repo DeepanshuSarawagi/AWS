@@ -1,7 +1,7 @@
 # Overview of S3 - Simple Storage Services
 
 ## Introduction:
-- Amazon S3 supports the largest file size upto 5TB.
+- Amazon S3 supports the **largest file size upto 5TB.**
 - The service operates on object storage system.
 - S3 is a regional service. While uploading the data, we are required to specify the
   location in which AWS region we want to upload the data.
@@ -16,7 +16,7 @@ To store data in Amazon S3, we need to define a S3 bucket.
 the name of the bucket should be unique. Since the buckets are created globally,
 this is because of the flat address space.
 
-By default, an AWS account can have 100 buckets and this is a soft limit.
+By default, **an AWS account can have 100 buckets and this is a soft limit.**
 
 ## S3 CORS:
 -  CORS is abbreviation for Cross Origin Resource Sharing.
@@ -31,14 +31,14 @@ By default, an AWS account can have 100 buckets and this is a soft limit.
   - Asynchronous replication happens between two different region buckets.
   - Buckets can be in different AWS accounts as well.
   - Must give proper IAM permission to S3.
-  - After activating, only new objects will be replicated.
-  - For replicating existing objects in the bucket, we can use S3 Batch Replication.
+  - After activating, **only new objects will be replicated.**
+  - For replicating existing objects in the bucket, **we can use S3 Batch Replication.**
   - For DELETE options: we can replicate delete marker of the objects from source to target bucket.
   - There is no chaining of replication.
   - Permanent delete on objects are not replicated.
 
 ### Replication Time Control:
-- Replicates most objects that you upload to S3 within seconds and 99.99% of the objects within 15 mains.
+- Replicates most objects that you upload to S3 within seconds and 99.99% of the objects within 15 mins.
 
 ## S3 Pre-Signed URLs:
 -  Can generate pre-signed URLs using SDK or CLIs.

@@ -57,7 +57,7 @@
   - Bucket ACLs.
 
   - As per AWS security policies, all of these policies will be scanned together
-    for what is called as Principle of lease-privileged.
+    for what is called as Principle of least-privileged.
   - By default, AWS states that access is denied to an object even if there is any explicit
     Deny stated in the policy.
   - To gain access, there has to be a Allow within a policy that the principal is associated to,
