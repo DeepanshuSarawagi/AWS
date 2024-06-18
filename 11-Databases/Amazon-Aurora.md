@@ -31,10 +31,10 @@
 
 ## Aurora Logs:
 - You can monitor the following types of Aurora cluster logs:
-  - Error
-  - Slow Query
-  - General
-  - Audit
+  - Error (Enabled by default)
+  - Slow Query (Needs to be enabled explicitly)
+  - General (Needs to be enabled explicitly)
+  - Audit (Needs to be enabled explicitly)
 - These log files are either downloaded or published to CloudWatch logs.
 
 ## Convert RDS to Aurora:
