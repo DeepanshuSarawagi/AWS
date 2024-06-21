@@ -62,3 +62,8 @@
 - **Versus Amazon SNS or Amazon SES:**
   - In SNS and SES you manage each message's audience, content and delivery schedule.
   - In Amazon PinPoint, you create message templates, delivery schedules,highly-targeted segments and full campaigns.
+ 
+## Amazon EC2 Image Builder:
+- Used to automate the creation of virtual machines or container images.
+- Automate the creation, maintain, validate and test EC2 AMIs.
+- Can be run on schedule (weekly, or whenever packages are updated, etc)
