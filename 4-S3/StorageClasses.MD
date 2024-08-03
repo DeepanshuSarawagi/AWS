@@ -88,4 +88,11 @@ This is second most expensive retrieval type. Cost is $0.01 per GB and $0.05 per
 | **Availability**                 | 99.99%          | 99.9%                | 99.9%            | 99.5%            | 99.9%                         | 99.99%                         | 99.99%                   |
 | **Min. Storage Duration Charge** | None            | None                 | 30 Days          | 30 Days          | 90 Days                       | 90 Days                        | 180 Days                 |
 | **Min. Billable Object Size**    | None            | None                 | 128 KB           | 128 KB           | 128 KB                        | 40 KB                          | 40KB                     |
-| **Retrieval Fees**               | None            | None                 | Per GB Retrieved | Per GB Retrieved | Per GB Retrieved              | Per GB Retrieved               | Per GB Retrieved         | 
+| **Retrieval Fees**               | None            | None                 | Per GB Retrieved | Per GB Retrieved | Per GB Retrieved              | Per GB Retrieved               | Per GB Retrieved         |
+
+
+### S3 transition lifecycle:
+
+We can transition S3 objects from one storage class to another class as per following rule.
+
+![S3-Storage-Class-Transition](https://docs.aws.amazon.com/images/AmazonS3/latest/userguide/images/lifecycle-transitions-v4.png)
