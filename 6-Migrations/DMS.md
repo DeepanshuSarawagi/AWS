@@ -40,8 +40,15 @@
 
 ## DMS - Must know:
 
+- Two options:
+  - Either login to console and initiate the AWS DMS Schema conversion.
+  - Or install the SCT software to their local drive.
+- SCT automatically assess and convert the source database schema and a majority of the database code objects, 
+  - including views, stored procedures, and functions, to a format compatible with the target database.
+- Any objects that cannot be automatically converted are clearly marked as action items with prescriptive instructions 
+  on how to convert, so that they can be manually converted to complete the migration.
 - Works over VPC Peering, VPN (site to site, software), Direct Connect Supports Full Load, Full Load + CDC, or CDC only 
-- O**racle:**
+- **Oracle:**
   - Source: Supports TDE for the source using "BinaryReader"
   - Target: Supports BLOBs in tables that have a primary key, and TDE
 - **OpenSearch:**
