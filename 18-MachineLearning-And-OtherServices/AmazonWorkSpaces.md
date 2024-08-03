@@ -3,7 +3,7 @@
 ## Introduction:
 
 - Managed secure, cloud desktop.
-- Great to eliminate management of on-r=premise VDI.
+- Great to eliminate management of on-premise VDI.
 - Pricing is either on-demand or monthly subscription.
 - Secure encrypted network isolation.
 - Can be integrated with Microsoft AD.

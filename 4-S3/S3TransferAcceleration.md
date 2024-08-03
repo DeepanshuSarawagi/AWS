@@ -9,7 +9,7 @@
 - Also, there is an increased cost out of S3 either to the internet or to the another region again due to the Edge Location acceleration involved.
 - Can be compatible with S3 Multi-part upload feature.
 - Following S3 operations are not supported when Transfer Acceleration is enabled.
-  - GET
+  - GET (list buckets)
   - DELETE Bucket
-  - PUT Bucket
+  - PUT Bucket (create bucket)
   - Cross region copies using PUT object - copy
