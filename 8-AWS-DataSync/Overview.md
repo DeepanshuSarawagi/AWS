@@ -3,7 +3,7 @@
 - AWS DataSync is an Amazon service which can be used to transfer data from on-premises / other cloud
 to AWS storage services such as S3 or EFS. Agent is needed.
 
-- Move data from one AWS to other AWS service (S3, EFS< FSx). No agent is needed.
+- Move data from one AWS to other AWS service (S3, EFS, FSx (Lustre, OpenZFS, NetApp ONTAP)). No agent is needed.
   - Not a continuous replication. It is a scheduled task.
 
 - It is natively integrated with Amazon S3, Amazon EFS, Amazon FSx, Amazon CloudWatch, and AWS CloudTrail
@@ -13,8 +13,8 @@ to AWS storage services such as S3 or EFS. Agent is needed.
   - Migrate an NFS from an Amazon EC2 to Amazon EFS within the same AWS region.
   - Replicate a NFS from an Amazon EC2 in one AWS region to an Amazon EFS in
     another region for disaster recovery.
-  - Migrate an Amazon EFS with no lifecycle management to a EFS with lifecycle
-    management enabled. 
+  - **Migrate an Amazon EFS with no lifecycle management to a EFS with lifecycle
+    management enabled.** 
   - Filesystems with lifecycle management enabled will automatically move the files to a lower-cost infrequently 
     accessed storage class based on a predefined lifecycle policy.
   - Migrate an Amazon EFS from one performance mode to another performance mode
