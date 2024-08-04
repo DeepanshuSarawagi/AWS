@@ -18,8 +18,8 @@ There are two kinds of `Application Discovery Services:`
 - Supports Microsoft Server, Amazon Linux, Ubuntu, RedHat, CentOS, SUSE...
 
 Note:
-: - Resulting data can be exported as CSV or viewed within AWS Migration Hub.
-: - Data can be explored using pre-defined queries in Amazon Athena.
+: Resulting data can be exported as CSV or viewed within AWS Migration Hub.
+: Data can be explored using pre-defined queries in Amazon Athena.
 
 ## Migration Hub Data Exploration:
 
@@ -49,6 +49,26 @@ Note:
 ![AWS MGN](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2021/04/15/2021-aws-mgn-how-it-works.jpg)
 
 **Reference docs:** [Blog](https://aws.amazon.com/blogs/aws/how-to-use-the-new-aws-application-migration-service-for-lift-and-shift-migrations/) for reference.
+
+## VM Import/Export:
+
+- VM Import/Export enables you to easily import virtual machine images from your existing environment to Amazon EC2 instances and export them back to your on-premises environment.
+- VM Import/Export is available at no additional charge beyond standard usage charges for Amazon EC2 and Amazon S3.
+
+### Benefits of VM Import/Export:
+
+- Migrate existing applications and workloads to Amazon EC2.
+- Import your VM image catalog to Amazon EC2.
+- Create a disaster recovery repository for VM images.
+
+### Features of VM Import/Export:
+
+- The ability to import a VM from your virtualization environment to Amazon EC2 as an Amazon Machine Image (AMI). You can launch EC2 instances from your AMI any time.
+- The ability to import a VM from your virtualization environment to Amazon EC2 as an EC2 instance. The instance is initially in a **`stopped`** state. You can create an AMI from the instance.
+- The ability to export a VM that was previously imported from your virtualization environment.
+- The ability to import disks as Amazon EBS snapshots.
+- VM import supports ENA drivers for Linux. ENA support will be enabled only if the original VM has ENA and/or NVMe drivers installed. 
+  - We recommend installing the latest drivers.
 
 ## AWS Elastic Disaster Recovery (DRS):
 
