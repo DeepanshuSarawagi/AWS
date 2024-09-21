@@ -7,7 +7,7 @@ steps to access a AWS service using Roles.
 1) Go to IAM dashboard
 2) Click on roles
 3) Click on create role and choose the AWS Service as EC2
-3) On the next page, attach the permission polocies. Select the desired policy.
+3) On the next page, attach the permission policies. Select the desired policy.
       In our case, we can to list the IAM users after SSHing into the EC2 instance.
       Hence, we will select IAMReadOnlyAccess policy and attach it to this Role.
 4) Give the name for this role and click on finish.
