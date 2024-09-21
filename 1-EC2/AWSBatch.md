@@ -54,6 +54,6 @@
 ## AWS Batch Multi-Node mode:
 - Large scale, good for HPC.
 - Leverages multiple EC2/ECS instances at the same time.
-- Good for tightly couples workloads.
+- Good for tightly coupled workloads.
 - Does not work with spot instances.
 - Works better if EC2 launch mode is cluster placement group.
