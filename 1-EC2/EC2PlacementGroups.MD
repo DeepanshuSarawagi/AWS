@@ -21,6 +21,7 @@ for the Groups
 - All EC2 instances will be located on the different hardware span across multiple AZ.
 - Reduced risk of simultaneous failures.
 - From this config, we are limited to 7 instances per AZ per placement group.
+- Spread placement groups are not supported for Dedicated Instances.
 - Use case: 
   - Maximum high availability. Critical applications that must be isolated from failure from each other.
 
