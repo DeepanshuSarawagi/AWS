@@ -107,7 +107,7 @@ By default, **an AWS account can have 100 buckets and this is a soft limit.**
 
 ### Amazon Athena - Federated Query:
 
-- Allows you to run SQL queries across data stored in relations, non-relational, objects, and custom data sources (AWS or on-premises)
+- Allows you to run SQL queries across data stored in relational, non-relational, objects, and custom data sources (AWS or on-premises)
 - Use Datasource connectors that run on Lambda to run federated queries on (CLoudWatch logs, RDS, DynamoDB)
 
 ![Federated Query](https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2019/11/27/AthenaQueryPic1.png)
