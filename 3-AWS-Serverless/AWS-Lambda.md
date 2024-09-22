@@ -79,6 +79,8 @@
   - Services using this push model publish events in addition to actually invoking your Lambda function.
   - Invocation types varies on types of service.
 
+For detailed difference between different lambda invocation types, refer to this [developer guide](https://docs.aws.amazon.com/lambda/latest/operatorguide/invocation-modes.html)
+
 An Event Source Mapping is the configuration that links your event source to the Lambda function.
 
 ### AWS CloudWatch monitors following metrics of your Lambda functions
