@@ -52,7 +52,7 @@
 ### Expedited: 
 - The data retrieval should be less than 250 MB, and it is typically made accessible within 2-5 minutes. 
 - This is the most expensive form of retrieval. 
-- Cost is $0.03 per GB and $0.01 per request. 
+- Cost is $0.03 per GB and 0.01 per request. 
 - Expedited — There are two types of Expedited retrievals: 
   - **On-Demand:**
     - On-Demand requests are similar to EC2 On-Demand instances and are available most of the time.
