@@ -42,8 +42,8 @@ By default, **an AWS account can have 100 buckets and this is a soft limit.**
 
 ## S3 Pre-Signed URLs:
 -  Can generate pre-signed URLs using SDK or CLIs.
--  They have a default TTL of 3600 seconds. It is possible to change the timeout using following argument --expires-in
-   [TIME_IN_SECONDS] argument.
+-  They have a default TTL of 3600 seconds. It is possible to change the timeout using following argument ```--expires-in
+   [TIME_IN_SECONDS]``` argument.
 -  Users given a pre-signed URL inherit the permissions of user who generated the URL.
   - Use cases:
     - Allow only logged-in users to download a premium video on S3 bucket.
