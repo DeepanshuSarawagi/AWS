@@ -38,7 +38,7 @@
   will read the entire volume first.** Or you can also attach it to the EC2 instance and **run fio/dd command** to read the 
   entire volume to pre-warm it)
 
-**- EBS Snapshot Archive:**
+**EBS Snapshot Archive:**
   - Move the snapshot to Archive which is 75% cheaper
   - Takes 24-72% to restore the archive.
 - **EBS Snapshot bin:**
@@ -47,12 +47,12 @@
 
 ## EBS Volume types:
 
-### - SSD volumes
+### SSD volumes
 
 - Suited for work with smaller blocks
 - Two types: General Purpose and Provisioned IOPS.
 
-##### - General Purpose SSD:
+##### General Purpose SSD:
 
 - Cost-effective storage, low latency.
 - Used for system boot volumes, virtual desktops, Development and test environments.
@@ -61,7 +61,7 @@
 - Can increase IOPS upto 16000 and throughput of 1000 MB/s.
 - GP2: Can burst upto 3000 IOPS.
 
-##### - Provisioned IOPS:
+##### Provisioned IOPS:
 
 - provides throughput of 16000 IOPS with 250 MiB/S.
 - Critical business application with sustained IOPS performance.
@@ -74,7 +74,7 @@
 - Max IOPS of 256,000 and IOPS:GB ratio is 1000:1
 - supports EBS Multi-Attach
 
-### - HDD volumes
+### HDD volumes
 
 - suited for workload that requires higher throughput or high blocks
   of storage. Eg; big data or logging information.
