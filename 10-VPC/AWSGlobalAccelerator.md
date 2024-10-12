@@ -10,8 +10,8 @@
 - Global Accelerator intelligently routes customer requests across the most
   optimized path.
 - Proxying packets at the Edge location to the applications running in one or more AWS regions.
-- An ENA provides high speed performance for your instance whereas AWS Global
-  Accelerator provides high speed performance from end client to your application.
+- **An ENA provides high speed performance for your instance whereas AWS Global
+  Accelerator provides high speed performance from end client to your application.**
 - Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP, as well
   as for HTTP use cases that specifically require static IP addresses or deterministic, fast regional failover.
 
