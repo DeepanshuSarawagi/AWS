@@ -12,6 +12,6 @@ applied to one subnet.
 - NACLs are stateless service. (Outbound is not allowed by default)
 - NACL is the first entrypoint firewall in VPC to enter into a subnet.
 - There is one NACL per subnet.
-- NACLs are great are blocking IPs at subnet level.
+- NACLs are great for blocking IPs at subnet level.
 - Default NACL accepts everything in inbound/outbound with the subnets its associated with.
 - If there is an explicit allow then request enters into subnet and checks for security group.
