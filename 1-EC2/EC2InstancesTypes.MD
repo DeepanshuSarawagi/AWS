@@ -17,10 +17,9 @@ On-Demand instances:
 - Linux - Billing per second after first minute.
 - Other OS - Billing per hour
 - has the highest cost but no upfront payment
-- Recommended for short-term and uninterrupted workloads, where you cant predict
-- how the application will behave.
-- Capacity reservations allows us to reserve capacity based on different attributes such as
-- instance type, platform, tenancy within a particular availability zone for any period of time.
+- Recommended for short-term and uninterrupted workloads, where you cant predict how the application will behave.
+- Capacity reservations allow us to reserve capacity based on different attributes such as
+  instance type, platform, tenancy within a particular availability zone for any period of time.
 
 ## EC2 Reserved Instance:
 - Upto 75% discount compared to On-Demand.
