@@ -1,6 +1,6 @@
 # Introduction to Security Groups in AWS
 
-SG are fundamental of network Security in AWS
+SG is fundamental to network Security in AWS
 They control how network is allowed into or out of EC2 instance
 Security groups only contains allow rules
 Security groups refer by IPs or other Security groups
