@@ -28,3 +28,6 @@
 - Usually very big models.
   - Billions of parameters
   - Trained on books, articles, texts and other forms of textual data.
+- We usually interact with LLM by giving it a prompt.
+- Then the model will leverage all the existing content it has learned from to generate new content.
+  - The generated response could be Non-deterministic: Meaning it maybe different for every user who uses the same prompt.
