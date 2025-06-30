@@ -32,3 +32,13 @@
 #### Continued pre-training:
 - Provide un-labeled data to pre-train a foundation model by familiarizing it with certain input types.
 
+## Fine tuning a Model:
+- Adapt a copy of foundation model with your own data.
+- Fine tuning will change the weights of the base foundation model.
+- Training data must:
+  - Adhere to a specific format.
+  - Be stored in Amazon S3.
+- You must use `Provisioned Throughput` to fine tune a model.
+- **Note:** Not all model can be fine tuned.
+
+### 
