@@ -45,3 +45,10 @@
 - Improves the performance on a pre-trained FM on a specific domain tasks.
   - Which means, the model is further trained on a particular field or area of knowledge.
 - Instruction-based fine-tuning uses labeled examples that are prompt-response pairs.
+
+### Continued pre-training:
+- Provide un-labeled data to continue the training of a foundation model.
+- Also called domain-adaptation fine tuning to make a model expert in specific domain.
+- **Example:** Feeding the entire AWS documentation to a model to make it AWS expert.
+- Can continue to train model as more data becomes available.
+
