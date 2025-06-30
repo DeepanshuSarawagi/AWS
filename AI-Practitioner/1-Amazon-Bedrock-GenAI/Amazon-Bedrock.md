@@ -75,4 +75,9 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
 - Running a fine-tuned model is also more expensive since it requires provisioned throughput.
 
 ### Transfer Learning:
+- The broader concept of re-using a pre-trained model to adapt it to a new related task.
+- Widely used for image classification.
+- Useful for NLP models such as `BERT, GPT`.
+- Fine-tuning is a specific kind of Transfer-Learning.
+
 
