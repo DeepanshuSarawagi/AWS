@@ -41,4 +41,7 @@
 - You must use `Provisioned Throughput` to fine tune a model.
 - **Note:** Not all model can be fine tuned.
 
-### 
+### Instruction-based fine tuning:
+- Improves the performance on a pre-trained FM on a specific domain tasks.
+  - Which means, the model is further trained on a particular field or area of knowledge.
+- Instruction-based fine-tuning uses labeled examples that are prompt-response pairs.
