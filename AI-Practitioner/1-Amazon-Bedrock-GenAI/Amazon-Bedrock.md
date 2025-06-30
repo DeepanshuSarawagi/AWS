@@ -52,3 +52,27 @@
 - **Example:** Feeding the entire AWS documentation to a model to make it AWS expert.
 - Can continue to train model as more data becomes available.
 
+There are two subsets of `Instruction-based fine-tuning` a foundational model. 
+
+#### Single-Turn Messaging:
+- Part of `Instruction-based fine-tuning`.
+- Provide context for the conversation.
+- **messages:** An array of message objects, each containing:
+  - **role:** Either user or assistant.
+  - **content:** The text content of the message.
+
+#### Multi-turn Messaging:
+- To provide instruction-based fine-tuning for a conversation.
+- Chatbots=Multi-turn environment.
+- You must alternate between `user` and `assistant` roles.
+
+### Fine-tuning good to know:
+
+- Re-training an FM requires a higher budget.
+- **Instruction-based fine tuning is usually cheaper since computations are less intense and amount of data required is usually less**
+- It also requires experienced ML engineers to perform the task.
+- You must prepare the data, perform fine-tuning, evaluate the model.
+- Running a fine-tuned model is also more expensive since it requires provisioned throughput.
+
+### Transfer Learning:
+
