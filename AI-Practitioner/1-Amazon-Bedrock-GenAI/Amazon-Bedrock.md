@@ -80,4 +80,12 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
 - Useful for NLP models such as `BERT, GPT`.
 - Fine-tuning is a specific kind of Transfer-Learning.
 
-
+### Fine-tuning use cases:
+- A chatbot designed with a particular persona or tone, or geared towards a specific-purpose(e.g., assisting customers, drafting ads)
+- Train using more up-to-date informationt than what the model previously accessed.
+- Training with exclusive data such as:
+  - Customer emails/Messages
+  - Records from customer service interaction.
+- Targeted use cases such as:
+  - Categorization
+  - Assessing accuracy
