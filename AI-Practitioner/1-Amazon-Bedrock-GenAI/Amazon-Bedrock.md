@@ -89,3 +89,39 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
 - Targeted use cases such as:
   - Categorization
   - Assessing accuracy
+ 
+## Evaluating a model:
+
+### Automatic Evaluation:
+- Evaluate a model for QA.
+- Utilize the built-in task types:
+  - Text summarization
+  - Question and Answer
+  - Text clasification
+  - open-ended text generation
+- We can then specify the job to a task and supply a dataset to evaluate the model:
+  - We can either use the `built-in` curated prompt dataset or `bring your own` prompt dataset.
+- Once the prompt dataset is configured to the task type, benchmark is performed and scores are calculated automatically.
+
+### Benchmark datasets:
+- Curated collection of data designed specifically at evaluating the performance of LLMs.
+- It supports wide range of topics, complexities, speeed, accuracy and efficiency.
+- Some benchmark datasets allow you to very quickly detect any kind of bias and potential discrimination against a group of people.
+- You can also create your own benchmark dataset that it specific to your business.
+
+### Automated metrics to evaluate an FM:
+- ROUGE: Recall-Oriented Understudy for Gisting Evaluation
+  - Evaluating automatic summarization and machine translation systems.
+  - ROUGE-N: Measure the number of matching n-grams between reference and generated text.
+    - Define how many words are matching between reference text and generated text.
+  - ROUGE-L: Longest common subsequence between reference and generated text.
+- BLEU: Bilingual Evaluation Understudy
+  - Evaluate the quality of generated texxt, especially for translations.
+  - Considers both precision and penalises brevity.
+  - Looks at the combination of n-grams.
+- BERTScore:
+  - Semantic similarity between generated text.
+    - Meaning, compare actual meaning of the text and ssee if meanings are similar.
+  - Uses pre-trained BERT models `(Bidirectional Encoder Representations from Transformers)` to compare the contextualized embeddings of both texts and computes the cosine similarity between them.
+  - Capable of cpaturing more nuance between the texts.
+- Perplexity: How well the model predicts the next token. (lower is better)
