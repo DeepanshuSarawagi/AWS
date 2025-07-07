@@ -1,0 +1,22 @@
+# RAG and Knowledge base:
+
+## RAG - Retrieval-Augmented-Generation:
+- Allows a foundation model to reference a datasource outside its training data.
+- Below is the process:
+  - Knowledge base is built and managed by Amazon Bedrock.
+  - Knowledge base should have a datasource, for example Amazon S3.
+  - User asks a question to FM.
+    - It realizes that its not trained on the prompt user has given.
+  - Hence, the FM performs a search in the knowledge base performing a lookup.
+  - This knowledge base is backed up Vector database.
+  - Bedrock takes care of creating Vector Embeddings in the database of your choice based on your choice of data.
+  - FM model then retrieves the information from this knowledge base and responds to the user prompt.
+- All this is going to go as an augmented prompt (Query + Retrieved text)
+  - Retrieved text since the information is retrieved from the knowledge base which is outside of the foundation model.
+  - And this is called as augmented generation since the response has been augmented from the external data.
+- Use where real-time data is needed to be fed to the foundation model.
+
+![Amazon-Bedrock-Knowledge-Base](https://docs.aws.amazon.com/images/bedrock/latest/userguide/images/kb/rag-runtime.png)
+
+Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html) for further reading.
+
