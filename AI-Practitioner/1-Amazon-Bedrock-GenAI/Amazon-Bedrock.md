@@ -97,7 +97,7 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
 - Utilize the built-in task types:
   - Text summarization
   - Question and Answer
-  - Text clasification
+  - Text classification
   - open-ended text generation
 - We can then specify the job to a task and supply a dataset to evaluate the model:
   - We can either use the `built-in` curated prompt dataset or `bring your own` prompt dataset.
@@ -108,6 +108,10 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
 - It supports wide range of topics, complexities, speeed, accuracy and efficiency.
 - Some benchmark datasets allow you to very quickly detect any kind of bias and potential discrimination against a group of people.
 - You can also create your own benchmark dataset that it specific to your business.
+
+The Following illustration shows the flow to benchmark model evaluation.
+
+![model-evaluation-flow](https://miro.medium.com/v2/resize:fit:836/1*b9k5iLw5Lo6NnN3O09uulQ.png)
 
 ### Automated metrics to evaluate an FM:
 - ROUGE: Recall-Oriented Understudy for Gisting Evaluation
@@ -125,3 +129,9 @@ There are two subsets of `Instruction-based fine-tuning` a foundational model.
   - Uses pre-trained BERT models `(Bidirectional Encoder Representations from Transformers)` to compare the contextualized embeddings of both texts and computes the cosine similarity between them.
   - Capable of cpaturing more nuance between the texts.
 - Perplexity: How well the model predicts the next token. (lower is better)
+
+Refer to the following image for the simple comparison between different evaluation scores.
+
+![evaluation-methods](https://cdn.analyticsvidhya.com/wp-content/uploads/2025/04/1-1.webp)
+
+
