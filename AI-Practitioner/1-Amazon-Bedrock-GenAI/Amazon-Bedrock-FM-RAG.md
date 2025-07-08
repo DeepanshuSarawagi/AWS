@@ -20,7 +20,18 @@
 
 Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html) for further reading.
 
-## RAG Vector databases:
+### RAG - Vector Databases:
+
+- Vector databases on Amazon Bedrock can be of several kinds backed by:
+  - Amazon OpenSearch
+  - Amazon Aurora
+  - Pinecone
+  - MongoDB
+  - Redis
+- **Embedding Models:** Converts the data into vectors. Could be `Amazon Titan` or `Cohere`.
+- Amazon S3 will contain the document chunks.
+- These document chunks will be fed into Embeddings Model.
+- Embedding Models will generate the vectors from this S3 datasource and place it in the vector database.
 
 ### Amazon OpenSearch Service: 
 - Most preferred database for vector embeddings. Search and Analytics database.
