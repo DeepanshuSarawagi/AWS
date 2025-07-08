@@ -20,3 +20,18 @@
 
 Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html) for further reading.
 
+## RAG Vector databases:
+
+### Amazon OpenSearch Service: 
+- Most preferred database for vector embeddings. Search and Analytics database.
+- Used for real time similarity queries, stores millions of vector embeddigs, scalable index management and fast nearest-neighbor search capability.
+
+### Amazon DocumentDB:
+- Used for real time similarity queries, stores millions of vector embeddigs.
+
+### Amazon Aurora and RDS for PostgreSQL: 
+- Relational database.
+
+### Amazon Neptune:
+- Graph database.
+
