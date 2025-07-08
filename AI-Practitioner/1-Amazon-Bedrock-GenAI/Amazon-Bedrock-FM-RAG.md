@@ -35,3 +35,16 @@ Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/usergui
 ### Amazon Neptune:
 - Graph database.
 
+## RAG Data Sources:
+- S3
+- Confluence
+- MS SharePoint
+- Salesforce
+- Web Pages
+
+## Use cases:
+- Customer Service Chatbot:
+  - Knowledge base - products, features, specifications, troubleshooting guides and FAQs
+  - RAG Application - chatbot that can answer custom queries
+- Legal Search and Analysis:
+  - Knowkedge base: laws, regulations, case precedents, legal opinions, and expert analysis.
