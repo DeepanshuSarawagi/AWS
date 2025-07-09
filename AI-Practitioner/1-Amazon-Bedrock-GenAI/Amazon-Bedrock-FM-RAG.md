@@ -58,4 +58,7 @@ Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/usergui
   - Knowledge base - products, features, specifications, troubleshooting guides and FAQs
   - RAG Application - chatbot that can answer custom queries
 - Legal Search and Analysis:
-  - Knowkedge base: laws, regulations, case precedents, legal opinions, and expert analysis.
+  - Knowledge base: laws, regulations, case precedents, legal opinions, and expert analysis.
+- Healthcare Question Answering:
+  - Knowledge-base: diseases, treatments, critical guidelines, research papers, patients..
+  - RAG Application: Chatbot that can answer complex medical queries.
