@@ -143,3 +143,14 @@ Refer to the following image for the simple comparison between different evaluat
 - Enhanced privacy.
 - Reduce hallucinations.
 - Ability to create multiple Guardrails and monitor and analyze user inputs that can violate the Guardrails.
+
+## Amazon Bedrock - Agents:
+
+ Instead of performing response to prompts, the model can as well start thinking and perform multi-tasks. This is possible with the help of AI Agents.
+An AI agent can perform following tasks.
+
+- Manage and carry out various multi-step tasks related to infrastructure provisioning, application deployment, and operation
+  activities.
+- **Task coordination:** Perform tasks in the correct order and ensure information is passed correctly between tasks.
+- Agents are configured to perform specific pre-defined action groups.
+- It can integrate with other systems, services, databases and API to exchange data or initiate actions.
