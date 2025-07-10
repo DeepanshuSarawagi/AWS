@@ -162,3 +162,16 @@ from AWS demonstrates how Amazon Bedrock Agents works. For easy access, please f
 ![Amazon-Bedrock-Agents1](Amazon-Bedrock-Agents-1.png)
 
 ![Amazon-Bedrock-Agents-2](Amazon-Bedrock-Agents-2.png)
+
+## Amazon Bedrock - CloudWatch Integration:
+
+- Model invocation logging.
+  - Send logs of all invocations to CW or S3.
+  - Can include text, images and embeddings.
+  - Analyze further and build alerting using CW Logs Insights.
+
+### CloudWatch Metrics:
+- Published metrics from Bedrock to CloudWatch.
+  - SOme metrics maybe related to Amazon Bedrock Guardrails. For example, metrics
+  - Including `ContentFilteredCount`, which helps to see if Guardrails are functioning.
+- Can build CloudWatch Alarms on top of Metrics.
