@@ -31,3 +31,10 @@
 - We usually interact with LLM by giving it a prompt.
 - Then the model will leverage all the existing content it has learned from to generate new content.
   - The generated response could be Non-deterministic: Meaning it maybe different for every user who uses the same prompt.
+
+## Tokenization:
+- Process of converting raw text into sequence of tokens.
+  - **Word based tokenization:** Text is split into individual words.
+  - **Subword tokenization:** Some words can be split too. Helpful for longer words.
+- Each token has an ID.
+- **Context Window:** The number of tokens an LLM can consider when generating text.
