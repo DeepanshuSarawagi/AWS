@@ -154,3 +154,11 @@ An AI agent can perform following tasks.
 - **Task coordination:** Perform tasks in the correct order and ensure information is passed correctly between tasks.
 - Agents are configured to perform specific pre-defined action groups.
 - It can integrate with other systems, services, databases and API to exchange data or initiate actions.
+- Leverage RAG to retrieve information when necessary.
+
+Following [architecture-reference](https://d1.awsstatic.com/solutions/guidance/architecture-diagrams/automating-tasks-using-agents-for-amazon-bedrock.pdf)
+from AWS demonstrates how Amazon Bedrock Agents works. For easy access, please find the snippets for reference.
+
+![Amazon-Bedrock-Agents1](Amazon-Bedrock-Agents-1.png)
+
+![Amazon-Bedrock-Agents-2](Amazon-Bedrock-Agents-2.png)
