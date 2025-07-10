@@ -37,4 +37,22 @@
   - **Word based tokenization:** Text is split into individual words.
   - **Subword tokenization:** Some words can be split too. Helpful for longer words.
 - Each token has an ID.
-- **Context Window:** The number of tokens an LLM can consider when generating text.
+- **Context Window:** 
+  - The number of tokens an LLM can consider when generating text.
+  - The larger the windows, the more information and coherence.
+- Large context window requires more memory and processing power.
+- First factor to look at when considering a model.
+
+## Embeddings:
+- Create vectors out of text, images or audio.
+- Upon tokenization, every word will have a tokenID.
+- Create a vector for each token.
+- All these vectors are then going to be stored in a vector database.
+
+### Why do we convert token into vectors?
+- When we have vector with very high dimensionality, we can actually encode many features for one input token.
+  - We can add meaning of the word, synthetic role, sentiment (positive or negative).
+- Hence, a model is able to capture lot of information about the word.
+- This is what is done in Vector Databases and RAG.
+- This is how embedding models can be used with vector embeddings for a search application.
+- Words with sematic relationship will have similar embeddings.
