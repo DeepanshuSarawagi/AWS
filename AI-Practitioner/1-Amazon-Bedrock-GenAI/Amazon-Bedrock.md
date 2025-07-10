@@ -135,3 +135,11 @@ Refer to the following image for the simple comparison between different evaluat
 ![evaluation-methods](https://cdn.analyticsvidhya.com/wp-content/uploads/2025/04/1-1.webp)
 
 
+## Amazon Bedrock - Guardrails:
+
+- Control the interaction between users and Foundation Models.
+- Filter undesirable and harmful content.
+- Use it to remove any PII.
+- Enhanced privacy.
+- Reduce hallucinations.
+- Ability to create multiple Guardrails and monitor and analyze user inputs that can violate the Guardrails.
