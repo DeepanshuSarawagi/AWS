@@ -175,3 +175,28 @@ from AWS demonstrates how Amazon Bedrock Agents works. For easy access, please f
   - SOme metrics maybe related to Amazon Bedrock Guardrails. For example, metrics
   - Including `ContentFilteredCount`, which helps to see if Guardrails are functioning.
 - Can build CloudWatch Alarms on top of Metrics.
+
+## Amazon Bedrock - Pricing:
+
+- **On-demand:** Pay as you go. Charged for text models, Embedding models, Image Models. Works only on base models.
+- **Batch:** Multiple predictions at time. Can provide discount upto 50%.
+- **Provisioned Throughput:** Purchase model units for a certain period of time. Throughput is max number of input/output tokens processed per minute.
+                              Works with Base, Custom and Fine-tuned models.
+
+### Model Improvement Techniques Cost Order:
+
+#### Prompt Engineering:
+- No model training needed (No additional computation or fine-tuning)
+
+#### Retrieval Augmented Generation:
+- Uses external knowledge-base. NO FM changes.
+
+#### Instruction-based fine tuning:
+- FM is fine-tuned with specific instructions.
+
+#### Domain Adaptation Fine-tuning:
+- Model is trained on a domain specific dataset.
+
+Usually a smaller model is cheaper. 
+
+Number of inputs and outputs tokens is the main driver of the cost.
