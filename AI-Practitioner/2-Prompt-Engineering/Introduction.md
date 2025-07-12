@@ -42,3 +42,24 @@
   - The number of tokens in the input.
   - The number of tokens in the output.
 - Latency is not impacted by Top P, Top K, Temperature.
+
+## Prompt Engineering Techniques:
+
+### Zero-Shot Prompting:
+- Present a task to the model without providing examples or explicit training for that specific task.
+- You fully rely on the model's general knowledge.
+- The larger and more capable the model, the more likely you will get good results.
+
+### Few-shots Prompting:
+- Provide examples of a task to the model to guide its output.
+- we provide a few shots to the model to perform the task.
+- If we provide one example, it is also called as single-shot or one-shot prompting.
+
+### Chain of thought Prompting:
+- Divide the task into a sequence of reasoning steps, leading to more structure and coherence.
+- Using a sentence like `Think step by step` helps.
+- Helpful when solving a problem as a human usually requires several steps.
+
+### RAG Prompting:
+- Combine the model's capability withexternal data sources to generate a more informed and contextually rich response.
+- The initial prompt is then augmented with external information.
