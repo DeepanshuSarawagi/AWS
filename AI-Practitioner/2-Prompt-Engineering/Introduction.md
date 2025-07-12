@@ -32,3 +32,13 @@
   - High K (ex: 500): more probable words, more diverse and creative.
 - **Length:** maximum length of answer.
 - **Stop Sequences:** tokens that signal the model to stop generating output.
+
+### Prompt Latency:
+
+- Latency is how fast the model responds.
+- - Its impacted by a few parameters:
+  - The model size.
+  - The model type.
+  - The number of tokens in the input.
+  - The number of tokens in the output.
+- Latency is not impacted by Top P, Top K, Temperature.
