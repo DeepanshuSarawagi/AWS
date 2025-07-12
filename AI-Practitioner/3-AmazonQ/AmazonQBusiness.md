@@ -59,3 +59,31 @@ Following is the good use case referenced from AWS blog which gives us a guidanc
 for creating a customized coding companion.
 
 ![Customized-Coding-Companion](Amazon-Q-Developer-usecase.png)
+
+## Amazon Q for AWS services:
+
+### Amazon Q for QuickSight:
+
+- Amazon QuickSight is used to visualize your data and create dashboard about them.
+- Amazon Q understands natural language that you use to ask questions about your data.
+- Create executive summaries of your data.
+- Ask and answer questions of your data.
+- Generate and edit visuals for your dashboards.
+
+### Amazon Q for EC2:
+- Provides guidance and suggestion for EC2 instance types that are best suited for your new workload.
+- Can provide requirements using natural language to get even more suggestions or ask for advice by providing other workload requirements.
+
+### Amazon Q for AWS chatbot:
+- AWS Chatbot is a way for you to deploy an Chatbot application in a Slack or Microsoft Teams channel that knows about your AWS account.
+  - can even execute AWS CLI commands on your behalf.
+  - Hence, you need not leave chatbot application yet get access to AWS acocunts.
+- Troubleshoot issues, receive notifications for alarms, security findings, billing alerts, create support request.
+- You can access Amazon Q directly in AWS Chatbot to accelerate understanding of the AWS services, troubleshoot issues, and
+  and identify remediation paths.
+
+### Amazon Q for Glue:
+- Answer questions about Glue.
+- Generate code for AWS Glue ETL Scripts.
+- Understand errors in AWS Glue jobs.
+- Provide step-by-step instructions, to root cause and resolve your issues.
