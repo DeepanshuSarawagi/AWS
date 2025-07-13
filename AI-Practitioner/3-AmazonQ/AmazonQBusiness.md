@@ -87,3 +87,9 @@ for creating a customized coding companion.
 - Generate code for AWS Glue ETL Scripts.
 - Understand errors in AWS Glue jobs.
 - Provide step-by-step instructions, to root cause and resolve your issues.
+
+## PartyRock:
+- Playground for building GenAI apps powered by Amazon Bedrock.
+  - Not an AWS service.
+  - Need not have an AWS account.
+- 
