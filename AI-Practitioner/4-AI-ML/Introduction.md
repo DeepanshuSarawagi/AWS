@@ -50,3 +50,26 @@
 [Medium-article-reference-on-DeepLearning](https://medium.com/@mustaphaliaichi/neural-networks-and-deep-learning-a-comprehensive-introduction-092449336c1f)
 
 ![Deep Learning](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*wDptpMvzYcmV62esTVZ_Bw.png)
+
+## GenAI:
+
+- Subset of Deep learning.
+- Multi-purpose foundation model backed by neural networks.
+- They can be fine-tuned if necessary to better fit our use-case.
+- Leverages Transformers Model. (LLM)
+
+### Transformer Models:
+- Able to process a sentence as a whole instead of word by word.
+- Faster and more efficient text processing.
+- It gives relative importance to specific words in a sentence - more coherent sentences.
+- Transformer based LLMs:
+  - Powerful models that can understand and generate human-like text.
+  - Chat generative Pretrained Transformer (ChatGPT).
+
+### Multi-modal models:
+- Multiple types of inputs and outputs.
+- Input can be mix of text, audio and output can be mix of text and video.
+
+Classification of AI as referenced from AWS:
+
+![AI-Classification](AI-ML-DL-GenAI.png)
