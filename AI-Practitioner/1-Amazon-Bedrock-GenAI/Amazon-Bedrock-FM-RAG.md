@@ -25,6 +25,8 @@ Refer to the following [blog](https://docs.aws.amazon.com/bedrock/latest/usergui
 - Vector databases on Amazon Bedrock can be of several kinds backed by:
   - Amazon OpenSearch
   - Amazon Aurora
+  - Neptune Analytics
+  - S3 Vectors
   - Pinecone
   - MongoDB
   - Redis
