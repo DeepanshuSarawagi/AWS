@@ -44,7 +44,7 @@
 - First factor to look at when considering a model.
 
 ## Embeddings:
-- Create vectors out of text, images or audio.
+- Create vectors (array of numerical values) out of text, images or audio.
 - Upon tokenization, every word will have a tokenID.
 - Create a vector for each token.
 - All these vectors are then going to be stored in a vector database.
