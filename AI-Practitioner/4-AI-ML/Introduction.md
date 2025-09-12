@@ -79,7 +79,7 @@ Classification of AI as referenced from AWS:
 ### Good to know ML terminologies:
 
 - **GPT (Generative Pre-trained Transformer):** generate human text or computer code based on input prompts.
-- **BERT (Bidirectional Encoder Representations from Transformers):** similar intent to GPT, but reads the text in two directions.
+- **BERT (Bidirectional Encoder Representations from Transformers):** similar intent to GPT, but reads the text in two directions, making it greate for translational purposes.
 - **RNN (Recurrent Neural Networks):** meant for sequential data such as time-series or text, useful in speech recognition, time-series prediction.
 - **ResNET (Residual Network):** Deep Convolutional Neural Network (CNN) used for image recognition, object detection, facial recognition.
 - **SVM (Support Vector Machine):** ML algorithm for classification and regression.
