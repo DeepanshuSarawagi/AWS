@@ -31,4 +31,11 @@ Training data in context of ML is to train the model with data. If data is not r
 - Text Data:
   - Unstructured text such as articles, social media posts or customer reviews.
   - Example: a collection of product reviews from an e-commerce website.
--  
+- Image Data:
+  - Data in the form of images which can vary widely in format and content.
+
+## ML Algorithms:
+
+### Supervised Learning:
+- Learn a mapping function that can predict the output for new unseen input data.
+- Needs labeled data: very powerful; but difficult to perform on millions of datapoints.
