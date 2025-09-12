@@ -41,6 +41,8 @@
 
 ### Neural Networks:
 
+The input data is put into network which is going to create connections between different layers in the network. And over time, new layers are going to be created, connections are going to change based on pattern in the data.
+
 - As illustrated in the below diagram, nodes are connected together.
 - Nodes are organized in layers.
 - When the neural networks sees a lot of data, it identifies patterns and changes the connections between the nodes.
