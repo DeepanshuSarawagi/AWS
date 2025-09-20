@@ -171,3 +171,28 @@ Reference from [LinkedIn-Blog](https://www.linkedin.com/pulse/unsupervised-learn
 ![Anomaly-Detection](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*eNc-PZX1mFdqhF0V)
 
 Reference from [medium-blog](https://medium.com/@y.s.yoon/isolation-forest-anomaly-detection-identify-outliers-101123a9ff63)
+
+### Semi-supervised Learning:
+
+- Use a small amount of labeled data and large amount of unlabeled data to train the model.
+- After that, the partial trained algorithm itself labels the unlabeled data.
+- This is called pseudo-labeling.
+- The model is then retrained on the resulting data mix without explicit programming.
+
+### Self-Supervised Learning:
+- Have a model generate pseudo-label for its own data without having humans label any data first.
+- Then using pseudo-labels solve problems traditionally solved by Supervised Learning.
+- Widely used in Natural Language Processing.
+
+### Reinforcement Learning:
+- A type of Machine Learning where an agent learns to make decisions by performing actions in an environment to maximize
+  cumulative rewards.
+- Key concepts:
+  - **Agent:** The learner or decision maker
+  - **Environment:** The external agent the system interacts with
+  - **Action:** The choices made by the agent
+  - **Reward:** The feedback from the environment based on the agent's actions.
+  - **State:** The current situation of the environment
+  - **Policy:** The strategy the agent uses to determine actions based on the state
+- Learning Process:
+  - 
