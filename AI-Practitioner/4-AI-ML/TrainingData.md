@@ -206,4 +206,34 @@ Blog on Anomaly detection [medium-blog](https://medium.com/@y.s.yoon/isolation-f
 - **Robotics:** Navigating and manipulating objects in dynamic environments.
 - **Finance:** Portfolio management and trading strategies.
 - **Healthcare:** Optimizing treatment plans.
-- **Autonomous vehicles:** Path planning and decision making.
+- **Autonomous vehicles:** Path planning and decision-making.
+
+### Reinforcement Learning from Human Feedback:
+- Use human feedback to help ML models to self-learn more efficiently.
+- As we know, in reinforcement learning there is a reward function
+- `RLHF` incorporates human feedback in the reward function, to be more aligned with human goals, wants and needs.
+  - First the model's responses are compared to human responses
+  - Then, a human assesses the quality of the model's responses
+- `RLHF` is used throughout GenAI applications including LLM models.
+- `RLHF` significantly enhances the model performance.
+- Example: grading text translations from "technically correct" to "human".
+
+#### How does `RLHF` work?
+
+**Example: Internal company knowledge chatbot**
+- **Data Collection:**
+  - Set of human generated prompts and responses are created.
+- **Supervised fine tuning of a language model:**
+  - Fine-tune an existing model with internal knowledge.
+  - Then the model creates responses based on the human-generated prompts.
+  - Responses are mathematically compared with human-generated answers.
+- **Build a separate reward model:**
+  - Humans can indicate which response they prefer from the same prompt.
+  - The reward model can now estimate which how a human would prefer a prompt response.
+- **Optimize the language model with the reward based model:**
+  - Use the reward model as reward function for Reinforcement Learning
+
+Refer to following RLHF process referenced from [AWS-Blog-On-RLHF](https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/)
+
+![RLHF-Process](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2023/08/31/ML-14874_image001.jpg)
+
