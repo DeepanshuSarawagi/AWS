@@ -76,5 +76,44 @@ Most common ML algorithm is `K-Nn -- K-Nearest neighbors` model.
 
 Reference from following [medium-blog](https://medium.com/@aakash013/master-supervised-learning-with-top-classification-techniques-af870f710c82)
 
+#### Training vs Validation vs Test set:
+
+**Training:**
+- Used to train the model.
+- Typically, 60-80% of the data set.
+- Example: 800 labeled images from the dataset of 1000 images.
+
+**Validation:**
+- Used to tune model parameters and validate performance.
+- Typically, 10-20% of dataset. Tune the settings of algorithm to make it more efficient.
+- Example: 100 labeled images for the hyperparameter tuning.
+
+**Test set:**
+- Used to evaluate the final performance of the model.
+- Typically 10-20% of the dataset.
+- Example: 100 labeled images to test the model accuracy.
+
+#### Feature Engineering:
+- The process of using domain knowledge to transform raw data into meaningful features.
+- Helps enhance the performance of machine learning models.
+- Techniques:
+  - **Feature Extraction:** Extracting useful information from raw data such as deriving age from data of birth.
+  - **Feature Selection:** Selecting a subset of relevant features, like choosing important predictors in a regression model.
+  - **Feature Transformation:** Transforming data for better model performance, such as normalizing numerical data.
+- Particularly meaningful for supervised learning.
+
+**Example:** 
+: A table has column with fields related to customer name, DOB, purchase amount. Now, this data can be transformed
+for meaningful learning for the model, if the DOB field can be converted to Age field, which would give better prediction.
+
+##### Feature Engineering on Structured data:
+
+Predicting house prices based on features like location, size of house, number of bedrooms, amenities, realty developer.
+
+**Feature Engineering tasks:**
+- Feature Creation: Deriving new features like `price per square foot`.
+- Feature Selection: Identifying and retaining important features such as location, number of bedrooms.
+- Feature Transformation: Normalizing features to ensure they are on a similar scale, which helps algorithms converge faster.
 
 ### Unsupervised Learning:
+
