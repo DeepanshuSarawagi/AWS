@@ -199,3 +199,11 @@ Blog on Anomaly detection [medium-blog](https://medium.com/@y.s.yoon/isolation-f
   - It selects an action based on its policy.
   - The environment transitions to a new state and provides a Reward.
   - The Agent updates its policy to improve future decisions.
+
+#### Applications of Reinforcement Learning:
+
+- **Gaming:** Teaching AI to play complex games.
+- **Robotics:** Navigating and manipulating objects in dynamic environments.
+- **Finance:** Portfolio management and trading strategies.
+- **Healthcare:** Optimizing treatment plans.
+- **Autonomous vehicles:** Path planning and decision making.
