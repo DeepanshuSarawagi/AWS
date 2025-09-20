@@ -170,3 +170,4 @@ Reference from [LinkedIn-Blog](https://www.linkedin.com/pulse/unsupervised-learn
 
 ![Anomaly-Detection](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*eNc-PZX1mFdqhF0V)
 
+Reference from [medium-blog](https://medium.com/@y.s.yoon/isolation-forest-anomaly-detection-identify-outliers-101123a9ff63)
