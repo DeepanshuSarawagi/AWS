@@ -168,9 +168,9 @@ Reference from [LinkedIn-Blog](https://www.linkedin.com/pulse/unsupervised-learn
 
 **Outcome:** The system flags potentially fraudulent transaction for further investigation.
 
-![Anomaly-Detection](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*eNc-PZX1mFdqhF0V)
+[//]: # (![Anomaly-Detection]&#40;https://miro.medium.com/v2/resize:fit:1400/format:webp/0*eNc-PZX1mFdqhF0V&#41;)
 
-Reference from [medium-blog](https://medium.com/@y.s.yoon/isolation-forest-anomaly-detection-identify-outliers-101123a9ff63)
+Blog on Anomaly detection [medium-blog](https://medium.com/@y.s.yoon/isolation-forest-anomaly-detection-identify-outliers-101123a9ff63)
 
 ### Semi-supervised Learning:
 
@@ -187,12 +187,15 @@ Reference from [medium-blog](https://medium.com/@y.s.yoon/isolation-forest-anoma
 ### Reinforcement Learning:
 - A type of Machine Learning where an agent learns to make decisions by performing actions in an environment to maximize
   cumulative rewards.
-- Key concepts:
+- **Key concepts:**
   - **Agent:** The learner or decision maker
   - **Environment:** The external agent the system interacts with
   - **Action:** The choices made by the agent
   - **Reward:** The feedback from the environment based on the agent's actions.
   - **State:** The current situation of the environment
   - **Policy:** The strategy the agent uses to determine actions based on the state
-- Learning Process:
-  - 
+- **Learning Process:**
+  - The Agent observes the current state of the environment.
+  - It selects an action based on its policy.
+  - The environment transitions to a new state and provides a Reward.
+  - The Agent updates its policy to improve future decisions.
