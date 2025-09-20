@@ -115,5 +115,58 @@ Predicting house prices based on features like location, size of house, number o
 - Feature Selection: Identifying and retaining important features such as location, number of bedrooms.
 - Feature Transformation: Normalizing features to ensure they are on a similar scale, which helps algorithms converge faster.
 
+##### Feature Engineering on Unstructured data:
+
+Unstructured data such as text, images.
+Example: Sentiment analysis of customer reviews.
+
+**Feature Engineering tasks:**
+- Text data: Converting text data into numerical features using techniques like TF-IDF or word embeddings.
+- Image Data: Extracting features such as edges or textures using techniques like Convolutional neural networks.
+
 ### Unsupervised Learning:
+
+Machine learning algorithms on unlabeled data.
+
+- The goal is to discover patterns, structures, relationships within the input data.
+- The machine must uncover and create the groups itself but human must still put labels on output groups.
+- Common techniques include `Clustering`, `Anomaly Detection`, `Association Rule learning`.
+- Clustering use cases: Customer segmentation, targeted marketing, recommender systems.
+
+#### Clustering technique:
+- Used to group similar datapoints into cluster based on their features.
+
+- Example: Customer Segmentation:
+  - Scenario: e-commerce company wants to segment its customers based on their purchase history for targeted marketing emails.
+  - Data: A dataset containing purchase history.
+  - Goal: Identify distinct group of customers based on purchase behavior.
+  - Technique: K-means clustering.
+
+![Clustering](https://developers.google.com/static/machine-learning/clustering/images/clustering_example.png)
+
+#### Association Rule Learning Technique:
+
+- Example: Market Basket Analysis.
+  - Scenario: a supermarket wants to know which products are frequently bought together.
+  - Data: transaction records from customer purchases.
+  - Goal: Identify associations between products to optimize product placements and associations.
+  - Technique: Apiori Algorithm
+
+**Outcome:** The supermarket can place associated products together to boost sales.
+
+![Association-Rule-Learning](https://media.licdn.com/dms/image/v2/D4D12AQE0yvWDBJZsyg/article-inline_image-shrink_1000_1488/B4DZUpmUl6HIAQ-/0/1740159667726?e=2147483647&v=beta&t=iCEfvcFlgE-YCsSuU2e3afS0zBAftD5_10gvrrQkUmc)
+
+Reference from [LinkedIn-Blog](https://www.linkedin.com/pulse/unsupervised-learning-power-self-taught-machines-sobia-noor-mvfsf)
+
+#### Anomaly Detection Technique:
+
+- Example: Fraud Detection.
+  - Scenario: Detect Fraudulent credit card transactions.
+  - Data: Transaction data including amount, location, time.
+  - Goal: Identify transactions that deviate significantly from typical behaviour.
+  - Technique: Isolation Forest.
+
+**Outcome:** The system flags potentially fraudulent transaction for further investigation.
+
+![Anomaly-Detection](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*eNc-PZX1mFdqhF0V)
 
