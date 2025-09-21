@@ -91,3 +91,13 @@ model performance in ImageB with AUC = 0.65.
 
 ![Lower-AUC-ROC](https://developers.google.com/static/machine-learning/crash-course/images/auc_0-65.png)
 
+Referenced from really nice blog by [Google](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc).
+
+## Model Evaluation - Regression Metrics:
+
+- **MAE:** Mean Absolute Error
+- **MAPE:** Mean Absolute Percentage Error
+- **RMSE:** Root Mean Squared Error
+- $R^2$: Explains variance in your model. Model with $R^2$ close to 1 means model predictions are good.
+
+To get detailed explanation on these metrics, refer to the following [medium-blog](https://medium.com/latinxinai/evaluation-metrics-for-regression-models-03f2143ecec2)
