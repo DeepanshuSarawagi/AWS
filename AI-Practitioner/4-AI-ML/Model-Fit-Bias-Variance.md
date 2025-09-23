@@ -1,4 +1,4 @@
-# Model Fit, Bias and Variance:
+# Model Fit, Bias and Variance
 
 ## Model Fit:
 
@@ -48,3 +48,14 @@ Read the following medium blog on [Bias-And-Variance](https://python.plainenglis
 - Low Bias and High Variance (Overfitting)
 - High Bias and Low Variance (Underfitting)
 
+## Hyperparameters tuning:
+
+### Hyperparameter:
+- Settings that define the model structure and learning algorithm and process.
+- Set before training begins.
+- Example: Learning rate, batch size, number of epochs and regularization:
+- **Learning Rate:** How fast you want to model to incorporate new data.
+- **Batch Size:** How many data points to consider at a time.
+- **Number of Epochs:** How many times you want to iterate over your model until it is converged to a good result.
+- **Regularization:** How flexible the model should be.
+- 
