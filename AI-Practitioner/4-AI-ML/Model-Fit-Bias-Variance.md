@@ -58,4 +58,11 @@ Read the following medium blog on [Bias-And-Variance](https://python.plainenglis
 - **Batch Size:** How many data points to consider at a time.
 - **Number of Epochs:** How many times you want to iterate over your model until it is converged to a good result.
 - **Regularization:** How flexible the model should be.
-- 
+
+### Hyperparameter Tuning:
+- Finding the best hyperparameters values to optimize the model performance.
+- Improves model accuracy, reduces overfitting and enhances generalization.
+
+### How to tune hyperparameters:
+- Grid search, random search
+- Using services such as `SageMake Automatics Model Auto Tuning`(AMT)
