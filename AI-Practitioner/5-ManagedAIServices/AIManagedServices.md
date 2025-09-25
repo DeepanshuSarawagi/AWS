@@ -52,3 +52,13 @@
 - ML powered Voice based toxicity detection capability.
 - Leverages speech cues: tone and pitch and, text-based cues.
 
+## Amazon Rekognition:
+- Service to find objects, images, places, face detection and analysis, texts in images, person, logos, celebrity recognition.
+- Has ability to use custom labels:
+  - Example: Find your own logo on social media pages.
+- Has ability for content moderation.
+  - Automatically detect inappropriate, unwanted or offensive content.
+  - Integrated with Amazon Augmented AI for human review.
+
+## Amazon Lex:
+- AI managed service for building chatbot applications.
