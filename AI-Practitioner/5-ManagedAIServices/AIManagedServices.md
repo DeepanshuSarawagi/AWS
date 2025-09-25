@@ -61,4 +61,11 @@
   - Integrated with Amazon Augmented AI for human review.
 
 ## Amazon Lex:
-- AI managed service for building chatbot applications.
+- AI managed service for building chatbot applications using voice and text.
+- Integration with AWS Lambda, Connect, Comprehend Kendra.
+
+## Amazon Personalize:
+- Fully managed ML service to build apps with real-time personalized recommendation engine.
+  - For example: Personalization ads based on shopping history, browser history etc.
+- Integrates into existing websites, apps, mobile apps.
+
