@@ -69,3 +69,19 @@
   - For example: Personalization ads based on shopping history, browser history etc.
 - Integrates into existing websites, apps, mobile apps.
 
+## Amazon Textract:
+- Automatically extracts texts, handwriting and data from any scanned documents using AI and ML.
+- Extracts data from forms and tables.
+
+## Amazon Kendra:
+- Fully managed document search service powered by ML.
+- Extract answers from within a document. (text, PDF, HTML, Powerpoint, Word, Faqs..)
+- NLP capability.
+
+## Amazon Mechanical Turk:
+- Crowdsourcing marketplace to perform simple human tasks.
+- Distributed virtual workforce.
+- Integration with Amazon A2I, SageMaker Ground Truth
+
+## Amazon Augmented AI:
+- Human oversight of ML predictions in production.
