@@ -75,7 +75,7 @@
 
 ## Amazon Kendra:
 - Fully managed document search service powered by ML.
-- Extract answers from within a document. (text, PDF, HTML, Powerpoint, Word, Faqs..)
+- Extract answers from within a document. (text, PDF, HTML, PowerPoint, Word, Faqs..)
 - NLP capability.
 
 ## Amazon Mechanical Turk:
@@ -85,3 +85,8 @@
 
 ## Amazon Augmented AI:
 - Human oversight of ML predictions in production.
+
+## Amazon Comprehend Medical and Transcribe Medical:
+- Automatically convert medical-related speech to text (HIPAA compliant)
+- Comprehend medical detects and returns useful information in unstructured clinical text.
+- Analyze real time data with Kinesis Data Firehose.
