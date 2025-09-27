@@ -11,13 +11,13 @@
 ### Real-Time:
 - One prediction at a time.
 - Offers low latency.
-- Max payload size of 6 MB.
+- Max payload size of `6 MB`.
 - Processing time of max 60s.
 - Fast near-instant predictions for mobile/web apps.
 
 ### Serverless:
 - Idle period between traffic spikes.
-- Max payload size of 4 MB.
+- Max payload size of `4 MB`.
 - Processing time of max 60s.
 - Can tolerate more latency (cold starts)
 
@@ -29,12 +29,13 @@
 
 ### Batch deployments:
 - Batch deployments are for predictions on entire dataset; request and response are on S3.
-- Max payload of 100 MB per batch invocation.
+- Max payload of `100 MB` per batch invocation.
 - Max processing time of 1 hour.
 
 ## SageMaker Studio:
 - End-to-end development from a unified interface.
 - Tune, deploy and train ML models.
+- Ability to create automated workflows.
 
 ## SageMaker Data Tools:
 
@@ -70,5 +71,27 @@
 - Align model to human preferences.
 - Helps model review, customization and evaluation.
 
-### ML Governance:
-- 
+### SageMaker JumpStart:
+- ML Hub to find pre-trained FM, Computer Vision Models or NLP models.
+- Models can be fully customized for your own data.
+- Models can be directly deployed on SageMaker.
+- Pre-built ML solutions.
+
+### SageMaker Canvas:
+- Build models using a visual interface.
+- Access to ready to use models from bedrock or JumpStart.
+
+### Summary:
+AMT: Tune Hyperparameters
+Feature Store: Stores features and metadata in central place.
+Clarify: Compare models, explain models and bias.
+Ground Truth: Humans for model grading and data labeling.
+Model Cards: SageMaker model documentation
+ML Dashboard: View all your models in one place.
+Model Monitor: Monitoring alerts for your models.
+Model Registry: Centralized repository to manage all model versions.
+Pipelines: CICD for ML.
+Role Manager: Access control for personas.
+JumpStart: ML model hub and built-in ML solutions.
+Canvas: No-code interface for SageMaker.
+MLFlow: use MLFlow tracking servers on SageMaker.
